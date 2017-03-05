@@ -1,9 +1,9 @@
-## [Unreleased]
+# Unreleased
 
 - Move characters panel from bottom to left area
 - Enhanced filtering
 
-## ![version](https://img.shields.io/badge/version-2.0.0-blue.svg?style=flat) (2017-03-05)
+# ![version 2.0.0](https://img.shields.io/badge/version-2.0.0-brightgreen.svg?style=flat) ![date 2017-03-05](https://img.shields.io/badge/date-2017--03--05-red.svg?style=flat)
 
 **Added:**
 
@@ -23,8 +23,7 @@
 - Fix a filtering issue with "Destroyer" (it has a "neutral" side and a "neutral" gender)
 - Add missing "Attack speed"
 
-
-## ![version](https://img.shields.io/badge/version-1.9.0-green.svg?style=flat) (2017-02-15)
+# ![version 1.9.0](https://img.shields.io/badge/version-1.9.0-brightgreen.svg?style=flat) ![date 2017-02-15](https://img.shields.io/badge/date-2017--02--15-red.svg?style=flat)
 
 **Added:**
 
@@ -38,7 +37,7 @@
 - Transform attack total + attack bonus to physical attack and energy attack
 
 
-## ![version](https://img.shields.io/badge/version-1.8.0-green.svg?style=flat) (2017-01-31)
+# ![version 1.8.0](https://img.shields.io/badge/version-1.8.0-brightgreen.svg?style=flat) ![date 2017-01-31](https://img.shields.io/badge/date-2017--01--31-red.svg?style=flat)
 
 **Added:**
 
@@ -61,14 +60,14 @@
 - Fix World War Hulk gender (from hero to vilain)
 
 
-## ![version](https://img.shields.io/badge/version-1.7.1-green.svg?style=flat) (2017-01-11)
+# ![version 1.7.1](https://img.shields.io/badge/version-1.7.1-brightgreen.svg?style=flat) ![date 2017-01-11](https://img.shields.io/badge/date-2017--01--11-red.svg?style=flat)
 
 **Added:**
 
 - Now compliant with MFF 2.8
 
 
-## ![version](https://img.shields.io/badge/version-1.7.0-green.svg?style=flat) (2017-01-09)
+# ![version 1.7.0](https://img.shields.io/badge/version-1.7.0-brightgreen.svg?style=flat) ![date 2017-01-09](https://img.shields.io/badge/date-2017--01--09-red.svg?style=flat)
 
 **Added:**
 
@@ -86,6 +85,6 @@
 - minor UI update
 
 
-## ![version](https://img.shields.io/badge/version-1.6.0-green.svg?style=flat) (2016-12-28)
+# ![version 1.6.0](https://img.shields.io/badge/version-1.6.0-brightgreen.svg?style=flat) ![date 2016-12-28](https://img.shields.io/badge/date-2017--12--28-red.svg?style=flat)
 
 - First public release
