@@ -1,9 +1,9 @@
-# Unreleased
+# Unreleased ![version 2.0.0](https://img.shields.io/badge/version-2.0.0-brightgreen.svg?style=flat) ![date 2017-03-05](https://img.shields.io/badge/date-2017--03--05-red.svg?style=flat)
+
+**In development:**
 
 - Move characters panel from bottom to left area
 - Enhanced filtering
-
-# ![version 2.0.0](https://img.shields.io/badge/version-2.0.0-brightgreen.svg?style=flat) ![date 2017-03-05](https://img.shields.io/badge/date-2017--03--05-red.svg?style=flat)
 
 **Added:**
 
