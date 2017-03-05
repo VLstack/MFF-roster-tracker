@@ -5,7 +5,7 @@ var MODAL =
  "show":function(options)
  {
   var wrapper, header, body, footer, closer, i;
-  API.DOM.addLinkElement("modal.css");
+  API.DOM.addLinkElement("css/modal.css");
   MODAL.hide();
   MODAL._node = document.body.appendChild(document.createElement("div"));
   MODAL._node.id = "modalBackground";

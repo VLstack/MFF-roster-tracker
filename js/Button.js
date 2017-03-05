@@ -3,7 +3,7 @@ function Button(options)
 {
  var i, k,
      node = API.DOM.getById(options.renderTo).appendChild(document.createElement("span"));
- API.DOM.addLinkElement("button.css");
+ API.DOM.addLinkElement("css/button.css");
  node.className = "button";
  if ( options.className ) { node.classList.add(options.className); }
  if ( options.fa )
