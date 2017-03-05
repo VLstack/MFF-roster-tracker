@@ -14,8 +14,8 @@
 
 **Enhancements:**
 
-- Rename "Defense penetration" to "Ignore defense"
-- Rename "Abnormal" to "Debuff" in details profile
+- Rename "Defense penetration" to "Ignore defense" as of Netmarble
+- Rename "Abnormal" to "Debuff" in details profile as of Netmarble
 - Refactor of javascript code for incoming UI update
 
 **Fixed bugs:**
