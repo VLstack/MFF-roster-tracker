@@ -1,9 +1,20 @@
-var DETAIL =
+/* global MFF, Panel */
+MFF.LAYOUT.DETAIL =
 {
-"draw":function(container, character, persistant)
+ "_panel" : null,
+ "init" : function()
+ {
+  MFF.LAYOUT.DETAIL._panel = new Panel({ "id" : "panelDetail" });
+  MFF.LAYOUT.DETAIL.randomBackground();
+ },
+ "randomBackground" : function()
+ {
+  var nbBackground = 16;
+  MFF.LAYOUT.DETAIL._panel.getNode().style.backgroundImage = "url(images/background/{0}.jpg)".format(1 + parseInt(Math.random() * nbBackground, 10));
+ },
+"draw" : function(container, character)
 {
- var k,
-     data = MFF.loadCharacter(character);
+ var data = MFF.CHARACTERS.get(character);
 
  function getAtk(valueWhenNaN)
  {
@@ -11,7 +22,7 @@ var DETAIL =
       energy = parseInt(document.getElementById("detailattribute_atk_energy").value);
   if ( isNaN(physical) ) { physical = valueWhenNaN; }
   if ( isNaN(energy) ) { energy = valueWhenNaN; }
-  return {"physical":physical, "energy":energy};
+  return { "physical" : physical, "energy" : energy };
  }
 
  function saveAtk()
@@ -25,7 +36,7 @@ var DETAIL =
    if ( err.length ) { alert(err.join("\n")); }
    else
    {
-    MFF.saveCharacter({"mode":"attack", "physical":data.physical, "energy":data.energy});
+    MFF.saveCharacter({ "mode" : "attack", "physical" : data.physical, "energy" : data.energy });
    }
   };
  }
@@ -36,7 +47,7 @@ var DETAIL =
       energy = parseInt(document.getElementById("detailattribute_def_energy").value);
   if ( isNaN(physical) ) { physical = valueWhenNaN; }
   if ( isNaN(energy) ) { energy = valueWhenNaN; }
-  return {"physical":physical, "energy":energy};
+  return { "physical" : physical, "energy" : energy };
  }
 
  function saveDef()
@@ -50,7 +61,7 @@ var DETAIL =
    if ( err.length ) { alert(err.join("\n")); }
    else
    {
-    MFF.saveCharacter({"mode":"defense", "physical":data.physical, "energy":data.energy});
+    MFF.saveCharacter({ "mode" : "defense", "physical" : data.physical, "energy" : data.energy });
    }
   };
  }
@@ -65,61 +76,81 @@ var DETAIL =
  }
 
  // ATTACK
- DETAIL.drawFormTable(container, character, data, "Attacks",
-                      [
-                       [
-                        {"key":"atk_base", "label":"Base", "tag":"span", "attributes":{"id":"attack_base", "innerHTML":CHARACTERS[character].uniforms[data.uniform].attackBase == "physical" ? "Physical" : "Energy"}},
-                        {"key":"atkspeed", "label":"Attack speed", "tabindex":200},
-                        {"key":"defpen", "label":"Ignore defense", "tabindex":300}
-                       ],
-                       [
-                        {"key":"atk_physical", "label":"Physical", "onchange":saveAtk, "value":data.attack.physical || 0, "tabindex":100},
-                        {"key":"critrate", "label":"Critical rate", "tabindex":201},
-                        {"key":"ignore_dodge", "label":"Ignore dodge", "tabindex":301}
-                       ],
-                       [
-                        {"key":"atk_energy", "label":"Energy", "onchange":saveAtk, "value":data.attack.energy || 0, "tabindex":101},
-                        {"key":"critdamage", "label":"Critical damage", "tabindex":202},
-                        null
-                       ]
-                      ]);
+ MFF.DETAIL.drawFormTable(container, character, data, "Attacks",
+                          [
+                           [
+                            { "key" : "atk_base", "label" : "Base", "tag" : "span", "attributes" : { "id" : "attack_base", "innerHTML" : MFF.CHARACTERS.DATA[character].uniforms[data.uniform].attackBase == "physical" ? "Physical" : "Energy" } },
+                            { "key" : "atkspeed", "label" : "Attack speed", "tabindex" : 200 },
+                            { "key" : "defpen", "label" : "Ignore defense", "tabindex" : 300 }
+                           ],
+                           [
+                            { "key" : "atk_physical", "label" : "Physical", "onchange" : saveAtk, "value" : data.attack.physical || 0, "tabindex" : 100 },
+                            { "key" : "critrate", "label" : "Critical rate", "tabindex" : 201 },
+                            { "key" : "ignore_dodge", "label" : "Ignore dodge", "tabindex" : 301 }
+                           ],
+                           [
+                            { "key" : "atk_energy", "label" : "Energy", "onchange" : saveAtk, "value" : data.attack.energy || 0, "tabindex" : 101 },
+                            { "key" : "critdamage", "label" : "Critical damage", "tabindex" : 202 },
+                            null
+                           ]
+                          ]);
  // DEFENSE
- DETAIL.drawFormTable(container, character, data, "Defenses",
-                      [
-                       [
-                        {"key":"def_physical", "label":"Physical", "onchange":saveDef, "onkeyup":showAvgDef, "value":data.defense.physical || 0, "tabindex":400},
-                        {"key":"hp", "label":"HP", "tabindex":500}
-                       ],
-                       [
-                        {"key":"def_energy", "label":"Energy", "onchange":saveDef, "onkeyup":showAvgDef, "value":data.defense.energy || 0, "tabindex":401},
-                        {"key":"recorate", "label":"Recovery rate", "tabindex":501}
-                       ],
-                       [
-                        {"key":"average_defense", "label":"Average", "tag":"span", "attributes":{"id":"average_defense", "innerHTML":"0", "tabindex":402}},
-                        {"key":"dodge", "label":"Dodge", "tabindex":502}
-                       ]
-                      ]);
- // misc
- DETAIL.drawFormTable(container, character, data, "Debuff",
-                      [
-                       [
-                        {"key":"movspeed", "label":"Movement speed", "tabindex":600}
-                       ],
-                       [
-                        {"key":"debuff", "label":"Debuff duration", "tabindex":601}
-                       ],
-                       [
-                        {"key":"scd", "label":"Skill cooldown", "tabindex":602}
-                       ]
-                      ]);
- DETAIL.drawSkills(container, character, data);
+ MFF.DETAIL.drawFormTable(container, character, data, "Defenses",
+                          [
+                           [
+                            { "key" : "def_physical", "label" : "Physical", "onchange" : saveDef, "onkeyup" : showAvgDef, "value" : data.defense.physical || 0, "tabindex" : 400 },
+                            { "key" : "hp", "label" : "HP", "tabindex" : 500 }
+                           ],
+                           [
+                            { "key" : "def_energy", "label" : "Energy", "onchange" : saveDef, "onkeyup" : showAvgDef, "value" : data.defense.energy || 0, "tabindex" : 401 },
+                            { "key" : "recorate", "label" : "Recovery rate", "tabindex" : 501 }
+                           ],
+                           [
+                            { "key" : "average_defense", "label" : "Average", "tag" : "span", "attributes" : { "id" : "average_defense", "innerHTML" : "0", "tabindex" : 402 } },
+                            { "key" : "dodge", "label" : "Dodge", "tabindex" : 502 }
+                           ]
+                          ]);
+ // DEBUFF
+ MFF.DETAIL.drawFormTable(container, character, data, "Debuff",
+                          [
+                           [
+                            { "key" : "movspeed", "label" : "Movement speed", "tabindex" : 600 }
+                           ],
+                           [
+                            { "key" : "debuff", "label" : "Debuff duration", "tabindex" : 601 }
+                           ],
+                           [
+                            { "key" : "scd", "label" : "Skill cooldown", "tabindex" : 602 }
+                           ]
+                          ]);
+ MFF.DETAIL.drawSkills(container, character, data);
 
  // compute values
  showAvgDef()();
 },
-"drawFormTable":function(container, character, data, tableLabel, items)
+"drawSkills" : function(container, character, data)
 {
- var tr, td, th, input, i, j,
+ var i, j, select, option,
+     div = container.appendChild(document.createElement("div"));
+ div.id = "skills";
+ for ( i = 0; i < 5; i++ )
+ {
+  select = div.appendChild(document.createElement("select"));
+  select.className = "skill_lvl";
+  for ( j = 0; j < 7; j++ )
+  {
+   option = select.appendChild(document.createElement("option"));
+   option.value = j;
+   option.text = "{0}: #{1}".format(MFF.CHARACTERS.DATA[character].uniforms[data.uniform].skills[i], j);
+  }
+  select.selectedIndex = data.skills[i];
+  select.dataset.skill = i;
+  select.onchange = function() { MFF.saveCharacter({ "mode" : "skill", "skill" : this.dataset.skill, "lvl" : this.options[this.selectedIndex].value }); };
+ }
+},
+"drawFormTable" : function(container, character, data, tableLabel, items)
+{
+ var tr, td, input, i, j,
     maxCells = 0,
     div = container.appendChild(document.createElement("div")),
     table = div.appendChild(document.createElement("table")),
@@ -134,8 +165,8 @@ var DETAIL =
    {
     var input = document.getElementById("detailattribute_" + key),
         value = input ? input.value : 0;
-    MFF.saveCharacter({"mode":"attribute", "type":key, "value":value});
-   }
+    MFF.saveCharacter({ "mode" : "attribute", "type" : key, "value" : value });
+   };
   }
 
   if ( item )

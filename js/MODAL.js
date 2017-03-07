@@ -1,8 +1,8 @@
 /* global API, Button */
 var MODAL =
 {
- "_node":null,
- "show":function(options)
+ "_node" : null,
+ "show" : function(options)
  {
   var wrapper, header, body, footer, closer, i;
   API.DOM.addLinkElement("css/modal.css");
@@ -14,7 +14,7 @@ var MODAL =
   header = wrapper.appendChild(document.createElement("h1"));
   header.id = "modalHeader";
   closer = header.appendChild(document.createElement("span"));
-  closer.className = "fa fa-times";
+  closer.className = "fa fa-window-close";
   closer.onclick = MODAL.hide;
   header.appendChild(document.createTextNode(options.title || " "));
   body = wrapper.appendChild(document.createElement("div"));
@@ -31,7 +31,7 @@ var MODAL =
    }
   }
  },
- "hide":function()
+ "hide" : function()
  {
   if ( MODAL._node ) { MODAL._node.parentNode.removeChild(MODAL._node); }
   MODAL._node = null;

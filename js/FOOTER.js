@@ -1,57 +1,53 @@
-/*global MFF, CHARACTERS */
-var FOOTER =
+/*global MFF, Panel, API */
+MFF.LAYOUT.FOOTER =
 {
-"__node":null,
-"init":function()
-{
- var div = document.getElementById("footer");
- if ( div ) { FOOTER.__node = div; }
- else
+ "_panel" : null,
+ "init" : function()
  {
-  FOOTER.__node = document.body.appendChild(document.createElement("div"));
-  FOOTER.__node.id = "footer";
- }
-},
-"draw":function()
-{
- var span;
- FOOTER.init();
- FOOTER.__node.innerHTML = "";
- FOOTER.__computeNbTiers();
- span = FOOTER.__node.appendChild(document.createElement("span"));
- span.id = "MFFversion";
- span.className = "bgOpaque";
- span.appendChild(document.createTextNode("v.{0} for MFF v.{1}".format(MFF.version, MFF.versionMFF)));
- span.title = "Version {0} compliant with MFF version {1}".format(MFF.version, MFF.versionMFF);
-
-},
-"__computeNbTiers":function()
-{
- var k, span,
-     T1 = 0,
-     T2 = 0,
-     PT2 = 0;
- for ( k in MFF.characters )
+  var span;
+  MFF.LAYOUT.FOOTER._panel = new Panel({ "id" : "panelFooter" });
+  API.EVT.on("updateTier", MFF.LAYOUT.FOOTER._updateTier);
+  span = MFF.LAYOUT.FOOTER._panel.appendChild(document.createElement("span"));
+  span.id = "MFFversion";
+  span.className = "bgOpaque";
+  span.innerHTML = "v.{0} for MFF v.{1}".format(MFF.version, MFF.versionMFF);
+  span.title = "Version {0} compliant with MFF version {1}".format(MFF.version, MFF.versionMFF);
+ },
+ "_updateTier" : function()
  {
-  if ( MFF.characters.hasOwnProperty(k) )
+  var k,
+      span = document.getElementById("nbTiers"),
+      all = MFF.CHARACTERS.getAll(),
+      T1 = 0,
+      T2 = 0,
+      PT2 = 0;
+  if ( all )
   {
-   if ( MFF.characters[k].tier == 2 )
+   for ( k in all )
    {
-    T2++;
-   }
-   else
-   {
-    T1++;
-    if ( CHARACTERS[k].tiers.indexOf(2) != -1 && MFF.characters[k].gear[0][7].type && MFF.characters[k].gear[1][7].type && MFF.characters[k].gear[2][7].type && MFF.characters[k].gear[3][7].type )
+    if ( all.hasOwnProperty(k) )
     {
-     PT2++;
+     if ( all[k].tier == 2 )
+     {
+      T2++;
+     }
+     else
+     {
+      T1++;
+      if ( MFF.CHARACTERS.DATA[k].tiers.indexOf(2) != -1 && all[k].gear[0][7].type && all[k].gear[1][7].type && all[k].gear[2][7].type && all[k].gear[3][7].type )
+      {
+       PT2++;
+      }
+     }
     }
    }
   }
+  if ( !span )
+  {
+   span = MFF.LAYOUT.FOOTER._panel.appendChild(document.createElement("span"));
+   span.id = "nbTiers";
+   span.className = "bgOpaque";
+  }
+  span.innerHTML = "T1 : {0} | T2 : {1} | T2 ready : {2}".format(T1, T2, PT2);
  }
- span = FOOTER.__node.appendChild(document.createElement("span"));
- span.id = "nbTiers";
- span.className = "bgOpaque";
- span.appendChild(document.createTextNode("T1 : {0} | T2 : {1} | Potential T2 : {2}".format(T1, T2, PT2)));
-}
 };
