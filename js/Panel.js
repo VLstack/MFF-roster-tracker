@@ -12,7 +12,7 @@ Panel.prototype =
  "_node" : null,
  "getNode" : function() { return this._node; },
  "setHTML" : function(html) { this._node.innerHTML = html; },
- "clear" : function() { this._node.innerHTML = ""; },
+ "flush" : function() { this._node.innerHTML = ""; },
  "appendChild" : function(child) { return this._node.appendChild(child); },
  "removeClass" : function(cName) { this._node.classList.remove(cName); },
  "addClass" : function(cName) { this._node.classList.add(cName); },

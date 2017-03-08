@@ -3,6 +3,7 @@
 **In development:**
 
 - Move characters panel from bottom to left area
+- Major UI update
 - Enhanced filtering
 
 **Added:**
@@ -16,7 +17,7 @@
 
 - Rename "Defense penetration" to "Ignore defense" as of Netmarble
 - Rename "Abnormal" to "Debuff" in details profile as of Netmarble
-- Refactor of javascript code for incoming UI update
+- Major refactor of javascript code
 
 **Fixed bugs:**
 

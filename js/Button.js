@@ -6,10 +6,15 @@ function Button(options)
  API.DOM.addLinkElement("css/button.css");
  this._node.className = "button";
  if ( options.className ) { this._node.classList.add(options.className); }
- if ( options.label )
+ if ( options.content )
  {
-  this._node.innerHTML = options.label;
-  this._node.classList.add("label");
+  if ( !Array.isArray(options.content) ) { options.content = [options.content]; }
+  options.content.forEach(function(node)
+                          {
+                           if ( typeof node == "string" ) { this.innerHTML += node; }
+                           else { this.appendChild(node); }
+                          }, this._node);
+  this._node.classList.add("content");
  }
  if ( options.fa )
  {
@@ -20,16 +25,19 @@ function Button(options)
   else { this._node.appendChild(i); }
  }
  if ( options.styles ) { for ( k in options.styles ) { if ( options.styles.hasOwnProperty(k) ) { this._node.style[k] = options.styles[k]; } } }
- this._node.onclick = options.callback;
+ if ( options.callback ) { this._node.onclick = options.callback; }
  if ( options.small ) { this._node.classList.add("small"); }
  if ( options.listener ) { API.EVT.on(options.listener.method, options.listener.callback, options.listener.context || this); }
+ if ( options.hide ) { this.hide(); }
  return this;
 }
 
 Button.prototype =
 {
  "_node" : null,
- "setActive" : function(state) { this._node.classList[state ? "add" : "remove"]("active"); }
+ "setActive" : function(state) { this._node.classList[state ? "add" : "remove"]("active"); },
+ "show" : function() { this._node.style.display = ""; },
+ "hide" : function() { this._node.style.display = "none"; }
 };
 
 function GroupButton(options)

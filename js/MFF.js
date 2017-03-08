@@ -220,11 +220,7 @@ var MFF =
  },
  "setTierLI" : function(character)
  {
-  var li = document.getElementById(character),
-      data = MFF.CHARACTERS.get(character);
-  li.classList.remove("tier1");
-  li.classList.remove("tier2");
-  li.classList.add("tier" + data.tier);
+  MFF.LAYOUT.LIST.setTier(character);
  },
  "getClassNameColor" : function(cName, type)
  {
@@ -289,6 +285,7 @@ var MFF =
   MFF.LAYOUT.init();
   MFF.drawCharacter(null);
   // MFF.setRandomBackground();
+  // TODO : déplacer
   MFF.renderList();
  },
  "drawContentLI" : function(character)
@@ -297,7 +294,7 @@ var MFF =
  },
  "init" : function()
  {
-  var ul, li, data, character;
+  var data;
   if ( !window.localStorage ) { alert("localStorage must be enabled in your browser"); return; }
   data = localStorage.getItem(MFF.localStorageKeys.main);
   if ( data && data != null && (typeof data == "string") ) { MFF.CHARACTERS.setAll(JSON.parse(data)); }
@@ -307,58 +304,15 @@ var MFF =
  },
  "setColorLineDetail" : function(character)
  {
-  var lineGear, i, j, cName, span,
-      data = MFF.CHARACTERS.get(character);
-  if ( (span = document.getElementById("{0}_level".format(character))) ) { span.innerHTML = "#" + data.level; }
-  if ( (span = document.getElementById("{0}_tier".format(character))) ) { span.innerHTML = "/T" + data.tier; }
-  for ( i = 0; i < 4; i++ )
-  {
-   lineGear = document.getElementById("{0}_lineDetailGear_{1}".format(character, i + 1));
-   API.DOM.flush(lineGear);
-   for ( j = 0; j < data.gear[i].length; j++ )
-   {
-    cName = "";
-    if ( data.gear[i][j].type )
-    {
-     if ( !data.gear[i][j].pref ) { cName = "undef"; }
-     else if ( data.gear[i][j].percent == 100 ) { cName = "max"; }
-     else if ( data.gear[i][j].percent > 50 ) { cName = "sup"; }
-     else if ( data.gear[i][j].percent == 50 ) { cName = "moy"; }
-     else if ( data.gear[i][j].percent > 0 ) { cName = "inf"; }
-     else if ( data.gear[i][j].percent == 0 ) { cName = "min"; }
-    }
-    span = lineGear.appendChild(document.createElement("span"));
-    span.className = cName;
-   }
-  }
+  MFF.LAYOUT.LIST.synchroDetailGear(character);
  },
  "setColorLI" : function(elt, percent)
  {
-  var cName = "undef",
-      li = API.DOM.parent(elt, "li");
-  if ( percent == 100 ) { cName = "max"; }
-  else if ( percent > 50 ) { cName = "sup"; }
-  else if ( percent == 50 ) { cName = "moy"; }
-  else if ( percent > 25 ) { cName = "inf"; }
-  else if ( percent != 0 ) { cName = "min"; }
-  li.classList.remove("undef");
-  li.classList.remove("max");
-  li.classList.remove("sup");
-  li.classList.remove("moy");
-  li.classList.remove("inf");
-  li.classList.remove("min");
-  if ( cName ) { li.classList.add(cName); }
-  li.firstChild.style.width = percent + "%";
+  MFF.LAYOUT.LIST.synchroDevelomment(elt, percent);
  },
  "setClassTypeLI" : function(character)
  {
-  var li = document.getElementById(character),
-      data = MFF.CHARACTERS.get(character);
-  li.classList.remove("combat");
-  li.classList.remove("speed");
-  li.classList.remove("blast");
-  li.classList.remove("universal");
-  li.classList.add(MFF.CHARACTERS.DATA[character].uniforms[data.uniform].type);
+  MFF.LAYOUT.LIST.setClassType(character);
  },
  "getIndividualPercent" : function(cur, min, max)
  {
@@ -411,318 +365,7 @@ var MFF =
  },
  "drawCharacter" : function(character, persistant, keep)
  {
-  var h1, img, table, tbody, tr, td, td2, k, i, j, div, input, percent, curStat, select, option, data, idx, span,
-      chooseMessage = "<div class=\"choose_character\"><span class=\"bgOpaque\">Select a character</span></div><div class=\"copyright bgOpaque\">The Marvel Logo, images and all characters that appear on this website and the distinctive likeness(es) thereof are Trademarks of Marvel Entertainment, LLC and Netmarble Games. This site is not affiliated with Marvel Entertainment or Netmarble Games.</div>";
-  function getMin(select) { return parseFloat(select.options[select.selectedIndex].dataset.rangeMin); }
-  function getMax(select) { return parseFloat(select.options[select.selectedIndex].dataset.rangeMax); }
-  function checkValues(tr, save)
-  {
-   var div, gear, type, pref,
-       select = tr.childNodes[1].firstChild,
-       cur = tr.childNodes[2].firstChild.value,
-       min = getMin(select),
-       max = getMax(select),
-       cName = "invalide",
-       moy = (min + max) / 2,
-       curPercent = tr.childNodes[8];
-   if ( cur == 0 ) { cName = "undef"; }
-   else if ( cur == moy ) { cName = "moy"; }
-   else if ( cur == min ) { cName = "min"; }
-   else if ( cur == max ) { cName = "max"; }
-   else if ( cur < moy && cur > min ) { cName = "inf"; }
-   else if ( cur > moy && cur < max ) { cName = "sup"; }
-   curPercent.innerHTML = "({0}%)".format(parseInt(MFF.getIndividualPercent(cur, min, max)));
-   tr.className = cName;
-   if ( save )
-   {
-    div = API.DOM.parent(tr, "div", "gear");
-    gear = div.dataset.gearIndex;
-    type = select.options[select.selectedIndex].value;
-    pref = tr.childNodes[0].firstChild.checked;
-    MFF.saveCharacter({ "mode" : "gear", "gear" : gear, "gearIndex" : tr.dataset.gearIndex, "type" : type, "val" : parseFloat(cur), "pref" : pref, "percent" : MFF.getIndividualPercent(cur, min, max) });
-   }
-  }
-  function changeMinMax(evt)
-  {
-   var min, moy, max,
-       tr = this.parentNode.parentNode,
-       cur = tr.childNodes[2].firstChild,
-       minSpan = tr.childNodes[3],
-       moySpan = tr.childNodes[5],
-       maxSpan = tr.childNodes[7];
-   min = getMin(this);
-   max = getMax(this);
-   moy = API.numberToFixed((min + max) / 2, 2);
-   minSpan.innerHTML = min;
-   moySpan.innerHTML = moy;
-   maxSpan.innerHTML = max;
-   if ( evt !== null ) { cur.value = 0; }
-   checkValues(tr, false);
-  }
-
-  function choosePreviousNextCharacter(sens)
-  {
-   return function()
-   {
-    var self = document.getElementById(MFF.currentCharacter),
-        node = self[sens];
-    if ( !node && sens == "nextSibling" ) { node = self.parentNode.firstChild; }
-    else if ( !node && sens == "previousSibling" ) { node = self.parentNode.lastChild; }
-    while ( !node || node.style.display == "none" )
-    {
-     node = node[sens];
-     if ( !node && sens == "nextSibling" ) { node = self.parentNode.firstChild; }
-     else if ( !node && sens == "previousSibling" ) { node = self.parentNode.lastChild; }
-     if ( node == self ) { return ; }
-    }
-    if ( node )
-    {
-     MFF.drawCharacter(node.id, true);
-    }
-   };
-  }
-  API.DOM.flush(MFF.layout.detail);
-  if ( !character || !(character in MFF.CHARACTERS.DATA) )
-  {
-   MFF.layout.detail.innerHTML = chooseMessage;
-   return ;
-  }
-  if ( MFF.toid2 ) { MFF.toid2 = clearTimeout(MFF.toid2); }
-  if ( MFF.toid ) { MFF.toid = clearTimeout(MFF.toid); }
-  if ( MFF.currentCharacter ) { document.getElementById(MFF.currentCharacter).classList.remove("active"); }
-  if ( persistant )
-  {
-   if ( MFF.currentCharacter )
-   {
-    k = document.getElementById(MFF.currentCharacter + "_percent");
-    percent = MFF.computePercent(MFF.currentCharacter);
-    k.innerHTML = API.numberToFixed(percent, 2) + "%";
-    MFF.setColorLineDetail(MFF.currentCharacter);
-    MFF.setColorLI(k, percent);
-    MFF.setClassTypeLI(MFF.currentCharacter);
-    MFF.setTierLI(MFF.currentCharacter);
-    if ( MFF.currentCharacter == character && !keep )
-    {
-     MFF.currentCharacter = null;
-     MFF.layout.detail.innerHTML = chooseMessage;
-     return ;
-    }
-   }
-   MFF.currentCharacter = character;
-   if ( MFF.currentCharacter ) { document.getElementById(MFF.currentCharacter).classList.add("active"); }
-  }
-  data = MFF.CHARACTERS.get(character);
-  MFF.layout.detail.className = data.tier == 2 ? "tier2" : "tier1";
-  table = MFF.layout.detail.appendChild(document.createElement("table"));
-  tbody = table.appendChild(document.createElement("tbody"));
-  tr = tbody.appendChild(document.createElement("tr"));
-  td = tr.appendChild(document.createElement("td"));
-  td.className = "picture";
-
-  div = td.appendChild(document.createElement("div"));
-  div.id = "typeSideGender";
-  div.className = "bgOpaque";
-
-  img = div.appendChild(document.createElement("img"));
-  img.src = "images/{0}.png".format(MFF.CHARACTERS.DATA[character].uniforms[data.uniform].type);
-
-  img = div.appendChild(document.createElement("img"));
-  img.src = "images/{0}.png".format(MFF.CHARACTERS.DATA[character].uniforms[data.uniform].gender);
-
-  img = div.appendChild(document.createElement("img"));
-  img.src = "images/{0}.png".format(MFF.CHARACTERS.DATA[character].uniforms[data.uniform].side);
-
-  h1 = td.appendChild(document.createElement("h1"));
-  h1.className = "bgOpaque";
-  h1.appendChild(document.createTextNode(MFF.CHARACTERS.DATA[character].uniforms[data.uniform].name));
-
-  h1 = td.appendChild(document.createElement("h2"));
-  h1.className = "bgOpaque";
-  span = h1.appendChild(document.createElement("label"));
-  span.htmlFor = "character_level";
-  span.appendChild(document.createTextNode("level : "));
-  input = h1.appendChild(document.createElement("input"));
-  input.type = "text";
-  input.id = "character_level";
-  input.onchange = function()
-                   {
-                    MFF.saveCharacter({ "mode" : "level", "level" : this.value });
-                   };
-  input.value = data.level;
-  select = h1.appendChild(document.createElement("select"));
-  select.id = "character_tier";
-  select.onchange = function()
-  {
-   var tier = this.options[this.selectedIndex].value;
-   MFF.layout.detail.className = tier == 2 ? "tier2" : "tier1";
-   MFF.saveCharacter({ "mode" : "tier", "tier" : tier });
-  };
-  option = select.appendChild(document.createElement("option"));
-  option.value = "1";
-  option.text = "Tier 1";
-  option = select.appendChild(document.createElement("option"));
-  option.value = "2";
-  option.text = "Tier 2";
-  select.selectedIndex = data.tier - 1;
-  if ( MFF.CHARACTERS.DATA[character].tiers[0] != 1 ) { select.removeChild(select.firstChild); }
-  if ( MFF.CHARACTERS.DATA[character].tiers.indexOf(2) === -1 ) { select.removeChild(select.lastChild); }
-
-
-  img = td.appendChild(document.createElement("img"));
-  img.className = "characterPicture";
-  img.src = "images/characters/{0}/{1}.png".format(data.uniform, character);
-  img.width = img.height = 194;
-  span = td.appendChild(document.createElement("img"));
-  span.className = "tier2";
-  span.src = "images/tier2.png";
-  span.width = span.height = 194;
-  if ( persistant )
-  {
-   span = td.appendChild(document.createElement("i"));
-   span.className = "fa fa-line-chart";
-   span.title = "Toggle development charts";
-   span.onclick = function()
-                  {
-                   if ( document.body.className == "render_detail_charts" )
-                   {
-                    MFF.renderList();
-                    return ;
-                   }
-                   document.body.className = "render_detail_charts";
-                   MFF.renderDetailCharts();
-                  };
-   span = td.appendChild(document.createElement("i"));
-   span.className = "fa fa-chevron-right";
-   span.onclick = choosePreviousNextCharacter("nextSibling");
-   span = td.appendChild(document.createElement("i"));
-   span.className = "fa fa-chevron-left";
-   span.onclick = choosePreviousNextCharacter("previousSibling");
-  }
-  div = td.appendChild(document.createElement("div"));
-  div.id = "current_percent";
-  div.className = "bgOpaque";
-  div.innerHTML = API.numberToFixed(MFF.computePercent(character), 2) + "%";
-
-  select = td.appendChild(document.createElement("select"));
-  select.id = "uniform";
-  select.title = "Uniform";
-  i = 0;
-  for ( k in MFF.CHARACTERS.DATA[character].uniforms )
-  {
-   if ( MFF.CHARACTERS.DATA[character].uniforms.hasOwnProperty(k) )
-   {
-    option = select.appendChild(document.createElement("option"));
-    option.value = k;
-    option.text = MFF.UNIFORMS[k];
-    if ( data.uniform == k ) { select.selectedIndex = i;}
-    i++;
-   }
-  }
-  select.onchange = function()
-                    {
-                     MFF.saveCharacter({ "mode" : "uniform", "uniform" : this.options[this.selectedIndex].value });
-                    };
-
-  td = tr.appendChild(document.createElement("td"));
-  td.className = "content";
-  MFF.DETAIL.draw(td, character, persistant);
-  for ( i = 0; i < MFF.GEARS.length; i++ )
-  {
-   div = td.appendChild(document.createElement("div"));
-   div.className = "gear";
-   div.dataset.gearIndex = i;
-   table = div.appendChild(document.createElement("table"));
-   tbody = table.appendChild(document.createElement("tbody"));
-   for ( j = 0; j < 8; j++ )
-   {
-    tr = tbody.appendChild(document.createElement("tr"));
-    tr.dataset.gearIndex = j;
-    td2 = tr.appendChild(document.createElement("td"));
-    input = td2.appendChild(document.createElement("input"));
-    input.type = "checkbox";
-    input.title = "Set as favorite statistic once checked";
-    input.setAttribute("tabindex", -1);
-    input.onchange = function() { checkValues(API.DOM.parent(this, "tr"), true); };
-    input.checked = data.gear[i][j].pref;
-    td2 = tr.appendChild(document.createElement("td"));
-    td2.style.width = "100%";
-    select = td2.appendChild(document.createElement("select"));
-    select.style.width = "100%";
-    select.setAttribute("tabindex", -1);
-    select.onchange = changeMinMax;
-    select.title = "Statistic";
-    option = select.appendChild(document.createElement("option"));
-    option.value = "";
-    option.text = "";
-    option.dataset.rangeMin = 0;
-    option.dataset.rangeMax = 0;
-    option.dataset.statType = "";
-    select.selectedIndex = 0;
-    idx = 1;
-    for ( k in MFF.GEARS[i] )
-    {
-     if ( MFF.GEARS[i].hasOwnProperty(k) )
-     {
-      option = select.appendChild(document.createElement("option"));
-      option.value = k;
-      if ( k == data.gear[i][j].type ) { select.selectedIndex = idx; }
-      idx++;
-      option.text = MFF.GEARS[i][k].name;
-      option.dataset.rangeMin = MFF.GEARS[i][k].range[j].min;
-      option.dataset.rangeMax = MFF.GEARS[i][k].range[j].max;
-      option.dataset.statType = MFF.GEARS[i][k].type;
-     }
-    }
-    td2 = tr.appendChild(document.createElement("td"));
-    curStat = td2.appendChild(document.createElement("input"));
-    curStat.title = "Current value";
-    curStat.type = "text";
-    curStat.style.width = "40px";
-    curStat.value = data.gear[i][j].val;
-    curStat.onkeyup = function()
-    {
-     var that = this;
-     if ( MFF.toid ) { MFF.toid = clearTimeout(MFF.toid); }
-     setTimeout(function()
-                {
-                 checkValues(API.DOM.parent(that, "tr"), true);
-                }, 500);
-    };
-    curStat.onchange = function()
-    {
-     if ( MFF.toid ) { MFF.toid = clearTimeout(MFF.toid); }
-     checkValues(API.DOM.parent(this, "tr"), true);
-    };
-    // min
-    td2 = tr.appendChild(document.createElement("td"));
-    td2.style.textAlign = "center";
-    td2.title = "Minimum value";
-    // >
-    td2 = tr.appendChild(document.createElement("td"));
-    td2.style.textAlign = "center";
-    td2.innerHTML = "&gt;";
-    // moy
-    td2 = tr.appendChild(document.createElement("td"));
-    td2.style.textAlign = "center";
-    td2.title = "Average value";
-    // >
-    td2 = tr.appendChild(document.createElement("td"));
-    td2.style.textAlign = "center";
-    td2.innerHTML = "&gt;";
-    // max
-    td2 = tr.appendChild(document.createElement("td"));
-    td2.style.textAlign = "center";
-    td2.title = "Maximum value";
-    // (XX%)
-    td2 = tr.appendChild(document.createElement("td"));
-    td2.style.textAlign = "center";
-    td2.title = "Progression from current value to maximum value";
-
-    changeMinMax.call(select, null);
-   }
-  }
-  if ( persistant ) { MFF.googleAnalytics("drawCharacter_" + MFF.currentCharacter); }
-  if ( document.body.className == "render_detail_charts" ) { MFF.renderDetailCharts(); }
+  MFF.LAYOUT.DETAIL.drawCharacter (character, persistant, keep);
  },
  "renderDetailCharts" : function()
  {

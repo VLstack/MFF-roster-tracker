@@ -55,82 +55,16 @@ span.chartAxis select, span.chartAxis option { font:12px/20px verdana }
 input, select { border:0 }
 input { border-radius:4px }
 
-#query { border:1px solid #999999; font:14px/20px verdana; padding:2px 4px; vertical-align:middle; width:150px }
-#clearQuery { color:#999999; left:-16px; position:relative; top:2px; cursor:pointer }
-#clearQuery:hover { color:#000000 }
 
-.sorter i { display:none }
-.sorter .active.asc i.fa-chevron-down { display:inline }
-.sorter .active.desc i.fa-chevron-up { display:inline }
 
 .tiers { display:inline-block; line-height:30px; margin-left:5px; color:#FFFFFF; padding:2px 20px 5px 20px; position:relative; top:1px; line-height:20px }
 #area_action span.text { font-size:12px }
 /* #nbTier1, #nbTier2, #readyTier2 { margin:0 10px 0 5px } */
 
-#area_detail div.choose_character { text-align:center }
-#area_detail div.choose_character span { font:bold 30px/160px verdana; color:#FFFFFF; padding:20px 100px }
-
-#area_detail div.copyright { margin:auto; width:750px; text-align:center; font:10px/14px verdana; color:#FFFFFF; padding:2px 120px }
-
-#area_detail>table { width:100% }
-#area_detail>table>tbody>tr>td { }
-#area_detail>table>tbody>tr>td.picture { vertical-align:top; width:195px; position:relative }
-#area_detail>table>tbody>tr>td.picture>* { position:fixed }
-#area_detail>table>tbody>tr>td.picture>h1 { font:bold 14px/24px verdana; color:#FFFFFF; top:40px; width:194px; text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; text-align:center }
-#area_detail>table>tbody>tr>td.picture>h2 { padding:2px 2px 2px 4px; font:12px/24px verdana; color:#FFFFFF; top:68px; width:188px; text-align:center }
-#character_level { font:12px/14px verdana; text-align:center; width:35px; margin-right:5px }
-#character_tier, #character_tier option { font:11px/14px verdana }
-
-#typeSideGender { top:140px; left:95px; z-index:11; padding:4px 2px 2px 2px }
-#typeSideGender img { display:inline-block; width:20px; height:20px; margin:0 5px }
-
-#area_detail>table>tbody>tr>td.picture>img.characterPicture, #area_detail>table>tbody>tr>td.picture>.tier2 { top:132px }
-#area_detail>table>tbody>tr>td.picture>img.characterPicture { z-index:10 }
-#area_detail>table>tbody>tr>td.picture>.tier2 { z-index:20 }
-/* TODO : fix image source */
-img.characterPicture { filter:brightness(125%) }
 
 
-.tier2 { display:none }
-.tier2 .tier2 { display:block }
 
-select#uniform { top:102px; width:194px }
-select#uniform, select#uniform option { font:12px/24px verdana; vertical-align:middle }
 
-#area_detail>table>tbody>tr>td.picture>i { color:white; font-size:40px; top:210px; opacity:0.2; cursor:pointer; z-index:100 }
-#area_detail>table>tbody>tr>td.picture>i:hover { opacity:1 }
-#area_detail>table>tbody>tr>td.picture>i.fa-chevron-right { left:170px }
-#area_detail>table>tbody>tr>td.picture>i.fa-chevron-left { left:5px }
-#area_detail>table>tbody>tr>td.picture>i.fa-line-chart { top:295px; left:163px; font-size:16px; cursor:pointer; opacity:0.6 }
-#area_detail>table>tbody>tr>td.picture>i.fa-line-chart:hover { opacity:1 }
-
-#area_detail>table>tbody>tr>td.content { vertical-align:top }
-
-#area_detail td.content div.forms { display:inline-block; white-space:nowrap; margin-right:10px }
-#area_detail td.content .forms td.title { padding:0 }
-#area_detail td.content .forms td.title h2 { text-align:center; background-color:white; border-top-left-radius:4px; border-top-right-radius:4px; color:black; font:12px/16px verdana; min-width:180px }
-#area_detail td.content .forms th, #area_detail td.content .forms td { text-align:left; padding:2px }
-#area_detail td.content .forms th { color:white; font:12px/16px verdana }
-#area_detail td.content .forms td { text-align:center }
-#area_detail td.content .forms td input { text-align:center; font:12px/16px verdana; width:70px; vertical-align:top }
-#area_detail td.content .forms td span { color:white; font:12px/16px verdana; vertical-align:top }
-
-#area_detail td.content .gear { background-color:#ffffff; display:inline-block; margin:5px; padding:2px; border-radius:4px }
-#area_detail td.content .gear table { width:100%; border-collapse:collapse }
-#area_detail td.content .gear td { padding:2px }
-#area_detail td.content .gear * { font:9px/12px verdana }
-#area_detail td.content .gear input[type="text"] { text-align:center; border:1px solid #000000 }
-
-#area_detail td.content tr.invalide td { background-color:yellow; color:#333333 }
-#area_detail td.content h1 img { width:30px; height:30px; vertical-align:middle; margin:0 5px 3px 0 }
-
-#skills { margin:1px 3px }
-.skill_lvl { font:12px/14px verdana; padding:2px }
-select.skill_lvl { width:calc(20% - 4px); margin:0 2px }
-span.skill_lvl { display:inline-block; width:calc(20% - 8px); margin:2px; color:#FFFFFF }
-.skill_lvl > option { font:10px/16px verdana }
-
-#current_percent { color:white; font:bold 20px/30px verdana; top:285px; text-align:center; z-index:20; width:175px; text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; margin:0 10px }
 
 
 @media (min-width: 1px) {

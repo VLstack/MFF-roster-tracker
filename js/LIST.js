@@ -10,10 +10,7 @@ MFF.LAYOUT.LIST =
   function cb(format) { return function() { API.EVT.dispatch("switchList", format); }; }
   function listener(format)
   {
-   function fn(param)
-   {
-    MFF.LAYOUT.LIST[format == "list" ? "_btnList" : "_btnIcon"].setActive(format == param);
-   }
+   function fn(param) { this.setActive(format == param); }
    return { "method" : "switchList", "callback" : fn };
   }
 
@@ -181,6 +178,69 @@ MFF.LAYOUT.LIST =
                         });
 
   sorted.forEach(function(character) { MFF.LAYOUT.LIST._content.getNode().appendChild(document.getElementById(character)); });
+ },
+ "synchroDetailGear" : function(character)
+ {
+  var lineGear, i, j, cName, span,
+      data = MFF.CHARACTERS.get(character);
+  if ( (span = document.getElementById("{0}_level".format(character))) ) { span.innerHTML = "#" + data.level; }
+  if ( (span = document.getElementById("{0}_tier".format(character))) ) { span.innerHTML = "/T" + data.tier; }
+  for ( i = 0; i < 4; i++ )
+  {
+   lineGear = document.getElementById("{0}_lineDetailGear_{1}".format(character, i + 1));
+   API.DOM.flush(lineGear);
+   for ( j = 0; j < data.gear[i].length; j++ )
+   {
+    cName = "";
+    if ( data.gear[i][j].type )
+    {
+     if ( !data.gear[i][j].pref ) { cName = "undef"; }
+     else if ( data.gear[i][j].percent == 100 ) { cName = "max"; }
+     else if ( data.gear[i][j].percent > 50 ) { cName = "sup"; }
+     else if ( data.gear[i][j].percent == 50 ) { cName = "moy"; }
+     else if ( data.gear[i][j].percent > 0 ) { cName = "inf"; }
+     else if ( data.gear[i][j].percent == 0 ) { cName = "min"; }
+    }
+    span = lineGear.appendChild(document.createElement("span"));
+    span.className = cName;
+   }
+  }
+ },
+ "synchroDevelomment" : function(elt, percent)
+ {
+  var cName = "undef",
+      li = API.DOM.parent(elt, "li");
+  if ( percent == 100 ) { cName = "max"; }
+  else if ( percent > 50 ) { cName = "sup"; }
+  else if ( percent == 50 ) { cName = "moy"; }
+  else if ( percent > 25 ) { cName = "inf"; }
+  else if ( percent != 0 ) { cName = "min"; }
+  li.classList.remove("undef");
+  li.classList.remove("max");
+  li.classList.remove("sup");
+  li.classList.remove("moy");
+  li.classList.remove("inf");
+  li.classList.remove("min");
+  if ( cName ) { li.classList.add(cName); }
+  li.firstChild.style.width = percent + "%";
+ },
+ "setClassType" : function(character)
+ {
+  var li = document.getElementById(character),
+      data = MFF.CHARACTERS.get(character);
+  li.classList.remove("combat");
+  li.classList.remove("speed");
+  li.classList.remove("blast");
+  li.classList.remove("universal");
+  li.classList.add(MFF.CHARACTERS.DATA[character].uniforms[data.uniform].type);
+ },
+ "setTier" : function(character)
+ {
+  var li = document.getElementById(character),
+      data = MFF.CHARACTERS.get(character);
+  li.classList.remove("tier1");
+  li.classList.remove("tier2");
+  li.classList.add("tier" + data.tier);
  }
 
 
