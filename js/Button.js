@@ -2,9 +2,12 @@
 function Button(options)
 {
  var i, k;
+
  this._node = API.DOM.getById(options.renderTo).appendChild(document.createElement("span"));
  API.DOM.addLinkElement("css/button.css");
  this._node.className = "button";
+ if ( options.id ) { this._id = options.id; }
+ if ( options.noHover ) { this._node.classList.add("noHover"); }
  if ( options.className ) { this._node.classList.add(options.className); }
  if ( options.content )
  {
@@ -25,35 +28,48 @@ function Button(options)
   else { this._node.appendChild(i); }
  }
  if ( options.styles ) { for ( k in options.styles ) { if ( options.styles.hasOwnProperty(k) ) { this._node.style[k] = options.styles[k]; } } }
- if ( options.callback ) { this._node.onclick = options.callback; }
+ if ( options.callback ) { this._node.onclick = (function(btn, cb) { return function() { cb.call(btn); }; })(this, options.callback); }
  if ( options.small ) { this._node.classList.add("small"); }
  if ( options.listener ) { API.EVT.on(options.listener.method, options.listener.callback, options.listener.context || this); }
  if ( options.hide ) { this.hide(); }
+ if ( options.active ) { this.setActive(options.active); }
  return this;
 }
 
 Button.prototype =
 {
  "_node" : null,
+ "_id" : null,
  "setActive" : function(state) { this._node.classList[state ? "add" : "remove"]("active"); },
+ "isActive" : function() { return this._node.classList.contains("active"); },
+ "toggle" : function() { this.setActive(!this.isActive()); },
  "show" : function() { this._node.style.display = ""; },
- "hide" : function() { this._node.style.display = "none"; }
+ "hide" : function() { this._node.style.display = "none"; },
+ "getId" : function() { return this._id; }
 };
 
 function GroupButton(options)
 {
- var i,
-     node = API.DOM.getById(options.renderTo).appendChild(document.createElement("node"));
+ var i;
+ this._node = API.DOM.getById(options.renderTo).appendChild(document.createElement("node"));
  API.DOM.addLinkElement("css/button.css");
- node.className = "groupButton";
- if ( options.className ) { node.classList.add(options.className); }
+ this._node.className = "groupButton";
+ if ( options.className ) { this._node.classList.add(options.className); }
+ if ( options.listener ) { API.EVT.on(options.listener.method, options.listener.callback, options.listener.context || this); }
  for ( i = 0; i < options.items.length; i++ )
  {
-  options.items[i].renderTo = node;
+  options.items[i].renderTo = this._node;
   Button(options.items[i]);
  }
  return this;
 }
+
+GroupButton.prototype =
+{
+ "_node" : null,
+ "show" : function() { this._node.style.display = ""; },
+ "hide" : function() { this._node.style.display = "none"; }
+};
 
 function ImageButton(options)
 {

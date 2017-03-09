@@ -1,20 +1,27 @@
-# Unreleased ![version 2.0.0](https://img.shields.io/badge/version-2.0.0-brightgreen.svg?style=flat) ![date 2017-03-05](https://img.shields.io/badge/date-2017--03--05-red.svg?style=flat)
+# Unreleased ![version 2.1.0](https://img.shields.io/badge/version-2.1.0-brightgreen.svg?style=flat) ![date 2017-03-09](https://img.shields.io/badge/date-2017--03--09-red.svg?style=flat)
 
 **In development:**
 
-- Move characters panel from bottom to left area
-- Major UI update
 - Enhanced filtering
+- Complete sort for all attributes
+- CSV export allowing data import to Numbers or Excel
+- More javascript refactor
+- Correct naming of all gears in detail charts, instead of ugly "Gear 1", "Gear 2", "Gear 3" and "Gear 4"
+
+
+# ![version 2.0.0](https://img.shields.io/badge/version-2.0.0-brightgreen.svg?style=flat) ![date 2017-03-09](https://img.shields.io/badge/date-2017--03--09-red.svg?style=flat)
 
 **Added:**
 
-- Create public GitHub repository
+- Create public GitHub repository, fork it or help me, your choice :smile:
 - Move from local HighCharts 4.2.6 to CDN
 - Move from local fontAwesome 4.6.3 to CDN
 - Add Google Analytics
+- Add Tier-2 to Daisy Johnson, Phil Coulson, Lincoln Campbell and Deathlok as released on 2017-03-08 by Netmarble Mid-month Tier-2 update
 
 **Enhancements:**
 
+- Major UI update
 - Rename "Defense penetration" to "Ignore defense" as of Netmarble
 - Rename "Abnormal" to "Debuff" in details profile as of Netmarble
 - Major refactor of javascript code

@@ -1,7 +1,6 @@
 /* global API, Button */
 var MODAL =
 {
- "_node" : null,
  "show" : function(options)
  {
   var wrapper, header, body, footer, closer, i;

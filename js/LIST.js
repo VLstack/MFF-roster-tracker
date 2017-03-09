@@ -1,9 +1,6 @@
 /* global MFF, Panel, Button, API */
 MFF.LAYOUT.LIST =
 {
- "_panel" : null,
- "_tab" : null,
- "_content" : null,
  "init" : function()
  {
   var node, data;
@@ -37,8 +34,7 @@ MFF.LAYOUT.LIST =
  },
  "switchTo" : function(format)
  {
-  //alert("switch To " + format);
-  // localStorage.setItem("list", format);
+  localStorage.setItem("list", format);
   MFF.LAYOUT.LIST._content.removeClass("render-list");
   MFF.LAYOUT.LIST._content.removeClass("render-icon");
   MFF.LAYOUT.LIST._content.addClass("render-" + format);
@@ -59,7 +55,7 @@ MFF.LAYOUT.LIST =
   ul.onclick = function(evt)
   {
    var target = API.EVT.getParentTarget(evt, "li");
-   if ( target ) { MFF.drawCharacter(target.id, true); }
+   if ( target ) { MFF.LAYOUT.DETAIL.drawCharacter(target.id, true); }
   };
   ul.onmousemove = function(evt)
   {
@@ -69,13 +65,13 @@ MFF.LAYOUT.LIST =
     if ( MFF.lastTarget != target.id )
     {
      MFF.lastTarget = target.id;
-     MFF.drawCharacter(target.id, false);
+     MFF.LAYOUT.DETAIL.drawCharacter(target.id, false);
     }
    }
    else if ( !target && !MFF.currentCharacter )
    {
     MFF.lastTarget = null;
-    MFF.drawCharacter(null, false);
+    MFF.LAYOUT.DETAIL.drawCharacter(null, false);
    }
   };
  },
@@ -85,8 +81,8 @@ MFF.LAYOUT.LIST =
       li = document.getElementById(character),
       data = MFF.CHARACTERS.get(character);
   API.DOM.flush(li);
-  MFF.setClassTypeLI(character);
-  MFF.setTierLI(character);
+  MFF.LAYOUT.LIST.setClassType(character);
+  MFF.LAYOUT.LIST.setTier(character);
   progressBar = li.appendChild(document.createElement("div"));
   progressBar.className = "progressBar";
   img = li.appendChild(document.createElement("img"));
@@ -120,8 +116,8 @@ MFF.LAYOUT.LIST =
    lineGear.id = "{0}_lineDetailGear_{1}".format(character, i + 1);
    lineGear.className = "lineDetailGear lineDetailGear{0}".format(i + 1);
   }
-  MFF.setColorLineDetail(character);
-  MFF.setColorLI(character, percent);
+  MFF.LAYOUT.LIST.synchroDetailGear(character);
+  MFF.LAYOUT.LIST.synchroDevelomment(character, percent);
  },
  "_currentSort" : { "key" : "", "order" : "desc" },
  "sort" : function(by)

@@ -1,20 +1,19 @@
 /* global MFF, Panel, API */
 MFF.LAYOUT.DETAIL =
 {
- "_panel" : null,
- "_panelContent" : null,
  "init" : function()
  {
   var node;
   MFF.LAYOUT.DETAIL._panel = new Panel({ "id" : "panelDetail" });
   node = MFF.LAYOUT.DETAIL._panel.getNode();
   MFF.LAYOUT.DETAIL.randomBackground();
-  MFF.LAYOUT.DETAIL._panelContent = new Panel({ "id" : "panelDetailContent", "parent" : node });
+  MFF.LAYOUT.DETAIL._panelContent = new Panel({ "id" : "panelDetailContent", "parent" : node, "relative" : true });
   MFF.LAYOUT.DETAIL.GEARS.init(node);
+  MFF.LAYOUT.DETAIL.drawEmpty();
  },
  "randomBackground" : function()
  {
-  var nbBackground = 16;
+  var nbBackground = 17;
   MFF.LAYOUT.DETAIL._panel.getNode().style.backgroundImage = "url(images/background/{0}.jpg)".format(1 + parseInt(Math.random() * nbBackground, 10));
  },
  "drawAttributes" : function(container, character)
@@ -230,11 +229,12 @@ MFF.LAYOUT.DETAIL =
   var msg = "<div class=\"choose_character\"><span class=\"bgOpaque\">Select a character</span></div><div class=\"copyright bgOpaque\">The Marvel Logo, images and all characters that appear on this website and the distinctive likeness(es) thereof are Trademarks of Marvel Entertainment, LLC and Netmarble Games. This site is not affiliated with Marvel Entertainment or Netmarble Games.</div>";
   MFF.currentCharacter = null;
   MFF.LAYOUT.DETAIL._panelContent.setHTML(msg);
-  // TODO : hide sub
+  MFF.LAYOUT.DETAIL.GEARS._tab.hide();
+  MFF.LAYOUT.DETAIL.GEARS._content.hide();
  },
  "drawCharacter" : function(character, persistant, keep)
  {
-  var h1, img, table, tbody, tr, td, td2, k, i, j, div, input, percent, curStat, select, option, data, idx, span, src;
+  var h1, img, table, tbody, tr, td, k, i, div, input, percent, select, option, data, span, src;
 
   function choosePreviousNextCharacter(sens)
   {
@@ -266,6 +266,7 @@ MFF.LAYOUT.DETAIL =
   if ( MFF.currentCharacter ) { document.getElementById(MFF.currentCharacter).classList.remove("active"); }
   if ( persistant )
   {
+   API.EVT.dispatch("globalChart", "hide");
    if ( MFF.currentCharacter )
    {
     k = document.getElementById(MFF.currentCharacter + "_percent");
@@ -327,20 +328,6 @@ MFF.LAYOUT.DETAIL =
   span.src = "images/tier2.png";
   if ( persistant )
   {
-   // span = td.appendChild(document.createElement("i"));
-   // span.className = "fa fa-line-chart";
-   // span.title = "Toggle development charts";
-   // span.onclick = function()
-   //                {
-   //                 alert("TODO render_detail_charts");
-   //                 if ( document.body.className == "render_detail_charts" )
-   //                 {
-   //                  MFF.renderList();
-   //                  return ;
-   //                 }
-   //                 document.body.className = "render_detail_charts";
-   //                 MFF.renderDetailCharts();
-   //                };
    span = td.appendChild(document.createElement("i"));
    span.className = "fa fa-chevron-right";
    span.onclick = choosePreviousNextCharacter("nextSibling");
@@ -401,133 +388,7 @@ MFF.LAYOUT.DETAIL =
 
   MFF.LAYOUT.DETAIL.drawAttributes(td, character, persistant);
 
-
-
-  tr = tbody.appendChild(document.createElement("tr"));
-  td = tr.appendChild(document.createElement("td"));
-
-/*
-  div = td.appendChild(document.createElement("div"));
-  div.id = "typeSideGender";
-  div.className = "bgOpaque";
-
-  img = div.appendChild(document.createElement("img"));
-  img.src = "images/{0}.png".format(MFF.CHARACTERS.DATA[character].uniforms[data.uniform].type);
-
-  img = div.appendChild(document.createElement("img"));
-  img.src = "images/{0}.png".format(MFF.CHARACTERS.DATA[character].uniforms[data.uniform].gender);
-
-  img = div.appendChild(document.createElement("img"));
-  img.src = "images/{0}.png".format(MFF.CHARACTERS.DATA[character].uniforms[data.uniform].side);
-*/
-/*
-  h1 = td.appendChild(document.createElement("h2"));
-  h1.className = "bgOpaque";
-*/
-
-
-  // td = tr.appendChild(document.createElement("td"));
-  // td.className = "content";
-  // MFF.LAYOUT.DETAIL.drawAttributes(td, character, persistant);
-  /*
-  for ( i = 0; i < MFF.GEARS.length; i++ )
-  {
-   div = td.appendChild(document.createElement("div"));
-   div.className = "gear";
-   div.dataset.gearIndex = i;
-   table = div.appendChild(document.createElement("table"));
-   tbody = table.appendChild(document.createElement("tbody"));
-   for ( j = 0; j < 8; j++ )
-   {
-    tr = tbody.appendChild(document.createElement("tr"));
-    tr.dataset.gearIndex = j;
-    td2 = tr.appendChild(document.createElement("td"));
-    input = td2.appendChild(document.createElement("input"));
-    input.type = "checkbox";
-    input.title = "Set as favorite statistic once checked";
-    input.setAttribute("tabindex", -1);
-    input.onchange = function() { checkValues(API.DOM.parent(this, "tr"), true); };
-    input.checked = data.gear[i][j].pref;
-    td2 = tr.appendChild(document.createElement("td"));
-    td2.style.width = "100%";
-    select = td2.appendChild(document.createElement("select"));
-    select.style.width = "100%";
-    select.setAttribute("tabindex", -1);
-    select.onchange = changeMinMax;
-    select.title = "Statistic";
-    option = select.appendChild(document.createElement("option"));
-    option.value = "";
-    option.text = "";
-    option.dataset.rangeMin = 0;
-    option.dataset.rangeMax = 0;
-    option.dataset.statType = "";
-    select.selectedIndex = 0;
-    idx = 1;
-    for ( k in MFF.GEARS[i] )
-    {
-     if ( MFF.GEARS[i].hasOwnProperty(k) )
-     {
-      option = select.appendChild(document.createElement("option"));
-      option.value = k;
-      if ( k == data.gear[i][j].type ) { select.selectedIndex = idx; }
-      idx++;
-      option.text = MFF.GEARS[i][k].name;
-      option.dataset.rangeMin = MFF.GEARS[i][k].range[j].min;
-      option.dataset.rangeMax = MFF.GEARS[i][k].range[j].max;
-      option.dataset.statType = MFF.GEARS[i][k].type;
-     }
-    }
-    td2 = tr.appendChild(document.createElement("td"));
-    curStat = td2.appendChild(document.createElement("input"));
-    curStat.title = "Current value";
-    curStat.type = "text";
-    curStat.style.width = "40px";
-    curStat.value = data.gear[i][j].val;
-    curStat.onkeyup = function()
-    {
-     var that = this;
-     if ( MFF.toid ) { MFF.toid = clearTimeout(MFF.toid); }
-     MFF.toid = setTimeout(function()
-                           {
-                            checkValues(API.DOM.parent(that, "tr"), true);
-                           }, 250);
-    };
-    curStat.onchange = function()
-    {
-     if ( MFF.toid ) { MFF.toid = clearTimeout(MFF.toid); }
-     checkValues(API.DOM.parent(this, "tr"), true);
-    };
-    // min
-    td2 = tr.appendChild(document.createElement("td"));
-    td2.style.textAlign = "center";
-    td2.title = "Minimum value";
-    // >
-    td2 = tr.appendChild(document.createElement("td"));
-    td2.style.textAlign = "center";
-    td2.innerHTML = "&gt;";
-    // moy
-    td2 = tr.appendChild(document.createElement("td"));
-    td2.style.textAlign = "center";
-    td2.title = "Average value";
-    // >
-    td2 = tr.appendChild(document.createElement("td"));
-    td2.style.textAlign = "center";
-    td2.innerHTML = "&gt;";
-    // max
-    td2 = tr.appendChild(document.createElement("td"));
-    td2.style.textAlign = "center";
-    td2.title = "Maximum value";
-    // (XX%)
-    td2 = tr.appendChild(document.createElement("td"));
-    td2.style.textAlign = "center";
-    td2.title = "Progression from current value to maximum value";
-
-    changeMinMax.call(select, null);
-   }
-  }
-  */
   if ( persistant ) { MFF.googleAnalytics("drawCharacter_" + MFF.currentCharacter); }
-  if ( document.body.className == "render_detail_charts" ) { MFF.renderDetailCharts(); }
   MFF.LAYOUT.DETAIL.GEARS.synchroCurrentTab(character);
  },
  "setTier" : function(tier)

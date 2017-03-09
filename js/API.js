@@ -219,10 +219,11 @@ API.EVT =
  return API.DOM.parent(API.EVT.getTarget(E), N, C);
 },
 "_listeners" : {},
+"reset" : function() { API.EVT._listeners = {}; },
 "on" : function(method, callback, context)
 {
  if ( !(method in API.EVT._listeners) ) { API.EVT._listeners[method] = []; }
- API.EVT._listeners[method].push({ "callback" : callback, "context" : context });
+  API.EVT._listeners[method].push({ "callback" : callback, "context" : context });
 },
 // TODO : implement off method
 "off" : function(/*method, callback, context*/)

@@ -1,12 +1,12 @@
 /*global MFF, Panel, API */
 MFF.LAYOUT.FOOTER =
 {
- "_panel" : null,
  "init" : function()
  {
   var span;
   MFF.LAYOUT.FOOTER._panel = new Panel({ "id" : "panelFooter" });
   API.EVT.on("updateTier", MFF.LAYOUT.FOOTER._updateTier);
+  MFF.LAYOUT.FOOTER._updateTier();
   span = MFF.LAYOUT.FOOTER._panel.appendChild(document.createElement("span"));
   span.id = "MFFversion";
   span.className = "bgOpaque";

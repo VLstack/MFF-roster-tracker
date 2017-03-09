@@ -1,10 +1,15 @@
 /* global MFF, Panel, Button, ImageButton, GroupButton, API */
 MFF.LAYOUT.ACTION =
 {
- "_panel" : null,
  "init" : function()
  {
   var span, input, container;
+
+  function listener(state)
+  {
+   function fn(param) { this[state == param ? "show" : "hide"](); }
+   return { "method" : "globalChart", "callback" : fn };
+  }
 
   function axis(container, type)
   {
@@ -34,17 +39,22 @@ MFF.LAYOUT.ACTION =
                        return function()
                        {
                         localStorage.setItem(storageKey, this.value);
-                        MFF.renderChart();
+                        API.EVT.dispatch("globalChart", "show");
                        };
                       })(storageKey);
-   new Button({ "renderTo" : container, "content" : [type == "x" ? "X-Axis " : "Y-Axis ", select], "hide" : true });
+   new Button({ "renderTo" : container, "content" : [type == "x" ? "X-Axis " : "Y-Axis ", select], "hide" : true, "listener" : listener("show"), "noHover" : true });
   }
 
   function cbSort(by) { return function() { API.EVT.dispatch("sortList", by); }; }
 
+  function cbChart()
+  {
+   API.EVT.dispatch("globalChart", this.isActive() ? "hide" : "show");
+   this.toggle();
+  }
+
   MFF.LAYOUT.ACTION._panel = new Panel({ "id" : "panelAction" });
   container = MFF.LAYOUT.ACTION._panel.getNode();
-  MFF.layout.action = container;
 
   new Button({ "renderTo" : container, "content" : "Import / Export", "fa" : "upload", "callback" : MFF.cbImportExport, "styles" : { "float" : "right" } });
   new ImageButton({ "renderTo" : container, "type" : "combat", "image" : "combat.png", "checked" : true, "callback" : MFF.toggleClass("type") });
@@ -66,8 +76,10 @@ MFF.LAYOUT.ACTION =
   span.className = "fa fa-close";
   span.onclick = function() { document.getElementById("query").value = ""; MFF.queryOnSearch(); };
 
+  new Button({ "renderTo" : container, "content" : "Chart", "fa" : "line-chart", "callback" : cbChart });
+
   new GroupButton({
-                   "renderTo" : container, "className" : "sorter",
+                   "renderTo" : container, "className" : "sorter", "listener" : listener("hide"),
                    "items" : [
                               { "content" : "Sort by name <i class=\"fa fa-chevron-down\"></i><i class=\"fa fa-chevron-up\"></i>", "callback" : cbSort("sortByName"), "className" : "sortByName" },
                               { "content" : "by percent <i class=\"fa fa-chevron-down\"></i><i class=\"fa fa-chevron-up\"></i>", "callback" : cbSort("sortByPercent"), "className" : "sortByPercent" },
@@ -75,9 +87,6 @@ MFF.LAYOUT.ACTION =
                               { "content" : "by attack <i class=\"fa fa-chevron-down\"></i><i class=\"fa fa-chevron-up\"></i>", "callback" : cbSort("sortByAttack"), "className" : "sortByAttack" }
                              ]
                   });
-
-  new Button({ "renderTo" : container, "content" : "Chart", "fa" : "line-chart", "callback" : MFF.renderChart, "className" : "showCharts" });
-  new Button({ "renderTo" : container, "content" : "List", "fa" : "bars", "callback" : MFF.renderList, "className" : "showList", "hide" : true });
 
   axis(container, "x");
   axis(container, "y");

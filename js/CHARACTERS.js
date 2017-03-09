@@ -389,7 +389,7 @@ MFF.CHARACTERS.DATA =
                      },
 "daisy_johnson" :    {
                       "uniform" : "maos",
-                      "tiers" : [1],
+                      "tiers" : [1, 2],
                       "uniforms" :
                       {
                        // TODO : image need to be recreated from game
@@ -415,7 +415,7 @@ MFF.CHARACTERS.DATA =
                      },
 "deathlok" :         {
                       "uniform" : "maos",
-                      "tiers" : [1],
+                      "tiers" : [1, 2],
                       "uniforms" :
                       {
                        // TODO : image need to be recreated from game
@@ -798,7 +798,7 @@ MFF.CHARACTERS.DATA =
                      },
 "lincoln_campbell" : {
                       "uniform" : "maos",
-                      "tiers" : [1],
+                      "tiers" : [1, 2],
                       "uniforms" :
                       {
                        // TODO : image need to be recreated from game
@@ -972,7 +972,7 @@ MFF.CHARACTERS.DATA =
                      },
 "phil_coulson" :     {
                       "uniform" : "maos",
-                      "tiers" : [1],
+                      "tiers" : [1, 2],
                       "uniforms" :
                       {
                        // TODO : image need to be recreated from game

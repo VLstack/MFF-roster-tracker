@@ -1,6 +1,7 @@
-span.button { display:inline-block; border:1px solid rgba(255, 255, 255, 0.2); border-radius:4px; background:linear-gradient(to bottom, #4e51e6 0%,#1e3598 50%,#142564 100%); color:#FFFFFF; font:12px/24px verdana; padding:1px 20px; cursor:pointer; margin:4px 5px }
+span.button { display:inline-block; border:1px solid rgba(255, 255, 255, 0.2); border-radius:4px; background:linear-gradient(to bottom, #4e51e6 0%,#1e3598 50%,#142564 100%); color:#FFFFFF; font:12px/24px verdana; padding:1px 20px; margin:4px 5px }
+span.button:not(.noHover) { cursor:pointer }
 span.button.content.image i { margin-right:5px }
-span.button:hover { background:#FFFFFF; color:#8080C0 }
+span.button:not(.noHover):hover { background:linear-gradient(to bottom, #142564 0%,#1e3598 50%,#4e51e6 100%) }
 span.button.small { font:10px/16px verdana; padding:1px 10px; margin:2px 2px }
 span.button.active, span.button.active:hover { background:linear-gradient(to bottom, #569934 0%,#3b6e23 50%,#1c3d0d 100%); color:white }
 
