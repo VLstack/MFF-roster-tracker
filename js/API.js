@@ -1,19 +1,19 @@
-var API = {"uid":0};
+var API = { "UID" : 0 };
 
-API.FEATURES = function()
+API.FEATURES = (function()
 {
  var
   E/*lement*/, T/*mpValue*/,
   D/*ocument*/ = document,
   F/*eatures*/ =
   {
-   "rgba":false,
-   "canvas":false,
-   "strict":D.compatMode === "CSS1Compat",
-   "quirks":D.compatMode !== "CSS1Compat",
-   "SVG":!!(D && ( T = D.implementation ) && typeof T.hasFeature == "function" && T.hasFeature("http://www.w3.org/TR/SVG11/feature#CoreAttribute", "1.1")),
+   "rgba" : false,
+   "canvas" : false,
+   "strict" : D.compatMode === "CSS1Compat",
+   "quirks" : D.compatMode !== "CSS1Compat",
+   "SVG" : !!(D && ( T = D.implementation ) && typeof T.hasFeature == "function" && T.hasFeature("http://www.w3.org/TR/SVG11/feature#CoreAttribute", "1.1")),
    // détermine si un objet possède une méthode "M" qui peut etre "call"
-   "isMethod":function(O/*ject*/, M/*ethodString*/)
+   "isMethod" : function(O/*ject*/, M/*ethodString*/)
    {
     var t/*ype*/;
     if ( O && M in O )
@@ -23,7 +23,7 @@ API.FEATURES = function()
     }
     return false;
    },
-   "isProperty":function(O/*bject*/, P/*ropertyString*/)
+   "isProperty" : function(O/*bject*/, P/*ropertyString*/)
    {
     var t/*ype*/, o/*bject*/;
     if ( P in O )
@@ -56,11 +56,11 @@ API.FEATURES = function()
  }
  E = null;
  return F;
-}();
+})();
 
 API.DOM =
 {
-"getById":function(E/*lementID*/, D/*ocument*/)
+"getById" : function(E/*lementID*/, D/*ocument*/)
 {
  var
   z,
@@ -103,7 +103,7 @@ API.DOM =
  }
  return ( API.DOM.getById = fn )(E, D);
 },
-"flush":function(E/*lementID*/, P/*roperties*/)
+"flush" : function(E/*lementID*/, P/*roperties*/)
 {
  var i, n/*ode*/ = API.DOM.getById(E);
  if ( !n ) { return null; }
@@ -114,7 +114,7 @@ API.DOM =
  }
  return n;
 },
-"parent":function(E/*lementID*/, N/*odeName*/, C/*lassName*/)
+"parent" : function(E/*lementID*/, N/*odeName*/, C/*lassName*/)
 {
  var
   c/*hecker*/ = API.DOM.nodeChecker(N, C),
@@ -130,16 +130,16 @@ API.DOM =
  }
  return null;
 },
-"nodeChecker":function(N/*odeName*/, C/*lassName*/)
+"nodeChecker" : function(N/*odeName*/, C/*lassName*/)
 {
  return   C && N ? function(e,n,c) { return e && e.nodeName && e.nodeName.toUpperCase() == n && API.DOM.CSS.has(c, e); }
         : C      ? function(e,n,c) { return API.DOM.CSS.has(c, e); }
         :          function(e,n)   { return e && e.nodeName && e.nodeName.toUpperCase() == n; };
 },
-"addStyleElement":function(css, id)
+"addStyleElement" : function(css, id)
 {
  var n/*ode*/;
- if ( !id ) { id = "API_CSS_UID_" + ( API.uid++ ); }
+ if ( !id ) { id = "API_CSS_UID_" + ( API.UID++ ); }
  n = API.DOM.getById(id);
  if ( n ) { n.parentNode.removeChild(n); }
  n = document.getElementsByTagName("head")[0].appendChild(document.createElement("style"));
@@ -147,13 +147,13 @@ API.DOM =
  n.type = "text/css";
  n.appendChild(document.createTextNode(css));
 },
-"_loaded":[],
-"addLinkElement":function(U/*rl*/, id)
+"_loaded" : [],
+"addLinkElement" : function(U/*rl*/, id)
 {
  var n/*ode*/;
  if ( !API.DOM._loaded[U] )
  {
-  if ( !id || id === "" ) { id = U.replace(/[^\w]/g, "-").toCamel() + API.uid++; }
+  if ( !id || id === "" ) { id = U.replace(/[^\w]/g, "-").toCamel() + API.UID++; }
   n = document.getElementsByTagName("head")[0].appendChild(document.createElement("link"));
   n.id = id;
   n.rel = "stylesheet";
@@ -165,7 +165,7 @@ API.DOM =
 
 API.DOM.CSS =
 {
- "has":function(C/*lassName*/, E/*lementID*/)
+ "has" : function(C/*lassName*/, E/*lementID*/)
  {
   var
    f/*eatures*/ = API.FEATURES,
@@ -191,7 +191,7 @@ API.DOM.CSS =
 
 API.EVT =
 {
-"getTarget":function(E/*vent*/)
+"getTarget" : function(E/*vent*/)
 {
  var
   isP = API.FEATURES.isProperty,
@@ -214,9 +214,27 @@ API.EVT =
  }
  return (API.EVT.getTarget = f)(E);
 },
-"getParentTarget":function(E/*vent*/, N/*odeName*/, C/*lassName*/)
+"getParentTarget" : function(E/*vent*/, N/*odeName*/, C/*lassName*/)
 {
  return API.DOM.parent(API.EVT.getTarget(E), N, C);
+},
+"_listeners" : {},
+"reset" : function() { API.EVT._listeners = {}; },
+"on" : function(method, callback, context)
+{
+ if ( !(method in API.EVT._listeners) ) { API.EVT._listeners[method] = []; }
+  API.EVT._listeners[method].push({ "callback" : callback, "context" : context });
+},
+// TODO : implement off method
+"off" : function(/*method, callback, context*/)
+{
+},
+"dispatch" : function(method, params)
+{
+ if ( method in API.EVT._listeners )
+ {
+  API.EVT._listeners[method].forEach(function(listener) { listener.callback.call(listener.context || null, params); });
+ }
 }
 
 };

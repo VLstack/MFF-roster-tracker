@@ -1,0 +1,16 @@
+span.button { display:inline-block; border:1px solid rgba(255, 255, 255, 0.2); border-radius:4px; background:linear-gradient(to bottom, #4e51e6 0%,#1e3598 50%,#142564 100%); color:#FFFFFF; font:12px/24px verdana; padding:1px 20px; margin:4px 5px }
+span.button:not(.noHover) { cursor:pointer }
+span.button.content.image i { margin-right:5px }
+span.button:not(.noHover):hover { background:linear-gradient(to bottom, #142564 0%,#1e3598 50%,#4e51e6 100%) }
+span.button.small { font:10px/16px verdana; padding:1px 10px; margin:2px 2px }
+span.button.active, span.button.active:hover { background:linear-gradient(to bottom, #569934 0%,#3b6e23 50%,#1c3d0d 100%); color:white }
+
+span.imageButton { display:inline-block; cursor:pointer; margin:2px 5px; opacity:0.3 }
+span.imageButton.checked { opacity:1 }
+span.imageButton img { width:32px; height:32px; vertical-align:middle }
+
+.groupButton { display:inline; margin:4px 5px }
+.groupButton span.button { border-radius:4px; margin:0 1px 0 0; padding:1px 5px }
+.groupButton span.button:first-child { border-top-left-radius:5px; border-bottom-left-radius:5px }
+.groupButton span.button:last-child { border-top-right-radius:5px; border-bottom-right-radius:5px }
+.groupButton span.active { background-color:#990000; color:#FFFFFF }
