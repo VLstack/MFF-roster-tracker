@@ -8,9 +8,3 @@ span.button.active, span.button.active:hover { background:linear-gradient(to bot
 span.imageButton { display:inline-block; cursor:pointer; margin:2px 5px; opacity:0.3 }
 span.imageButton.checked { opacity:1 }
 span.imageButton img { width:32px; height:32px; vertical-align:middle }
-
-.groupButton { display:inline; margin:4px 5px }
-.groupButton span.button { border-radius:4px; margin:0 1px 0 0; padding:1px 5px }
-.groupButton span.button:first-child { border-top-left-radius:5px; border-bottom-left-radius:5px }
-.groupButton span.button:last-child { border-top-right-radius:5px; border-bottom-right-radius:5px }
-.groupButton span.active { background-color:#990000; color:#FFFFFF }
