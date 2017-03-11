@@ -125,7 +125,8 @@ MFF.LAYOUT.LIST =
   var sorted,
       groupButton = MFF.LAYOUT.ACTION._panel.getNode().querySelector(".groupButton.sorter"),
       active = groupButton.querySelector(".active"),
-      btn = groupButton.querySelector("." + by),
+      sortKey = by || "sortByName",
+      btn = groupButton.querySelector("." + sortKey),
       charsId = Object.keys(MFF.CHARACTERS.DATA);
   if ( active )
   {
@@ -133,8 +134,8 @@ MFF.LAYOUT.LIST =
    active.classList.remove("desc");
    active.classList.remove("active");
   }
-  if ( MFF.LAYOUT.LIST._currentSort.key == by ) { MFF.LAYOUT.LIST._currentSort.order = MFF.LAYOUT.LIST._currentSort.order == "asc" ? "desc" : "asc"; }
-  else { MFF.LAYOUT.LIST._currentSort = { "key" : by, "order" : "asc" }; }
+  if ( MFF.LAYOUT.LIST._currentSort.key == sortKey ) { MFF.LAYOUT.LIST._currentSort.order = MFF.LAYOUT.LIST._currentSort.order == "asc" ? "desc" : "asc"; }
+  else { MFF.LAYOUT.LIST._currentSort = { "key" : sortKey, "order" : "asc" }; }
   localStorage.setItem("sorter", JSON.stringify(MFF.LAYOUT.LIST._currentSort));
   btn.classList.add("active");
   btn.classList.add(MFF.LAYOUT.LIST._currentSort.order);
