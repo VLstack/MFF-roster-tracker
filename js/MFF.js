@@ -4,7 +4,7 @@
 var MFF =
 {
  "googleAnalyticsUID" : "UA-92278331-1",
- "version" : "2.0.1",
+ "version" : "2.1.0",
  "versionMFF" : "2.9",
  "localStorageKey" : "characters",
  "toid" : null,
@@ -81,6 +81,7 @@ var MFF =
  },
  "axisItems" :
  {
+  "name" :             { "disableChart" : true, "label" : "Name", "callback" : function(character) { return { "value" : MFF.CHARACTERS.DATA[character.id].uniforms[character.uniform].name, "percent" : false }; } },
   "attack" :           { "label" : "Attack", "callback" : function(character) { var v = character.attack[MFF.CHARACTERS.DATA[character.id].uniforms[character.uniform].attackBase]; return { "value" : v, "percent" : false }; } },
   "attack_energy" :    { "label" : "Energy attack", "callback" : function(character) { var v = character.attack.energy; return { "value" : v, "percent" : false }; } },
   "attack_physical" :  { "label" : "Physical attack", "callback" : function(character) { var v = character.attack.physical; return { "value" : v, "percent" : false }; } },
@@ -115,9 +116,8 @@ var MFF =
  },
  "cbImport" : function()
  {
-  var parsed,
-      textarea = document.getElementById("textareaImportExport");
-  try { parsed = JSON.parse(textarea.value); }
+  var parsed;
+  try { parsed = JSON.parse(document.getElementById("textareaImportExport").value); }
   catch(ex) { alert("The JSON data is not well formed"); }
   if ( parsed )
   {
@@ -136,9 +136,34 @@ var MFF =
  "init" : function()
  {
   var data;
-  if ( !window.localStorage ) { alert("localStorage must be enabled in your browser"); return; }
+  // TODO : explain how to activate localStorage in main browsers
+  if ( !window.localStorage ) { document.body.innerHTML = "<p>localStorage must be enabled in your browser</p>"; return; }
   data = localStorage.getItem(MFF.localStorageKey);
-  if ( data && data != null && (typeof data == "string") ) { MFF.CHARACTERS.setAll(JSON.parse(data)); }
+  if ( data && data != null && data != undefined && data != "null" && data != "undefined" && (typeof data == "string") )
+  {
+   try { data = JSON.parse(data); MFF.CHARACTERS.setAll(data); }
+   catch(ex) { }
+  }
+  /* compatibility 2.1.0 start */
+  data = localStorage.getItem("sorter");
+  if ( data && data != null && data != undefined && data != "null" && data != "undefined" && (typeof data == "string") )
+  {
+   localStorage.removeItem("sorter");
+   try
+   {
+    data = JSON.parse(data);
+    if ( data && ("order" in data) ) { MFF.LAYOUT.LIST.setSortDirection(data.order); }
+    if ( data && ("key" in data) )
+    {
+     if ( data.key == "sortByName" ) { MFF.LAYOUT.LIST.setSortAttribute("name"); }
+     else if ( data.key == "sortByPercent" ) { MFF.LAYOUT.LIST.setSortAttribute("completion"); }
+     else if ( data.key == "sortByLevel" ) { MFF.LAYOUT.LIST.setSortAttribute("level"); }
+     else if ( data.key == "sortByAttack" ) { MFF.LAYOUT.LIST.setSortAttribute("attack"); }
+    }
+   }
+   catch(ex) { }
+  }
+  /* compatibility 2.1.0 end */
   Highcharts.setOptions({ "plotOptions" : { "series" : { "animation" : false } } });
   MFF.LAYOUT.init();
  },
@@ -167,7 +192,11 @@ var MFF =
  {
   MFF.CHARACTERS.setProperty(MFF.currentCharacter, data);
   localStorage.setItem(MFF.localStorageKey, JSON.stringify(MFF.CHARACTERS.getAll()));
-  if ( data.mode == "tier" ) { API.EVT.dispatch("updateTier"); }
+  if ( data.mode == "tier" )
+  {
+   API.EVT.dispatch("updateTier");
+   MFF.LAYOUT.LIST.setTier(MFF.currentCharacter);
+  }
   else if ( data.mode == "gear" || data.mode == "skill" )
   {
    MFF.toid2 = clearTimeout(MFF.toid2);
@@ -182,6 +211,8 @@ var MFF =
                             {
                              MFF.LAYOUT.CHARTS.renderDetail();
                             }
+                            MFF.LAYOUT.LIST.setSub(MFF.currentCharacter);
+                            MFF.LAYOUT.LIST.synchroDetailGear(MFF.currentCharacter);
                            }
                           }, 250);
   }
@@ -190,5 +221,6 @@ var MFF =
    MFF.LAYOUT.DETAIL.drawCharacter(MFF.currentCharacter, true, true);
    MFF.LAYOUT.LIST.drawCharacter(MFF.currentCharacter);
   }
+  else { MFF.LAYOUT.LIST.setSub(MFF.currentCharacter); }
  }
 };
