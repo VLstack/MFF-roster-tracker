@@ -3,17 +3,12 @@ MFF.LAYOUT.LIST =
 {
  "init" : function()
  {
-  var node, data;
+  var node;
   function cb(format) { return function() { API.EVT.dispatch("switchList", format); }; }
   function listener(format)
   {
    function fn(param) { this.setActive(format == param); }
    return { "method" : "switchList", "callback" : fn };
-  }
-
-  if ( (data = localStorage.getItem("sorter")) && data != null && (typeof data == "string") && (data = JSON.parse(data)) )
-  {
-   MFF.LAYOUT.LIST._currentSort = { "key" : data.key, "order" : data.order == "desc" ? "asc" : "desc" };
   }
 
   MFF.LAYOUT.LIST._panel = new Panel({ "id" : "panelList" });
@@ -30,7 +25,7 @@ MFF.LAYOUT.LIST =
   API.EVT.on("sortList", MFF.LAYOUT.LIST.sort);
 
   API.EVT.dispatch("switchList", localStorage.getItem("list") || "list");
-  API.EVT.dispatch("sortList", MFF.LAYOUT.LIST._currentSort.key);
+  API.EVT.dispatch("sortList");
  },
  "switchTo" : function(format)
  {
@@ -79,7 +74,7 @@ MFF.LAYOUT.LIST =
  },
  "drawCharacter" : function(character)
  {
-  var img, p, span, percent, lineGear, i, progressBar,
+  var img, p, span, lineGear, i, progressBar,
       li = document.getElementById(character),
       data = MFF.CHARACTERS.get(character);
   API.DOM.flush(li);
@@ -99,19 +94,8 @@ MFF.LAYOUT.LIST =
   p.appendChild(document.createTextNode(MFF.CHARACTERS.DATA[character].uniforms[data.uniform].name));
   p.appendChild(document.createElement("br"));
   span = p.appendChild(document.createElement("span"));
-  span.id = character + "_level";
-  span.className = "chiffre";
-  span.innerHTML = "#?";
-  span = p.appendChild(document.createElement("span"));
-  span.className = "chiffre";
-  span.id = character + "_tier";
-  span.innerHTML = "?";
-  span = p.appendChild(document.createElement("span"));
-  span.className = "chiffre";
-  span.id = character + "_percent";
-  span.style.marginLeft = "5px";
-  percent = MFF.computePercent(character);
-  span.innerHTML = API.numberToFixed(percent, 2) + "%";
+  span.id = character + "_sub";
+  span.className = "character_sub";
   for ( i = 0; i < 4; i++ )
   {
    lineGear = li.appendChild(document.createElement("div"));
@@ -119,65 +103,45 @@ MFF.LAYOUT.LIST =
    lineGear.className = "lineDetailGear lineDetailGear{0}".format(i + 1);
   }
   MFF.LAYOUT.LIST.synchroDetailGear(character);
-  MFF.LAYOUT.LIST.synchroDevelomment(character, percent);
+  MFF.LAYOUT.LIST.synchroDevelomment(character);
  },
- "_currentSort" : { "key" : "", "order" : "desc" },
- "sort" : function(by)
+ "setSortAttribute" : function(attribute) { localStorage.setItem("sorterAttribute", attribute); },
+ "setSortDirection" : function(direction) { localStorage.setItem("sorterDirection", direction); },
+ "getSortAttribute" : function() { var v = localStorage.getItem("sorterAttribute"); return v === undefined || v === null || v === "undefined" || v === "null" || v == "" ? "name" : v; },
+ "getSortDirection" : function() { var v = localStorage.getItem("sorterDirection"); return v === undefined || v === null || v === "undefined" || v === "null" || v == "" ? "asc" : v; },
+ "sort" : function()
  {
-  var sorted,
-      groupButton = MFF.LAYOUT.ACTION._panel.getNode().querySelector(".groupButton.sorter"),
-      active = groupButton.querySelector(".active"),
-      sortKey = by || "sortByName",
-      btn = groupButton.querySelector("." + sortKey),
-      charsId = Object.keys(MFF.CHARACTERS.DATA);
-  if ( active )
-  {
-   active.classList.remove("asc");
-   active.classList.remove("desc");
-   active.classList.remove("active");
-  }
-  if ( MFF.LAYOUT.LIST._currentSort.key == sortKey ) { MFF.LAYOUT.LIST._currentSort.order = MFF.LAYOUT.LIST._currentSort.order == "asc" ? "desc" : "asc"; }
-  else { MFF.LAYOUT.LIST._currentSort = { "key" : sortKey, "order" : "asc" }; }
-  localStorage.setItem("sorter", JSON.stringify(MFF.LAYOUT.LIST._currentSort));
-  btn.classList.add("active");
-  btn.classList.add(MFF.LAYOUT.LIST._currentSort.order);
-
-  sorted = charsId.sort(function(a, b)
-                        {
-                         var A, B, tmp, dataA, dataB, nameA, nameB;
-                         if ( MFF.LAYOUT.LIST._currentSort.order != "asc" )
-                         {
-                          tmp = a;
-                          a = b;
-                          b = tmp;
-                         }
-                         dataA = MFF.CHARACTERS.get(a);
-                         dataB = MFF.CHARACTERS.get(b);
-                         nameA = MFF.CHARACTERS.DATA[a].uniforms[dataA.uniform].name;
-                         nameB = MFF.CHARACTERS.DATA[b].uniforms[dataB.uniform].name;
-                         switch ( MFF.LAYOUT.LIST._currentSort.key )
-                         {
-                          case "sortByPercent" :
-                           A = MFF.computePercent(a);
-                           B = MFF.computePercent(b);
-                           if ( A != B ) { return B - A; }
-                          break;
-                          case "sortByLevel" :
-                           A = dataA.level;
-                           B = dataB.level;
-                           if ( A != B ) { return B - A; }
-                          break;
-                          case "sortByAttack" :
-                           A = MFF.CHARACTERS.DATA[a].uniforms[dataA.uniform].attackBase == "physical" ? dataA.attack.physical : dataA.attack.energy;
-                           B = MFF.CHARACTERS.DATA[b].uniforms[dataB.uniform].attackBase == "physical" ? dataB.attack.physical : dataB.attack.energy;
-                           if ( A != B ) { return B - A; }
-                          break;
-                         }
-                         return nameA.localeCompare(nameB);
-                        });
-
-  sorted.forEach(function(character) { MFF.LAYOUT.LIST._content.getNode().appendChild(document.getElementById(character)); });
-  MFF.googleAnalytics("sort-list-by-" + MFF.LAYOUT.LIST._currentSort.key + "-" + MFF.LAYOUT.LIST._currentSort.order);
+  var charsId = Object.keys(MFF.CHARACTERS.DATA),
+      attribute = MFF.LAYOUT.LIST.getSortAttribute(),
+      direction = MFF.LAYOUT.LIST.getSortDirection(),
+      cb = MFF.axisItems[attribute].callback,
+      sorted = charsId.sort(function(a, b)
+                            {
+                             var A, B, tmp;
+                             a = MFF.CHARACTERS.get(a);
+                             b = MFF.CHARACTERS.get(b);
+                             if ( direction != "asc" )
+                             {
+                              tmp = a;
+                              a = b;
+                              b = tmp;
+                             }
+                             A = cb(a).value;
+                             B = cb(b).value;
+                             if ( attribute != "name" )
+                             {
+                              if ( a != b ) { return B - A; }
+                              A = MFF.axisItems.name.callback(a).value;
+                              B = MFF.axisItems.name.callback(b).value;
+                             }
+                             return A.localeCompare(B);
+                            });
+  sorted.forEach(function(character)
+                 {
+                  MFF.LAYOUT.LIST._content.getNode().appendChild(document.getElementById(character));
+                  MFF.LAYOUT.LIST.setSub(character);
+                 });
+  MFF.googleAnalytics("sort-list-by-" + attribute + "-" + direction);
  },
  "synchroDetailGear" : function(character)
  {
@@ -206,10 +170,11 @@ MFF.LAYOUT.LIST =
    }
   }
  },
- "synchroDevelomment" : function(elt, percent)
+ "synchroDevelomment" : function(character)
  {
   var cName = "undef",
-      li = API.DOM.parent(elt, "li");
+      li = document.getElementById(character),
+      percent = MFF.computePercent(character);
   if ( percent == 100 ) { cName = "max"; }
   else if ( percent > 50 ) { cName = "sup"; }
   else if ( percent == 50 ) { cName = "moy"; }
@@ -222,7 +187,6 @@ MFF.LAYOUT.LIST =
   li.classList.remove("inf");
   li.classList.remove("min");
   if ( cName ) { li.classList.add(cName); }
-  li.firstChild.style.width = percent + "%";
  },
  "setClassType" : function(character)
  {
@@ -241,5 +205,19 @@ MFF.LAYOUT.LIST =
   li.classList.remove("tier1");
   li.classList.remove("tier2");
   li.classList.add("tier" + data.tier);
+ },
+ "setSub" : function(character)
+ {
+  var v,
+      attribute = MFF.LAYOUT.LIST.getSortAttribute(),
+      span = document.getElementById(character + "_sub");
+  if ( span ) { span.innerHTML = ""; span.title = ""; }
+  if ( span && attribute != "name" )
+  {
+   v = MFF.axisItems[attribute].callback(MFF.CHARACTERS.get(character));
+   if ( v.percent ) { span.innerHTML = MFF.axisItems[attribute].label + ": " + API.numberToFixed(v.value, 2) + "%"; }
+   else { span.innerHTML = MFF.axisItems[attribute].label + ": " + parseInt(v.value, 10); }
+   span.title = MFF.axisItems[attribute].label;
+  }
  }
 };

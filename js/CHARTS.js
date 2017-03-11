@@ -52,7 +52,7 @@ MFF.LAYOUT.CHARTS =
    }
   }
   new Highcharts.Chart({
-                        "chart" : { "renderTo" : MFF.LAYOUT.CHARTS._panel.getNode(), "type" : "scatter", "zoomType" : "xy", "backgroundColor" : "#FFFFFF" },
+                        "chart" : { "renderTo" : MFF.LAYOUT.CHARTS._panel.getNode(), "type" : "scatter", "zoomType" : "xy", "backgroundColor" : "#efefef" },
                         "credits" : { "enabled" : false },
                         "title" : { "text" : "{0} / {1}".format(MFF.axisItems[xAxis].label, MFF.axisItems[yAxis].label) },
                         "xAxis" :

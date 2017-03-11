@@ -15,9 +15,13 @@ input { border-radius:4px }
 
 #panelAction { top:0; left:0px; right:0; height:40px; overflow:hidden; background:linear-gradient(to bottom, #666e92 0%,#3c4460 50%,#12192b 100%) } /* converted from area_action */
 
+/*
 .sorter i { display:none }
 .sorter .active.asc i.fa-chevron-down { display:inline }
 .sorter .active.desc i.fa-chevron-up { display:inline }
+*/
+span.button.sorterDirection { margin-left:-24px; border-left:0; border-top-left-radius:0; border-bottom-left-radius:0 }
+
 
 #query { border:1px solid #999999; font:12px/20px verdana; padding:1px 4px; vertical-align:middle; width:125px }
 #clearQuery { color:#999999; left:-16px; position:relative; top:2px; cursor:pointer }
@@ -48,6 +52,7 @@ ul#panelListContent>li>img.tier2 { left:3px; position:absolute; top:3px }
 ul#panelListContent>li>p { line-height:20px; font-size:13px; margin-left:3px; display:inline-block; position:relative; color:rgba(255, 255, 255, 0.6); z-index:50 }
 ul#panelListContent>li>p>span.chiffre { font-size:12px }
 ul#panelListContent>li>p>span.character_type { display:inline-block; width:14px; height:14px; margin-right:2px; background-repeat:no-repeat; border-radius:4px; vertical-align:middle }
+ul#panelListContent>li>p>span.character_sub { display:inline-block; min-height:14px; font:10px/12px arial }
 
 ul#panelListContent>li.combat>p>span.character_type { background-color:#D62918 }
 ul#panelListContent>li.blast>p>span.character_type { background-color:#15B1FF }
@@ -82,7 +87,7 @@ ul#panelListContent.render-icon>li { width:40px; display:inline-block; margin:2p
 ul#panelListContent.render-icon>li .lineDetailGear,
 ul#panelListContent.render-icon>li>p { display:none }
 
-#panelGlobalChart { top:40px; left:260px; right:0; bottom:30px; background-color:pink }
+#panelGlobalChart { top:40px; left:0; right:0; bottom:30px }
 
 #panelDetail { top:40px; left:260px; right:0; bottom:30px; background-color:#000; background-size:cover; background-position:50% 50%; background-repeat:no-repeat } /* converted from area_detail */
 
@@ -123,7 +128,7 @@ select#uniform, select#uniform option { font:12px/24px verdana; vertical-align:m
 
 #panelDetailContent td.content div.forms { display:inline-block; white-space:nowrap; margin-right:10px }
 #panelDetailContent td.content .forms td.title { padding:0 }
-#panelDetailContent td.content .forms td.title h2 { text-align:center; background-color:white; border-top-left-radius:4px; border-top-right-radius:4px; color:black; font:12px/16px verdana; min-width:180px }
+#panelDetailContent td.content .forms td.title h2 { text-align:center; background:linear-gradient(to bottom, #666e92 0%, #3c4460 50%, #12192b 100%); border-top-left-radius:4px; border-top-right-radius:4px; color:#fff; font:12px/18px verdana; min-width:180px }
 #panelDetailContent td.content .forms th, #panelDetail td.content .forms td { text-align:left; padding:2px }
 #panelDetailContent td.content .forms th { color:white; font:12px/16px verdana }
 #panelDetailContent td.content .forms td { text-align:center }

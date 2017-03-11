@@ -13,26 +13,26 @@ MFF.LAYOUT.ACTION =
 
   function axis(container, type)
   {
-   var option, select, k, i,
+   var option, k, i,
        defSelected = type == "x" ? "attack_total" : "completion",
        storageKey = type == "x" ? "XAxis" : "YAxis",
-       selected = localStorage.getItem(storageKey) || defSelected;
-   select = document.createElement("select");
+       selected = localStorage.getItem(storageKey) || defSelected,
+       select = document.createElement("select");
    select.id = storageKey;
    i = 0;
    for ( k in MFF.axisItems )
    {
     if ( MFF.axisItems.hasOwnProperty(k) )
     {
-     option = select.appendChild(document.createElement("option"));
-     option.value = k;
-     option.text = MFF.axisItems[k].label;
-     if ( k == selected )
+     if ( !MFF.axisItems[k].disableChart )
      {
-      select.selectedIndex = i;
+      option = select.appendChild(document.createElement("option"));
+      option.value = k;
+      option.text = MFF.axisItems[k].label;
+      if ( k == selected ) { select.selectedIndex = i; }
+      i++;
      }
     }
-    i++;
    }
    select.onchange = (function(storageKey)
                       {
@@ -45,7 +45,43 @@ MFF.LAYOUT.ACTION =
    new Button({ "renderTo" : container, "content" : [type == "x" ? "X-Axis " : "Y-Axis ", select], "hide" : true, "listener" : listener("show"), "noHover" : true });
   }
 
-  function cbSort(by) { return function() { API.EVT.dispatch("sortList", by); }; }
+  function sorter(container)
+  {
+   var option, k, i,
+       attribute = MFF.LAYOUT.LIST.getSortAttribute(),
+       direction = MFF.LAYOUT.LIST.getSortDirection(),
+       select = document.createElement("select");
+   function cbDirection()
+   {
+    var direction = this._nodeIcon.classList.contains("fa-chevron-down") ? "desc" : "asc";
+    this.setIcon(direction == "asc" ? "chevron-down" : "chevron-up");
+    MFF.LAYOUT.LIST.setSortDirection(direction);
+    API.EVT.dispatch("sortList");
+   }
+   i = 0;
+   for ( k in MFF.axisItems )
+   {
+    if ( MFF.axisItems.hasOwnProperty(k) )
+    {
+     option = select.appendChild(document.createElement("option"));
+     option.value = k;
+     option.text = MFF.axisItems[k].label;
+     if ( k == attribute )
+     {
+      select.selectedIndex = i;
+     }
+    }
+    i++;
+   }
+   select.style.marginLeft = "10px";
+   select.onchange = function()
+                     {
+                      MFF.LAYOUT.LIST.setSortAttribute(this.value);
+                      API.EVT.dispatch("sortList");
+                     };
+   new Button({ "renderTo" : container, "content" : ["Sort by", select], "listener" : listener("hide"), "noHover" : true });
+   new Button({ "renderTo" : container, "callback" : cbDirection, "fa" : direction == "asc" ? "chevron-down" : "chevron-up", "className" : "sorterDirection", "listener" : listener("hide") });
+  }
 
   function cbChart()
   {
@@ -78,15 +114,7 @@ MFF.LAYOUT.ACTION =
 
   new Button({ "renderTo" : container, "content" : "Chart", "fa" : "line-chart", "callback" : cbChart });
 
-  new GroupButton({
-                   "renderTo" : container, "className" : "sorter", "listener" : listener("hide"),
-                   "items" : [
-                              { "content" : "Sort by name <i class=\"fa fa-chevron-down\"></i><i class=\"fa fa-chevron-up\"></i>", "callback" : cbSort("sortByName"), "className" : "sortByName" },
-                              { "content" : "by percent <i class=\"fa fa-chevron-down\"></i><i class=\"fa fa-chevron-up\"></i>", "callback" : cbSort("sortByPercent"), "className" : "sortByPercent" },
-                              { "content" : "by level <i class=\"fa fa-chevron-down\"></i><i class=\"fa fa-chevron-up\"></i>", "callback" : cbSort("sortByLevel"), "className" : "sortByLevel" },
-                              { "content" : "by attack <i class=\"fa fa-chevron-down\"></i><i class=\"fa fa-chevron-up\"></i>", "callback" : cbSort("sortByAttack"), "className" : "sortByAttack" }
-                             ]
-                  });
+  sorter(container);
 
   axis(container, "x");
   axis(container, "y");

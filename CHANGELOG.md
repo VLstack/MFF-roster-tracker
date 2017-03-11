@@ -1,18 +1,30 @@
 # Unreleased ![version 2.1.0](https://img.shields.io/badge/version-2.1.0-brightgreen.svg?style=flat) ![date 2017-03-09](https://img.shields.io/badge/date-2017--03--09-red.svg?style=flat)
 
-**In thinking about**
+**In development**
+
+- More javascript refactor
+
+**Waiting for development:**
+- Enhanced filtering
+- CSV export allowing data import to Numbers or Excel
+- Correct naming of all gears in detail charts, instead of ugly "Gear 1", "Gear 2", "Gear 3" and "Gear 4"
+
+**In specification**
 
 - Database storage in addition to the localStorage, user choice. Dunno yet :smile:
 - Set all gear options to the same stat in one click
 - See equipped Obelisk and how satisfying it is
 
-**In development:**
+**Enhancements:**
 
-- Enhanced filtering
-- Complete sort for all attributes
-- CSV export allowing data import to Numbers or Excel
-- More javascript refactor
-- Correct naming of all gears in detail charts, instead of ugly "Gear 1", "Gear 2", "Gear 3" and "Gear 4"
+- Sort characters list by any attributes
+- Show sorted attribute value under characters names in the list
+- Better synchro between character detail and character list
+- Scroll active character to top in list view
+
+**Fixed bugs:**
+
+- Fix global chart not covering the whole area
 
 # ![version 2.0.1](https://img.shields.io/badge/version-2.0.1-brightgreen.svg?style=flat) ![date 2017-03-11](https://img.shields.io/badge/date-2017--03--11-red.svg?style=flat)
 

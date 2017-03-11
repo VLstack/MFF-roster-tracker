@@ -234,7 +234,7 @@ MFF.LAYOUT.DETAIL =
  },
  "drawCharacter" : function(character, persistant, keep)
  {
-  var h1, img, table, tbody, tr, td, k, i, div, input, percent, select, option, data, span, src;
+  var h1, img, table, tbody, tr, td, k, i, div, input, select, option, data, span, src, node;
 
   function choosePreviousNextCharacter(sens)
   {
@@ -270,11 +270,11 @@ MFF.LAYOUT.DETAIL =
    API.EVT.dispatch("globalChart", "hide");
    if ( MFF.currentCharacter )
    {
-    k = document.getElementById(MFF.currentCharacter + "_percent");
-    percent = MFF.computePercent(MFF.currentCharacter);
-    k.innerHTML = API.numberToFixed(percent, 2) + "%";
+    // k = document.getElementById(MFF.currentCharacter + "_percent");
+    // percent = MFF.computePercent(MFF.currentCharacter);
+    // k.innerHTML = API.numberToFixed(percent, 2) + "%";
     MFF.LAYOUT.LIST.synchroDetailGear(MFF.currentCharacter);
-    MFF.LAYOUT.LIST.synchroDevelomment(k, percent);
+    MFF.LAYOUT.LIST.synchroDevelomment(MFF.currentCharacter);
     MFF.LAYOUT.LIST.setClassType(MFF.currentCharacter);
     MFF.LAYOUT.LIST.setTier(MFF.currentCharacter);
     if ( MFF.currentCharacter == character && !keep )
@@ -284,7 +284,15 @@ MFF.LAYOUT.DETAIL =
     }
    }
    MFF.currentCharacter = character;
-   if ( MFF.currentCharacter ) { document.getElementById(MFF.currentCharacter).classList.add("active"); }
+   if ( MFF.currentCharacter )
+   {
+    node = document.getElementById(MFF.currentCharacter);
+    if (node )
+    {
+     node.classList.add("active");
+     if ( node.scrollIntoView ) { node.scrollIntoView(); }
+    }
+   }
   }
 
   data = MFF.CHARACTERS.get(character);
