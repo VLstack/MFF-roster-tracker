@@ -4,7 +4,7 @@
 var MFF =
 {
  "googleAnalyticsUID" : "UA-92278331-1",
- "version" : "2.0",
+ "version" : "2.0.1",
  "versionMFF" : "2.9",
  "localStorageKey" : "characters",
  "toid" : null,

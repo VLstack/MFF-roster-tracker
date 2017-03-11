@@ -1,5 +1,10 @@
 # Unreleased ![version 2.1.0](https://img.shields.io/badge/version-2.1.0-brightgreen.svg?style=flat) ![date 2017-03-09](https://img.shields.io/badge/date-2017--03--09-red.svg?style=flat)
 
+**In thinking about**
+
+- Database storage in complement to the localStorage, user choice. Dunno yet :smile:
+- Set all gear options to the same stat in one click
+
 **In development:**
 
 - Enhanced filtering
@@ -8,6 +13,13 @@
 - More javascript refactor
 - Correct naming of all gears in detail charts, instead of ugly "Gear 1", "Gear 2", "Gear 3" and "Gear 4"
 
+# ![version 2.0.1](https://img.shields.io/badge/version-2.0.1-brightgreen.svg?style=flat) ![date 2017-03-11](https://img.shields.io/badge/date-2017--03--11-red.svg?style=flat)
+
+**Fixed bugs:**
+
+- Issue #4 : Default sort not correctly applied
+- Issue #5 : Missing "character" variable when creating empty data
+- Issue #6 : Global chart not showing, related to issue #4
 
 # ![version 2.0.0](https://img.shields.io/badge/version-2.0.0-brightgreen.svg?style=flat) ![date 2017-03-09](https://img.shields.io/badge/date-2017--03--09-red.svg?style=flat)
 
