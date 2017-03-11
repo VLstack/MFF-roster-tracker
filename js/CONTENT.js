@@ -252,6 +252,7 @@ MFF.LAYOUT.DETAIL =
      if ( node == self ) { return ; }
     }
     if ( node ) { MFF.LAYOUT.DETAIL.drawCharacter(node.id, true); }
+    MFF.googleAnalytics(sens == "nextSibling" ? "goto-next-character" : "goto-previous-character");
    };
   }
 
@@ -388,7 +389,7 @@ MFF.LAYOUT.DETAIL =
 
   MFF.LAYOUT.DETAIL.drawAttributes(td, character, persistant);
 
-  if ( persistant ) { MFF.googleAnalytics("drawCharacter_" + MFF.currentCharacter); }
+  if ( persistant ) { MFF.googleAnalytics("draw-character-" + MFF.currentCharacter); }
   MFF.LAYOUT.DETAIL.GEARS.synchroCurrentTab(character);
  },
  "setTier" : function(tier)

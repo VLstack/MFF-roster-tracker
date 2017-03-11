@@ -210,6 +210,7 @@ MFF.LAYOUT.DETAIL.GEARS =
     changeMinMax.call(select, null);
    }
   }
+  MFF.googleAnalytics("show-character-gears");
  },
  "drawChart" : function()
  {

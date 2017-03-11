@@ -141,7 +141,6 @@ var MFF =
   if ( data && data != null && (typeof data == "string") ) { MFF.CHARACTERS.setAll(JSON.parse(data)); }
   Highcharts.setOptions({ "plotOptions" : { "series" : { "animation" : false } } });
   MFF.LAYOUT.init();
-  MFF.googleAnalytics("showList");
  },
  "getIndividualPercent" : function(cur, min, max)
  {

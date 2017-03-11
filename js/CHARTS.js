@@ -10,7 +10,7 @@ MFF.LAYOUT.CHARTS =
  "hideGlobal" : function()
  {
   MFF.LAYOUT.CHARTS._panel.hide();
-  MFF.googleAnalytics("hideGlobalChart");
+  MFF.googleAnalytics("hide-global-chart");
  },
  "showGlobal" : function()
  {
@@ -95,7 +95,9 @@ MFF.LAYOUT.CHARTS =
                         },
                         "series" : [{ "data" : serie }]
                        });
-  MFF.googleAnalytics("showGlobalChart");
+  MFF.googleAnalytics("show-global-chart");
+  MFF.googleAnalytics("set-global-chart-xaxis-" + xAxis);
+  MFF.googleAnalytics("set-global-chart-yaxis-" + yAxis);
  },
  "renderDetail" : function()
  {
@@ -166,7 +168,7 @@ MFF.LAYOUT.CHARTS =
                         "series" : [{ "name" : "Skills", "data" : data.skills }]
                        });
   MFF.LAYOUT.CHARTS.fixHighchartsTitles();
-  MFF.googleAnalytics("drawCharacterChart");
+  MFF.googleAnalytics("show-character-chart");
  },
  "fixHighchartsTitles" : function()
  {
