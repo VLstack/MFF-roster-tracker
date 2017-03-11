@@ -38,6 +38,7 @@ MFF.LAYOUT.LIST =
   MFF.LAYOUT.LIST._content.removeClass("render-list");
   MFF.LAYOUT.LIST._content.removeClass("render-icon");
   MFF.LAYOUT.LIST._content.addClass("render-" + format);
+  MFF.googleAnalytics("switch-to-list-" + format);
  },
  "draw" : function()
  {
@@ -74,6 +75,7 @@ MFF.LAYOUT.LIST =
     MFF.LAYOUT.DETAIL.drawCharacter(null, false);
    }
   };
+  MFF.googleAnalytics("render-list");
  },
  "drawCharacter" : function(character)
  {
@@ -175,6 +177,7 @@ MFF.LAYOUT.LIST =
                         });
 
   sorted.forEach(function(character) { MFF.LAYOUT.LIST._content.getNode().appendChild(document.getElementById(character)); });
+  MFF.googleAnalytics("sort-list-by-" + MFF.LAYOUT.LIST._currentSort.key + "-" + MFF.LAYOUT.LIST._currentSort.order);
  },
  "synchroDetailGear" : function(character)
  {
@@ -239,6 +242,4 @@ MFF.LAYOUT.LIST =
   li.classList.remove("tier2");
   li.classList.add("tier" + data.tier);
  }
-
-
 };
