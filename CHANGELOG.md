@@ -4,6 +4,7 @@
 
 - Database storage in complement to the localStorage, user choice. Dunno yet :smile:
 - Set all gear options to the same stat in one click
+- See equipped Obelisk and how satisfying it is
 
 **In development:**
 
