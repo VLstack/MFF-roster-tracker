@@ -1,4 +1,4 @@
-# Unreleased ![version 2.1.0](https://img.shields.io/badge/version-2.1.0-brightgreen.svg?style=flat) ![date 2017-03-09](https://img.shields.io/badge/date-2017--03--09-red.svg?style=flat)
+# Unreleased ![version 2.1.0](https://img.shields.io/badge/version-2.1.0-brightgreen.svg?style=flat) ![date 2017-03-12](https://img.shields.io/badge/date-2017--03--12-red.svg?style=flat)
 
 **In development**
 
