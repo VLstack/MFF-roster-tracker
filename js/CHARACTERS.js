@@ -74,7 +74,7 @@ MFF.CHARACTERS =
 "_all" : {},
 "set" : function(character, data)
 {
- if ( !data ) { data = MFF.CHARACTERS.getEmpty(); }
+ if ( !data ) { data = MFF.CHARACTERS.getEmpty(character); }
  MFF.CHARACTERS._all[character] = data;
 },
 "getEmpty" : function(character)
