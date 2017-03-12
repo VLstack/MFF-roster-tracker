@@ -6,22 +6,23 @@
 
 **Waiting for development:**
 - [#10](https://github.com/Mokhet/MFF-roster-tracker/issues/10) Enhanced filtering
-- CSV export allowing data import to Numbers or Excel
-- Import/Export of selected chars
-- Correct naming of all gears in detail charts, instead of ugly "Gear 1", "Gear 2", "Gear 3" and "Gear 4"
-- Global development score (average of all developments for all characters)
-- Keep track of last update and sort by last update
-- Way to show/hide unwanted characters
-- Flag to keep track of characters up to date with game data
+- [#11](https://github.com/Mokhet/MFF-roster-tracker/issues/11) CSV export
+- [#12](https://github.com/Mokhet/MFF-roster-tracker/issues/12) Import/Export of selected chars
+- [#13](https://github.com/Mokhet/MFF-roster-tracker/issues/13) Correct naming of all gears in detail charts
+- [#14](https://github.com/Mokhet/MFF-roster-tracker/issues/14) Show gears image
+- [#15](https://github.com/Mokhet/MFF-roster-tracker/issues/15) Global development score
+- [#16](https://github.com/Mokhet/MFF-roster-tracker/issues/16) Keep track of last update and sort by last update
+- [#17](https://github.com/Mokhet/MFF-roster-tracker/issues/17) Way to show/hide unwanted characters
+- [#18](https://github.com/Mokhet/MFF-roster-tracker/issues/18) Flag to keep track of characters up to date with game data
 
 **In specification**
 
-- Database storage in addition to the localStorage, user choice. Dunno yet :smile:
-- Set all gear options to the same stat in one click
-- See equipped Obelisk and how satisfying it is
-- Tracking uniforms development and dependencies (waiting for Netmarble update on the matter)
-- Tacking Uru for each gears
-- CSV import
+- [#19](https://github.com/Mokhet/MFF-roster-tracker/issues/19) Database storage
+- [#20](https://github.com/Mokhet/MFF-roster-tracker/issues/20) Set all gear options to the same stat in one click
+- [#21](https://github.com/Mokhet/MFF-roster-tracker/issues/21) See equipped Obelisk and how satisfying it is
+- [#22](https://github.com/Mokhet/MFF-roster-tracker/issues/22) Tracking uniforms development and dependencies
+- [#23](https://github.com/Mokhet/MFF-roster-tracker/issues/23) Tacking Uru for each gears
+- [#24](https://github.com/Mokhet/MFF-roster-tracker/issues/24) CSV import
 
 **Enhancements:**
 
