@@ -5,7 +5,7 @@
 - More javascript refactor
 
 **Waiting for development:**
-- #10 Enhanced filtering
+- [#10](https://github.com/Mokhet/MFF-roster-tracker/issues/10) Enhanced filtering
 - CSV export allowing data import to Numbers or Excel
 - Import/Export of selected chars
 - Correct naming of all gears in detail charts, instead of ugly "Gear 1", "Gear 2", "Gear 3" and "Gear 4"
