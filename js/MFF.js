@@ -3,7 +3,6 @@
 // localStorage.removeItem("sorter");
 var MFF =
 {
- "googleAnalyticsUID" : "UA-92278331-1",
  "version" : "2.1.0",
  "versionMFF" : "2.9",
  "localStorageKey" : "characters",

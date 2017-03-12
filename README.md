@@ -3,8 +3,14 @@ Roster tracker for character of the mobile game Marvel Future Fight. Keep track 
 
 # Live
 
-https://www.mokhet.com/MFF/
+![current](https://img.shields.io/badge/Current_release-stable-green.svg?style=flat) https://www.mokhet.com/MFF/">https://www.mokhet.com/MFF/
+![beta](https://img.shields.io/badge/Beta_release-unstable-red.svg?style=flat) https://www.mokhet.com/MFF-beta/">https://www.mokhet.com/MFF-beta/
+![previous](https://img.shields.io/badge/Previous_release-stable-green.svg?style=flat) https://www.mokhet.com/MFF-previous/">https://www.mokhet.com/MFF-previous/
 
 # Contributions
 
 You are encouraged to contact me if you want to participate and/or allowed to make any fork you wish.
+
+# Google analytics
+
+The PHP file /js/google-analytics-keys.php?JS=Y provide the javascript variable "MFFTrackingID". It is used to split analytics between releases (current, beta, previous and own private version). If you want to fork the project, you will have to provide your own Tracking ID.
