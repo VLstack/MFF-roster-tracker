@@ -14,7 +14,3 @@ Keep track of developments, levels, tiers, active uniform, attacks value, defens
 # Contributions
 
 You are encouraged to contact me if you want to participate. And you are of course fully allowed to make any fork you wish.
-
-# Google analytics
-
-The PHP file /js/google-analytics-keys.php?JS=Y provide the javascript variable "MFFTrackingID". It is used to split analytics between releases (current, beta, previous and own private version). If you want to fork the project, you will have to provide your own Tracking ID.
