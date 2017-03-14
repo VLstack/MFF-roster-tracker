@@ -33,7 +33,7 @@ span.button.sorterDirection { margin-left:-24px; border-left:0; border-top-left-
 #panelListContent { top:25px; left:0; right:0; bottom:0; background: #12192b }
 
 ul#panelListContent { list-style-type:none }
-ul#panelListContent>li { border:1px solid rgba(255, 255, 255, 0.2); border-radius:4px; padding:3px; line-height:0; margin:2px; background-color:#3c4460; cursor:pointer; position:relative; overflow:hidden }
+ul#panelListContent>li { transition:all 1s ease; border:1px solid rgba(255, 255, 255, 0.2); border-radius:4px; padding:3px; line-height:0; margin:2px; background-color:#3c4460; cursor:pointer; position:relative; overflow:hidden }
 
 ul#panelListContent>li.undef { background-color:#4c4c4c; color:#333333 }
 ul#panelListContent>li.min>div.progressBar { background-color:#FF0000 }
@@ -43,8 +43,7 @@ ul#panelListContent>li.sup>div.progressBar { background-color:#00FF00 }
 ul#panelListContent>li.max>div.progressBar { background-color:#00FF00 }
 
 ul#panelListContent>li>div.progressBar { position:absolute; top:0; left:0; height:2px; width:0; border:1px solid black }
-ul#panelListContent>li:hover { background-color:#fcfce1 }
-ul#panelListContent>li:hover>p { color:black }
+ul#panelListContent>li:hover { border-color:gold }
 ul#panelListContent>li.active, ul#panelListContent>li.active:hover { background-color:#FFFFFF }
 ul#panelListContent>li.active>p, ul#panelListContent>li.active:hover>p { color:black }
 ul#panelListContent>li>img { width:40px; height:40px; border-radius:4px; vertical-align:sub; position:relative }
