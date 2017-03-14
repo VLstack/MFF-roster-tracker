@@ -86,7 +86,12 @@ MFF.LAYOUT.ACTION =
   function cbChart()
   {
    API.EVT.dispatch("globalChart", this.isActive() ? "hide" : "show");
-   this.toggle();
+  }
+
+  function listenerChart()
+  {
+   function fn(param) { this.setActive(param == "show"); }
+   return { "method" : "globalChart", "callback" : fn };
   }
 
   MFF.LAYOUT.ACTION._panel = new Panel({ "id" : "panelAction" });
@@ -112,7 +117,7 @@ MFF.LAYOUT.ACTION =
   span.className = "fa fa-close";
   span.onclick = function() { document.getElementById("query").value = ""; MFF.queryOnSearch(); };
 
-  new Button({ "renderTo" : container, "content" : "Chart", "fa" : "line-chart", "callback" : cbChart });
+  new Button({ "renderTo" : container, "content" : "Chart", "fa" : "line-chart", "callback" : cbChart, "listener" : listenerChart() });
 
   sorter(container);
 

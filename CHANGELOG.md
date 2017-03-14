@@ -34,6 +34,7 @@
 **Fixed bugs:**
 
 - Fix global chart not covering the whole area
+- [#25](https://github.com/Mokhet/MFF-roster-tracker/issues/25) Chart button stay active
 
 # ![version 2.0.1](https://img.shields.io/badge/version-2.0.1-brightgreen.svg?style=flat) ![date 2017-03-11](https://img.shields.io/badge/date-2017--03--11-red.svg?style=flat)
 
