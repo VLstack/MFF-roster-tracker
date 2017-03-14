@@ -33,7 +33,7 @@ span.button.sorterDirection { margin-left:-24px; border-left:0; border-top-left-
 #panelListContent { top:25px; left:0; right:0; bottom:0; background: #12192b }
 
 ul#panelListContent { list-style-type:none }
-ul#panelListContent>li { transition:all 1s ease; border:1px solid rgba(255, 255, 255, 0.2); border-radius:4px; padding:3px; line-height:0; margin:2px; background-color:#3c4460; cursor:pointer; position:relative; overflow:hidden }
+ul#panelListContent>li { transition:background-color 1s ease; border:1px solid rgba(255, 255, 255, 0.2); border-radius:4px; padding:3px; line-height:0; margin:2px; background-color:#3c4460; cursor:pointer; position:relative; overflow:hidden }
 
 ul#panelListContent>li.undef { background-color:#4c4c4c; color:#333333 }
 ul#panelListContent>li.min>div.progressBar { background-color:#FF0000 }
