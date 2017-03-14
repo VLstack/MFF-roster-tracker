@@ -12,6 +12,8 @@ MFF.LAYOUT.FOOTER =
   span.className = "bgOpaque";
   span.innerHTML = "v.{0} for MFF v.{1}".format(MFF.version, MFF.versionMFF);
   span.title = "Version {0} compliant with MFF version {1}".format(MFF.version, MFF.versionMFF);
+  if ( ("" + location).indexOf("MFF-beta") != -1 ) { span.classList.add("beta"); }
+  else if ( ("" + location).indexOf("localhost") != -1 ) { span.classList.add("localhost"); }
  },
  "_updateTier" : function()
  {

@@ -3,7 +3,6 @@
 input, select { border:0 }
 input { border-radius:4px }
 
-.MFFVersion { float:right; font:12px/35px verdana; margin-right:5px; color:#FFFFFF }
 .bgOpaque { background-color:rgba(0,0,0,0.5); border-radius:4px; border:1px solid rgba(255, 255, 255, 0.2) }
 
 .panel { position:absolute; z-index:1; overflow:auto }
@@ -154,3 +153,6 @@ span.skill_lvl { display:inline-block; width:calc(20% - 8px); margin:2px; color:
 #panelFooter span { display:inline-block; font:10px/20px verdana; color:white; padding:1px 5px; border:1px solid rgba(255, 255, 255, 0.5) }
 #panelFooter span#MFFversion { position:absolute; right:3px; bottom:3px }
 #panelFooter span#nbTiers { position:absolute; left:3px; bottom:3px }
+
+#panelFooter span#MFFversion.beta::before { content:"BETA"; background-color:#630000; color:white; position:absolute; left:-40px; padding:1px 5px; border-radius:4px }
+#panelFooter span#MFFversion.localhost::before { content:"localhost"; background-color:#006363; color:white; position:absolute; left:-40px; padding:1px 5px; border-radius:4px }
