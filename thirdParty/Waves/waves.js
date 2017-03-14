@@ -1,19 +1,31 @@
 (function()
 {
  "use strict";
+
  var Effect,
      isInit = false,
      Waves =
      {
+      "event" : "mousedown",
       "duration" : 1000,
-      "init" : function()
+      "init" : function(options)
       {
+       var duration = Waves.duration;
        if ( "ontouchstart" in window ) { return ; }
        if ( typeof document.body.getBoundingClientRect === typeof undefined ) { return ; }
+       if ( options )
+       {
+        if ( "duration" in options )
+        {
+         duration = parseInt(options.duration, 10);
+         if ( !isNaN(duration) ) { Waves.duration = duration; }
+        }
+        if ( "event" in options ) { Waves.event = options.event; }
+       }
        if ( isInit === false )
        {
         isInit = true;
-        document.body.addEventListener("click", Effect.click, false);
+        document.body.addEventListener(Waves.event, Effect.onEvent, false);
        }
       }
      };
@@ -37,7 +49,7 @@
 
  Effect =
  {
-  "click" : function(e)
+  "onEvent" : function(e)
   {
    var element = Effect.getWavesElement(e);
    if ( element !== null )
