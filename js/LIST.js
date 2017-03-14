@@ -45,7 +45,8 @@ MFF.LAYOUT.LIST =
    {
     li = ul.appendChild(document.createElement("li"));
     li.id = character;
-    MFF.LAYOUT.LIST.drawCharacter(character); //MFF.drawContentLI(character);
+    li.className = "waves waves-blue";
+    MFF.LAYOUT.LIST.drawCharacter(character);
    }
   }
   ul.onclick = function(evt)

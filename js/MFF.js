@@ -165,6 +165,7 @@ var MFF =
   /* compatibility 2.1.0 end */
   Highcharts.setOptions({ "plotOptions" : { "series" : { "animation" : false } } });
   MFF.LAYOUT.init();
+  window.Waves.init();
  },
  "getIndividualPercent" : function(cur, min, max)
  {

@@ -1,0 +1,15 @@
+
+.waves { position:relative; user-select:none; overflow:hidden }
+.waves .waves-ripple { position:absolute; border-radius:50%; width:100px; height:100px; margin-top:-50px; margin-left:-50px; opacity:0;
+                       background:radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
+                       transition:all 0.5s ease-out; transition-property:transform, opacity;
+                       transform:scale(0) translate(0, 0) }
+.waves-notransition { transition:none !important }
+.waves.waves-dark .waves-ripple { background:radial-gradient(rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.5) 60%, rgba(255, 255, 255, 0) 70%) }
+.waves.waves-red .waves-ripple { background:radial-gradient(rgba(244, 67, 54, 0.4) 0, rgba(244, 67, 54, 0.5) 40%, rgba(244, 67, 54, 0.6) 50%, rgba(244, 67, 54, 0.7) 60%, rgba(255, 255, 255, 0) 70%) }
+.waves.waves-green .waves-ripple { background:radial-gradient(rgba(76, 175, 80, 0.4) 0, rgba(76, 175, 80, 0.5) 40%, rgba(76, 175, 80, 0.6) 50%, rgba(76, 175, 80, 0.7) 60%, rgba(255, 255, 255, 0) 70%) }
+.waves.waves-blue .waves-ripple { background:radial-gradient(rgba(84, 121, 198, 0.4) 0, rgba(84, 121, 198, 0.5) 40%, rgba(84, 121, 198, 0.6) 50%, rgba(84, 121, 198, 0.7) 60%, rgba(255, 255, 255, 0) 70%) }
+.waves.waves-yellow .waves-ripple { background:radial-gradient(rgba(255, 235, 59, 0.4) 0, rgba(255, 235, 59, 0.5) 40%, rgba(255, 235, 59, 0.6) 50%, rgba(255, 235, 59, 0.7) 60%, rgba(255, 255, 255, 0) 70%) }
+.waves.waves-orange .waves-ripple { background:radial-gradient(rgba(255, 152, 0, 0.4) 0, rgba(255, 152, 0, 0.5) 40%, rgba(255, 152, 0, 0.6) 50%, rgba(255, 152, 0, 0.7) 60%, rgba(255, 255, 255, 0) 70%) }
+.waves.waves-purple .waves-ripple { background:radial-gradient(rgba(156, 39, 176, 0.4) 0, rgba(156, 39, 176, 0.5) 40%, rgba(156, 39, 176, 0.6) 50%, rgba(156, 39, 176, 0.7) 60%, rgba(255, 255, 255, 0) 70%) }
+.waves.waves-teal .waves-ripple { background:radial-gradient(rgba(0, 150, 136, 0.4) 0, rgba(0, 150, 136, 0.5) 40%, rgba(0, 150, 136, 0.6) 50%, rgba(0, 150, 136, 0.7) 60%, rgba(255, 255, 255, 0) 70%) }
