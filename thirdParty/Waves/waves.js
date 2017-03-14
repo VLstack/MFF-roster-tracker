@@ -2,6 +2,7 @@
 {
  "use strict";
  var Effect,
+     isInit = false,
      Waves =
      {
       "duration" : 1000,
@@ -9,10 +10,10 @@
       {
        if ( "ontouchstart" in window ) { return ; }
        if ( typeof document.body.getBoundingClientRect === typeof undefined ) { return ; }
-       if ( !("wavesIsInit" in document.body.dataset) || document.body.dataset.wavesIsInit != "YES" )
+       if ( isInit === false )
        {
-        document.body.dataset.wavesIsInit = "YES";
-        document.body.addEventListener("mousedown", Effect.mousedown, false);
+        isInit = true;
+        document.body.addEventListener("click", Effect.click, false);
        }
       }
      };
@@ -36,7 +37,7 @@
 
  Effect =
  {
-  "mousedown" : function(e)
+  "click" : function(e)
   {
    var element = Effect.getWavesElement(e);
    if ( element !== null )
