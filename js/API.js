@@ -1,5 +1,20 @@
 var API = { "UID" : 0 };
 
+DOMTokenList.prototype.addOriginal = DOMTokenList.prototype.add;
+DOMTokenList.prototype.removeOriginal = DOMTokenList.prototype.remove;
+
+DOMTokenList.prototype.add = function(classes)
+{
+ var arr = classes.split(" ");
+ arr.forEach(function(cName) { this.addOriginal(cName); }, this);
+};
+
+DOMTokenList.prototype.remove = function(classes)
+{
+ var arr = classes.split(" ");
+ arr.forEach(function(cName) { this.removeOriginal(cName); }, this);
+};
+
 API.FEATURES = (function()
 {
  var
