@@ -5,7 +5,7 @@ Keep track of developments, levels, tiers, active uniform, attacks value, defens
 
 # Live
 
-![current](https://img.shields.io/badge/Current_release-stable-green.svg?style=flat)https://www.mokhet.com/MFF/
+![current](https://img.shields.io/badge/Current_release-stable-green.svg?style=flat) https://www.mokhet.com/MFF/
 
 ![beta](https://img.shields.io/badge/Beta_release-unstable-red.svg?style=flat) https://www.mokhet.com/MFF-beta/
 
