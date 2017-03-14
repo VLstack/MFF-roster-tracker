@@ -1,28 +1,8 @@
 # Unreleased ![version 2.1.0](https://img.shields.io/badge/version-2.1.0-brightgreen.svg?style=flat) ![date 2017-03-14](https://img.shields.io/badge/date-2017--03--14-red.svg?style=flat)
 
-**In development**
+**In progress**
 
 - More javascript refactor
-
-**Waiting for development:**
-- [#10](https://github.com/Mokhet/MFF-roster-tracker/issues/10) Enhanced filtering
-- [#11](https://github.com/Mokhet/MFF-roster-tracker/issues/11) CSV export
-- [#12](https://github.com/Mokhet/MFF-roster-tracker/issues/12) Import/Export of selected chars
-- [#13](https://github.com/Mokhet/MFF-roster-tracker/issues/13) Correct naming of all gears in detail charts
-- [#14](https://github.com/Mokhet/MFF-roster-tracker/issues/14) Show gears image
-- [#15](https://github.com/Mokhet/MFF-roster-tracker/issues/15) Global development score
-- [#16](https://github.com/Mokhet/MFF-roster-tracker/issues/16) Keep track of last update and sort by last update
-- [#17](https://github.com/Mokhet/MFF-roster-tracker/issues/17) Way to show/hide unwanted characters
-- [#18](https://github.com/Mokhet/MFF-roster-tracker/issues/18) Flag to keep track of characters up to date with game data
-
-**In specification**
-
-- [#19](https://github.com/Mokhet/MFF-roster-tracker/issues/19) Database storage
-- [#20](https://github.com/Mokhet/MFF-roster-tracker/issues/20) Set all gear options to the same stat in one click
-- [#21](https://github.com/Mokhet/MFF-roster-tracker/issues/21) See equipped Obelisk and how satisfying it is
-- [#22](https://github.com/Mokhet/MFF-roster-tracker/issues/22) Tracking uniforms development and dependencies
-- [#23](https://github.com/Mokhet/MFF-roster-tracker/issues/23) Tacking Uru for each gears
-- [#24](https://github.com/Mokhet/MFF-roster-tracker/issues/24) CSV import
 
 **Enhancements:**
 
