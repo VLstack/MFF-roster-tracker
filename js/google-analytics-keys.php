@@ -13,7 +13,7 @@ else
   else if ( $tmp == "MFF-previous" ) { $MFFTrackingID = "UA-92278331-4"; }
  }
 }
-if ( array_key_exists("JS", $_GET) && $_GET["JS"] == "Y" )
+if ( !isset($noOutput) )
 {
  header("Content-type: text/javascript");
  echo "var MFFTrackingID = \"$MFFTrackingID\";";
