@@ -79,7 +79,7 @@ MFF.LAYOUT.CHARTS =
                            "click" : function(evt)
                            {
                             MFF.LAYOUT.CHARTS.hideGlobal();
-                            MFF.LAYOUT.DETAIL.drawCharacter(evt.point.characterId, true);
+                            MFF.LAYOUT.DETAIL.drawCharacter(evt.point.characterId, true, null, true);
                            }
                           }
                          },

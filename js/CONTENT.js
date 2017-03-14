@@ -232,7 +232,7 @@ MFF.LAYOUT.DETAIL =
   MFF.LAYOUT.DETAIL.GEARS._tab.hide();
   MFF.LAYOUT.DETAIL.GEARS._content.hide();
  },
- "drawCharacter" : function(character, persistant, keep)
+ "drawCharacter" : function(character, persistant, keep, scrollIntoView)
  {
   var h1, img, table, tbody, tr, td, k, i, div, input, select, option, data, span, src, node;
 
@@ -251,7 +251,7 @@ MFF.LAYOUT.DETAIL =
      else if ( !node && sens == "previousSibling" ) { node = self.parentNode.lastChild; }
      if ( node == self ) { return ; }
     }
-    if ( node ) { MFF.LAYOUT.DETAIL.drawCharacter(node.id, true); }
+    if ( node ) { MFF.LAYOUT.DETAIL.drawCharacter(node.id, true, null, true); }
     MFF.googleAnalytics(sens == "nextSibling" ? "goto-next-character" : "goto-previous-character");
    };
   }
@@ -270,9 +270,6 @@ MFF.LAYOUT.DETAIL =
    API.EVT.dispatch("globalChart", "hide");
    if ( MFF.currentCharacter )
    {
-    // k = document.getElementById(MFF.currentCharacter + "_percent");
-    // percent = MFF.computePercent(MFF.currentCharacter);
-    // k.innerHTML = API.numberToFixed(percent, 2) + "%";
     MFF.LAYOUT.LIST.synchroDetailGear(MFF.currentCharacter);
     MFF.LAYOUT.LIST.synchroDevelomment(MFF.currentCharacter);
     MFF.LAYOUT.LIST.setClassType(MFF.currentCharacter);
@@ -290,7 +287,7 @@ MFF.LAYOUT.DETAIL =
     if (node )
     {
      node.classList.add("active");
-     if ( node.scrollIntoView ) { node.scrollIntoView(); }
+     if ( scrollIntoView && node.scrollIntoView ) { node.scrollIntoView(); }
     }
    }
   }
