@@ -96,6 +96,7 @@ var MFF =
   "hp" :               { "label" : "Hit points", "callback" : function(character) { var v = character.hp; return { "value" : v, "percent" : false }; } },
   "defpen" :           { "label" : "Ignore defense", "callback" : function(character) { var v = character.defpen; return { "value" : v, "percent" : true }; } },
   "ignore_dodge" :     { "label" : "Ignore dodge", "callback" : function(character) { var v = character.ignore_dodge; return { "value" : v, "percent" : true }; } },
+  "lastUpdate" :       { "disableChart" : true, "label" : "Last update", "callback" : function(character) { return { "value" : character.lastUpdate || null, "percent" : false }; } },
   "level" :            { "label" : "Level", "callback" : function(character) { var v = character.level; return { "value" : v, "percent" : false }; } },
   "movspeed" :         { "label" : "Movement speed", "callback" : function(character) { var v = character.movspeed; return { "value" : v, "percent" : true }; } },
   "recorate" :         { "label" : "Recovery rate", "callback" : function(character) { var v = character.recorate; return { "value" : v, "percent" : true }; } },

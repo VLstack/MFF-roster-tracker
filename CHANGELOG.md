@@ -4,6 +4,10 @@
 
 - More javascript refactor
 
+**Added:**
+
+- [#16] Keep track of last update and sort by last update
+
 ![version 2.1.0](https://img.shields.io/badge/version-2.1.0-brightgreen.svg?style=flat) ![date 2017-03-15](https://img.shields.io/badge/date-2017--03--15-red.svg?style=flat)
 
 **Added:**
