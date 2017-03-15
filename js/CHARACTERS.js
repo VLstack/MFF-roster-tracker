@@ -177,6 +177,7 @@ MFF.CHARACTERS =
    MFF.CHARACTERS._all[character][data.type] = data.value;
   break;
  }
+ MFF.CHARACTERS._all[character].lastUpdate = (new Date()).valueOf();
 }
 };
 

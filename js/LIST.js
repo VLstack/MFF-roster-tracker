@@ -209,14 +209,33 @@ MFF.LAYOUT.LIST =
  },
  "setSub" : function(character)
  {
-  var v,
+  var v, Y, M, D,
       attribute = MFF.LAYOUT.LIST.getSortAttribute(),
       span = document.getElementById(character + "_sub");
   if ( span ) { span.innerHTML = ""; span.title = ""; }
   if ( span && attribute != "name" )
   {
    v = MFF.axisItems[attribute].callback(MFF.CHARACTERS.get(character));
-   if ( v.percent ) { span.innerHTML = MFF.axisItems[attribute].label + ": " + API.numberToFixed(v.value, 2) + "%"; }
+   if ( attribute == "lastUpdate" )
+   {
+    if ( v.value )
+    {
+     v = new Date(v.value);
+     if ( v )
+     {
+      Y = v.getFullYear();
+      M = 1 + v.getMonth();
+      D = v.getDate();
+      if ( M < 10 ) { M = "0" + M; }
+      if ( D < 10 ) { D = "0" + D; }
+      v = "{0}-{1}-{2}".format(Y, M, D);
+     }
+     else { v = "Invalid"; }
+    }
+    else { v = "Unknown"; }
+    span.innerHTML = MFF.axisItems[attribute].label + ": " + v;
+   }
+   else if ( v.percent ) { span.innerHTML = MFF.axisItems[attribute].label + ": " + API.numberToFixed(v.value, 2) + "%"; }
    else { span.innerHTML = MFF.axisItems[attribute].label + ": " + parseInt(v.value, 10); }
    span.title = MFF.axisItems[attribute].label;
   }
