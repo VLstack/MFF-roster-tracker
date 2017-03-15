@@ -1,8 +1,10 @@
-# Unreleased ![version 2.1.0](https://img.shields.io/badge/version-2.1.0-brightgreen.svg?style=flat) ![date 2017-03-14](https://img.shields.io/badge/date-2017--03--14-red.svg?style=flat)
+# Unreleased ![version 2.2.0](https://img.shields.io/badge/version-2.2.0-brightgreen.svg?style=flat) ![date 2017-03-15](https://img.shields.io/badge/date-2017--03--15-red.svg?style=flat)
 
 **In progress**
 
 - More javascript refactor
+
+![version 2.1.0](https://img.shields.io/badge/version-2.1.0-brightgreen.svg?style=flat) ![date 2017-03-15](https://img.shields.io/badge/date-2017--03--15-red.svg?style=flat)
 
 **Enhancements:**
 
@@ -10,6 +12,7 @@
 - Show sorted attribute value under characters names in the list
 - Better synchro between character detail and character list
 - Scroll active character to top in list view
+- Move all ideas and future enhancements to GitHub [Issues](https://github.com/Mokhet/MFF-roster-tracker/issues)
 
 **Fixed bugs:**
 
