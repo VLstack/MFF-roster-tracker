@@ -483,9 +483,7 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "classic" : { "name" : "Elektra", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed", "skills" : ["Blood rush", "Harsh strike", "Throwing sais", "Silent ambush", "Red assassin"], "bonus" : null },
-                       // TODO : check skills and attributes
                        "md"      : { "name" : "Elektra", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed", "skills" : ["Blood rush", "Harsh strike", "Throwing sais", "Silent ambush", "Red assassin"], "bonus" : ["Activation rate: when skill Throwing sais is used", "Apply to: Self", "Increase critical damage by 15% (5 sec.)", "Increase all speeds by 10% (5 sec.)", "Cooldown time 2 seconds"] }
                       }
                      },
@@ -561,7 +559,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "now" :    { "name" : "Ghost rider - Robbie Reyes", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "universal", "skills" : ["Chain lash", "Torque chain", "Demon bind", "Tire scorcher", "Hell racer"], "bonus" : null }
                       }
                      },
@@ -651,8 +648,7 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
-                       "anad" : { "name" : "HellCat", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed", "skills" : ["Cat's cradle", "Leaping cat", "Sharp claw", "Cat's grudge", "Fierce claw"], "bonus" : null }
+                       "anad" : { "name" : "Hellcat", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed", "skills" : ["Cat's cradle", "Leaping cat", "Sharp claw", "Cat's grudge", "Fierce claw"], "bonus" : null }
                       }
                      },
 "hellstrom" :        {
@@ -739,14 +735,10 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "classic" : { "name" : "Iron fist", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat", "skills" : ["Chi of flying crane", "Pressure point jab", "K'un-Lun focus", "The iron fist", "Chi strike"], "bonus" : null },
-                       // TODO : image need to be recreated from game
                        "na" :      { "name" : "Iron fist", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat", "skills" : ["Chi of flying crane", "Pressure point jab", "K'un-Lun focus", "The iron fist", "Chi strike"], "bonus" : ["Activation rate: when HP is below 30%", "Apply to: Self", "Max HP recovery 10%", "Invincible (5 sec.)", "Cooldown time 30 seconds"] },
-                       // TODO : image need to be recreated from game
                        "anad" :    { "name" : "Iron fist", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat", "skills" : ["Chi of flying crane", "Pressure point jab", "K'un-Lun focus", "The iron fist", "Chi strike"], "bonus" : ["Activation rate: when HP is below 30%", "Apply to: Self", "Max HP recovery 10%", "Invincible (5 sec.)", "Cooldown time 30 seconds"] },
-                       // TODO : check skills and attributes
-                       "mif" :     { "name" : "Iron fist", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat", "skills" : ["Chi of flying crane", "Pressure point jab", "K'un-Lun focus", "The iron fist", "Chi strike"], "bonus" : ["Activation rate: when HP is below 30%", "Apply to: Self", "Max HP recovery 10%", "Invincible (5 sec.)", "Cooldown time 30 seconds"] }
+                       "mif" :     { "name" : "Iron fist", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat", "skills" : ["Chi of flying crane", "Pressure point jab", "K'un-Lun focus", "The iron fist", "Immortal iron fist"], "bonus" : ["Activation rate: when HP is below 30%", "Apply to: Self", "Max HP recovery 10%", "Invincible (5 sec.)", "Cooldown time 30 seconds"] }
                       }
                      },
 "iron_man" :         {
@@ -797,8 +789,7 @@ MFF.CHARACTERS.DATA =
                       "uniforms" :
                       {
                        "warofking" : { "name" : "Karnak", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed", "skills" : ["Side-splitter", "Gale", "Composure", "Charging strike", "Death chop"], "bonus" : null },
-                       // TODO : check skills and attributes
-                       "anad" :      { "name" : "Karnak", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed", "skills" : ["Side-splitter", "Gale", "Composure", "Charging strike", "Death chop"], "bonus" : ["Activation rate: 35% when debuffed", "Apply to: Self", "Remove all debuffs (2 sec.)", "Cooldown time 15 seconds"] }
+                       "anad" :      { "name" : "Karnak", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed", "skills" : ["Side-splitter", "Gale", "Wave of wisdom", "Charging strike", "Death chop"], "bonus" : ["Activation rate: 35% when debuffed", "Apply to: Self", "Remove all debuffs (2 sec.)", "Cooldown time 15 seconds"] }
                       }
                      },
 "kidkaiju" :         {
@@ -806,7 +797,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "unleashed" : { "name" : "Kid Kaiju", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed", "skills" : ["Fireclaw summon", "Slizzik summon", "Sketch up", "Tag-team titan", "Monter Mayhem"], "bonus" : null }
                       }
                      },
@@ -857,12 +847,9 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" : { "name" : "Luke Cage", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat", "skills" : ["Dempsey roll", "Street style", "Screaming", "Sweet christmas", "Tactical offense"], "bonus" : null },
-                       // TODO : image need to be recreated from game
                        "anad" :   { "name" : "Luke Cage", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat", "skills" : ["Dempsey roll", "Street style", "Screaming", "Sweet christmas", "Tactical offense"], "bonus" : ["Increase skill duration of Heroes for Hire, reduce cooldown time"] },
-                       // TODO : check skills and attributes
-                       "mlc" :    { "name" : "Luke Cage", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat", "skills" : ["Dempsey roll", "Street style", "Screaming", "Sweet christmas", "Tactical offense"], "bonus" : ["Increase skill duration of Heroes for Hire, reduce cooldown time", "Add guard break effect on skill Street style"] }
+                       "mlc" :    { "name" : "Luke Cage", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat", "skills" : ["Dempsey roll", "Street style", "Backup call", "Sweet christmas", "Tactical offense"], "bonus" : ["Increase skill duration of Heroes for Hire, reduce cooldown time", "Add guard break effect on skill Street style"] }
                       }
                      },
 "malekith" :         {
@@ -1031,14 +1018,10 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" : { "name" : "Punisher", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat", "skills" : ["Grenade throw", "Flare", "Killer instinct", "Punish the guilty", "Incendiary rocket"], "bonus" : null },
-                       // TODO : image need to be recreated from game
                        "noir" :   { "name" : "Punisher", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat", "skills" : ["Grenade throw", "Flare", "Killer instinct", "Punish the guilty", "Incendiary rocket"], "bonus" : ["Activation rate: when dealing critical attack", "Apply to: Self", "Physical attack +10% (20 sec.)", "Cooldown time 30 seconds"] },
-                       // TODO : image need to be recreated from game
                        "wj" :     { "name" : "Punisher", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat", "skills" : ["Grenade throw", "Flare", "Perfect aim", "Rocket shower", "Incendiary rocket"], "bonus" : ["Activation rate: when dealing critical attack", "Apply to: Self", "Physical attack +10% (20 sec.)", "Cooldown time 30 seconds"] },
-                       // TODO : check skills and attributes
-                       "md" :     { "name" : "Punisher", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat", "skills" : ["Grenade throw", "Flare", "Perfect aim", "Rocket shower", "Incendiary rocket"], "bonus" : ["Activation rate: 5% when attacking", "Apply to: Self", "Decrease skill cooldown by 30% (10 sec.)", "Cooldown time 20 seconds"] }
+                       "md" :     { "name" : "Punisher", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat", "skills" : ["Grenade throw", "Flare", "Wild shot", "Rocket shower", "Smoke operation"], "bonus" : ["Activation rate: 5% when attacking", "Apply to: Self", "Decrease skill cooldown by 30% (10 sec.)", "Cooldown time 20 seconds"] }
                       }
                      },
 "red_hulk" :         {

@@ -155,4 +155,4 @@ span.skill_lvl { display:inline-block; width:calc(20% - 8px); margin:2px; color:
 #panelFooter span#nbTiers { position:absolute; left:3px; bottom:3px }
 
 #panelFooter span#MFFversion.beta::before { content:"BETA"; background-color:#630000; color:white; position:absolute; left:-40px; padding:1px 5px; border-radius:4px }
-#panelFooter span#MFFversion.localhost::before { content:"localhost"; background-color:#006363; color:white; position:absolute; left:-40px; padding:1px 5px; border-radius:4px }
+#panelFooter span#MFFversion.localhost::before { content:"localhost"; background-color:#006363; color:white; position:absolute; left:-60px; padding:1px 5px; border-radius:4px }
