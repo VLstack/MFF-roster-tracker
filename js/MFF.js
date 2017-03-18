@@ -222,6 +222,6 @@ var MFF =
    MFF.LAYOUT.DETAIL.drawCharacter(MFF.currentCharacter, true, true);
    MFF.LAYOUT.LIST.drawCharacter(MFF.currentCharacter);
   }
-  else { MFF.LAYOUT.LIST.setSub(MFF.currentCharacter); }
+  MFF.LAYOUT.LIST.setSub(MFF.currentCharacter);
  }
 };

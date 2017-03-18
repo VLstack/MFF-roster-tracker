@@ -19,9 +19,6 @@ MFF.LAYOUT.CHARTS =
       xAxis = document.getElementById("XAxis").value,
       yAxis = document.getElementById("YAxis").value,
       childs = document.getElementById("panelListContent").childNodes;
-
-  MFF.LAYOUT.CHARTS._panel.show();
-  MFF.LAYOUT.CHARTS._panel.flush();
   for ( i = 0; i < childs.length; i++ )
   {
    if ( childs[i].style.display !== "none" )
@@ -36,21 +33,26 @@ MFF.LAYOUT.CHARTS =
     labelY = MFF.axisItems[yAxis].label;
     if ( xAxis == "attack" )
     {
-     labelX = MFF.CHARACTERS.DATA[id].uniforms[character.uniform].attackBase == "physical" ? "Physical attack" : "Energy attack";
+     labelX = MFF.CHARACTERS.isAttackBaseForUniformIsPhysical(id, character.uniform) ? "Physical attack" : "Energy attack";
     }
     if ( yAxis == "attack" )
     {
-     labelY = MFF.CHARACTERS.DATA[id].uniforms[character.uniform].attackBase == "physical" ? "Physical attack" : "Energy attack";
+     labelY = MFF.CHARACTERS.isAttackBaseForUniformIsPhysical(id, character.uniform) ? "Physical attack" : "Energy attack";
     }
     serie.push({
                 "characterId" : id,
-                "name" : MFF.CHARACTERS.DATA[id].uniforms[character.uniform].name,
+                "name" : MFF.CHARACTERS.getNameForUniform(id, character.uniform),
                 "x" : x, "labelX" : labelX,
                 "y" : y, "labelY" : labelY,
                 "marker" : { "width" : 32, "height" : 32, "symbol" : "url(images/characters/{0}/{1}.png)".format(character.uniform, id) }
                });
    }
   }
+
+  if ( !serie.length ) { tmpX = tmpY = function() { return ""; } ; }
+
+  MFF.LAYOUT.CHARTS._panel.show();
+  MFF.LAYOUT.CHARTS._panel.flush();
   new Highcharts.Chart({
                         "chart" : { "renderTo" : MFF.LAYOUT.CHARTS._panel.getNode(), "type" : "scatter", "zoomType" : "xy", "backgroundColor" : "#efefef" },
                         "credits" : { "enabled" : false },

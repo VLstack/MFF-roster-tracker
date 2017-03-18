@@ -17,8 +17,8 @@ MFF.LAYOUT.DETAIL.GEARS =
   MFF.LAYOUT.DETAIL.GEARS._content = new Panel({ "id" : "panelDetailGearsContent", "parent" : container, "hide" : true, "relative" : true });
   node = MFF.LAYOUT.DETAIL.GEARS._tab.getNode();
   MFF.LAYOUT.DETAIL.GEARS._btnGears = new Button({ "small" : true, "renderTo" : node, "fa" : "tasks", "content" : "Gears", "callback" : cb("Gears"), "listener" : listener("Gears") });
+  MFF.LAYOUT.DETAIL.GEARS._btnUniforms = new Button({ "small" : true, "renderTo" : node, "fa" : "black-tie", "content" : "Uniforms", "callback" :  cb("Uniforms"), "listener" : listener("Uniforms") });
   MFF.LAYOUT.DETAIL.GEARS._btnDetailCharts = new Button({ "small" : true, "renderTo" : node, "fa" : "line-chart", "content" : "Chart", "callback" : cb("DetailChart"), "listener" : listener("DetailChart") });
-  //MFF.LAYOUT.DETAIL.GEARS._btnUniforms = new Button({ "small" : true, "renderTo" : node, "fa" : "black-tie", "content" : "Uniforms", "callback" :  cb("Uniforms"), "listener" : listener("Uniforms") });
 
   API.EVT.on("switchDetail", function(params)
                              {
@@ -26,7 +26,7 @@ MFF.LAYOUT.DETAIL.GEARS =
                               MFF.LAYOUT.DETAIL.GEARS._content.show();
                               if ( params == "Gears" ) { MFF.LAYOUT.DETAIL.GEARS.drawGears(); }
                               else if ( params == "DetailChart" ) { MFF.LAYOUT.DETAIL.GEARS.drawChart(); }
-                              //else if ( params == "Uniforms" ) { alert("Uniforms"); }
+                              else if ( params == "Uniforms" ) { MFF.UNIFORMS.list(); }
                              });
 
 
@@ -39,23 +39,18 @@ MFF.LAYOUT.DETAIL.GEARS =
  {
   MFF.LAYOUT.DETAIL.GEARS._content.flush();
   MFF.LAYOUT.DETAIL.GEARS.currentTab = tab;
- },
- "sizer" : function(resize)
+  MFF.LAYOUT.DETAIL.GEARS.sizer();
+},
+ "sizer" : function()
  {
   var containerSize, nodeSize,
       container = MFF.LAYOUT.DETAIL._panel.getNode(),
       node = MFF.LAYOUT.DETAIL.GEARS._content.getNode();
-  if ( resize  )
-  {
-   containerSize = container.getBoundingClientRect();
-   nodeSize = node.getBoundingClientRect();
-   node.style.height = (containerSize.height + containerSize.top - nodeSize.top) + "px";
-  }
-  else
-  {
-   node.style.width = "";
-   node.style.height = "";
-  }
+  node.style.width = "";
+  node.style.height = "";
+  containerSize = container.getBoundingClientRect();
+  nodeSize = node.getBoundingClientRect();
+  node.style.height = (containerSize.height + containerSize.top - nodeSize.top) + "px";
  },
  "drawGears" : function()
  {
@@ -113,7 +108,6 @@ MFF.LAYOUT.DETAIL.GEARS =
   }
 
   MFF.LAYOUT.DETAIL.GEARS.setCurrentTab("Gears");
-  MFF.LAYOUT.DETAIL.GEARS.sizer(false);
 
   for ( i = 0; i < MFF.GEARS.length; i++ )
   {
@@ -210,12 +204,11 @@ MFF.LAYOUT.DETAIL.GEARS =
     changeMinMax.call(select, null);
    }
   }
-  MFF.googleAnalytics("show-character-gears");
+  MFF.googleAnalytics("show-character-gears-" + data.id);
  },
  "drawChart" : function()
  {
   MFF.LAYOUT.DETAIL.GEARS.setCurrentTab("DetailChart");
-  MFF.LAYOUT.DETAIL.GEARS.sizer(true);
   MFF.LAYOUT.CHARTS.renderDetail();
  }
 

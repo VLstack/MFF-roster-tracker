@@ -75,9 +75,10 @@ MFF.LAYOUT.LIST =
  },
  "drawCharacter" : function(character)
  {
-  var img, p, span, lineGear, i, progressBar,
+  var img, p, span, lineGear, i, progressBar, name,
       li = document.getElementById(character),
       data = MFF.CHARACTERS.get(character);
+  name = MFF.CHARACTERS.DATA[character].uniforms[data.uniform].name;
   API.DOM.flush(li);
   MFF.LAYOUT.LIST.setClassType(character);
   MFF.LAYOUT.LIST.setTier(character);
@@ -86,13 +87,15 @@ MFF.LAYOUT.LIST =
   img = li.appendChild(document.createElement("img"));
   img.className = "characterPicture";
   img.src = "images/characters/{0}/{1}.png".format(data.uniform, character);
+  img.title = name,
   img = li.appendChild(document.createElement("img"));
   img.src = "images/tier2.png";
+  img.title = name,
   img.className = "tier2";
   p = li.appendChild(document.createElement("p"));
   img = p.appendChild(document.createElement("span"));
   img.className = "character_type";
-  p.appendChild(document.createTextNode(MFF.CHARACTERS.DATA[character].uniforms[data.uniform].name));
+  p.appendChild(document.createTextNode(name));
   p.appendChild(document.createElement("br"));
   span = p.appendChild(document.createElement("span"));
   span.id = character + "_sub";
@@ -188,6 +191,7 @@ MFF.LAYOUT.LIST =
   li.classList.remove("inf");
   li.classList.remove("min");
   if ( cName ) { li.classList.add(cName); }
+  li.querySelector("div.progressBar").style.width = percent + "%";
  },
  "setClassType" : function(character)
  {

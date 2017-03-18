@@ -234,7 +234,7 @@ MFF.LAYOUT.DETAIL =
  },
  "drawCharacter" : function(character, persistant, keep, scrollIntoView)
  {
-  var h1, img, table, tbody, tr, td, k, i, div, input, select, option, data, span, src, node;
+  var h1, img, table, tbody, tr, td, div, input, select, option, data, span, src, node, uniforms;
 
   function choosePreviousNextCharacter(sens)
   {
@@ -299,31 +299,6 @@ MFF.LAYOUT.DETAIL =
   tbody = table.appendChild(document.createElement("tbody"));
 
   tr = tbody.appendChild(document.createElement("tr"));
-
-  td = tr.appendChild(document.createElement("td"));
-  select = td.appendChild(document.createElement("select"));
-  select.id = "uniform";
-  select.title = "Uniform";
-  i = 0;
-  for ( k in MFF.CHARACTERS.DATA[character].uniforms )
-  {
-   if ( MFF.CHARACTERS.DATA[character].uniforms.hasOwnProperty(k) )
-   {
-    option = select.appendChild(document.createElement("option"));
-    option.value = k;
-    option.text = MFF.UNIFORMS[k];
-    if ( data.uniform == k ) { select.selectedIndex = i;}
-    i++;
-   }
-  }
-  select.onchange = function() { MFF.saveCharacter({ "mode" : "uniform", "uniform" : this.options[this.selectedIndex].value }); };
-
-  td = tr.appendChild(document.createElement("td"));
-  td.id = "skills";
-  MFF.LAYOUT.DETAIL.drawSkills(td, data);
-
-  tr = tbody.appendChild(document.createElement("tr"));
-
   td = tr.appendChild(document.createElement("td"));
   td.className = "picture";
   img = td.appendChild(document.createElement("img"));
@@ -346,24 +321,26 @@ MFF.LAYOUT.DETAIL =
   div.className = "bgOpaque";
   div.innerHTML = API.numberToFixed(MFF.computePercent(character), 2) + "%";
 
-  td = tr.appendChild(document.createElement("td"));
-  td.className = "content";
-  h1 = td.appendChild(document.createElement("h1"));
-  h1.className = "bgOpaque";
-
-  img = h1.appendChild(document.createElement("img"));
+  div = td.appendChild(document.createElement("div"));
+  div.id = "attributes";
+  div.className = "bgOpaque";
+  img = div.appendChild(document.createElement("img"));
   img.src = "images/{0}.png".format(MFF.CHARACTERS.DATA[character].uniforms[data.uniform].type);
 
-  img = h1.appendChild(document.createElement("img"));
+  img = div.appendChild(document.createElement("img"));
   src = MFF.CHARACTERS.DATA[character].uniforms[data.uniform].gender;
   if ( src == "neutral" ) { src = "neutral_gender"; }
   img.src = "images/{0}.png".format(src);
 
-  img = h1.appendChild(document.createElement("img"));
+  img = div.appendChild(document.createElement("img"));
   src = MFF.CHARACTERS.DATA[character].uniforms[data.uniform].side;
   if ( src == "neutral" ) { src = "neutral_side"; }
   img.src = "images/{0}.png".format(src);
 
+  td = tr.appendChild(document.createElement("td"));
+  td.className = "content";
+  h1 = td.appendChild(document.createElement("h1"));
+  h1.className = "bgOpaque";
   span = h1.appendChild(document.createElement("label"));
   span.htmlFor = "character_level";
   span.appendChild(document.createTextNode("#"));
@@ -391,7 +368,7 @@ MFF.LAYOUT.DETAIL =
   if ( MFF.CHARACTERS.DATA[character].tiers.indexOf(2) === -1 ) { select.removeChild(select.lastChild); }
 
   h1.appendChild(document.createTextNode(MFF.CHARACTERS.DATA[character].uniforms[data.uniform].name));
-
+  MFF.LAYOUT.DETAIL.drawSkills(td, data);
   MFF.LAYOUT.DETAIL.drawAttributes(td, character, persistant);
 
   if ( persistant ) { MFF.googleAnalytics("draw-character-" + MFF.currentCharacter); }
