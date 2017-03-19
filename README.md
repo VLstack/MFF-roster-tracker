@@ -1,4 +1,4 @@
-# MFF Roster Tracker ![version](https://img.shields.io/badge/version-2.0.1-blue.svg)
+# MFF Roster Tracker ![version](https://img.shields.io/badge/version-2.2.0-blue.svg)
 Roster tracker for characters of the mobile game Marvel Future Fight.
 
 Keep track of developments, levels, tiers, active uniform, attacks value, defenses, hit points, criticals, gears, skills and so on.
