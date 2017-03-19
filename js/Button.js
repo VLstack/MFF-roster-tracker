@@ -20,13 +20,6 @@ function Button(options)
   this._node.classList.add("content");
  }
  if ( options.fa ) { this.setIcon(options.fa); }
- // {
- //  this._node.classList.add("image");
- //  i = document.createElement("i");
- //  i.className = "fa fa-{0}".format(options.fa);
- //  if ( this._node.firstChild ) { this._node.insertBefore(i, this._node.firstChild); }
- //  else { this._node.appendChild(i); }
- // }
  if ( options.styles ) { for ( k in options.styles ) { if ( options.styles.hasOwnProperty(k) ) { this._node.style[k] = options.styles[k]; } } }
  if ( options.callback ) { this._node.onclick = (function(btn, cb) { return function() { cb.call(btn); }; })(this, options.callback); }
  if ( options.small ) { this._node.classList.add("small"); }

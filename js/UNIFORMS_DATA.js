@@ -70,3 +70,67 @@ MFF.UNIFORMS.DATA =
  "warofking" : "War of king",
  "wwh" : "World War Hulk"
 };
+
+MFF.UNIFORMS.RANKS =
+{
+ "unowned" :   { "order" : -1, "label" : "not owned" },
+ "normal" :    { "order" : 0, "label" : "normal" },
+ "advanced" :  { "order" : 1, "label" : "advanced" },
+ "rare" :      { "order" : 2, "label" : "rare" },
+ "heroic" :    { "order" : 3, "label" : "heroic" },
+ "legendary" : { "order" : 4, "label" : "legendary" },
+ "mythical" :  { "order" : 5, "label" : "mythical" }
+};
+
+MFF.UNIFORMS.RANKS_PROGRESSIONS =
+{
+ "A" : { "normal" : 0, "advanced" : 249, "rare" : 418, "heroic" : 572, "legendary" : 741, "mythical" : 1067 },
+ "B" : { "normal" : 0, "advanced" : 84,  "rare" : 140, "heroic" : 191, "legendary" : 248, "mythical" : 357 },
+ "C" : { "normal" : 0, "advanced" : 76,  "rare" : 123, "heroic" : 171, "legendary" : 225, "mythical" : 329 },
+ "D" : { "normal" : 0, "advanced" : 292, "rare" : 490, "heroic" : 671, "legendary" : 868, "mythical" : 1251 }
+};
+
+MFF.UNIFORMS.RANKS_OPTIONS =
+[
+ // 0 : advanced
+ {
+  "atkspeed" : { "min" : 448,  "max" : 522, "progress" : "A" },
+  "movspeed" : { "min" : 448,  "max" : 522, "progress" : "A" },
+  "scd" :      { "min" : 448,  "max" : 522, "progress" : "A" },
+  // QUESTION : debuf == crowd control time ??
+  "debuff" :   { "min" : 448,  "max" : 522, "progress" : "A" },
+  "dodge" :    { "min" : 448,  "max" : 522, "progress" : "A" }
+ },
+ // 1 : rare
+ {
+  "attack_physical" :  { "min" : 180, "max" : 210, "progress" : "B" },
+  "attack_energy" :    { "min" : 180, "max" : 210, "progress" : "B" },
+  "defense_physical" : { "min" : 157, "max" : 183, "progress" : "C" },
+  "defense_energy" :   { "min" : 157, "max" : 183, "progress" : "C" },
+  "hp" :               { "min" : 630, "max" : 735, "progress" : "D" }
+ },
+ // 2 : heroic
+ {
+  "recorate" : { "min" : 571,  "max" : 666, "progress" : "A" },
+  "defpen" :   { "min" : 571,  "max" : 666, "progress" : "A" },
+  "scd" :      { "min" : 571,  "max" : 666, "progress" : "A" },
+  "hp" :       { "min" : 670,  "max" : 782, "progress" : "D" },
+  "atkspeed" : { "min" : 571,  "max" : 666, "progress" : "A" }
+ },
+ // 3 : legendary
+ {
+  "defense_physical" : { "min" : 183, "max" : 214, "progress" : "C" },
+  "defense_energy" :   { "min" : 183, "max" : 214, "progress" : "C" },
+  "defense_all" :      { "min" : 183, "max" : 214, "progress" : "C" },
+  "dodge" :            { "min" : 605, "max" : 706, "progress" : "A" },
+  "movspeed" :         { "min" : 605, "max" : 706, "progress" : "A" }
+ },
+ // 4 : mythical
+ {
+  "attack_physical" : { "min" : 214, "max" : 249, "progress" : "B" },
+  "attack_energy" :   { "min" : 214, "max" : 249, "progress" : "B" },
+  "attack_all" :      { "min" : 214, "max" : 249, "progress" : "B" },
+  "critrate" :        { "min" : 639, "max" : 747, "progress" : "A" },
+  "critdamage" :      { "min" : 639, "max" : 747, "progress" : "A" }
+ }
+];

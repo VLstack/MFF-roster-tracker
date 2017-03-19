@@ -12,6 +12,7 @@ MFF.CHARACTERS =
  return {
          "id" : character,
          "uniform" : MFF.CHARACTERS.DATA[character].uniform,
+         "uniforms" : {}, // 2.2 addition
          "level" : 0,
          "tier" : MFF.CHARACTERS.DATA[character].tiers[0],
          "attack" : { "physical" : 0, "energy" : 0 }, // 1.9 transformation
@@ -72,12 +73,14 @@ MFF.CHARACTERS =
   }
   data.attack = { "physical" : physical, "energy" : energy };
  }
+ if ( !("uniforms" in data) ) { data.uniforms = {}; } // compatibility any to 2.2
  return data;
 },
 "getAll" : function() { return MFF.CHARACTERS._all; },
 "setAll" : function(all) { MFF.CHARACTERS._all = all; },
 "setProperty" : function(character, data)
 {
+ var percent;
  if ( !(character in MFF.CHARACTERS._all) ) { MFF.CHARACTERS.set(character); }
  switch ( data.mode )
  {
@@ -105,7 +108,17 @@ MFF.CHARACTERS =
    MFF.CHARACTERS._all[character].uniform = data.uniform;
   break;
   case "attribute" :
-   MFF.CHARACTERS._all[character][data.type] = data.value;
+   percent = MFF.axisItems[data.type].callback(data).percent;
+   MFF.CHARACTERS._all[character][data.type] = percent ? parseFloat(data.value) : parseInt(data.value);
+  break;
+  case "uniformRank" :
+   if ( !(data.uniform in MFF.CHARACTERS._all[character].uniforms) ) { MFF.CHARACTERS._all[character].uniforms[data.uniform] = { "rank" : "unowned", "options" : [null, null, null, null, null] }; }
+   MFF.CHARACTERS._all[character].uniforms[data.uniform].rank = data.rank;
+  break;
+  case "uniformOptions" :
+   if ( !(data.uniform in MFF.CHARACTERS._all[character].uniforms) ) { MFF.CHARACTERS._all[character].uniforms[data.uniform] = { "rank" : "unowned", "options" : [null, null, null, null, null] }; }
+   if ( !("options" in MFF.CHARACTERS._all[character].uniforms[data.uniform]) ) { MFF.CHARACTERS._all[character].uniforms[data.uniform].options = [null, null, null, null, null]; }
+   MFF.CHARACTERS._all[character].uniforms[data.uniform].options[data.index] = [data.attribute, parseInt(data.value) || 0];
   break;
  }
  MFF.CHARACTERS._all[character].lastUpdate = (new Date()).valueOf();

@@ -6,10 +6,10 @@ MFF.LAYOUT.DETAIL.GEARS =
  {
   var node;
 
-  function cb(format) { return function() { API.EVT.dispatch("switchDetail", format); }; }
+  function cb(format) { return function() { API.EVT.dispatch("switchDetail", { "tab" : format }); }; }
   function listener(format)
   {
-   function fn(param) { this.setActive(format == param); }
+   function fn(param) { this.setActive(format == param.tab); }
    return { "method" : "switchDetail", "callback" : fn };
   }
 
@@ -18,22 +18,22 @@ MFF.LAYOUT.DETAIL.GEARS =
   node = MFF.LAYOUT.DETAIL.GEARS._tab.getNode();
   MFF.LAYOUT.DETAIL.GEARS._btnGears = new Button({ "small" : true, "renderTo" : node, "fa" : "tasks", "content" : "Gears", "callback" : cb("Gears"), "listener" : listener("Gears") });
   MFF.LAYOUT.DETAIL.GEARS._btnUniforms = new Button({ "small" : true, "renderTo" : node, "fa" : "black-tie", "content" : "Uniforms", "callback" :  cb("Uniforms"), "listener" : listener("Uniforms") });
-  MFF.LAYOUT.DETAIL.GEARS._btnDetailCharts = new Button({ "small" : true, "renderTo" : node, "fa" : "line-chart", "content" : "Chart", "callback" : cb("DetailChart"), "listener" : listener("DetailChart") });
+  MFF.LAYOUT.DETAIL.GEARS._btnDetailCharts = new Button({ "small" : true, "renderTo" : node, "fa" : "line-chart", "content" : "Development chart", "callback" : cb("DetailChart"), "listener" : listener("DetailChart") });
 
   API.EVT.on("switchDetail", function(params)
                              {
                               MFF.LAYOUT.DETAIL.GEARS._tab.show();
                               MFF.LAYOUT.DETAIL.GEARS._content.show();
-                              if ( params == "Gears" ) { MFF.LAYOUT.DETAIL.GEARS.drawGears(); }
-                              else if ( params == "DetailChart" ) { MFF.LAYOUT.DETAIL.GEARS.drawChart(); }
-                              else if ( params == "Uniforms" ) { MFF.UNIFORMS.list(); }
+                              if ( params.tab == "Gears" ) { MFF.LAYOUT.DETAIL.GEARS.drawGears(); }
+                              else if ( params.tab == "DetailChart" ) { MFF.LAYOUT.DETAIL.GEARS.drawChart(); }
+                              else if ( params.tab == "Uniforms" ) { MFF.UNIFORMS.list(params.focusUniform); }
                              });
 
 
  },
- "synchroCurrentTab" : function()
+ "synchroCurrentTab" : function(focusUniform)
  {
-  API.EVT.dispatch("switchDetail", MFF.LAYOUT.DETAIL.GEARS.currentTab);
+  API.EVT.dispatch("switchDetail", { "tab" : MFF.LAYOUT.DETAIL.GEARS.currentTab, "focusUniform" : focusUniform });
  },
  "setCurrentTab" : function(tab)
  {

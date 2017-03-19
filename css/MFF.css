@@ -20,7 +20,7 @@ span.button.sorterDirection { margin-left:-24px; border-left:0; border-top-left-
 #clearQuery+span { margin-left:10px }
 #clearQuery:hover { color:#000000 }
 
-#panelList { top:40px; left:0; right:0; bottom:30px; width:260px; background-color:#101629 } /* converted from area_list */
+#panelList { top:40px; left:0; right:0; bottom:30px; width:260px; background-color:#101629 }
 #panelListTab { top:0; left:0; right:0; height:24px; background: #12192b }
 #panelListContent { top:25px; left:0; right:0; bottom:0; background: #12192b }
 
@@ -80,7 +80,7 @@ ul#panelListContent.render-icon>li>p { display:none }
 
 #panelGlobalChart { top:40px; left:0; right:0; bottom:30px }
 
-#panelDetail { top:40px; left:260px; right:0; bottom:30px; background-color:#000; background-size:cover; background-position:50% 50%; background-repeat:no-repeat } /* converted from area_detail */
+#panelDetail { top:40px; left:260px; right:0; bottom:30px; background-color:#000; background-size:cover; background-position:50% 50%; background-repeat:no-repeat; overflow:hidden }
 
 #panelDetailContent { }
 #panelDetailGearsTab { height:24px; padding-left:5px }
@@ -140,17 +140,19 @@ select.skill_lvl { width:calc(20% - 4px); margin:0 2px }
 span.skill_lvl { display:inline-block; width:calc(20% - 8px); margin:2px; color:#FFFFFF }
 .skill_lvl > option { font:10px/16px verdana }
 
-#panelFooter { bottom:0; left:0; right:0; height:30px; overflow:hidden; background-color:#12192b } /* converted from footer */
+#panelFooter { bottom:0; left:0; right:0; height:30px; overflow:hidden; background-color:#12192b }
 #panelFooter span { display:inline-block; font:10px/20px verdana; color:white; padding:1px 5px; border:1px solid rgba(255, 255, 255, 0.5) }
 #panelFooter span#MFFversion { position:absolute; right:3px; bottom:3px }
 #panelFooter span#nbTiers { position:absolute; left:3px; bottom:3px }
+#panelFooter span#submitIssues { position:absolute; left:200px; bottom:3px }
+#panelFooter span#submitIssues a:link, #panelFooter span#submitIssues a:visited { color:white }
 
 #panelFooter span#MFFversion.beta::before { content:"BETA"; background-color:#630000; color:white; position:absolute; left:-40px; padding:1px 5px; border-radius:4px }
 #panelFooter span#MFFversion.localhost::before { content:"localhost"; background-color:#006363; color:white; position:absolute; left:-60px; padding:1px 5px; border-radius:4px }
 
 #uniformsLeftPanel, #uniformsRightPanel { position:absolute; top:0; bottom:0 }
 #uniformsLeftPanel { left:0; width:150px; overflow:auto }
-#uniformsRightPanel { left:150px; right:0; overflow:hidden }
+#uniformsRightPanel { left:150px; right:0; overflow:auto }
 #uniformsLeftPanel li { cursor:pointer; text-align:center; margin:5px }
 #uniformsLeftPanel li:hover { border-color:gold }
 #uniformsLeftPanel li.active, #uniformsLeftPanel li.active:hover { background-color:white }
@@ -158,30 +160,54 @@ span.skill_lvl { display:inline-block; width:calc(20% - 8px); margin:2px; color:
 #uniformsLeftPanel li.active h2, #uniformsLeftPanel li.active:hover h2 { color:black }
 #uniformsLeftPanel h1 { font:12px/20px arial; color:white }
 #uniformsLeftPanel img { width:100px; height:100px }
-#uniformsLeftPanel h2 { font:10px/14px arial; color:white }
-#uniformsLeftPanel h2.advanced { color:green !important }
-#uniformsLeftPanel h2.rare { color:cyan !important}
-#uniformsLeftPanel h2.heroic { color:purple !important}
-#uniformsLeftPanel h2.legendary { color:orange !important }
-#uniformsLeftPanel h2.mythical { color:blue !important }
+h2.rank { font:10px/14px arial; color:white }
+.ranks { position:relative; margin-left:5px }
+.ranks span, .ranks h2.rank { font:12px/16px arial; color:white; cursor:pointer }
+h2.rank.unowned { color:#DDD }
+h2.rank.normal { }
+h2.rank.advanced { color:#00cc27 }
+h2.rank.rare { color:cyan }
+h2.rank.heroic { color:#b12bb1 }
+h2.rank.legendary { color:orange }
+h2.rank.mythical { color:red }
+.ranks .select { position:absolute; top:2px; left:32px; background-color:black; cursor:pointer }
+.ranks .select h2 { padding:4px 15px }
+.ranks .select h2:hover { color:black !important; background-color:white }
+.ranks .current { display:inline-block; margin-left:5px; cursor:pointer }
+#uniformsRightPanel div.uniformOwned { margin:5px; padding:5px 10px }
 #uniformsRightPanel div.requiredUniforms { margin:5px; float:left; padding:5px 10px }
 #uniformsRightPanel div.requiredUniforms h1 { font:12px/16px arial; color:gold }
+#uniformsRightPanel div.requiredUniforms h2 { text-align:center }
+.rankOptions { margin:5px 0; text-align:center }
+.rankOptions * { text-align:center }
+.rankOptions select { font:10px/12px arial; width:120px; display:block }
+.rankOptions span { display:inline-block; width:30px; font:10px/12px arial; color:white }
+.rankOptions input { display:inline-block; width:30px; font:10px/12px arial }
+.rankOptions input.invalide { background-color:yellow; color:#333333 }
+.rankOptions input.undef { background-color:#f0f0f0; color:#333333 }
+.rankOptions input.min { background-color:#FF0000; color:#FFFFFF }
+.rankOptions input.inf { background-color:#FFCCCC; color:#333333 }
+.rankOptions input.moy { background-color:#99CCFF; color:#333333 }
+.rankOptions input.sup { background-color:#CCFFCC; color:#333333 }
+.rankOptions input.max { background-color:#00FF00; color:#333333 }
+
 #uniformsRightPanel table { border-collapse:collapse }
-#uniformsRightPanel img { width:60px; height:60px; display:block; margin:5px auto; cursor:pointer }
+#uniformsRightPanel img { width:60px; height:60px; display:block; margin:0 auto; cursor:pointer }
 #uniformsRightPanel td { padding:5px; width:90px; border-spacing:0 }
 #uniformsRightPanel .up td { padding-bottom:0 }
 #uniformsRightPanel .down td { padding-top:0 }
 #uniformsRightPanel td i { display:block; margin:auto; width:2px; height:20px; background-color:white }
 #uniformsRightPanel th { padding:0 }
-#uniformsRightPanel th div { height:2px; width:402px; background-color:white; margin:auto }
+#uniformsRightPanel th div { height:2px; width:522px; background-color:white; margin:auto }
 #uniformsRightPanel .uniformBonus { display:inline-block; padding:5px 10px; min-width:300px; float:left; margin:5px }
 #uniformsRightPanel .uniformBonus h1 { font:12px/16px arial; color:gold }
 #uniformsRightPanel .uniformBonus span { font:12px/16px arial; color:white; display:block; margin-bottom:2px }
 #uniformsRightPanel .uniformBonus span.cooldown { color:#00cc27 }
-#uniformsRightPanel p { font:12px/16px arial; color:white; padding:5px; display:inline-block; min-width:300px; float:left; margin:5px }
+#uniformsRightPanel p { font:12px/16px arial; color:white; margin:5px }
 #uniformsRightPanel p a:link, #uniformsRightPanel p a:visited { color:white }
-#uniformsRightPanel .linkedUniforms { clear:both; padding:5px 10px; min-width:500px; float:left; margin:5px }
+#uniformsRightPanel .linkedUniforms { clear:both; padding:5px 10px; min-width:650px; float:left; margin:5px }
 #uniformsRightPanel .linkedUniforms h1 { font:12px/16px arial; color:gold }
 #uniformsRightPanel .linkedUniforms li { color:white; padding:2px; font:12px/16px arial }
 #uniformsRightPanel .linkedUniforms li:not(.noLinkedUniforms) { display:inline-block; cursor:pointer }
-#uniformsRightPanel .linkedUniforms li img { width:40px; height:40px; margin:5px }
+#uniformsRightPanel .linkedUniforms li img { width:50px; height:50px; margin:5px }
+#uniformsRightPanel .linkedUniforms h2 { text-align:center }

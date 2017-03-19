@@ -1,4 +1,4 @@
-/* global MFF, API */
+/* global MFF, API, ToggleSwitch */
 MFF.UNIFORMS =
 {
  "getValue" : function(uniform)
@@ -38,7 +38,19 @@ MFF.UNIFORMS =
   }
   return all;
  },
- "list" : function()
+ "setActive" : function(uniform)
+ {
+  var ul = document.getElementById("uniformsLeftPanel"),
+      active = ul.querySelector("li.active");
+  if ( active ) { active.classList.remove("active"); }
+  active = ul.querySelector("li.uniform_" + uniform);
+  if ( active )
+  {
+   active.classList.add("active");
+   MFF.UNIFORMS.draw(uniform);
+  }
+ },
+ "list" : function(focusUniform)
  {
   var left = document.createElement("ul"),
       right = document.createElement("div"),
@@ -51,42 +63,116 @@ MFF.UNIFORMS =
   right.id = "uniformsRightPanel";
   all.forEach(function(uniform)
               {
-               var li = left.appendChild(document.createElement("li")),
+               var rankData = MFF.UNIFORMS.getRankData(data.id, uniform.key),
+                   li = left.appendChild(document.createElement("li")),
                    h1 = li.appendChild(document.createElement("h1")),
                    img = li.appendChild(document.createElement("img")),
                    h2 = li.appendChild(document.createElement("h2"));
-               li.classList.add("bgOpaque waves waves-blue");
+               li.classList.add("bgOpaque waves waves-blue uniform_" + uniform.key);
                li.dataset.uniform = uniform.key;
                img.src = "images/characters/{0}/{1}.png".format(uniform.key, data.id);
                h1.innerHTML = MFF.UNIFORMS.getValue(uniform.key);
-               h2.classList.add("grade");
-               h2.innerHTML = uniform.key == MFF.CHARACTERS.DATA[data.id].uniform ? "&nbsp;" : "normal";
-               if ( data.uniform == uniform.key )
-               {
-                li.classList.add("active");
-                MFF.UNIFORMS.drawLinks(uniform.key);
-               }
+               h2.className = "rank " + rankData.rank;
+               h2.innerHTML = uniform.key == MFF.CHARACTERS.DATA[data.id].uniform ?  "&nbsp;" : rankData.label;
               });
+  MFF.UNIFORMS.setActive(focusUniform || data.uniform);
   left.onclick = function(e)
   {
-   var li = API.EVT.getParentTarget(e, "li"),
-       ul = li ? li.parentNode : null,
-       active = ul ? ul.querySelector(".active") : null;
-   if ( active ) { active.classList.remove("active"); }
-   li.classList.add("active");
-   MFF.UNIFORMS.drawLinks(li.dataset.uniform);
-   MFF.saveCharacter({ "mode" : "uniform", "uniform" : li.dataset.uniform });
+   var li = API.EVT.getParentTarget(e, "li");
+   if ( li && li.dataset.uniform ) { MFF.UNIFORMS.setActive(li.dataset.uniform); }
   };
  },
- "drawLinks" : function(uniform)
+ "isSelected" : function(character, uniform)
  {
-  var table, tbody, trUp, trMiddle, trDown, th, div, h1, ul, li,
+  var data = MFF.CHARACTERS.get(character);
+  return data && data.uniform == uniform;
+ },
+ "getRank" : function(character, uniform)
+ {
+  var data = MFF.CHARACTERS.get(character);
+  return data && data.uniforms && (uniform in data.uniforms) && ("rank" in data.uniforms[uniform]) ? data.uniforms[uniform].rank : "unowned";
+ },
+ "getRankData" : function(character, uniform)
+ {
+  var rank = MFF.UNIFORMS.getRank(character, uniform),
+      obj = MFF.UNIFORMS.RANKS[rank];
+  obj.rank = rank;
+  return obj;
+ },
+ "drawRanks" : function(container, character, uniform)
+ {
+  var rankData = MFF.UNIFORMS.getRankData(character, uniform),
+      div = container.appendChild(document.createElement("div")),
+      all = Object.keys(MFF.UNIFORMS.RANKS),
+      span = div.appendChild(document.createElement("span")),
+      current = div.appendChild(document.createElement("h2")),
+      select = div.appendChild(document.createElement("div"));
+  div.className = "ranks";
+  select.className = "select bgOpaque";
+  select.style.display = "none";
+  span.innerHTML = "Rank";
+  current.className = "current rank " + rankData.rank;
+  current.innerHTML = rankData.label;
+  all.sort(function(a, b) { return MFF.UNIFORMS.RANKS[a].order - MFF.UNIFORMS.RANKS[b].order; });
+  all.forEach(function(rank)
+              {
+               var h2 = select.appendChild(document.createElement("h2"));
+               h2.className = "rank " + rank;
+               h2.innerHTML = MFF.UNIFORMS.RANKS[rank].label;
+               h2.dataset.rank = rank;
+              });
+  div.onclick = (function(character, uniform)
+                 {
+                  return function(e)
+                  {
+                   var target, current, rank,
+                       select = this.querySelector(".select");
+                   if ( select.style.display == "none" ) { select.style.display = ""; }
+                   else
+                   {
+                    target = API.EVT.getParentTarget(e, "h2");
+                    if ( target )
+                    {
+                     rank = target.dataset.rank;
+                     current = this.querySelector(".current");
+                     current.className = "current rank " + rank;
+                     current.innerHTML = MFF.UNIFORMS.RANKS[rank].label;
+                     MFF.saveCharacter({ "mode" : "uniformRank", "uniform" : uniform, "rank" : rank });
+                     MFF.UNIFORMS.list(uniform);
+                    }
+                    else { select.style.display = "none"; }
+                   }
+                  };
+                 })(character, uniform);
+ },
+ "draw" : function(uniform)
+ {
+  var table, tbody, trUp, trMiddle, trDown, th, div, h1, ul, li, p, selected,
       right = document.getElementById("uniformsRightPanel"),
       data = MFF.CHARACTERS.get(MFF.currentCharacter || MFF.lastTarget),
       links = (data.id in MFF.CHARACTERS.DATA) && (uniform in MFF.CHARACTERS.DATA[data.id].uniforms) && ("links" in MFF.CHARACTERS.DATA[data.id].uniforms[uniform]) ? MFF.CHARACTERS.DATA[data.id].uniforms[uniform].links : null,
-      bonus = (data.id in MFF.CHARACTERS.DATA) && (uniform in MFF.CHARACTERS.DATA[data.id].uniforms) && ("bonus" in MFF.CHARACTERS.DATA[data.id].uniforms[uniform]) ? MFF.CHARACTERS.DATA[data.id].uniforms[uniform].bonus : null;
+      bonus = (data.id in MFF.CHARACTERS.DATA) && (uniform in MFF.CHARACTERS.DATA[data.id].uniforms) && ("bonus" in MFF.CHARACTERS.DATA[data.id].uniforms[uniform]) ? MFF.CHARACTERS.DATA[data.id].uniforms[uniform].bonus : null,
+      rankDataParent = MFF.UNIFORMS.getRankData(data.id, uniform);
   right.innerHTML = "";
-  if ( bonus === null ) { right.innerHTML = "<p class=bgOpaque>Default uniform.<br>Upgrade not available</p>"; }
+  div = right.appendChild(document.createElement("div"));
+  div.classList.add("bgOpaque uniformOwned");
+  selected = MFF.UNIFORMS.isSelected(data.id, uniform);
+  new ToggleSwitch({
+                    "renderTo" : div, "content" : "Selected uniform", "id" : "selectedUniform",
+                    "checked" : selected, "disabled" : selected,
+                    "data" : uniform,
+                    "callback" : function(checked, uniform)
+                    {
+                     this.setDisabled(true);
+                     MFF.saveCharacter({ "mode" : "uniform", "uniform" : uniform });
+                    }
+                   });
+  if ( bonus === null )
+  {
+   p = div.appendChild(document.createElement("p"));
+   p.innerHTML = "Default uniform. Upgrade not available.";
+  }
+  else { MFF.UNIFORMS.drawRanks(div, data.id, uniform); }
   if ( links )
   {
    div = right.appendChild(document.createElement("div"));
@@ -105,32 +191,141 @@ MFF.UNIFORMS =
    trDown.classList.add("down");
    links.forEach(function(link, index)
                  {
-                  var td,
+                  var td, k, option, idx,
+                      options = MFF.UNIFORMS.RANKS_OPTIONS[index],
+                      div = document.createElement("div"),
+                      select = div.appendChild(document.createElement("select")),
+                      min = div.appendChild(document.createElement("span")),
+                      current = div.appendChild(document.createElement("input")),
+                      max = div.appendChild(document.createElement("span")),
                       i = document.createElement("i"),
                       img = document.createElement("img"),
-                      tmp = link.split("/");
+                      h2 = document.createElement("h2"),
+                      tmp = link.split("/"),
+                      characterChild = tmp[1],
+                      uniformChild = tmp[0],
+                      rankDataChild = MFF.UNIFORMS.getRankData(characterChild, uniformChild);
+                  // execution scope : current
+                  function checkValues(doSave)
+                  {
+                   var cName = "invalide",
+                       div = this.parentNode,
+                       min = div.childNodes[1],
+                       current = div.childNodes[2],
+                       max = div.childNodes[3],
+                       minValue = parseInt(min.innerHTML),
+                       maxValue = parseInt(max.innerHTML),
+                       moyValue = ( minValue + maxValue ) / 2;
+                   if ( current.value == 0 ) { cName = "undef"; }
+                   else if ( current.value == moyValue ) { cName = "moy"; }
+                   else if ( current.value == minValue ) { cName = "min"; }
+                   else if ( current.value == maxValue ) { cName = "max"; }
+                   else if ( current.value < moyValue && current.value > minValue ) { cName = "inf"; }
+                   else if ( current.value > moyValue && current.value < maxValue ) { cName = "sup"; }
+                   current.className = cName;
+                   if ( doSave !== false )
+                   {
+                    if ( MFF.UNIFORMS.toidSave ) { MFF.UNIFORMS.toidSave = clearTimeout(MFF.UNIFORMS.toidSave); }
+                    MFF.UNIFORMS.toidSave = setTimeout(function()
+                                                       {
+                                                        var index = div.dataset.index,
+                                                            select = div.firstChild,
+                                                            uniform = div.dataset.parentUniform;
+                                                        MFF.saveCharacter({ "mode" : "uniformOptions", "uniform" : uniform, "index" : index, "value" : current.value, "attribute" : select.value });
+                                                       }, 500);
+                   }
+                  }
+                  // execution scope : select
+                  function setMinMax(loadFromCharacter)
+                  {
+                   var v,
+                       div = this.parentNode,
+                       delta = MFF.UNIFORMS.RANKS_PROGRESSIONS[MFF.UNIFORMS.RANKS_OPTIONS[div.dataset.index][this.value].progress][div.dataset.rank],
+                       minValue = MFF.UNIFORMS.RANKS_OPTIONS[div.dataset.index][this.value].min + delta,
+                       maxValue = MFF.UNIFORMS.RANKS_OPTIONS[div.dataset.index][this.value].max + delta,
+                       min = div.childNodes[1],
+                       current = div.childNodes[2],
+                       max = div.childNodes[3];
+                   min.innerHTML = minValue;
+                   max.innerHTML = maxValue;
+                   current.value = 0;
+                   if (    loadFromCharacter === true
+                        && (div.dataset.parentUniform in data.uniforms)
+                        && data.uniforms[div.dataset.parentUniform].options
+                        && data.uniforms[div.dataset.parentUniform].options[div.dataset.index] )
+                   {
+                    v = parseInt(data.uniforms[div.dataset.parentUniform].options[div.dataset.index][1]);
+                    current.value = isNaN(v) ? 0 : v;
+                   }
+                   checkValues.call(current, false);
+                  }
                   img.src = "images/characters/{0}.png".format(link);
                   img.dataset.link = link;
-                  if ( tmp[1] == data.id ) { img.style.cursor = "default"; }
+                  if ( characterChild == data.id ) { img.style.cursor = "default"; }
                   else
                   {
                    img.onclick = function()
                    {
-                    var tmp = this.dataset.link.split("/");
-                    MFF.LAYOUT.DETAIL.drawCharacter(tmp[1], true, null, true);
+                    var tmp = this.dataset.link.split("/"),
+                        character = tmp[1],
+                        uniform = tmp[0];
+                    MFF.LAYOUT.DETAIL.drawCharacter(character, true, null, true, uniform);
                    };
+                  }
+                  div.classList.add("rankOptions");
+                  div.dataset.index = index;
+                  div.dataset.uniform = uniformChild;
+                  div.dataset.character = characterChild;
+                  div.dataset.rank = rankDataChild.rank;
+                  div.dataset.parentUniform = uniform;
+                  div.dataset.parentCharacter = data.id;
+                  idx = 0;
+                  for ( k in options )
+                  {
+                   if ( options.hasOwnProperty(k) )
+                   {
+                    option = select.appendChild(document.createElement("option"));
+                    option.value = k;
+                    option.text = MFF.axisItems[k].label;
+                    if (    (uniform in data.uniforms)
+                         && data.uniforms[uniform].options
+                         && data.uniforms[uniform].options[div.dataset.index]
+                         && data.uniforms[uniform].options[div.dataset.index][0] == k ) { select.selectedIndex = idx; }
+                    idx++;
+                   }
+                  }
+                  h2.className = "rank " + rankDataChild.rank;
+                  h2.innerHTML = rankDataChild.label;
+                  current.type = "text";
+                  if ( rankDataChild.rank == "unowned" || rankDataParent.order <= index )
+                  {
+                   current.disabled = true;
+                   select.disabled = true;
+                   min.innerHTML = "n/a";
+                   max.innerHTML = "n/a";
+                   current.value = "n/a";
+                  }
+                  else
+                  {
+                   current.onkeyup = checkValues;
+                   select.onchange = setMinMax;
+                   setMinMax.call(select, true);
                   }
                   if ( index % 2 )
                   {
                    td = trDown.appendChild(document.createElement("td"));
                    td.appendChild(i);
+                   td.appendChild(h2);
                    td.appendChild(img);
+                   td.appendChild(div);
                    trUp.appendChild(document.createElement("td"));
                   }
                   else
                   {
                    td = trUp.appendChild(document.createElement("td"));
+                   td.appendChild(div);
                    td.appendChild(img);
+                   td.appendChild(h2);
                    td.appendChild(i);
                    trDown.appendChild(document.createElement("td"));
                   }
@@ -140,7 +335,7 @@ MFF.UNIFORMS =
   if ( bonus )
   {
    div = right.appendChild(document.createElement("div"));
-   div.classList.add("uniformBonus bgOpaque");
+   div.classList.add("bgOpaque uniformBonus");
    h1 = div.appendChild(document.createElement("h1"));
    h1.innerHTML = "Uniform bonus";
    bonus.forEach(function(b)
@@ -164,16 +359,24 @@ MFF.UNIFORMS =
                   {
                    var li = ul.appendChild(document.createElement("li")),
                        img = li.appendChild(document.createElement("img")),
-                       tmp = link.split("/");
+                       h2 = li.appendChild(document.createElement("h2")),
+                       tmp = link.split("/"),
+                       character = tmp[1],
+                       uniform = tmp[0],
+                       rankData = MFF.UNIFORMS.getRankData(character, uniform);
                    img.src = "images/characters/{0}.png".format(link);
                    img.dataset.link = link;
+                   h2.className = "rank " + rankData.rank;
+                   h2.innerHTML = rankData.label;
                    if ( tmp[1] == data.id ) { img.style.cursor = "default"; }
                    else
                    {
                     img.onclick = function()
                     {
-                     var tmp = this.dataset.link.split("/");
-                     MFF.LAYOUT.DETAIL.drawCharacter(tmp[1], true, null, true);
+                     var tmp = this.dataset.link.split("/"),
+                         character = tmp[1],
+                         uniform = tmp[0];
+                     MFF.LAYOUT.DETAIL.drawCharacter(character, true, null, true, uniform);
                     };
                    }
                   });
