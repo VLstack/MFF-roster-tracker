@@ -232,9 +232,9 @@ MFF.LAYOUT.DETAIL =
   MFF.LAYOUT.DETAIL.GEARS._tab.hide();
   MFF.LAYOUT.DETAIL.GEARS._content.hide();
  },
- "drawCharacter" : function(character, persistant, keep, scrollIntoView)
+ "drawCharacter" : function(character, persistant, keep, scrollIntoView, focusUniform)
  {
-  var h1, img, table, tbody, tr, td, div, input, select, option, data, span, src, node, uniforms;
+  var h1, img, table, tbody, tr, td, div, input, select, option, data, span, src, node;
 
   function choosePreviousNextCharacter(sens)
   {
@@ -372,7 +372,7 @@ MFF.LAYOUT.DETAIL =
   MFF.LAYOUT.DETAIL.drawAttributes(td, character, persistant);
 
   if ( persistant ) { MFF.googleAnalytics("draw-character-" + MFF.currentCharacter); }
-  MFF.LAYOUT.DETAIL.GEARS.synchroCurrentTab(character);
+  MFF.LAYOUT.DETAIL.GEARS.synchroCurrentTab(focusUniform);
  },
  "setTier" : function(tier)
  {
