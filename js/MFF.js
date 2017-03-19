@@ -3,16 +3,11 @@
 // localStorage.removeItem("sorter");
 var MFF =
 {
- "version" : "2.1.0",
- "versionMFF" : "2.9",
+ "version" : "2.2.0",
+ "versionMFF" : "2.9.5",
  "localStorageKey" : "characters",
  "toid" : null,
  "currentCharacter" : null,
- "googleAnalytics" : function(page)
- {
-  ga("set", "page", "/" + page + ".html");
-  ga("send", "pageview");
- },
  "shownClassType" : ["combat", "speed", "blast", "universal"],
  "shownClassSide" : ["hero", "vilain", "neutral"],
  "shownClassGender" : ["male", "female", "neutral"],
@@ -100,7 +95,9 @@ var MFF =
   "level" :            { "label" : "Level", "callback" : function(character) { var v = character.level; return { "value" : v, "percent" : false }; } },
   "movspeed" :         { "label" : "Movement speed", "callback" : function(character) { var v = character.movspeed; return { "value" : v, "percent" : true }; } },
   "recorate" :         { "label" : "Recovery rate", "callback" : function(character) { var v = character.recorate; return { "value" : v, "percent" : true }; } },
-  "scd" :              { "label" : "Skill cooldown", "callback" : function(character) { var v = character.scd; return { "value" : v, "percent" : true }; } }
+  "scd" :              { "label" : "Skill cooldown", "callback" : function(character) { var v = character.scd; return { "value" : v, "percent" : true }; } },
+  "defense_all" :      { "disableCharts" : true, "disableSort" : true, "label" : "All defenses" },
+  "attack_all" :       { "disableCharts" : true, "disableSort" : true, "label" : "All attacks" }
  },
  "cbImportExport" : function()
  {
@@ -225,3 +222,33 @@ var MFF =
   MFF.LAYOUT.LIST.setSub(MFF.currentCharacter);
  }
 };
+
+
+MFF.googleAnalytics = function() { };
+
+var TrackingId = "";
+if ( ("" + location).indexOf("localhost") == -1 )
+{
+ MFF.googleAnalytics = function(page)
+ {
+  ga("set", "page", "/" + page + ".html");
+  ga("send", "pageview");
+ };
+ if ( ("" + location).indexOf("MFF-beta") != -1 ) { TrackingId = "UA-92278331-3"; }
+ else if ( ("" + location).indexOf("MFF-previous") != -1 ) { TrackingId = "UA-92278331-4"; }
+ else { TrackingId = "UA-92278331-1"; }
+ (function(i,s,o,g,r,a,m)
+  {
+   i["GoogleAnalyticsObject"] = r;
+   i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments); };
+   i[r].l = 1 * new Date();
+   a = s.createElement(o);
+   m = s.getElementsByTagName(o)[0];
+   a.async = 1;
+   a.src = g;
+   m.parentNode.insertBefore(a,m);
+  }
+ )(window, document, "script", "https://www.google-analytics.com/analytics.js", "ga");
+ ga("create", TrackingId, "auto");
+ ga("send", "pageview");
+}
