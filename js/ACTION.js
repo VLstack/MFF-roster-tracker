@@ -61,7 +61,7 @@ MFF.LAYOUT.ACTION =
    i = 0;
    for ( k in MFF.axisItems )
    {
-    if ( MFF.axisItems.hasOwnProperty(k) )
+    if ( MFF.axisItems.hasOwnProperty(k) && MFF.axisItems[k].disableSort !== true )
     {
      option = select.appendChild(document.createElement("option"));
      option.value = k;
