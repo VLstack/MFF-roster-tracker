@@ -14,6 +14,10 @@ MFF.LAYOUT.FOOTER =
   span.title = "Version {0} compliant with MFF version {1}".format(MFF.version, MFF.versionMFF);
   if ( ("" + location).indexOf("MFF-beta") != -1 ) { span.classList.add("beta"); }
   else if ( ("" + location).indexOf("localhost") != -1 ) { span.classList.add("localhost"); }
+  span = MFF.LAYOUT.FOOTER._panel.appendChild(document.createElement("span"));
+  span.id = "submitIssues";
+  span.className = "bgOpaque";
+  span.innerHTML = "<i class=\"fa fa-exclamation\"></i> If you find a bug, an incorrect data or you want to suggest an enhancement, please submit an <a href=\"https://github.com/Mokhet/MFF-roster-tracker/issues\" target=\"blank\">issue</a>";
  },
  "_updateTier" : function()
  {
