@@ -82,3 +82,41 @@ function ImageButton(options)
  img.src = "images/" + options.image;
  return this;
 }
+
+function ToggleSwitch(options)
+{
+ var div;
+ this._node = API.DOM.getById(options.renderTo).appendChild(document.createElement("label"));
+ this._input = this._node.appendChild(document.createElement("input"));
+ this._input.type = "checkbox";
+ this._input.checked = !!options.checked;
+ div = this._node.appendChild(document.createElement("div"));
+ div.className = "slider";
+ API.DOM.addLinkElement("css/button.css");
+ this._node.className = "switch";
+ if ( options.content )
+ {
+  this._label = API.DOM.getById(options.renderTo).appendChild(document.createElement("label"));
+  this._label.classList.add("labelSwitch");
+  if ( options.id ) { this._label.htmlFor = options.id; }
+  this._label.appendChild(document.createTextNode(options.content));
+ }
+ if ( options.large ) { this._node.classList.add("large"); }
+ if ( options.id )
+ {
+  this._id = options.id;
+  this._input.id = options.id;
+ }
+ if ( options.callback ) { this._node.onchange = (function(toggleSwitch, cb, data) { return function() { cb.call(toggleSwitch, toggleSwitch._input.checked, data || null); }; })(this, options.callback, options.data); }
+ this.setDisabled(!!options.disabled);
+}
+
+ToggleSwitch.prototype =
+{
+ "_node" : null,
+ "_input" : null,
+ "_label" : null,
+ "show" : function() { this._node.style.display = ""; this._label.style.display = ""; },
+ "hide" : function() { this._node.style.display = "none"; this._label.style.display = "none"; },
+ "setDisabled" : function(state) { this._input.disabled = state; }
+};
