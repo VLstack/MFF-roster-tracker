@@ -54,7 +54,7 @@ MFF.LAYOUT.DETAIL.GEARS =
  },
  "drawGears" : function()
  {
-  var i, j, k, div, table, tbody, tr, td2, input, select, option, idx, curStat,
+  var i, j, k, div, table, tbody, tr, td2, input, select, option, idx, curStat, selectChangeAll,
       data = MFF.CHARACTERS.get(MFF.currentCharacter || MFF.lastTarget);
 
   function getMin(select) { return parseFloat(select.options[select.selectedIndex].dataset.rangeMin); }
@@ -107,6 +107,23 @@ MFF.LAYOUT.DETAIL.GEARS =
    checkValues(tr, false);
   }
 
+  function changeAll()
+  {
+   var i, tr,
+       all = this.nextSibling.querySelectorAll("select");
+   for ( i = 0; i < all.length; i++ )
+   {
+    if ( all[i].value != this.value )
+    {
+     tr = all[i].parentNode.parentNode;
+     all[i].selectedIndex = this.selectedIndex;
+     all[i].parentNode.nextSibling.firstChild.value = 0;
+     checkValues(tr, true);
+    }
+   }
+   this.selectedIndex = 0;
+  }
+
   MFF.LAYOUT.DETAIL.GEARS.setCurrentTab("Gears");
 
   for ( i = 0; i < MFF.GEARS.length; i++ )
@@ -114,6 +131,12 @@ MFF.LAYOUT.DETAIL.GEARS =
    div = MFF.LAYOUT.DETAIL.GEARS._content.appendChild(document.createElement("div"));
    div.className = "gear";
    div.dataset.gearIndex = i;
+   selectChangeAll = div.appendChild(document.createElement("select"));
+   selectChangeAll.onchange = changeAll;
+   selectChangeAll.className = "changeAll";
+   option = selectChangeAll.appendChild(document.createElement("option"));
+   option.value = "";
+   option.text = "Set all to ...";
    table = div.appendChild(document.createElement("table"));
    tbody = table.appendChild(document.createElement("tbody"));
    for ( j = 0; j < 8; j++ )
@@ -146,6 +169,12 @@ MFF.LAYOUT.DETAIL.GEARS =
     {
      if ( MFF.GEARS[i].hasOwnProperty(k) )
      {
+      if ( j === 0 )
+      {
+       option = selectChangeAll.appendChild(document.createElement("option"));
+       option.value = k;
+       option.text = "Set all to " + MFF.GEARS[i][k].name;
+      }
       option = select.appendChild(document.createElement("option"));
       option.value = k;
       if ( k == data.gear[i][j].type ) { select.selectedIndex = idx; }

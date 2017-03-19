@@ -6,7 +6,9 @@
 
 **Added:**
 
+- [#22](https://github.com/Mokhet/MFF-roster-tracker/issues/22) Tracking uniforms development and dependencies
 - [#16](https://github.com/Mokhet/MFF-roster-tracker/issues/16) Keep track of last update and sort by last update
+- [#20](https://github.com/Mokhet/MFF-roster-tracker/issues/20) Set all gear options to the same stat in one click
 
 **Fixed bugs:**
 

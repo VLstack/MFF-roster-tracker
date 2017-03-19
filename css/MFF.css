@@ -126,6 +126,7 @@ div.copyright { margin:auto; width:750px; text-align:center; font:10px/14px verd
 #panelDetailContent td.content .forms td span { color:white; font:12px/16px verdana; vertical-align:top }
 
 #panelDetailGearsContent .gear { background-color:#ffffff; display:inline-block; margin:5px; padding:2px; border-radius:4px }
+#panelDetailGearsContent .gear select.changeAll { display:block; width:100% }
 #panelDetailGearsContent .gear table { width:100%; border-collapse:collapse }
 #panelDetailGearsContent .gear td { padding:2px }
 #panelDetailGearsContent .gear * { font:9px/12px verdana }
