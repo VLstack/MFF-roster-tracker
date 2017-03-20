@@ -201,6 +201,7 @@ h2.rank.mythical { color:red }
 #uniformsRightPanel th { padding:0 }
 #uniformsRightPanel th div { height:2px; width:522px; background-color:white; margin:auto }
 #uniformsRightPanel .uniformBonus { display:inline-block; padding:5px 10px; min-width:300px; float:left; margin:5px }
+#divDevelopment { padding-top:5px }
 #uniformsRightPanel .uniformBonus h1 { font:12px/16px arial; color:gold }
 #uniformsRightPanel .uniformBonus span { font:12px/16px arial; color:white; display:block; margin-bottom:2px }
 #uniformsRightPanel .uniformBonus span.cooldown { color:#00cc27 }

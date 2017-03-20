@@ -148,11 +148,65 @@ MFF.UNIFORMS =
  "draw" : function(uniform)
  {
   var table, tbody, trUp, trMiddle, trDown, th, div, h1, ul, li, p, selected,
+      divDevelopment = document.createElement("div"),
       right = document.getElementById("uniformsRightPanel"),
       data = MFF.CHARACTERS.get(MFF.currentCharacter || MFF.lastTarget),
       links = (data.id in MFF.CHARACTERS.DATA) && (uniform in MFF.CHARACTERS.DATA[data.id].uniforms) && ("links" in MFF.CHARACTERS.DATA[data.id].uniforms[uniform]) ? MFF.CHARACTERS.DATA[data.id].uniforms[uniform].links : null,
       bonus = (data.id in MFF.CHARACTERS.DATA) && (uniform in MFF.CHARACTERS.DATA[data.id].uniforms) && ("bonus" in MFF.CHARACTERS.DATA[data.id].uniforms[uniform]) ? MFF.CHARACTERS.DATA[data.id].uniforms[uniform].bonus : null,
       rankDataParent = MFF.UNIFORMS.getRankData(data.id, uniform);
+
+  function updateDevelopmentStatus()
+  {
+   var bonus, h1, k, span, character, uniform, data, rankData,
+       divDevelopment = document.getElementById("divDevelopment");
+   if ( divDevelopment )
+   {
+    character = divDevelopment.dataset.character;
+    uniform = divDevelopment.dataset.uniform;
+    data = MFF.CHARACTERS.get(character);
+    rankData = MFF.UNIFORMS.getRankData(character, uniform);
+    divDevelopment.innerHTML = "";
+    divDevelopment.style.display = "none";
+    if ( rankData.rank != "unowned" )
+    {
+     divDevelopment.style.display = "";
+     bonus = {
+              "AA" : { "label" : "All attacks", "value" : "+{0}%".format(10 + rankData.order * 2) },
+              "AD" : { "label" : "All defenses", "value" : "+{0}%".format(10 + rankData.order * 2) }
+             };
+     if ( (uniform in data.uniforms) && data.uniforms[uniform].options && Array.isArray(data.uniforms[uniform].options) )
+     {
+      data.uniforms[uniform].options.forEach(function(opt)
+                                             {
+                                              var k, v;
+                                              if ( opt && Array.isArray(opt) && opt.length == 2 )
+                                              {
+                                               k = opt[0];
+                                               v = opt[1];
+                                               if ( v )
+                                               {
+                                                if ( !(k in bonus) ) { bonus[k] = { "label" : MFF.axisItems[k].label, "value" : 0 }; }
+                                                bonus[k].value += v;
+                                               }
+                                              }
+                                             });
+     }
+     h1 = divDevelopment.appendChild(document.createElement("h1"));
+     h1.innerHTML = "Development bonus";
+     for ( k in bonus )
+     {
+      if ( bonus.hasOwnProperty(k) )
+      {
+       span = divDevelopment.appendChild(document.createElement("span"));
+       span.innerHTML = "{0} {1}".format(bonus[k].label, bonus[k].value);
+      }
+     }
+    }
+   }
+  }
+  divDevelopment.id = "divDevelopment";
+  divDevelopment.dataset.character = data.id;
+  divDevelopment.dataset.uniform = uniform;
   right.innerHTML = "";
   div = right.appendChild(document.createElement("div"));
   div.classList.add("bgOpaque uniformOwned");
@@ -206,7 +260,7 @@ MFF.UNIFORMS =
                       uniformChild = tmp[0],
                       rankDataChild = MFF.UNIFORMS.getRankData(characterChild, uniformChild);
                   // execution scope : current
-                  function checkValues(doSave)
+                  function checkValues()
                   {
                    var cName = "invalide",
                        div = this.parentNode,
@@ -223,17 +277,15 @@ MFF.UNIFORMS =
                    else if ( current.value < moyValue && current.value > minValue ) { cName = "inf"; }
                    else if ( current.value > moyValue && current.value < maxValue ) { cName = "sup"; }
                    current.className = cName;
-                   if ( doSave !== false )
-                   {
-                    if ( MFF.UNIFORMS.toidSave ) { MFF.UNIFORMS.toidSave = clearTimeout(MFF.UNIFORMS.toidSave); }
-                    MFF.UNIFORMS.toidSave = setTimeout(function()
-                                                       {
-                                                        var index = div.dataset.index,
-                                                            select = div.firstChild,
-                                                            uniform = div.dataset.parentUniform;
-                                                        MFF.saveCharacter({ "mode" : "uniformOptions", "uniform" : uniform, "index" : index, "value" : current.value, "attribute" : select.value });
-                                                       }, 500);
-                   }
+                   if ( MFF.UNIFORMS.toidSave ) { MFF.UNIFORMS.toidSave = clearTimeout(MFF.UNIFORMS.toidSave); }
+                   MFF.UNIFORMS.toidSave = setTimeout(function()
+                                                      {
+                                                       var index = div.dataset.index,
+                                                           select = div.firstChild,
+                                                           uniform = div.dataset.parentUniform;
+                                                       MFF.saveCharacter({ "mode" : "uniformOptions", "uniform" : uniform, "index" : index, "value" : current.value, "attribute" : select.value });
+                                                       updateDevelopmentStatus();
+                                                      }, 500);
                   }
                   // execution scope : select
                   function setMinMax(loadFromCharacter)
@@ -257,7 +309,7 @@ MFF.UNIFORMS =
                     v = parseInt(data.uniforms[div.dataset.parentUniform].options[div.dataset.index][1]);
                     current.value = isNaN(v) ? 0 : v;
                    }
-                   checkValues.call(current, false);
+                   checkValues.call(current);
                   }
                   img.src = "images/characters/{0}.png".format(link);
                   img.dataset.link = link;
@@ -344,6 +396,8 @@ MFF.UNIFORMS =
                   if ( b.substr(0, 13) == "Cooldown time" ) { span.classList.add("cooldown"); }
                   span.innerHTML = b;
                  });
+   div.appendChild(divDevelopment);
+   updateDevelopmentStatus();
   }
   if ( links )
   {
