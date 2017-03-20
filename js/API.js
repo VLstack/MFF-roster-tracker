@@ -204,6 +204,59 @@ API.DOM.CSS =
  }
 };
 
+API.CALLBACKS =
+{
+ "all" : {},
+ "on" : function(main, type, cb, ctx)
+ {
+  // fix types beginning with numbers
+  if ( type ) { type = "_" + type; }
+  if ( !(main in API.CALLBACKS.all) ) { API.CALLBACKS.all[main] = {}; }
+  if ( !(type in API.CALLBACKS.all[main]) ) { API.CALLBACKS.all[main][type] = []; }
+  if ( !ctx ) { ctx = this; }
+  API.CALLBACKS.all[main][type].push({ "cb" : cb, "ctx" : ctx });
+ },
+ "off" : function(main, type, cb, ctx)
+  {
+   // fix types beginning with numbers
+   if ( type ) { type = "_" + type; }
+   if ( main in API.CALLBACKS.all )
+   {
+    if ( (type in API.CALLBACKS.all[main]) && cb)
+    {
+     if ( !ctx ) { ctx = this; }
+     API.CALLBACKS.all[main][type] = API.CALLBACKS.all[main][type].filter(function(item) { return item.cb != cb && item.ctx != ctx; });
+    }
+    else if ( type ) { API.CALLBACKS.all[main][type] = []; }
+    else { API.CALLBACKS.all[main] = {}; }
+   }
+   else if ( main ) { API.CALLBACKS.all[main] = {}; }
+  },
+  "dispatch" : function(main, type)
+  {
+   var i, args, items;
+   // fix types beginning with numbers
+   if ( type ) { type = "_" + type; }
+   if  ( (main in API.CALLBACKS.all) && (type in API.CALLBACKS.all[main]) )
+   {
+    items = API.CALLBACKS.all[main][type];
+    args = [].splice.call(arguments, 2);
+    for ( i = 0; i < items.length; i++ )
+    {
+     if ( items[i].cb ) { items[i].cb.apply(items[i].ctx, args); }
+    }
+   }
+  },
+  "dispatchBinded" : function(/*main, type*/)
+  {
+   var args = Array.prototype.slice.call(arguments);
+   return function()
+   {
+    API.CALLBACKS.dispatch.apply(this, args);
+   };
+  }
+};
+
 API.EVT =
 {
 "getTarget" : function(E/*vent*/)
@@ -233,25 +286,11 @@ API.EVT =
 {
  return API.DOM.parent(API.EVT.getTarget(E), N, C);
 },
-"_listeners" : {},
-"reset" : function() { API.EVT._listeners = {}; },
-"on" : function(method, callback, context)
-{
- if ( !(method in API.EVT._listeners) ) { API.EVT._listeners[method] = []; }
-  API.EVT._listeners[method].push({ "callback" : callback, "context" : context });
-},
-// TODO : implement off method
-"off" : function(/*method, callback, context*/)
-{
-},
-"dispatch" : function(method, params)
-{
- if ( method in API.EVT._listeners )
- {
-  API.EVT._listeners[method].forEach(function(listener) { listener.callback.call(listener.context || null, params); });
- }
-}
-
+"reset" : function() { API.CALLBACKS.off("events"); },
+"on" : function(method, callback, context) { API.CALLBACKS.on("events", method, callback, context); },
+"off" : function(method, callback, context) { API.CALLBACKS.off("events", method, callback, context); },
+"dispatch" : function(method, params) { API.CALLBACKS.dispatch("events", method, params); },
+"dispatchBinded" : function(method, params) { return API.CALLBACKS.dispatchBinded("events", method, params); },
 };
 
 API.numberToFixed = (function()
