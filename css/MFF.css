@@ -162,7 +162,7 @@ span.skill_lvl { display:inline-block; width:calc(20% - 8px); margin:2px; color:
 #uniformsLeftPanel h1 { font:12px/20px arial; color:white }
 #uniformsLeftPanel img { width:100px; height:100px }
 h2.rank { font:10px/14px arial; color:white }
-.ranks { position:relative; margin-left:5px }
+.ranks { position:relative; margin-left:20px; display:inline-block }
 .ranks span, .ranks h2.rank { font:12px/16px arial; color:white; cursor:pointer }
 h2.rank.unowned { color:#DDD }
 h2.rank.normal { }
@@ -172,7 +172,7 @@ h2.rank.heroic { color:#b12bb1 }
 h2.rank.legendary { color:orange }
 h2.rank.mythical { color:red }
 .ranks .select { position:absolute; top:2px; left:32px; background-color:black; cursor:pointer }
-.ranks .select h2 { padding:4px 15px }
+.ranks .select h2 { padding:4px 15px; white-space:nowrap }
 .ranks .select h2:hover { color:black !important; background-color:white }
 .ranks .current { display:inline-block; margin-left:5px; cursor:pointer }
 #uniformsRightPanel div.uniformOwned { margin:5px; padding:5px 10px }
@@ -180,6 +180,7 @@ h2.rank.mythical { color:red }
 #uniformsRightPanel div.requiredUniforms h1 { font:12px/16px arial; color:gold }
 #uniformsRightPanel div.requiredUniforms h2 { text-align:center }
 .rankOptions { margin:5px 0; text-align:center }
+.rankOptions.disabled { opacity:0.5 }
 .rankOptions * { text-align:center }
 .rankOptions select { font:10px/12px arial; width:120px; display:block }
 .rankOptions span { display:inline-block; width:30px; font:10px/12px arial; color:white }

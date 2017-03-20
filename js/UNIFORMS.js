@@ -351,6 +351,7 @@ MFF.UNIFORMS =
                   current.type = "text";
                   if ( rankDataChild.rank == "unowned" || rankDataParent.order <= index )
                   {
+                   div.classList.add("disabled");
                    current.disabled = true;
                    select.disabled = true;
                    min.innerHTML = "n/a";
@@ -359,6 +360,7 @@ MFF.UNIFORMS =
                   }
                   else
                   {
+                   div.classList.remove("disabled");
                    current.onkeyup = checkValues;
                    select.onchange = setMinMax;
                    setMinMax.call(select, true);
