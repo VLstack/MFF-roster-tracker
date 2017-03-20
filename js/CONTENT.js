@@ -341,16 +341,37 @@ MFF.LAYOUT.DETAIL =
   td.className = "content";
   h1 = td.appendChild(document.createElement("h1"));
   h1.className = "bgOpaque";
+
+  span = h1.appendChild(document.createElement("label"));
+  span.id = "lblCombatPower";
+  span.appendChild(document.createTextNode("Combat power"));
+  input = span.appendChild(document.createElement("input"));
+  input.type = "text";
+  input.setAttribute("tabindex", 3);
+  input.value = data.combatPower || "";
+  input.placeholder = "unranked";
+  input.onchange = function()
+                   {
+                    var v = parseInt(this.value, 10);
+                    if ( isNaN(v) ) { v = 0; }
+                    this.value = v || "";
+                    // set value twice to fix Safari placeholder bug not showing if set only once
+                    this.value = v || "";
+                    MFF.saveCharacter({ "mode" : "combatPower", "combatPower" : v });
+                   };
+
   span = h1.appendChild(document.createElement("label"));
   span.htmlFor = "character_level";
   span.appendChild(document.createTextNode("#"));
   input = span.appendChild(document.createElement("input"));
   input.type = "text";
+  input.setAttribute("tabindex", 1);
   input.id = "character_level";
   input.onchange = function() { MFF.saveCharacter({ "mode" : "level", "level" : this.value }); };
   input.value = data.level;
   select = h1.appendChild(document.createElement("select"));
   select.id = "character_tier";
+  select.setAttribute("tabindex", 2);
   select.onchange = function()
   {
    var tier = this.options[this.selectedIndex].value;
@@ -368,6 +389,7 @@ MFF.LAYOUT.DETAIL =
   if ( MFF.CHARACTERS.DATA[character].tiers.indexOf(2) === -1 ) { select.removeChild(select.lastChild); }
 
   h1.appendChild(document.createTextNode(MFF.CHARACTERS.DATA[character].uniforms[data.uniform].name));
+
   MFF.LAYOUT.DETAIL.drawSkills(td, data);
   MFF.LAYOUT.DETAIL.drawAttributes(td, character, persistant);
 

@@ -120,6 +120,9 @@ MFF.CHARACTERS =
    if ( !("options" in MFF.CHARACTERS._all[character].uniforms[data.uniform]) ) { MFF.CHARACTERS._all[character].uniforms[data.uniform].options = [null, null, null, null, null]; }
    MFF.CHARACTERS._all[character].uniforms[data.uniform].options[data.index] = [data.attribute, parseInt(data.value) || 0];
   break;
+  case "combatPower" :
+   MFF.CHARACTERS._all[character].combatPower = data.combatPower;
+  break;
  }
  MFF.CHARACTERS._all[character].lastUpdate = (new Date()).valueOf();
 }

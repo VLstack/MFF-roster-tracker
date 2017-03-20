@@ -213,35 +213,48 @@ MFF.LAYOUT.LIST =
  },
  "setSub" : function(character)
  {
-  var v, Y, M, D,
+  var tmp, Y, M, D,
+      v = null,
       attribute = MFF.LAYOUT.LIST.getSortAttribute(),
       span = document.getElementById(character + "_sub");
   if ( span ) { span.innerHTML = ""; span.title = ""; }
   if ( span && attribute != "name" )
   {
-   v = MFF.axisItems[attribute].callback(MFF.CHARACTERS.get(character));
-   if ( attribute == "lastUpdate" )
+   tmp = MFF.axisItems[attribute].callback(MFF.CHARACTERS.get(character));
+   switch ( attribute )
    {
-    if ( v.value )
-    {
-     v = new Date(v.value);
-     if ( v )
+    case "last_update":
+     if ( tmp.value )
      {
-      Y = v.getFullYear();
-      M = 1 + v.getMonth();
-      D = v.getDate();
-      if ( M < 10 ) { M = "0" + M; }
-      if ( D < 10 ) { D = "0" + D; }
-      v = "{0}-{1}-{2}".format(Y, M, D);
+      tmp = new Date(tmp.value);
+      if ( tmp )
+      {
+       Y = tmp.getFullYear();
+       M = 1 + tmp.getMonth();
+       D = tmp.getDate();
+       if ( M < 10 ) { M = "0" + M; }
+       if ( D < 10 ) { D = "0" + D; }
+       v = "{0}-{1}-{2}".format(Y, M, D);
+      }
+      else { v = "Invalid"; }
      }
-     else { v = "Invalid"; }
-    }
-    else { v = "Unknown"; }
-    span.innerHTML = MFF.axisItems[attribute].label + ": " + v;
+     else { v = "Unknown"; }
+    break;
+    case "combat_power":
+     v = parseInt(tmp.value, 10);
+     if ( isNaN(v) ) { v = 0; }
+     if ( !v ) { v = "unranked"; }
+    break;
+    default:
+     if ( tmp.percent ) { v = API.numberToFixed(tmp.value, 2) + "%"; }
+     else { v = parseInt(tmp.value, 10); }
+    break;
    }
-   else if ( v.percent ) { span.innerHTML = MFF.axisItems[attribute].label + ": " + API.numberToFixed(v.value, 2) + "%"; }
-   else { span.innerHTML = MFF.axisItems[attribute].label + ": " + parseInt(v.value, 10); }
-   span.title = MFF.axisItems[attribute].label;
+   if ( v !== null )
+   {
+    span.innerHTML = MFF.axisItems[attribute].label + ": " + v;
+    span.title = MFF.axisItems[attribute].label;
+   }
   }
  }
 };

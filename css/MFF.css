@@ -1,4 +1,4 @@
-* { padding:0; margin:0; list-style-type:none; font-family:verdana }
+* { padding:0; margin:0; list-style-type:none; font-family:arial }
 
 input, select { border:0 }
 input { border-radius:4px }
@@ -15,7 +15,7 @@ input { border-radius:4px }
 
 span.button.sorterDirection { margin-left:-24px; border-left:0; border-top-left-radius:0; border-bottom-left-radius:0 }
 
-#query { border:1px solid #999999; font:12px/20px verdana; padding:1px 4px; vertical-align:top; width:125px; margin-top:6px }
+#query { border:1px solid #999999; font:12px/20px arial; padding:1px 4px; vertical-align:top; width:125px; margin-top:6px }
 #clearQuery { color:#999999; margin-left:-16px; cursor:pointer; position:absolute; top:10px }
 #clearQuery+span { margin-left:10px }
 #clearQuery:hover { color:#000000 }
@@ -87,8 +87,8 @@ ul#panelListContent.render-icon>li>p { display:none }
 #panelDetailGearsContent { }
 
 div.choose_character { text-align:center }
-div.choose_character span { font:bold 30px/160px verdana; color:#FFFFFF; padding:20px 100px }
-div.copyright { margin:auto; width:750px; text-align:center; font:10px/14px verdana; color:#FFFFFF; padding:2px 120px }
+div.choose_character span { font:bold 30px/160px arial; color:#FFFFFF; padding:20px 100px }
+div.copyright { margin:auto; width:750px; text-align:center; font:10px/14px arial; color:#FFFFFF; padding:2px 120px }
 #panelDetailContent>table { width:100% }
 
 #panelDetailContent .picture { position:relative; vertical-align:top }
@@ -101,16 +101,18 @@ div.copyright { margin:auto; width:750px; text-align:center; font:10px/14px verd
 #panelDetailContent .picture i:hover { opacity:1 }
 #panelDetailContent .picture i.fa-chevron-right { left:125px }
 #panelDetailContent .picture i.fa-chevron-left { left:5px }
-#current_percent { color:white; font:bold 15px/25px verdana; position:absolute; top:120px; left:10px; text-align:center; z-index:20; width:130px; text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black }
+#current_percent { color:white; font:bold 15px/25px arial; position:absolute; top:120px; left:10px; text-align:center; z-index:20; width:130px; text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black }
 
 #attributes { text-align:center }
 #attributes img { width:15px; margin:3px 10px 0 10px }
 
-#panelDetailContent h1 { font:bold 16px/38px verdana; color:#FFFFFF; margin-top:0; margin-bottom:6px; text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black }
+#panelDetailContent h1 { font:bold 16px/38px arial; color:#FFFFFF; margin-top:0; margin-bottom:6px; text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black }
+#panelDetailContent h1 label#lblCombatPower { float:right; margin-right:5px; font:12px/38px arial; white-space:nowrap }
+#lblCombatPower input { text-align:center; padding:2px 10px; width:60px; margin-left:5px }
 #panelDetailContent h1 label { float:left; margin-left:5px }
-#character_level { font:14px/20px verdana; text-align:center; width:35px; margin-right:2px }
+#character_level { font:14px/20px arial; text-align:center; width:35px; margin-right:2px }
 #panelDetailContent h1 select { float:left; margin:10px 10px 0 5px }
-#character_tier, #character_tier option { font:14px/20px verdana }
+#character_tier, #character_tier option { font:14px/20px arial }
 
 #panelDetailGearsContent>div.chart { width:calc(20% - 12px); display:inline-block; margin:5px }
 
@@ -118,34 +120,34 @@ div.copyright { margin:auto; width:750px; text-align:center; font:10px/14px verd
 
 #panelDetailContent td.content div.forms { display:inline-block; white-space:nowrap; margin-right:10px; margin-top:10px }
 #panelDetailContent td.content .forms td.title { padding:0 }
-#panelDetailContent td.content .forms td.title h2 { text-align:center; background:linear-gradient(to bottom, #666e92 0%, #3c4460 50%, #12192b 100%); border-top-left-radius:4px; border-top-right-radius:4px; color:#fff; font:12px/18px verdana; min-width:180px }
+#panelDetailContent td.content .forms td.title h2 { text-align:center; background:linear-gradient(to bottom, #666e92 0%, #3c4460 50%, #12192b 100%); border-top-left-radius:4px; border-top-right-radius:4px; color:#fff; font:12px/25px arial; min-width:180px }
 #panelDetailContent td.content .forms th, #panelDetail td.content .forms td { text-align:left; padding:2px }
-#panelDetailContent td.content .forms th { color:white; font:12px/16px verdana }
+#panelDetailContent td.content .forms th { color:white; font:12px/16px arial }
 #panelDetailContent td.content .forms td { text-align:center }
-#panelDetailContent td.content .forms td input { text-align:center; font:12px/16px verdana; width:70px; vertical-align:top }
-#panelDetailContent td.content .forms td span { color:white; font:12px/16px verdana; vertical-align:top }
+#panelDetailContent td.content .forms td input { text-align:center; font:12px/16px arial; width:70px; vertical-align:top }
+#panelDetailContent td.content .forms td span { color:white; font:12px/16px arial; vertical-align:top }
 
 #panelDetailGearsContent .gear { background-color:#ffffff; display:inline-block; margin:5px; padding:2px; border-radius:4px }
 #panelDetailGearsContent .gear select.changeAll { display:block; width:100% }
 #panelDetailGearsContent .gear table { width:100%; border-collapse:collapse }
 #panelDetailGearsContent .gear td { padding:2px }
-#panelDetailGearsContent .gear * { font:9px/12px verdana }
+#panelDetailGearsContent .gear * { font:10px/12px arial }
 #panelDetailGearsContent .gear input[type="text"] { text-align:center; border:1px solid #000000 }
 
 @media (min-width: 1px) { #panelDetailGearsContent .gear { width:calc(100% - 14px) } }
 @media (min-width: 768px) { #panelDetailGearsContent .gear { width:calc(50% - 14px) } }
 @media (min-width: 1300px) { #panelDetailGearsContent .gear { width:calc(25% - 14px) } }
 
-.skill_lvl { font:12px/14px verdana; padding:2px }
+.skill_lvl { font:12px/14px arial; padding:2px }
 select.skill_lvl { width:calc(20% - 4px); margin:0 2px }
 span.skill_lvl { display:inline-block; width:calc(20% - 8px); margin:2px; color:#FFFFFF }
-.skill_lvl > option { font:10px/16px verdana }
+.skill_lvl > option { font:10px/16px arial }
 
 #panelFooter { bottom:0; left:0; right:0; height:30px; overflow:hidden; background-color:#12192b }
-#panelFooter span { display:inline-block; font:10px/20px verdana; color:white; padding:1px 5px; border:1px solid rgba(255, 255, 255, 0.5) }
+#panelFooter span { display:inline-block; font:10px/18px arial; color:white; padding:1px 5px; border:1px solid rgba(255, 255, 255, 0.5) }
 #panelFooter span#MFFversion { position:absolute; right:3px; bottom:3px }
 #panelFooter span#nbTiers { position:absolute; left:3px; bottom:3px }
-#panelFooter span#submitIssues { position:absolute; left:200px; bottom:3px }
+#panelFooter span#submitIssues { position:absolute; left:170px; bottom:3px }
 #panelFooter span#submitIssues a:link, #panelFooter span#submitIssues a:visited { color:white }
 
 #panelFooter span#MFFversion.beta::before { content:"BETA"; background-color:#630000; color:white; position:absolute; left:-40px; padding:1px 5px; border-radius:4px }
