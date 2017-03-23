@@ -3,7 +3,7 @@
 // localStorage.removeItem("sorter");
 var MFF =
 {
- "version" : "2.2.0",
+ "version" : "2.2.1",
  "versionMFF" : "2.9.5",
  "localStorageKey" : "characters",
  "toid" : null,
@@ -164,7 +164,6 @@ var MFF =
   /* compatibility 2.1.0 end */
   Highcharts.setOptions({ "plotOptions" : { "series" : { "animation" : false } } });
   MFF.LAYOUT.init();
-  window.Waves.init();
  },
  "getIndividualPercent" : function(cur, min, max)
  {

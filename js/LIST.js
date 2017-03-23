@@ -45,7 +45,6 @@ MFF.LAYOUT.LIST =
    {
     li = ul.appendChild(document.createElement("li"));
     li.id = character;
-    li.className = "waves waves-blue";
     MFF.LAYOUT.LIST.drawCharacter(character);
    }
   }

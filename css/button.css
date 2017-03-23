@@ -14,8 +14,8 @@ span.imageButton img { width:32px; height:32px; vertical-align:middle }
 .labelSwitch { font:12px/30px arial; color:white }
 .switch { position:relative; display:inline-block; vertical-align:middle; margin:0 5px }
 .switch input { display:none }
-.slider { position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background-color:#ccc; transition:.4s }
-.slider:before { position:absolute; content:""; background-color:white; transition:.4s; border-radius:50% }
+.slider { position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background-color:#ccc; transition:.4s; box-shadow:1px 1px 0 rgba(0, 0, 0, 0.4) inset }
+.slider:before { position:absolute; content:""; background-color:white; transition:.4s; border-radius:50%; box-shadow:1px 1px 0 rgba(0,0,0,0.4) }
 input:checked + .slider { background-color: #2196F3 }
 input:focus + .slider { box-shadow:0 0 1px #2196F3 }
 
