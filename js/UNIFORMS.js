@@ -68,7 +68,7 @@ MFF.UNIFORMS =
                    h1 = li.appendChild(document.createElement("h1")),
                    img = li.appendChild(document.createElement("img")),
                    h2 = li.appendChild(document.createElement("h2"));
-               li.classList.add("bgOpaque waves waves-blue uniform_" + uniform.key);
+               li.classList.add("bgOpaque uniform_" + uniform.key);
                li.dataset.uniform = uniform.key;
                img.src = "images/characters/{0}/{1}.png".format(uniform.key, data.id);
                h1.innerHTML = MFF.UNIFORMS.getValue(uniform.key);

@@ -150,31 +150,6 @@ API.DOM =
  return   C && N ? function(e,n,c) { return e && e.nodeName && e.nodeName.toUpperCase() == n && API.DOM.CSS.has(c, e); }
         : C      ? function(e,n,c) { return API.DOM.CSS.has(c, e); }
         :          function(e,n)   { return e && e.nodeName && e.nodeName.toUpperCase() == n; };
-},
-"addStyleElement" : function(css, id)
-{
- var n/*ode*/;
- if ( !id ) { id = "API_CSS_UID_" + ( API.UID++ ); }
- n = API.DOM.getById(id);
- if ( n ) { n.parentNode.removeChild(n); }
- n = document.getElementsByTagName("head")[0].appendChild(document.createElement("style"));
- n.id = id;
- n.type = "text/css";
- n.appendChild(document.createTextNode(css));
-},
-"_loaded" : [],
-"addLinkElement" : function(U/*rl*/, id)
-{
- var n/*ode*/;
- if ( !API.DOM._loaded[U] )
- {
-  if ( !id || id === "" ) { id = U.replace(/[^\w]/g, "-").toCamel() + API.UID++; }
-  n = document.getElementsByTagName("head")[0].appendChild(document.createElement("link"));
-  n.id = id;
-  n.rel = "stylesheet";
-  n.href = U;
-  API.DOM._loaded[U] = id;
- }
 }
 };
 

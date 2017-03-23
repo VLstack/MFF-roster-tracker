@@ -4,8 +4,7 @@ function Button(options)
  var /*i, */k;
 
  this._node = API.DOM.getById(options.renderTo).appendChild(document.createElement("span"));
- API.DOM.addLinkElement("css/button.css");
- this._node.className = "button waves";
+ this._node.className = "button";
  if ( options.id ) { this._id = options.id; }
  if ( options.noHover ) { this._node.classList.add("noHover"); }
  if ( options.className ) { this._node.classList.add(options.className); }
@@ -70,8 +69,7 @@ function ImageButton(options)
 {
  var img,
      node = API.DOM.getById(options.renderTo).appendChild(document.createElement("span"));
- API.DOM.addLinkElement("css/button.css");
- node.className = "imageButton waves";
+ node.className = "imageButton";
  if ( options.className ) { node.classList.add(options.className); }
  if ( options.checked ) { node.classList.add("checked"); }
  node.onclick = function()
@@ -93,7 +91,6 @@ function ToggleSwitch(options)
  this._input.checked = !!options.checked;
  div = this._node.appendChild(document.createElement("div"));
  div.className = "slider";
- API.DOM.addLinkElement("css/button.css");
  this._node.className = "switch";
  if ( options.content )
  {
