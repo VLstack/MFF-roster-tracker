@@ -110,7 +110,7 @@ MFF.CHARACTERS =
    if ( isNaN(v) ) { v = 0; }
    if ( v > 60 ) { v = 60; }
    all[k].level = v;
-   if ( !("tier" in all[k]) || all[k].tier != 1 || all[k].tier != 2 ) { all[k].tier = MFF.CHARACTERS.DATA[k].tiers[0]; }
+   if ( !("tier" in all[k]) || (all[k].tier != 1 && all[k].tier != 2) ) { all[k].tier = MFF.CHARACTERS.DATA[k].tiers[0]; }
    if ( !("attack" in all[k]) ) { all[k].attack = { "physical" : 0, "energy" : 0 }; }
    if ( !("physical" in all[k].attack) ) { all[k].attack.pysical = 0; }
    if ( !("energy" in all[k].attack) ) { all[k].attack.energy = 0; }
