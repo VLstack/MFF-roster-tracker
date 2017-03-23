@@ -1,8 +1,14 @@
-# Unreleased ![version 2.3.0](https://img.shields.io/badge/version-2.3.0-brightgreen.svg?style=flat) ![date 2017-03-23](https://img.shields.io/badge/date-2017--03--23-red.svg?style=flat)
+# Unreleased ![version 2.3.0](https://img.shields.io/badge/version-2.3.0-brightgreen.svg?style=flat) ![date 2017-03-24](https://img.shields.io/badge/date-2017--03--24-red.svg?style=flat)
 
 **In progress**
 
 - More javascript refactor
+
+# ![version 2.2.1](https://img.shields.io/badge/version-2.2.1-brightgreen.svg?style=flat) ![date 2017-03-24](https://img.shields.io/badge/date-2017--03--24-red.svg?style=flat)
+
+**Fixed bugs:**
+
+- [#31](https://github.com/Mokhet/MFF-roster-tracker/issues/31) Removed waves effect on every elements
 
 # ![version 2.2.0](https://img.shields.io/badge/version-2.2.0-brightgreen.svg?style=flat) ![date 2017-03-23](https://img.shields.io/badge/date-2017--03--23-red.svg?style=flat)
 
