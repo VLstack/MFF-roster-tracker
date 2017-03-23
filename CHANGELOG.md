@@ -12,6 +12,7 @@
   - Full or partial export
   - Full or partial import
   - Export to text or JSON file
+  - Check data validity on import
 
 **Added:**
 
