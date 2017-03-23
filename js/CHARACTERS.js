@@ -41,6 +41,15 @@ MFF.CHARACTERS =
         };
 },
 "getNameForUniform" : function(character, uniform) { return MFF.CHARACTERS.DATA[character].uniforms[uniform].name; },
+"getImageUrlForUniform" : function(character, uniform) { return "images/characters/{0}/{1}.png".format(uniform, character); },
+"getImageForUniform" : function(character, uniform)
+{
+ var img = document.createElement("img");
+ img.title = MFF.CHARACTERS.getNameForUniform(character, uniform);
+ img.src = MFF.CHARACTERS.getImageUrlForUniform(character, uniform);
+ return img;
+},
+"getTypeForUniform" : function(character, uniform) { return MFF.CHARACTERS.DATA[character].uniforms[uniform].type; },
 "getAttackBaseForUniform" : function(character, uniform) { return MFF.CHARACTERS.DATA[character].uniforms[uniform].attackBase; },
 "isAttackBaseForUniformIsEnergy" : function(character, uniform) { return MFF.CHARACTERS.getAttackBaseForUniform(character, uniform) == "energy"; },
 "isAttackBaseForUniformIsPhysical" : function(character, uniform) { return MFF.CHARACTERS.getAttackBaseForUniform(character, uniform) == "physical"; },
@@ -76,8 +85,59 @@ MFF.CHARACTERS =
  if ( !("uniforms" in data) ) { data.uniforms = {}; } // compatibility any to 2.2
  return data;
 },
+"isValidData" : function(id, data)
+{
+ var i, name;
+ if ( !(id in MFF.CHARACTERS.DATA) ) { return "The character \"{0}\" is not a known character".format(id); }
+ if ( !data.uniform ) { return "The uniform of the character \"{0}\" is not defined".format(id); }
+ if ( !(data.uniform in MFF.CHARACTERS.DATA[id].uniforms) ) { return "The uniform \"{0}\" of the character \"{1}\" is not a known uniform".format(data.uniform, id); }
+ name = MFF.CHARACTERS.getNameForUniform(id, data.uniform);
+ if ( !("gear" in data) ) { return "Gears for the character \"{0}\" are not defined".format(name); }
+ if ( !Array.isArray(data.gear) || data.gear.length != 4 ) { return "Gears for the character \"{0}\" is not a valid array of 4 items".format(name); }
+ for ( i = 0; i < 4; i++ ) { if ( !Array.isArray(data.gear[i]) || data.gear[i].length != 8 ) { return "Gear {0} for the character \"{1}\" is not a valid array of 8 items".format(i + 1, name); } }
+ return true;
+},
 "getAll" : function() { return MFF.CHARACTERS._all; },
-"setAll" : function(all) { MFF.CHARACTERS._all = all; },
+"setAll" : function(all)
+{
+ var k, kk, v,
+     toImport = {};
+ for ( k in all )
+ {
+  if ( all.hasOwnProperty(k) && MFF.CHARACTERS.isValidData(k, all[k]) === true )
+  {
+   v = parseInt(all[k].level, 10);
+   if ( isNaN(v) ) { v = 0; }
+   if ( v > 60 ) { v = 60; }
+   all[k].level = v;
+   if ( !("tier" in all[k]) || all[k].tier != 1 || all[k].tier != 2 ) { all[k].tier = MFF.CHARACTERS.DATA[k].tiers[0]; }
+   if ( !("attack" in all[k]) ) { all[k].attack = { "physical" : 0, "energy" : 0 }; }
+   if ( !("physical" in all[k].attack) ) { all[k].attack.pysical = 0; }
+   if ( !("energy" in all[k].attack) ) { all[k].attack.energy = 0; }
+   if ( !("defense" in all[k]) ) { all[k].defense = { "physical" : 0, "energy" : 0 }; }
+   if ( !("physical" in all[k].defense) ) { all[k].defense.pysical = 0; }
+   if ( !("energy" in all[k].defense) ) { all[k].defense.energy = 0; }
+   if ( !("skills" in all[k]) || !Array.isArray(all[k].skills) || all[k].skills.length != 5 ) { all[k].skills = [0, 0, 0, 0, 0]; }
+   if ( "uniforms" in all[k] )
+   {
+    for ( kk in all[k].uniforms )
+    {
+     if ( all[k].uniforms.hasOwnProperty(kk) )
+     {
+      if ( !("rank" in all[k].uniforms[kk]) || !(all[k].uniforms[kk].rank in MFF.UNIFORMS.RANKS) )
+      {
+       alert(kk);
+       delete all[k].uniforms[kk];
+      }
+     }
+    }
+   }
+   all[k].id = k;
+   toImport[k] = all[k];
+  }
+ }
+ MFF.CHARACTERS._all = toImport;
+},
 "setProperty" : function(character, data)
 {
  var percent;

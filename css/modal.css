@@ -1,8 +1,22 @@
 #modalBackground { z-index:1000; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(255, 255, 255, 0.7) }
 #modalWrapper { position:absolute; top:80px; left:calc(50% - 300px); width:600px; height:400px; overflow:hidden; background:rgba(0, 0, 0, 0) linear-gradient(to bottom, #000000 0%, #000000 2%, #000000 2%, #431582 100%) repeat scroll 0 0; border-radius:4px; border:1px outset #FFFFFF }
-#modalHeader { font:18px/30px verdana; position:absolute; top:0; left:0; right:0; height:40px; overflow:hidden; padding:8px 13px; color:#FFFFFF }
+#modalHeader { font:18px/30px verdana; position:absolute; top:0; left:0; right:0; height:26px; overflow:hidden; padding:2px 5px; color:#FFFFFF }
 #modalHeader span { float:right; color:#CCCCCC; cursor:pointer }
 #modalHeader span:hover { color:#FFF }
-#modalBody { padding:5px; position:absolute; top:40px; left:0; right:0; bottom:40px; overflow:auto }
+#modalBody { padding:5px; position:absolute; top:30px; left:0; right:0; bottom:40px; overflow:auto }
 #modalBody textarea { resize:none; width:calc(100% - 2px); height:calc(100% - 2px); background:#FFFFFF; font:10px/12px verdana; border:1px inset #ffffff }
 #modalFooter { position:absolute; left:0; right:0; bottom:0; height:40px; overflow:hidden; text-align:center }
+#modalAction { position:absolute; top:30px; left:0; right:0; height:30px; background:linear-gradient(to bottom, #666e92 0%, #3c4460 50%, #12192b 100%) }
+#modalWrapper.withActionBar #modalBody { top:56px }
+#modalAction > img,
+#modalAction > span { width:25px; height:25px; position:relative; display:inline-block; margin:2px 6px; opacity:0.4; cursor:pointer; color:white }
+#modalAction > img.checked,
+#modalAction > span.checked { opacity:1 }
+#modalAction > span > i { position:absolute; top:0; left:0; font-size:12px }
+#modalAction > span > i.stack0 { top:0; left:0 }
+#modalAction > span > i.stack1 { top:5px; left:5px }
+#modalAction > span > i.matrix0 { top:0; left:0 }
+#modalAction > span > i.matrix1 { top:0; left:12px }
+#modalAction > span > i.matrix2 { top:12px; left:0 }
+#modalAction > span > i.matrix3 { top:12px; left:12px }
+

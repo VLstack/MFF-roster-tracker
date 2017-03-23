@@ -1,8 +1,17 @@
-# Unreleased ![version 2.2.0](https://img.shields.io/badge/version-2.2.0-brightgreen.svg?style=flat) ![date 2017-03-19](https://img.shields.io/badge/date-2017--03--19-red.svg?style=flat)
+# Unreleased ![version 2.3.0](https://img.shields.io/badge/version-2.3.0-brightgreen.svg?style=flat) ![date 2017-03-23](https://img.shields.io/badge/date-2017--03--23-red.svg?style=flat)
 
 **In progress**
 
 - More javascript refactor
+
+# ![version 2.2.0](https://img.shields.io/badge/version-2.2.0-brightgreen.svg?style=flat) ![date 2017-03-23](https://img.shields.io/badge/date-2017--03--23-red.svg?style=flat)
+
+**Enhancements:**
+
+- [#12](https://github.com/Mokhet/MFF-roster-tracker/issues/12) Import/Export of selected chars, global revamp of Import/Export feature:
+  - Full or partial export
+  - Full or partial import
+  - Export to text or JSON file
 
 **Added:**
 
@@ -16,7 +25,7 @@
 - Fix Chrome issue with the search input (Chrome macOs Sierra, I have no clue for windows)
 - [#29](https://github.com/Mokhet/MFF-roster-tracker/issues/29) Fix chart when filtering return no matching character
 
-![version 2.1.0](https://img.shields.io/badge/version-2.1.0-brightgreen.svg?style=flat) ![date 2017-03-15](https://img.shields.io/badge/date-2017--03--15-red.svg?style=flat)
+# ![version 2.1.0](https://img.shields.io/badge/version-2.1.0-brightgreen.svg?style=flat) ![date 2017-03-15](https://img.shields.io/badge/date-2017--03--15-red.svg?style=flat)
 
 **Added:**
 

@@ -84,17 +84,17 @@ MFF.LAYOUT.DETAIL =
                                   [
                                    [
                                     { "key" : "atk_base", "label" : "Base", "tag" : "span", "attributes" : { "id" : "attack_base", "innerHTML" : MFF.CHARACTERS.DATA[character].uniforms[data.uniform].attackBase == "physical" ? "Physical" : "Energy" } },
-                                    { "key" : "atkspeed", "label" : "Attack speed", "tabindex" : 200 },
-                                    { "key" : "defpen", "label" : "Ignore defense", "tabindex" : 300 }
+                                    { "key" : "atkspeed", "type" : "float", "label" : "Attack speed", "tabindex" : 200 },
+                                    { "key" : "defpen", "type" : "float", "label" : "Ignore defense", "tabindex" : 300 }
                                    ],
                                    [
-                                    { "key" : "atk_physical", "label" : "Physical", "onchange" : saveAtk, "value" : data.attack.physical || 0, "tabindex" : 100 },
-                                    { "key" : "critrate", "label" : "Critical rate", "tabindex" : 201 },
-                                    { "key" : "ignore_dodge", "label" : "Ignore dodge", "tabindex" : 301 }
+                                    { "key" : "atk_physical", "type" : "int", "label" : "Physical", "onchange" : saveAtk, "value" : data.attack.physical || 0, "tabindex" : 100 },
+                                    { "key" : "critrate", "type" : "float", "label" : "Critical rate", "tabindex" : 201 },
+                                    { "key" : "ignore_dodge", "type" : "float", "label" : "Ignore dodge", "tabindex" : 301 }
                                    ],
                                    [
-                                    { "key" : "atk_energy", "label" : "Energy", "onchange" : saveAtk, "value" : data.attack.energy || 0, "tabindex" : 101 },
-                                    { "key" : "critdamage", "label" : "Critical damage", "tabindex" : 202 },
+                                    { "key" : "atk_energy", "type" : "int", "label" : "Energy", "onchange" : saveAtk, "value" : data.attack.energy || 0, "tabindex" : 101 },
+                                    { "key" : "critdamage", "type" : "float", "label" : "Critical damage", "tabindex" : 202 },
                                     null
                                    ]
                                   ]);
@@ -102,29 +102,29 @@ MFF.LAYOUT.DETAIL =
   MFF.LAYOUT.DETAIL.drawFormTable(container, character, data, "Defenses",
                                   [
                                    [
-                                    { "key" : "def_physical", "label" : "Physical", "onchange" : saveDef, "onkeyup" : showAvgDef, "value" : data.defense.physical || 0, "tabindex" : 400 },
-                                    { "key" : "hp", "label" : "HP", "tabindex" : 500 }
+                                    { "key" : "def_physical", "type" : "int", "label" : "Physical", "onchange" : saveDef, "onkeyup" : showAvgDef, "value" : data.defense.physical || 0, "tabindex" : 400 },
+                                    { "key" : "hp", "type" : "int", "label" : "HP", "tabindex" : 500 }
                                    ],
                                    [
-                                    { "key" : "def_energy", "label" : "Energy", "onchange" : saveDef, "onkeyup" : showAvgDef, "value" : data.defense.energy || 0, "tabindex" : 401 },
-                                    { "key" : "recorate", "label" : "Recovery rate", "tabindex" : 501 }
+                                    { "key" : "def_energy", "type" : "int", "label" : "Energy", "onchange" : saveDef, "onkeyup" : showAvgDef, "value" : data.defense.energy || 0, "tabindex" : 401 },
+                                    { "key" : "recorate", "type" : "float", "label" : "Recovery rate", "tabindex" : 501 }
                                    ],
                                    [
                                     { "key" : "average_defense", "label" : "Average", "tag" : "span", "attributes" : { "id" : "average_defense", "innerHTML" : "0", "tabindex" : 402 } },
-                                    { "key" : "dodge", "label" : "Dodge", "tabindex" : 502 }
+                                    { "key" : "dodge", "type" : "float", "label" : "Dodge", "tabindex" : 502 }
                                    ]
                                   ]);
   // DEBUFF
   MFF.LAYOUT.DETAIL.drawFormTable(container, character, data, "Debuff",
                                   [
                                    [
-                                    { "key" : "movspeed", "label" : "Movement speed", "tabindex" : 600 }
+                                    { "key" : "movspeed", "type" : "float", "label" : "Movement speed", "tabindex" : 600 }
                                    ],
                                    [
-                                    { "key" : "debuff", "label" : "Debuff duration", "tabindex" : 601 }
+                                    { "key" : "debuff", "type" : "float", "label" : "Debuff duration", "tabindex" : 601 }
                                    ],
                                    [
-                                    { "key" : "scd", "label" : "Skill cooldown", "tabindex" : 602 }
+                                    { "key" : "scd", "type" : "float", "label" : "Skill cooldown", "tabindex" : 602 }
                                    ]
                                   ]);
 
@@ -152,7 +152,7 @@ MFF.LAYOUT.DETAIL =
  },
  "drawFormTable" : function(container, character, data, tableLabel, items)
  {
-  var tr, td, input, i, j,
+  var tr, td, input, i, j, v,
      maxCells = 0,
      div = container.appendChild(document.createElement("div")),
      table = div.appendChild(document.createElement("table")),
@@ -195,7 +195,20 @@ MFF.LAYOUT.DETAIL =
      if ( item.onchange ) { input.onchange = item.onchange(item.key); }
      else { input.onchange = save(item.key); }
      if ( item.onkeyup ) { input.onkeyup = item.onkeyup(item.key); }
-     input.value = "value" in item ? item.value : data[item.key] || 0;
+     v = "value" in item ? item.value : data[item.key] || 0;
+     if ( item.type == "int" )
+     {
+      v = parseInt(v, 10);
+      if ( isNaN(v) ) { v = 0; }
+     }
+     else if ( item.type == "float" )
+     {
+      v = parseFloat(v);
+      if ( isNaN(v) ) { v = "0.00"; }
+      else { v = API.numberToFixed(v, 2); }
+      if ( v === 0 ) { v = "0.00"; }
+     }
+     input.value = v;
      if ( item.tabindex ) { input.setAttribute("tabindex", item.tabindex); }
     }
    }

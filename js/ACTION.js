@@ -1,4 +1,4 @@
-/* global MFF, Panel, Button, ImageButton, GroupButton, API */
+/* global MFF, Panel, Button, ImageButton, API, Dropdown */
 MFF.LAYOUT.ACTION =
 {
  "init" : function()
@@ -97,7 +97,12 @@ MFF.LAYOUT.ACTION =
   MFF.LAYOUT.ACTION._panel = new Panel({ "id" : "panelAction" });
   container = MFF.LAYOUT.ACTION._panel.getNode();
 
-  new Button({ "renderTo" : container, "content" : "Import / Export", "fa" : "upload", "callback" : MFF.cbImportExport, "styles" : { "float" : "right" } });
+  new Dropdown({ "renderTo" : container, "fa" : "upload",
+                 "items" :
+                 [
+                  { "id" : "export", "content" : "Export characters", "fa" : "upload", "callback" : MFF.EXPORT.selectCharacters },
+                  { "id" : "import", "content" : "Import characters", "fa" : "download", "callback" : MFF.IMPORT.pasteContent },
+                 ] });
   new ImageButton({ "renderTo" : container, "type" : "combat", "image" : "combat.png", "checked" : true, "callback" : MFF.toggleClass("type") });
   new ImageButton({ "renderTo" : container, "type" : "speed", "image" : "speed.png", "checked" : true, "callback" : MFF.toggleClass("type") });
   new ImageButton({ "renderTo" : container, "type" : "blast", "image" : "blast.png", "checked" : true, "callback" : MFF.toggleClass("type") });

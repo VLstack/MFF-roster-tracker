@@ -190,7 +190,7 @@ MFF.LAYOUT.DETAIL.GEARS =
     curStat.title = "Current value";
     curStat.type = "text";
     curStat.style.width = "40px";
-    curStat.value = data.gear[i][j].val;
+    curStat.value = data.gear[i][j].val || 0;
     curStat.onkeyup = function()
     {
      var that = this;

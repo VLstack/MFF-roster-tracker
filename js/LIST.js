@@ -84,10 +84,14 @@ MFF.LAYOUT.LIST =
   MFF.LAYOUT.LIST.setTier(character);
   progressBar = li.appendChild(document.createElement("div"));
   progressBar.className = "progressBar";
+  /*
   img = li.appendChild(document.createElement("img"));
   img.className = "characterPicture";
-  img.src = "images/characters/{0}/{1}.png".format(data.uniform, character);
+  img.src = MFF.CHARACTERS.getImageUrlForUniform(data.id, data.uniform);
   img.title = name,
+  */
+  img = li.appendChild(MFF.CHARACTERS.getImageForUniform(data.id, data.uniform));
+  img.className = "characterPicture";
   img = li.appendChild(document.createElement("img"));
   img.src = "images/tier2.png";
   img.title = name,
