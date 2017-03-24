@@ -79,23 +79,27 @@ var MFF =
   "attack" :           { "label" : "Attack", "callback" : function(character) { var v = character.attack[MFF.CHARACTERS.DATA[character.id].uniforms[character.uniform].attackBase]; return { "value" : v, "percent" : false }; } },
   "attack_energy" :    { "label" : "Energy attack", "callback" : function(character) { var v = character.attack.energy; return { "value" : v, "percent" : false }; } },
   "attack_physical" :  { "label" : "Physical attack", "callback" : function(character) { var v = character.attack.physical; return { "value" : v, "percent" : false }; } },
-  "atkspeed" :         { "label" : "Attack speed", "callback" : function(character) { var v = character.atkspeed; return { "value" : v, "percent" : true }; } },
+  "atkspeed" :         { "label" : "Attack speed", "max" : 130, "callback" : function(character) { var v = character.atkspeed; return { "value" : v, "percent" : true }; } },
   "combat_power" :     { "label" : "Combat power", "callback" : function(character) { var v = character.combatPower || 0; return { "value" : v, "percent" : false }; } },
-  "critdamage" :       { "label" : "Critical damage", "callback" : function(character) { var v = character.critdamage; return { "value" : v, "percent" : true }; } },
-  "critrate" :         { "label" : "Critical rate", "callback" : function(character) { var v = character.critrate; return { "value" : v, "percent" : true }; } },
+  "critdamage" :       { "label" : "Critical damage", "max" : 200, "callback" : function(character) { var v = character.critdamage; return { "value" : v, "percent" : true }; } },
+  "critrate" :         { "label" : "Critical rate", "max" : 75, "callback" : function(character) { var v = character.critrate; return { "value" : v, "percent" : true }; } },
+  // TODO : need max debuff duration
   "debuff" :           { "label" : "Debuff duration", "callback" : function(character) { var v = character.debuff; return { "value" : v, "percent" : true }; } },
   "completion" :       { "label" : "Development completion", "callback" : function(character) { var v = MFF.computePercent(character.id); return { "value" : v, "percent" : true }; } },
   "defense_average" :  { "label" : "Defense average", "callback" : function(character) { var v = (character.defense.physical + character.defense.energy) / 2; return { "value" : v, "percent" : false }; } },
   "defense_energy" :   { "label" : "Defense energy", "callback" : function(character) { var v = character.defense.energy; return { "value" : v, "percent" : false }; } },
   "defense_physical" : { "label" : "Defense physical", "callback" : function(character) { var v = character.defense.physical; return { "value" : v, "percent" : false }; } },
+  // TODO : need max dodge
   "dodge" :            { "label" : "Dodge", "callback" : function(character) { var v = character.dodge; return { "value" : v, "percent" : true }; } },
   "hp" :               { "label" : "Hit points", "callback" : function(character) { var v = character.hp; return { "value" : v, "percent" : false }; } },
-  "defpen" :           { "label" : "Ignore defense", "callback" : function(character) { var v = character.defpen; return { "value" : v, "percent" : true }; } },
+  "defpen" :           { "label" : "Ignore defense", "max" : 50, "callback" : function(character) { var v = character.defpen; return { "value" : v, "percent" : true }; } },
+  // TODO : need max ignore dodge
   "ignore_dodge" :     { "label" : "Ignore dodge", "callback" : function(character) { var v = character.ignore_dodge; return { "value" : v, "percent" : true }; } },
   "last_update" :      { "disableChart" : true, "label" : "Last update", "callback" : function(character) { return { "value" : character.lastUpdate || null, "percent" : false }; } },
   "level" :            { "label" : "Level", "callback" : function(character) { var v = character.level; return { "value" : v, "percent" : false }; } },
-  "movspeed" :         { "label" : "Movement speed", "callback" : function(character) { var v = character.movspeed; return { "value" : v, "percent" : true }; } },
-  "recorate" :         { "label" : "Recovery rate", "callback" : function(character) { var v = character.recorate; return { "value" : v, "percent" : true }; } },
+  "movspeed" :         { "label" : "Movement speed", "max" : 130, "callback" : function(character) { var v = character.movspeed; return { "value" : v, "percent" : true }; } },
+  "recorate" :         { "label" : "Recovery rate", "max" : 250, "callback" : function(character) { var v = character.recorate; return { "value" : v, "percent" : true }; } },
+  // toDO : need max skill cooldown
   "scd" :              { "label" : "Skill cooldown", "callback" : function(character) { var v = character.scd; return { "value" : v, "percent" : true }; } },
   "defense_all" :      { "disableCharts" : true, "disableSort" : true, "label" : "All defenses" },
   "attack_all" :       { "disableCharts" : true, "disableSort" : true, "label" : "All attacks" }
