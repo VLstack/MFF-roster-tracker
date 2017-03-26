@@ -54,7 +54,7 @@ MFF.LAYOUT.DETAIL.GEARS =
  },
  "drawGears" : function()
  {
-  var i, j, k, div, table, tbody, tr, td2, input, select, option, idx, curStat, selectChangeAll, h1,
+  var i, j, k, div, table, tbody, tr, td2, input, select, option, idx, curStat, selectChangeAll, selectChangeAllUnchecked, h1,
       data = MFF.CHARACTERS.get(MFF.currentCharacter || MFF.lastTarget);
 
   function getMin(select) { return parseFloat(select.options[select.selectedIndex].dataset.rangeMin); }
@@ -111,16 +111,21 @@ MFF.LAYOUT.DETAIL.GEARS =
 
   function changeAll()
   {
-   var i, tr,
-       all = this.nextSibling.querySelectorAll("select");
+   var i, tr, canChange, checkbox, input, select,
+       all = this.parentNode.querySelectorAll("table select");
    for ( i = 0; i < all.length; i++ )
    {
-    if ( all[i].value != this.value )
+    tr = all[i].parentNode.parentNode;
+    checkbox = tr.childNodes[0].firstChild;
+    select = tr.childNodes[1].firstChild;
+    input = tr.childNodes[2].firstChild;
+    if ( this.classList.contains("onlyUnchecked") ) { canChange = !checkbox.checked && this.value != select.value; }
+    else { canChange = this.value != select.value; }
+    if ( canChange )
     {
-     tr = all[i].parentNode.parentNode;
-     all[i].selectedIndex = this.selectedIndex;
-     all[i].parentNode.nextSibling.firstChild.value = 0;
-     changeMinMax.call(all[i], null);
+     select.selectedIndex = this.selectedIndex;
+     input.value = 0;
+     changeMinMax.call(select, null);
      checkValues(tr, true);
     }
    }
@@ -135,14 +140,24 @@ MFF.LAYOUT.DETAIL.GEARS =
    div.className = "gear bgOpaque";
    div.dataset.gearIndex = i;
    div.dataset.character = data.id;
+
    h1 = div.appendChild(document.createElement("h1"));
    h1.innerHTML = MFF.UNIFORMS.getGearName(data.id, data.uniform, i);
+
    selectChangeAll = div.appendChild(document.createElement("select"));
    selectChangeAll.onchange = changeAll;
    selectChangeAll.className = "changeAll";
    option = selectChangeAll.appendChild(document.createElement("option"));
    option.value = "";
    option.text = "Set all to ...";
+
+   selectChangeAllUnchecked =  div.appendChild(document.createElement("select"));
+   selectChangeAllUnchecked.onchange = changeAll;
+   selectChangeAllUnchecked.className = "changeAll onlyUnchecked";
+   option = selectChangeAllUnchecked.appendChild(document.createElement("option"));
+   option.value = "";
+   option.text = "Set all unchecked to ...";
+
    table = div.appendChild(document.createElement("table"));
    tbody = table.appendChild(document.createElement("tbody"));
    for ( j = 0; j < 8; j++ )
@@ -181,6 +196,10 @@ MFF.LAYOUT.DETAIL.GEARS =
        option = selectChangeAll.appendChild(document.createElement("option"));
        option.value = k;
        option.text = "Set all to " + MFF.GEARS[i][k].name;
+
+       option = selectChangeAllUnchecked.appendChild(document.createElement("option"));
+       option.value = k;
+       option.text = "Set all unchecked to " + MFF.GEARS[i][k].name;
       }
       option = select.appendChild(document.createElement("option"));
       option.value = k;
