@@ -21,6 +21,9 @@ MFF.LAYOUT.LIST =
 
   MFF.LAYOUT.LIST.draw();
 
+  API.EVT.on("refreshPercentGlobal", MFF.LAYOUT.LIST.synchroDevelomment);
+  API.EVT.on("refreshPercentGears", MFF.LAYOUT.LIST.synchroDetailGear);
+
   API.EVT.on("switchList", MFF.LAYOUT.LIST.switchTo);
   API.EVT.on("sortList", MFF.LAYOUT.LIST.sort);
 
@@ -70,6 +73,14 @@ MFF.LAYOUT.LIST =
     MFF.LAYOUT.DETAIL.drawCharacter(null, false);
    }
   };
+  ul.onmouseleave = function()
+  {
+   if ( !MFF.currentCharacter )
+   {
+    MFF.lastTarget = null;
+    MFF.LAYOUT.DETAIL.drawCharacter(null, false);
+   }
+  };
   MFF.googleAnalytics("render-list");
  },
  "drawCharacter" : function(character)
@@ -109,6 +120,7 @@ MFF.LAYOUT.LIST =
    lineGear.id = "{0}_lineDetailGear_{1}".format(character, i + 1);
    lineGear.className = "lineDetailGear lineDetailGear{0}".format(i + 1);
   }
+  MFF.PERCENT.init(character);
   MFF.LAYOUT.LIST.synchroDetailGear(character);
   MFF.LAYOUT.LIST.synchroDevelomment(character);
  },
@@ -154,6 +166,7 @@ MFF.LAYOUT.LIST =
  {
   var lineGear, i, j, cName, span,
       data = MFF.CHARACTERS.get(character);
+      //TODO : vérifier si ca existe encore ça
   if ( (span = document.getElementById("{0}_level".format(character))) ) { span.innerHTML = "#" + data.level; }
   if ( (span = document.getElementById("{0}_tier".format(character))) ) { span.innerHTML = "/T" + data.tier; }
   for ( i = 0; i < 4; i++ )
@@ -181,7 +194,7 @@ MFF.LAYOUT.LIST =
  {
   var cName = "undef",
       li = document.getElementById(character),
-      percent = MFF.computePercent(character);
+      percent = MFF.PERCENT.get(character);
   if ( percent == 100 ) { cName = "max"; }
   else if ( percent > 50 ) { cName = "sup"; }
   else if ( percent == 50 ) { cName = "moy"; }
@@ -246,7 +259,6 @@ MFF.LAYOUT.LIST =
     case "combat_power":
      v = parseInt(tmp.value, 10);
      if ( isNaN(v) ) { v = 0; }
-     if ( !v ) { v = "unranked"; }
     break;
     default:
      if ( tmp.percent ) { v = API.numberToFixed(tmp.value, 2) + "%"; }

@@ -73,13 +73,13 @@ MFF.UNIFORMS.DATA =
 
 MFF.UNIFORMS.RANKS =
 {
- "unowned" :   { "order" : -1, "label" : "not owned" },
- "normal" :    { "order" : 0, "label" : "normal" },
- "advanced" :  { "order" : 1, "label" : "advanced" },
- "rare" :      { "order" : 2, "label" : "rare" },
- "heroic" :    { "order" : 3, "label" : "heroic" },
- "legendary" : { "order" : 4, "label" : "legendary" },
- "mythical" :  { "order" : 5, "label" : "mythical" }
+ "unowned" :   { "order" : -1, "label" : "not owned", "percent" : 0 },
+ "normal" :    { "order" : 0, "label" : "normal", "percent" : 10 },
+ "advanced" :  { "order" : 1, "label" : "advanced", "percent" : 18 },
+ "rare" :      { "order" : 2, "label" : "rare", "percent" : 26 },
+ "heroic" :    { "order" : 3, "label" : "heroic", "percent" : 34 },
+ "legendary" : { "order" : 4, "label" : "legendary", "percent" : 42 },
+ "mythical" :  { "order" : 5, "label" : "mythical", "percent" : 50 }
 };
 
 MFF.UNIFORMS.RANKS_PROGRESSIONS =

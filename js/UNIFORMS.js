@@ -120,6 +120,7 @@ MFF.UNIFORMS =
                h2.className = "rank " + rank;
                h2.innerHTML = MFF.UNIFORMS.RANKS[rank].label;
                h2.dataset.rank = rank;
+               h2.dataset.character = character;
               });
   div.onclick = (function(character, uniform)
                  {
@@ -138,6 +139,7 @@ MFF.UNIFORMS =
                      current.className = "current rank " + rank;
                      current.innerHTML = MFF.UNIFORMS.RANKS[rank].label;
                      MFF.saveCharacter({ "mode" : "uniformRank", "uniform" : uniform, "rank" : rank });
+                     API.EVT.dispatch("computePercentUniform", target.dataset.character);
                      MFF.UNIFORMS.list(uniform);
                     }
                     else { select.style.display = "none"; }
@@ -214,11 +216,12 @@ MFF.UNIFORMS =
   new ToggleSwitch({
                     "renderTo" : div, "content" : "Selected uniform", "id" : "selectedUniform",
                     "checked" : selected, "disabled" : selected,
-                    "data" : uniform,
-                    "callback" : function(checked, uniform)
+                    "data" : { "character" : data.id, "uniform" : uniform },
+                    "callback" : function(checked, data)
                     {
                      this.setDisabled(true);
-                     MFF.saveCharacter({ "mode" : "uniform", "uniform" : uniform });
+                     MFF.saveCharacter({ "mode" : "uniform", "uniform" : data.uniform });
+                     API.EVT.dispatch("computePercentUniform", data.character);
                     }
                    });
   if ( bonus === null )
@@ -251,6 +254,7 @@ MFF.UNIFORMS =
                       select = div.appendChild(document.createElement("select")),
                       min = div.appendChild(document.createElement("span")),
                       current = div.appendChild(document.createElement("input")),
+                      percent = div.appendChild(document.createElement("span")),
                       max = div.appendChild(document.createElement("span")),
                       i = document.createElement("i"),
                       img = document.createElement("img"),
@@ -260,7 +264,7 @@ MFF.UNIFORMS =
                       uniformChild = tmp[0],
                       rankDataChild = MFF.UNIFORMS.getRankData(characterChild, uniformChild);
                   // execution scope : current
-                  function checkValues()
+                  function checkValues(save)
                   {
                    var cName = "invalide",
                        div = this.parentNode,
@@ -269,7 +273,11 @@ MFF.UNIFORMS =
                        max = div.childNodes[3],
                        minValue = parseInt(min.innerHTML),
                        maxValue = parseInt(max.innerHTML),
-                       moyValue = ( minValue + maxValue ) / 2;
+                       moyValue = ( minValue + maxValue ) / 2,
+                       percent = div.childNodes[4],
+                       index = div.dataset.index,
+                        select = div.firstChild,
+                        uniform = div.dataset.parentUniform;
                    if ( current.value == 0 ) { cName = "undef"; }
                    else if ( current.value == moyValue ) { cName = "moy"; }
                    else if ( current.value == minValue ) { cName = "min"; }
@@ -277,15 +285,13 @@ MFF.UNIFORMS =
                    else if ( current.value < moyValue && current.value > minValue ) { cName = "inf"; }
                    else if ( current.value > moyValue && current.value < maxValue ) { cName = "sup"; }
                    current.className = cName;
-                   if ( MFF.UNIFORMS.toidSave ) { MFF.UNIFORMS.toidSave = clearTimeout(MFF.UNIFORMS.toidSave); }
-                   MFF.UNIFORMS.toidSave = setTimeout(function()
-                                                      {
-                                                       var index = div.dataset.index,
-                                                           select = div.firstChild,
-                                                           uniform = div.dataset.parentUniform;
-                                                       MFF.saveCharacter({ "mode" : "uniformOptions", "uniform" : uniform, "index" : index, "value" : current.value, "attribute" : select.value });
-                                                       updateDevelopmentStatus();
-                                                      }, 500);
+                   percent.innerHTML = "(" + parseInt(MFF.PERCENT.individual(current.value, minValue, maxValue)) + "%)";
+                   if ( save !== true )
+                   {
+                    MFF.saveCharacter({ "mode" : "uniformOptions", "uniform" : uniform, "index" : index, "value" : current.value, "attribute" : select.value });
+                    API.EVT.dispatch("computePercentUniform", div.dataset.parentCharacter);
+                   }
+                   updateDevelopmentStatus();
                   }
                   // execution scope : select
                   function setMinMax(loadFromCharacter)
@@ -309,7 +315,8 @@ MFF.UNIFORMS =
                     v = parseInt(data.uniforms[div.dataset.parentUniform].options[div.dataset.index][1]);
                     current.value = isNaN(v) ? 0 : v;
                    }
-                   checkValues.call(current);
+                   else { API.EVT.dispatch("computePercentUniform", div.dataset.parentCharacter); }
+                   checkValues.call(current, !loadFromCharacter);
                   }
                   img.src = "images/characters/{0}.png".format(link);
                   img.dataset.link = link;
@@ -357,11 +364,12 @@ MFF.UNIFORMS =
                    min.innerHTML = "n/a";
                    max.innerHTML = "n/a";
                    current.value = "n/a";
+                   percent.innerHTML = "";
                   }
                   else
                   {
                    div.classList.remove("disabled");
-                   current.onkeyup = checkValues;
+                   current.onchange = checkValues;
                    select.onchange = setMinMax;
                    setMinMax.call(select, true);
                   }

@@ -183,6 +183,9 @@ MFF.CHARACTERS =
   case "combatPower" :
    MFF.CHARACTERS._all[character].combatPower = data.combatPower;
   break;
+  case "rank" :
+   MFF.CHARACTERS._all[character].rank = data.rank;
+  break;
  }
  MFF.CHARACTERS._all[character].lastUpdate = (new Date()).valueOf();
 }

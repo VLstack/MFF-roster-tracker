@@ -6,6 +6,13 @@ MFF.LAYOUT.CHARTS =
   MFF.LAYOUT.CHARTS._panel = new Panel({ "id" : "panelGlobalChart", "hide" : true });
   API.EVT.on("globalChart", function(param) { MFF.LAYOUT.CHARTS[param == "show" ? "showGlobal" : "hideGlobal"](); });
   API.EVT.on("detailChart", function(param) { MFF.LAYOUT.CHARTS[param == "show" ? "showDetail" : "hideDetail"](); });
+  API.EVT.on("refreshPercentSkills", function()
+                                     {
+                                      if ( MFF.LAYOUT.DETAIL.GEARS._btnDetailCharts.isActive() )
+                                      {
+                                       MFF.LAYOUT.CHARTS.renderDetail();
+                                      }
+                                     });
  },
  "hideGlobal" : function()
  {

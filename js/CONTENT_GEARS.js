@@ -77,7 +77,8 @@ MFF.LAYOUT.DETAIL.GEARS =
    else if ( cur == max ) { cName = "max"; }
    else if ( cur < moy && cur > min ) { cName = "inf"; }
    else if ( cur > moy && cur < max ) { cName = "sup"; }
-   curPercent.innerHTML = "({0}%)".format(parseInt(MFF.getIndividualPercent(cur, min, max)));
+//   curPercent.innerHTML = "({0}%)".format(parseInt(MFF.getIndividualPercent(cur, min, max)));
+   curPercent.innerHTML = "({0}%)".format(parseInt(MFF.PERCENT.individual(cur, min, max)));
    tr.className = cName;
    if ( save )
    {
@@ -85,7 +86,8 @@ MFF.LAYOUT.DETAIL.GEARS =
     gear = div.dataset.gearIndex;
     type = select.options[select.selectedIndex].value;
     pref = tr.childNodes[0].firstChild.checked;
-    MFF.saveCharacter({ "mode" : "gear", "gear" : gear, "gearIndex" : tr.dataset.gearIndex, "type" : type, "val" : parseFloat(cur), "pref" : pref, "percent" : MFF.getIndividualPercent(cur, min, max) });
+    MFF.saveCharacter({ "mode" : "gear", "gear" : gear, "gearIndex" : tr.dataset.gearIndex, "type" : type, "val" : parseFloat(cur), "pref" : pref/*, "percent" : MFF.getIndividualPercent(cur, min, max)*/ });
+    API.EVT.dispatch("computePercentGears", tr.dataset.character);
    }
   }
 
@@ -131,6 +133,7 @@ MFF.LAYOUT.DETAIL.GEARS =
    div = MFF.LAYOUT.DETAIL.GEARS._content.appendChild(document.createElement("div"));
    div.className = "gear";
    div.dataset.gearIndex = i;
+   div.dataset.character = data.id;
    selectChangeAll = div.appendChild(document.createElement("select"));
    selectChangeAll.onchange = changeAll;
    selectChangeAll.className = "changeAll";
@@ -143,6 +146,7 @@ MFF.LAYOUT.DETAIL.GEARS =
    {
     tr = tbody.appendChild(document.createElement("tr"));
     tr.dataset.gearIndex = j;
+    tr.dataset.character = data.id;
     td2 = tr.appendChild(document.createElement("td"));
     input = td2.appendChild(document.createElement("input"));
     input.type = "checkbox";

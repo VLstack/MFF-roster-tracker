@@ -4,6 +4,24 @@
 
 - More javascript refactor
 
+**Enhancements:**
+
+- Consistent 2 digits float values
+
+**Added:**
+
+- [#15](https://github.com/Mokhet/MFF-roster-tracker/issues/15) Global development score
+ - Previous development percent is now Gears Development
+ - Added a skills development score
+ - Added an uniform development score
+- Since 2.2.0 added combat power, now you can also track related Rank
+
+**Fixed bugs:**
+
+- Leaving the mouse too quickly from the characters list to the detail no longer trigger an incomplete character state
+- Correctly save uniform attributes when not setting the new value
+- Drastically reduce invisible recursive calls to gears completion
+
 # ![version 2.2.1](https://img.shields.io/badge/version-2.2.1-brightgreen.svg?style=flat) ![date 2017-03-24](https://img.shields.io/badge/date-2017--03--24-red.svg?style=flat)
 
 **Fixed bugs:**
