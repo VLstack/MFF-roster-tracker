@@ -5,6 +5,14 @@ MFF.UNIFORMS =
  {
   return uniform in MFF.UNIFORMS.DATA ? MFF.UNIFORMS.DATA[uniform] : null;
  },
+ "getGearName" : function(characterId, uniform, idx)
+ {
+  if ( "gears" in MFF.CHARACTERS.DATA[characterId].uniforms[uniform] )
+  {
+   return MFF.CHARACTERS.DATA[characterId].uniforms[uniform].gears[idx];
+  }
+  return "Gear " + (1 + idx);
+ },
  "getListForCharacter" : function(character)
  {
   var k,
@@ -254,8 +262,9 @@ MFF.UNIFORMS =
                       select = div.appendChild(document.createElement("select")),
                       min = div.appendChild(document.createElement("span")),
                       current = div.appendChild(document.createElement("input")),
-                      percent = div.appendChild(document.createElement("span")),
                       max = div.appendChild(document.createElement("span")),
+                      percent = div.appendChild(document.createElement("span")),
+                      locker = div.appendChild(document.createElement("i")),
                       i = document.createElement("i"),
                       img = document.createElement("img"),
                       h2 = document.createElement("h2"),
@@ -276,8 +285,8 @@ MFF.UNIFORMS =
                        moyValue = ( minValue + maxValue ) / 2,
                        percent = div.childNodes[4],
                        index = div.dataset.index,
-                        select = div.firstChild,
-                        uniform = div.dataset.parentUniform;
+                       select = div.firstChild,
+                       uniform = div.dataset.parentUniform;
                    if ( current.value == 0 ) { cName = "undef"; }
                    else if ( current.value == moyValue ) { cName = "moy"; }
                    else if ( current.value == minValue ) { cName = "min"; }
@@ -286,6 +295,7 @@ MFF.UNIFORMS =
                    else if ( current.value > moyValue && current.value < maxValue ) { cName = "sup"; }
                    current.className = cName;
                    percent.innerHTML = "(" + parseInt(MFF.PERCENT.individual(current.value, minValue, maxValue)) + "%)";
+                   percent.style.width = "";
                    if ( save !== true )
                    {
                     MFF.saveCharacter({ "mode" : "uniformOptions", "uniform" : uniform, "index" : index, "value" : current.value, "attribute" : select.value });
@@ -320,10 +330,14 @@ MFF.UNIFORMS =
                   }
                   img.src = "images/characters/{0}.png".format(link);
                   img.dataset.link = link;
-                  if ( characterChild == data.id ) { img.style.cursor = "default"; }
+                  locker.dataset.link = link;
+                  if ( characterChild == data.id )
+                  {
+                   img.style.cursor = "default";
+                  }
                   else
                   {
-                   img.onclick = function()
+                   img.onclick = locker.onclick = function()
                    {
                     var tmp = this.dataset.link.split("/"),
                         character = tmp[1],
@@ -364,7 +378,10 @@ MFF.UNIFORMS =
                    min.innerHTML = "n/a";
                    max.innerHTML = "n/a";
                    current.value = "n/a";
+                   percent.style.width = 0;
                    percent.innerHTML = "";
+                   locker.style.display = "";
+                   locker.className = "fa fa-lock";
                   }
                   else
                   {
@@ -372,6 +389,8 @@ MFF.UNIFORMS =
                    current.onchange = checkValues;
                    select.onchange = setMinMax;
                    setMinMax.call(select, true);
+                   locker.style.display = "none";
+                   locker.className = "";
                   }
                   if ( index % 2 )
                   {
