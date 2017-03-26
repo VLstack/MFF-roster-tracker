@@ -164,7 +164,7 @@ MFF.LAYOUT.LIST =
  },
  "synchroDetailGear" : function(character)
  {
-  var lineGear, i, j, cName, span,
+  var lineGear, i, j, cName, span, percent, min, max,
       data = MFF.CHARACTERS.get(character);
       //TODO : vérifier si ca existe encore ça
   if ( (span = document.getElementById("{0}_level".format(character))) ) { span.innerHTML = "#" + data.level; }
@@ -179,11 +179,22 @@ MFF.LAYOUT.LIST =
     if ( data.gear[i][j].type )
     {
      if ( !data.gear[i][j].pref ) { cName = "undef"; }
-     else if ( data.gear[i][j].percent == 100 ) { cName = "max"; }
-     else if ( data.gear[i][j].percent > 50 ) { cName = "sup"; }
-     else if ( data.gear[i][j].percent == 50 ) { cName = "moy"; }
-     else if ( data.gear[i][j].percent > 0 ) { cName = "inf"; }
-     else if ( data.gear[i][j].percent == 0 ) { cName = "min"; }
+     else
+     {
+      min = MFF.GEARS[i][data.gear[i][j].type].range[j].min;
+      max = MFF.GEARS[i][data.gear[i][j].type].range[j].max;
+      percent = MFF.PERCENT.individual(data.gear[i][j].val, min, max);
+      if ( percent == 100 ) { cName = "max"; }
+      else if ( percent > 50 ) { cName = "sup"; }
+      else if ( percent == 50 ) { cName = "moy"; }
+      else if ( percent > 0 ) { cName = "inf"; }
+      else if ( percent == 0 ) { cName = "min"; }
+     }
+     // else if ( data.gear[i][j].percent == 100 ) { cName = "max"; }
+     // else if ( data.gear[i][j].percent > 50 ) { cName = "sup"; }
+     // else if ( data.gear[i][j].percent == 50 ) { cName = "moy"; }
+     // else if ( data.gear[i][j].percent > 0 ) { cName = "inf"; }
+     // else if ( data.gear[i][j].percent == 0 ) { cName = "min"; }
     }
     span = lineGear.appendChild(document.createElement("span"));
     span.className = cName;

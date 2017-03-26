@@ -1,4 +1,4 @@
-/* global MFF, Panel, API */
+/* global MFF, Panel, API, ToggleSwitch */
 MFF.LAYOUT.DETAIL =
 {
  "init" : function()
@@ -103,24 +103,39 @@ MFF.LAYOUT.DETAIL =
    };
   }
 
+  function htmlCb(item)
+  {
+   new ToggleSwitch({
+                     "renderTo" : this, "content" : MFF.PERCENT.map[item.key].label,
+                     "checked" : MFF.PERCENT.isActive(item.key),
+                     "data" : item,
+                     "callback" : function(checked, data)
+                     {
+                      MFF.PERCENT.setActive(data.key, checked);
+                      MFF.PERCENT.recomputeAll(data.key, data.character);
+                      API.EVT.dispatch(MFF.PERCENT.map[data.key].compute, data.character);
+                     }
+                    });
+  }
+
   // ATTACK
   MFF.LAYOUT.DETAIL.drawFormTable(container, character, data, "Attacks",
                                   [
                                    [
                                     { "key" : "atk_base", "label" : "Base", "tag" : "span", "attributes" : { "id" : "attack_base", "innerHTML" : MFF.CHARACTERS.DATA[character].uniforms[data.uniform].attackBase == "physical" ? "Physical" : "Energy" } },
-                                    { "key" : "atkspeed", "type" : "float", "label" : "Attack speed", "tabindex" : 200 }
+                                    { "key" : "critrate", "type" : "float", "label" : "Critical rate", "tabindex" : 200 }
                                    ],
                                    [
                                     { "key" : "atk_physical", "type" : "int", "label" : "Physical", "onchange" : saveAtk, "value" : data.attack.physical || 0, "tabindex" : 100 },
-                                    { "key" : "critrate", "type" : "float", "label" : "Critical rate", "tabindex" : 201 }
+                                    { "key" : "critdamage", "type" : "float", "label" : "Critical damage", "tabindex" : 201 }
                                    ],
                                    [
                                     { "key" : "atk_energy", "type" : "int", "label" : "Energy", "onchange" : saveAtk, "value" : data.attack.energy || 0, "tabindex" : 101 },
-                                    { "key" : "critdamage", "type" : "float", "label" : "Critical damage", "tabindex" : 202 }
+                                    { "key" : "defpen", "type" : "float", "label" : "Ignore defense", "tabindex" : 202 }
                                    ],
                                    [
-                                    { "key" : "defpen", "type" : "float", "label" : "Ignore defense", "tabindex" : 300 },
-                                    { "key" : "ignore_dodge", "type" : "float", "label" : "Ignore dodge", "tabindex" : 301 }
+                                    { "key" : "atkspeed", "type" : "float", "label" : "Attack speed", "tabindex" : 102 },
+                                    { "key" : "ignore_dodge", "type" : "float", "label" : "Ignore dodge", "tabindex" : 203 }
                                    ]
                                   ]);
   // DEFENSE
@@ -162,15 +177,15 @@ MFF.LAYOUT.DETAIL =
                                     //null
                                    ],
                                    [
-                                    { "key" : "percent_gears", "label" : "Gears", "tag" : "span", "attributes" : { "id" : "dev_percent_gears" } }//,
+                                    { "key" : "gears", "htmlCb" : htmlCb, "character" : character, "tag" : "span", "attributes" : { "id" : "dev_percent_gears" } }//,
                                     //{ "key" : "percent_uru", "label" : "Uru", "tag" : "span", "attributes" : { "id" : "dev_percent_uru", "innerHTML" : "0%" } }
                                    ],
                                    [
-                                    { "key" : "percent_skills", "label" : "Skills", "tag" : "span", "attributes" : { "id" : "dev_percent_skills" } }//,
+                                    { "key" : "skills", "htmlCb" : htmlCb, "character" : character, "tag" : "span", "attributes" : { "id" : "dev_percent_skills" } }//,
                                     //{ "key" : "percent_obelisk", "label" : "Obelisk", "tag" : "span", "attributes" : { "id" : "dev_percent_obelisk", "innerHTML" : "0%" } }
                                    ],
                                    [
-                                    { "key" : "percent_uniform", "label" : "Uniform", "tag" : "span", "attributes" : { "id" : "dev_percent_uniform" } }//,
+                                    { "key" : "uniform", "htmlCb" : htmlCb, "character" : character, "tag" : "span", "attributes" : { "id" : "dev_percent_uniform" } }//,
                                   //  null
                                    ]
                                   ]);
@@ -229,7 +244,10 @@ MFF.LAYOUT.DETAIL =
    if ( item )
    {
     th = tr.appendChild(document.createElement("th"));
-    th.appendChild(document.createTextNode(item.label));
+    if ( ("html" in item) && Array.isArray(item.html) ) { item.html.forEach(function(html) { this.appendChild(html); }, th); }
+    else if ( "html" in item ) { th.innerHTML = item.html; }
+    else if ( "htmlCb" in item ) { item.htmlCb.call(th, item); }
+    else { th.appendChild(document.createTextNode(item.label)); }
     td = tr.appendChild(document.createElement("td"));
     if ( "tag" in item )
     {
