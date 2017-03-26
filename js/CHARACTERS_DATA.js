@@ -45,7 +45,7 @@ MFF.CHARACTERS.DATA =
                       },
 "angela" :           {
                       "uniform" : "modern",
-                      "tiers" : [1],
+                      "tiers" : [1, 2],
                       "uniforms" :
                       {
                        // TODO : image need to be recreated from game
@@ -1245,7 +1245,7 @@ MFF.CHARACTERS.DATA =
                      },
 "loki" :             {
                       "uniform" : "avengers",
-                      "tiers" : [1],
+                      "tiers" : [1, 2],
                       "uniforms" :
                       {
                        // TODO : image need to be recreated from game
@@ -1700,7 +1700,7 @@ MFF.CHARACTERS.DATA =
                        // TODO : image need to be recreated from game
                        "modern" :
                        {
-                        "name" : "Satana", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "vilain", "type" : "universal",
+                        "name" : "Satana", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "universal",
                         "skills" : ["Dancing flame", "Flamethrower", "Little minion", "Fire barrier", "Succubus army"]
                        }
                       }
