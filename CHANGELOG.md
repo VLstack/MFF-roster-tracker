@@ -1,8 +1,21 @@
-# Unreleased ![version 2.3.0](https://img.shields.io/badge/version-2.3.0-brightgreen.svg?style=flat) ![date 2017-03-24](https://img.shields.io/badge/date-2017--03--24-red.svg?style=flat)
+# Unreleased ![version 2.3.0](https://img.shields.io/badge/version-2.3.0-brightgreen.svg?style=flat) ![date 2017-03-23](https://img.shields.io/badge/date-2017--03--27-red.svg?style=flat)
 
 **In progress**
 
 - More javascript refactor
+
+# ![version 2.2.3](https://img.shields.io/badge/version-2.2.3-brightgreen.svg?style=flat) ![date 2017-03-27](https://img.shields.io/badge/date-2017--03--27-red.svg?style=flat)
+
+- [#35](https://github.com/Mokhet/MFF-roster-tracker/issues/35) Data error
+  - add Loki T2
+  - add Angela T2
+  - update Satana side from vilain to hero
+
+# ![version 2.2.2](https://img.shields.io/badge/version-2.2.2-brightgreen.svg?style=flat) ![date 2017-03-25](https://img.shields.io/badge/date-2017--03--25-red.svg?style=flat)
+
+**Fixed bugs:**
+
+- Fixed download json file
 
 # ![version 2.2.1](https://img.shields.io/badge/version-2.2.1-brightgreen.svg?style=flat) ![date 2017-03-24](https://img.shields.io/badge/date-2017--03--24-red.svg?style=flat)
 
