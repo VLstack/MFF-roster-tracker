@@ -116,8 +116,8 @@ div.copyright { margin:auto; width:750px; text-align:center; font:10px/14px aria
 #lblRank input:-ms-input-placeholder { color:#00cc27 }
 #panelDetailContent h1 label#lblCombatPower { float:right; margin-right:5px}
 #lblCombatPower input { text-align:center; padding:2px 10px; width:60px; margin-left:5px }
-#panelDetailContent h1 label { float:left; margin-left:5px; font-size:12px; white-space:nowrap  }
-#character_level { font:14px/20px arial; text-align:center; width:35px; margin-right:2px }
+#panelDetailContent h1 label { float:left; margin-left:5px; font-size:12px; white-space:nowrap; font-weight:normal }
+#character_level { font:14px/20px arial; text-align:center; width:30px; margin-right:2px; margin-left:2px }
 #panelDetailContent h1 select { float:left; margin:4px 10px 0 5px }
 #character_tier, #character_tier option { font:14px/20px arial }
 
@@ -134,16 +134,17 @@ div.copyright { margin:auto; width:750px; text-align:center; font:10px/14px aria
 #panelDetailContent td.content .forms td input { text-align:center; font:12px/16px arial; width:50px; vertical-align:top }
 #panelDetailContent td.content .forms td span { color:white; font:12px/16px arial; vertical-align:top }
 
-#panelDetailGearsContent .gear { background-color:#ffffff; display:inline-block; margin:5px; padding:2px; border-radius:4px }
+#panelDetailGearsContent .gear { display:inline-block; margin:5px; padding:2px; border-radius:4px }
 #panelDetailGearsContent .gear select.changeAll { display:block; width:100% }
 #panelDetailGearsContent .gear table { width:100%; border-collapse:collapse }
-#panelDetailGearsContent .gear td { padding:2px }
+#panelDetailGearsContent .gear td { padding:2px; background-color:#ffffff }
 #panelDetailGearsContent .gear * { font:10px/12px arial }
 #panelDetailGearsContent .gear input[type="text"] { text-align:center; border:1px solid #000000 }
+#panelDetailGearsContent .gear h1 { border-top-left-radius:4px; border-top-right-radius:4px; background:linear-gradient(to bottom, #666e92 0%, #3c4460 50%, #12192b 100%); color:white; font:100 14px/24px arial; padding:2px 0; text-align:center; overflow:hidden }
 
-@media (min-width: 1px) { #panelDetailGearsContent .gear { width:calc(100% - 14px) } }
-@media (min-width: 768px) { #panelDetailGearsContent .gear { width:calc(50% - 14px) } }
-@media (min-width: 1300px) { #panelDetailGearsContent .gear { width:calc(25% - 14px) } }
+@media (min-width: 1px) { #panelDetailGearsContent .gear { width:calc(100% - 16px) } }
+@media (min-width: 768px) { #panelDetailGearsContent .gear { width:calc(50% - 16px) } }
+@media (min-width: 1300px) { #panelDetailGearsContent .gear { width:calc(25% - 16px) } }
 
 .skill_lvl { font:12px/14px arial; padding:2px }
 select.skill_lvl { width:calc(20% - 4px); margin:0 2px }
@@ -180,7 +181,7 @@ h2.rank.rare { color:cyan }
 h2.rank.heroic { color:#b12bb1 }
 h2.rank.legendary { color:orange }
 h2.rank.mythical { color:red }
-.ranks .select { position:absolute; top:2px; left:32px; background-color:black; cursor:pointer }
+.ranks .select { position:absolute; top:2px; left:32px; background-color:black; cursor:pointer; z-index:10 }
 .ranks .select h2 { padding:4px 15px; white-space:nowrap }
 .ranks .select h2:hover { color:black !important; background-color:white }
 .ranks .current { display:inline-block; margin-left:5px; cursor:pointer }
@@ -188,6 +189,10 @@ h2.rank.mythical { color:red }
 #uniformsRightPanel div.requiredUniforms { margin:5px; float:left; padding:5px 10px }
 #uniformsRightPanel div.requiredUniforms h1 { font:12px/16px arial; color:gold }
 #uniformsRightPanel div.requiredUniforms h2 { text-align:center }
+#uniformsRightPanel div.requiredUniforms td { position:relative }
+#uniformsRightPanel div.requiredUniforms i.fa.fa-lock { font-size:50px; color:rgba(255, 255, 255, 0.6); position:absolute; left:50px; background-color:transparent; border:0; margin:0; padding:0; text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; cursor:pointer }
+#uniformsRightPanel div.requiredUniforms tr.up i.fa.fa-lock { top:55px }
+#uniformsRightPanel div.requiredUniforms tr.down i.fa.fa-lock { top:43px }
 .rankOptions { margin:5px 0; text-align:center }
 .rankOptions.disabled { opacity:0.5 }
 .rankOptions * { text-align:center }
