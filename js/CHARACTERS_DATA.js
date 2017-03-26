@@ -80,24 +80,27 @@ MFF.CHARACTERS.DATA =
                        // TODO : image need to be recreated from game
                        "modern" :
                        {
-                        "name" : "Ant man", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
-                        "skills" : ["Pym punch", "Speeding bullet", "Bug squash", "Flying rush", "Pym discs"]
+                        "name" : "Ant-man", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
+                        "skills" : ["Pym punch", "Speeding bullet", "Bug squash", "Flying rush", "Pym discs"],
+                        "gears" : ["Pym particles", "Ant-man suit", "Cybernetic helmet", "Toolbot"]
                        },
                        // TODO : image need to be recreated from game
                        "mam" :
                        {
-                        "name" : "Ant man", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
+                        "name" : "Ant-man", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
                         "skills" : ["Pym punch", "Speeding bullet", "Bug squash", "Flying rush", "Pym discs"],
                         "bonus" : ["Activation rate: when using MINIATURIZE buff", "Apply to: Self", "Dodge +5% (20 sec.)", "All attack +10% (20 sec.)", "Cooldown time 30 seconds"],
-                        "links" : ["spidoc/modok", "classic_70/ghost_rider", "armored/moon_knight", "anad/angela", "aaou_speed/ultron"]
+                        "links" : ["spidoc/modok", "classic_70/ghost_rider", "armored/moon_knight", "anad/angela", "aaou_speed/ultron"],
+                        "gears" : ["Pym particles", "Ant-man suit", "Cybernetic helmet", "Toolbot"]
                        },
                        // TODO : image need to be recreated from game
                        "cacw" :
                        {
-                        "name" : "Ant man", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
+                        "name" : "Ant-man", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
                         "skills" : ["Pym punch", "Speeding bullet", "Bug squash", "Flying rush", "Size matters"],
                         "bonus" : ["Apply to: Self", "All attack +3%", "Immune to guard break"],
-                        "links" : ["cacw/black_widow", "sa/star_lord", "sw_armor_wars/kingpin", "cacw/falcon", "cacw/winter_soldier"]
+                        "links" : ["cacw/black_widow", "sa/star_lord", "sw_armor_wars/kingpin", "cacw/falcon", "cacw/winter_soldier"],
+                        "gears" : ["Pym particles", "Ant-man suit", "Cybernetic helmet", "Toolbot"]
                        }
                       }
                      },
@@ -167,7 +170,8 @@ MFF.CHARACTERS.DATA =
                        "infinity" :
                        {
                         "name" : "Black dwarf", "attackBase" : "physical", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "universal",
-                        "skills" : ["Axe Lunge", "Executioner", "Axe Slam", "Wind Blade", "Eviscerator"]
+                        "skills" : ["Axe Lunge", "Executioner", "Axe Slam", "Wind Blade", "Eviscerator"],
+                        "gears" : ["Black dwarf axe", "Black order pauldron", "Black battle shorts", "Battle mace"]
                        }
                       }
                      },
@@ -333,7 +337,8 @@ MFF.CHARACTERS.DATA =
                        "modern" :
                        {
                         "name" : "Captain marvel", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "universal",
-                        "skills" : ["Mighty straight", "Backflip blast", "Photon blast", "Binary explosion", "Radiant form"]
+                        "skills" : ["Mighty straight", "Backflip blast", "Photon blast", "Binary explosion", "Radiant form"],
+                        "gears" : ["Binary power", "Captain Marvel costume", "Battle boots", "Red fabric belt"]
                        },
                        // TODO : image need to be recreated from game
                        "sw_carol_corp" :
@@ -341,7 +346,8 @@ MFF.CHARACTERS.DATA =
                         "name" : "Captain marvel", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "universal",
                         "skills" : ["Mighty straight", "Backflip blast", "Photon blast", "Binary explosion", "Radiant form"],
                         "bonus" : ["Add guard break effect on skill: Mighty straight", "7 seconds increase to duration of Radiant form"],
-                        "links" : ["aaou/iron_man", "cacw/war_machine", "sw_thors/groot", "aaou/vision", "sw_future/hulk"]
+                        "links" : ["aaou/iron_man", "cacw/war_machine", "sw_thors/groot", "aaou/vision", "sw_future/hulk"],
+                        "gears" : ["Unknwon gear 1", "Unknwon gear 2", "Unknown gear 3", "Uniform gear 4"]
                        },
                        // TODO : image need to be recreated from game
                        "ms_marvel" :
@@ -349,7 +355,8 @@ MFF.CHARACTERS.DATA =
                         "name" : "Captain marvel", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "universal",
                         "skills" : ["Mighty straight", "Backflip blast", "Photon blast", "Binary explosion", "Radiant form"],
                         "bonus" : ["Add 1 extra hit attack to the Backflip blast skill", "3 second increase to duration of Radiant form"],
-                        "links" : ["ultimate/green_goblin", "aaou/iron_man", "cacw/iron_man", "capdoc/modok", "sw_2099/captain_america"]
+                        "links" : ["ultimate/green_goblin", "aaou/iron_man", "cacw/iron_man", "capdoc/modok", "sw_2099/captain_america"],
+                        "gears" : ["Binary power", "Combat suit", "Combar boots", "Red fabric belt"]
                        }
                       }
                      },
@@ -362,7 +369,8 @@ MFF.CHARACTERS.DATA =
                        "anad" :
                        {
                         "name" : "Carnage", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "combat",
-                        "skills" : ["Weapon Manipulation", "Devouring Maniac", "Camouflage Strike", "Carnage Strike", "Insanity Strike"]
+                        "skills" : ["Weapon Manipulation", "Devouring Maniac", "Camouflage Strike", "Carnage Strike", "Insanity Strike"],
+                        "gears" : ["Claws", "Carnage symbiote", "Detachable weapon", "Insanity"]
                        }
                       }
                      },
@@ -388,7 +396,8 @@ MFF.CHARACTERS.DATA =
                        "infinity" :
                        {
                         "name" : "Corvus glaive", "attackBase" : "physical", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "universal",
-                        "skills" : ["Boogeyman", "Pain Wheel", "Piercing Strike", "Deadly Charge", "Peek-a-boo"]
+                        "skills" : ["Boogeyman", "Pain Wheel", "Piercing Strike", "Deadly Charge", "Peek-a-boo"],
+                        "gears" : ["Corvus' halberd", "Black hood", "Black battle pants", "Black gauntlets"]
                        }
                       }
                      },
@@ -589,7 +598,8 @@ MFF.CHARACTERS.DATA =
                        "infinity" :
                        {
                         "name" : "Ebony maw", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "universal",
-                        "skills" : ["Stone columns", "Stones storm", "Dark reinforcement", "Shadow attack", "Dark meteor"]
+                        "skills" : ["Stone columns", "Stones storm", "Dark reinforcement", "Shadow attack", "Dark meteor"],
+                        "gears" : ["Conspiracy", "Gold insignia", "Black pants", "Black order pattern"]
                        }
                       }
                      },
@@ -621,7 +631,8 @@ MFF.CHARACTERS.DATA =
                        "modern" :
                        {
                         "name" : "Elsa Bloodstone", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
-                        "skills" : ["Bloodstone training", "Filled with hate", "Nowhere to hide", "No mercy", "No escape"]
+                        "skills" : ["Bloodstone training", "Filled with hate", "Nowhere to hide", "No mercy", "No escape"],
+                        "gears" : ["Hunting rifle", "Leather coat", "Enhanced tights", "Bloodstone choker"]
                        },
                        // TODO : image need to be recreated from game
                        "sw_zombies" :
@@ -629,14 +640,16 @@ MFF.CHARACTERS.DATA =
                         "name" : "Elsa Bloodstone", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
                         "skills" : ["Bloodstone training", "Filled with hate", "Nowhere to hide", "No mercy", "Red flame"],
                         "bonus" : ["Activation rate: 10% when attacking", "Apply to: Self", "Skill cooltime 35% (15 sec.)", "All attack +30% (15 sec.)", "All speed +8% (15 sec.)", "Critical rate +35% (15 sec.)", "Cooldown time 20 seconds"],
-                        "links" : ["websuit/silk", "ca/winter_soldier", "annihilation/ronan", "anad/rocket_raccoon", "cacw/war_machine"]
+                        "links" : ["websuit/silk", "ca/winter_soldier", "annihilation/ronan", "anad/rocket_raccoon", "cacw/war_machine"],
+                        "gears" : ["Hunting rifle", "Trench coat", "S.H.I.E.L.D. enhanced tights", "Bloodstone"]
                        },
                        "unleashed" :
                        {
                         "name" : "Elsa Bloodstone", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
                         "skills" : ["Bloodstone training", "Retribution", "Nowhere to hide", "No mercy", "Force of Bloodstone"],
                         "bonus" : ["Activation rate: 10% when attacking", "Apply to: Self", "Skill cooltime 35% (15 sec.)", "All attack +30% (15 sec.)", "All speed +8% (15 sec.)", "Critical rate +35% (15 sec.)", "Cooldown time 20 seconds"],
-                        "links" : ["unleashed/hulk_cho", "sw_red_skull/red_skull", "anad/sister_grimm", "sw_1602/angela", "classic_70/blade"]
+                        "links" : ["unleashed/hulk_cho", "sw_red_skull/red_skull", "anad/sister_grimm", "sw_1602/angela", "classic_70/blade"],
+                        "gears" : ["Spell converting handgun", "Blue trench coat", "Tech pants", "Bloodstone choker"]
                        }
                       }
                      },
@@ -649,7 +662,8 @@ MFF.CHARACTERS.DATA =
                        "modern" :
                        {
                         "name" : "Enchantress", "attackBase" : "energy", "species" : "alien", "gender" : "female", "side" : "vilain", "type" : "blast",
-                        "skills" : ["Sorceress whip", "Maiden's farewell", "Sorceress sphere", "Fatal illusion", "Enchanted entrapment"]
+                        "skills" : ["Sorceress whip", "Maiden's farewell", "Sorceress sphere", "Fatal illusion", "Enchanted entrapment"],
+                        "gears" : ["Asgard magic", "Charming dress", "Goddess attire", "Green long gloves"]
                        }
                       }
                      },
@@ -829,7 +843,8 @@ MFF.CHARACTERS.DATA =
                        "anad" :
                        {
                         "name" : "Gwenpool", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
-                        "skills" : ["Katana kick", "Figure skate", "Bombs 'n bullets", "Bullet rain", "Gift special"]
+                        "skills" : ["Katana kick", "Figure skate", "Bombs 'n bullets", "Bullet rain", "Gift special"],
+                        "gears" : ["Twin swords", "Gwenpool suit", "Gwenpool mask", "Submachine gun"]
                        }
                       }
                      },
@@ -947,7 +962,8 @@ MFF.CHARACTERS.DATA =
                        "avengers" :
                        {
                         "name" : "Hulk", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
-                        "skills" : ["Hulk charge", "Thunder clap", "Hulk smash", "Hulk stomp", "Hulk slam"]
+                        "skills" : ["Hulk charge", "Thunder clap", "Hulk smash", "Hulk stomp", "Hulk slam"],
+                        "gears" : ["Rage", "Ripped pants", "Gamma radiation", "Dr. Banner glass"]
                        },
                        // TODO : image need to be recreated from game
                        "sw_future" :
@@ -955,7 +971,8 @@ MFF.CHARACTERS.DATA =
                         "name" : "Maestro", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "combat",
                         "skills" : ["Hulk charge", "Thunder clap", "Hulk smash", "Hulk stomp", "Hulk slam"],
                         "bonus" : ["Activation rate: 20% when attacking", "Physical attack 42% poison damage", "Cooldown time 10 seconds"],
-                        "links" : ["modern/lash", "anad/malekith", "wwh/hulk", "modern/deathlok", "anad/drax"]
+                        "links" : ["modern/lash", "anad/malekith", "wwh/hulk", "modern/deathlok", "anad/drax"],
+                        "gears" : ["Rage", "Maestro pants", "Gamma radiation", "Ornament necklace"]
                        },
                        // TODO : image need to be recreated from game
                        "wwh" :
@@ -964,7 +981,8 @@ MFF.CHARACTERS.DATA =
                         "skills" : ["Hulk charge", "Shield bash", "Lunge strike", "Raging charge", "Hulk slam"],
                         "bonus" : ["Apply to: Self", "Immune to guard break"],
                         // TODO : check if the linked uniform to ultron is the correct ultron uniform
-                        "links" : ["aaou/hawkeye", "aaou/black_widow", "aaou_blast/ultron", "now/squirrel_girl", "aaou/thor"]
+                        "links" : ["aaou/hawkeye", "aaou/black_widow", "aaou_blast/ultron", "now/squirrel_girl", "aaou/thor"],
+                        "gears" : ["Hulk blade", "Shoulder phase", "Gamma radiation", "Defender shield"]
                        }
                       }
                      },
@@ -1032,7 +1050,8 @@ MFF.CHARACTERS.DATA =
                        "anad" :
                        {
                         "name" : "Hyperion", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "universal",
-                        "skills" : ["Soaring Uppercut", "Heat Blast", "Sun God", "Solar Flare", "Atomic Vision"]
+                        "skills" : ["Soaring Uppercut", "Heat Blast", "Sun God", "Solar Flare", "Atomic Vision"],
+                        "gears" : ["Atomic vision", "Black compression shirt", "Atomic belt", "Golden cape"]
                        }
                       }
                      },
@@ -1127,7 +1146,8 @@ MFF.CHARACTERS.DATA =
                        "now" :
                        {
                         "name" : "Ironheart", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
-                        "skills" : ["Iron blade", "Air raid mode", "Ambush fire", "Barrage fire", "Prime cannon"]
+                        "skills" : ["Iron blade", "Air raid mode", "Ambush fire", "Barrage fire", "Prime cannon"],
+                        "gears" : ["Repulsors", "Model-prime armor", "All-in-one tool set", "STARK A.I."]
                        }
                       }
                      },
@@ -1245,7 +1265,7 @@ MFF.CHARACTERS.DATA =
                      },
 "loki" :             {
                       "uniform" : "avengers",
-                      "tiers" : [1],
+                      "tiers" : [1, 2],
                       "uniforms" :
                       {
                        // TODO : image need to be recreated from game
@@ -1441,7 +1461,8 @@ MFF.CHARACTERS.DATA =
                        "modern" :
                        {
                         "name" : "Moon knight", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
-                        "skills" : ["Moon strike", "Crescent bommerang", "Staff slam", "Full moon", "Lunar eclipse"]
+                        "skills" : ["Moon strike", "Crescent bommerang", "Staff slam", "Full moon", "Lunar eclipse"],
+                        "gears" : ["Truncheon", "Chest armor", "Silver cloak", "Crescent dart"]
                        },
                        // TODO : image need to be recreated from game
                        "armored" :
@@ -1449,7 +1470,8 @@ MFF.CHARACTERS.DATA =
                         "name" : "Moon knight", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
                         "skills" : ["Midnight combo", "Crescent darts", "Staff slam", "Full moon", "Lunar eclipse"],
                         "bonus" : ["Increased no. of projectiles on Crescent dart skill"],
-                        "links" : ["doc_strange/mordo", "websuit/silk", "sw_armor_wars/kingpin", "sw_1872/bullseye", "maosq/daisy_johnson"]
+                        "links" : ["doc_strange/mordo", "websuit/silk", "sw_armor_wars/kingpin", "sw_1872/bullseye", "maosq/daisy_johnson"],
+                        "gears" : ["Truncheon", "Chest armor", "Silver cloak", "Crescent dart"]
                        }
                       }
                      },
@@ -1545,7 +1567,8 @@ MFF.CHARACTERS.DATA =
                        "modern" :
                        {
                         "name" : "Odin", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "universal",
-                        "skills" : ["King slash", "Odin charge", "Asgardian barrier", "Odin's wrath", "Odinforce"]
+                        "skills" : ["King slash", "Odin charge", "Asgardian barrier", "Odin's wrath", "Odinforce"],
+                        "gears" : ["Odinsword", "Battle armor of the all-father", "Eye patch of Odin", "Odinforce"]
                        }
                       }
                      },
@@ -1571,7 +1594,8 @@ MFF.CHARACTERS.DATA =
                        "infinity" :
                        {
                         "name" : "Proxima midnight", "attackBase" : "energy", "species" : "alien", "gender" : "female", "side" : "vilain", "type" : "universal",
-                        "skills" : ["Impact Blow", "Midnight Blow", "Velocity Strike", "Piercing Abyss", "Midnight Sky"]
+                        "skills" : ["Impact Blow", "Midnight Blow", "Velocity Strike", "Piercing Abyss", "Midnight Sky"],
+                        "gears" : ["Collapsing star spear", "Black combat uniform", "Golden pauldron and gauntlet", "Proxima mask"]
                        }
                       }
                      },
@@ -1700,7 +1724,7 @@ MFF.CHARACTERS.DATA =
                        // TODO : image need to be recreated from game
                        "modern" :
                        {
-                        "name" : "Satana", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "vilain", "type" : "universal",
+                        "name" : "Satana", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "universal",
                         "skills" : ["Dancing flame", "Flamethrower", "Little minion", "Fire barrier", "Succubus army"]
                        }
                       }
@@ -1714,7 +1738,8 @@ MFF.CHARACTERS.DATA =
                        "ca_75" :
                        {
                         "name" : "Sharon Rogers", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
-                        "skills" : ["Riposte strike", "Sky dragoon", "Javelin blast", "Paladin blast", "Freedom strike"]
+                        "skills" : ["Riposte strike", "Sky dragoon", "Javelin blast", "Paladin blast", "Freedom strike"],
+                        "gears" : ["Energy blast lance", "Kevlar-titanium uniform", "Helmet", "Vibranium shield"]
                        }
                       }
                      },
@@ -1727,7 +1752,8 @@ MFF.CHARACTERS.DATA =
                        "modern" :
                        {
                         "name" : "Shang-Chi", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
-                        "skills" : ["Nunchaku knockout", "Mystic clone", "Chi charge", "Mystic barrage", "Mystic army"]
+                        "skills" : ["Nunchaku knockout", "Mystic clone", "Chi charge", "Mystic barrage", "Mystic army"],
+                        "gears" : ["Nunchaku", "Red tights", "Gold shoes", "Metal bracelets"]
                        }
                       }
                      },
@@ -1782,7 +1808,8 @@ MFF.CHARACTERS.DATA =
                        "anad" :
                        {
                         "name" : "Silk", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
-                        "skills" : ["Spider and fly", "Look behind you", "Shield smash", "Web rebound", "The yo-yo"]
+                        "skills" : ["Spider and fly", "Look behind you", "Shield smash", "Web rebound", "The yo-yo"],
+                        "gears" : ["Organic web", "Red hood", "Silk costume", "Silk sense"]
                        },
                        // TODO : image need to be recreated from game
                        "websuit" :
@@ -1790,7 +1817,8 @@ MFF.CHARACTERS.DATA =
                         "name" : "Silk", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
                         "skills" : ["Spider and fly", "Look behind you", "Shield smash", "Silk spinner", "The yo-yo"],
                         "bonus" : ["Apply to: self", "2 sec increase to duration time of web"],
-                        "links" : ["anad/wasp", "anad/iron_fist", "sw_zombies/venom", "anad/luke_cage", "anad/rocket_raccoon"]
+                        "links" : ["anad/wasp", "anad/iron_fist", "sw_zombies/venom", "anad/luke_cage", "anad/rocket_raccoon"],
+                        "gears" : ["Organic web", "Web hood", "Web costume", "Silk sense"]
                        }
                       }
                      },
@@ -1816,7 +1844,8 @@ MFF.CHARACTERS.DATA =
                        "sw_a_force" :
                        {
                         "name" : "Singularity", "attackBase" : "energy", "species" : "alien", "gender" : "female", "side" : "hero", "type" : "universal",
-                        "skills" : ["Ablation", "Space fold", "Supernova", "Meteorite", "Dimensional tear"]
+                        "skills" : ["Ablation", "Space fold", "Supernova", "Meteorite", "Dimensional tear"],
+                        "gears" : ["Dimensional power", "Star field", "Cat collar bracelet", "Purple ribbon"]
                        }
                       }
                      },
@@ -1955,7 +1984,8 @@ MFF.CHARACTERS.DATA =
                        "infinity" :
                        {
                         "name" : "Supergiant", "attackBase" : "energy", "species" : "alien", "gender" : "female", "side" : "vilain", "type" : "universal",
-                        "skills" : ["Energy strike", "Mental trap", "Battle mentality", "Puppeteer", "Giant illusions"]
+                        "skills" : ["Energy strike", "Mental trap", "Battle mentality", "Puppeteer", "Giant illusions"],
+                        "gears" : ["Mind control", "White cloak", "Black order battle suite", "Black long boots"]
                        }
                       }
                      },
@@ -2165,7 +2195,8 @@ MFF.CHARACTERS.DATA =
                        "howling" :
                        {
                         "name" : "Warworlf", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
-                        "skills" : ["Vicious strike", "Bury them", "Ambush", "Blood frenzy", "Howl to Mars"]
+                        "skills" : ["Vicious strike", "Bury them", "Ambush", "Blood frenzy", "Howl to Mars"],
+                        "gears" : ["Mini gatling gun", "S.H.I.E.L.D. battle suit", "A.O.S. bandolier", "Tactical backpack"]
                        }
                       }
                      },
@@ -2275,7 +2306,8 @@ MFF.CHARACTERS.DATA =
                        "mam" :
                        {
                         "name" : "Yellow jacket", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "blast",
-                        "skills" : ["Stinger", "Flying barrage", "Now you see me", "Swarm shot", "Laser burst"]
+                        "skills" : ["Stinger", "Flying barrage", "Now you see me", "Swarm shot", "Laser burst"],
+                        "gears" : ["Robotic arms", "Yellow jacket suit", "Yellow jacked helmet", "Pym particles"]
                        },
                        // TODO : image need to be recreated from game
                        "now" :
@@ -2283,7 +2315,8 @@ MFF.CHARACTERS.DATA =
                         "name" : "Yellow jacket", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "blast",
                         "skills" : ["Stinger", "Flying barrage", "Now you see me", "Swarm shot", "Laser burst"],
                         "bonus" : ["Apply to: Self", "25% damage increase to hero type"],
-                        "links" : ["doc_strange/doctor_strange", "sw_zombies/elsa_bloodstone", "modern/deathlok", "cacw/war_machine", "anca/falcon"]
+                        "links" : ["doc_strange/doctor_strange", "sw_zombies/elsa_bloodstone", "modern/deathlok", "cacw/war_machine", "anca/falcon"],
+                        "gears" : ["Robotic arms", "Yellow jacket suit", "Yellow jacket helmet", "Pym particles"]
                        }
                       }
                      },

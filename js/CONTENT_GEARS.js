@@ -54,7 +54,7 @@ MFF.LAYOUT.DETAIL.GEARS =
  },
  "drawGears" : function()
  {
-  var i, j, k, div, table, tbody, tr, td2, input, select, option, idx, curStat, selectChangeAll,
+  var i, j, k, div, table, tbody, tr, td2, input, select, option, idx, curStat, selectChangeAll, h1,
       data = MFF.CHARACTERS.get(MFF.currentCharacter || MFF.lastTarget);
 
   function getMin(select) { return parseFloat(select.options[select.selectedIndex].dataset.rangeMin); }
@@ -101,7 +101,7 @@ MFF.LAYOUT.DETAIL.GEARS =
        maxSpan = tr.childNodes[7];
    min = getMin(this);
    max = getMax(this);
-   moy = API.numberToFixed((min + max) / 2, 2);
+   moy = API.numberToFixed((min + max) / 2, 2, true);
    minSpan.innerHTML = min;
    moySpan.innerHTML = moy;
    maxSpan.innerHTML = max;
@@ -131,9 +131,11 @@ MFF.LAYOUT.DETAIL.GEARS =
   for ( i = 0; i < MFF.GEARS.length; i++ )
   {
    div = MFF.LAYOUT.DETAIL.GEARS._content.appendChild(document.createElement("div"));
-   div.className = "gear";
+   div.className = "gear bgOpaque";
    div.dataset.gearIndex = i;
    div.dataset.character = data.id;
+   h1 = div.appendChild(document.createElement("h1"));
+   h1.innerHTML = MFF.UNIFORMS.getGearName(data.id, data.uniform, i);
    selectChangeAll = div.appendChild(document.createElement("select"));
    selectChangeAll.onchange = changeAll;
    selectChangeAll.className = "changeAll";
