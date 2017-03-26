@@ -22,6 +22,8 @@
   - add Angela T2
   - update Satana side from vilain to hero
 - Consistent 2 digits float values
+- [#31](https://github.com/Mokhet/MFF-roster-tracker/issues/31) Removed waves effect on every elements
+- [#36](https://github.com/Mokhet/MFF-roster-tracker/issues/36) After "Set all ...", the min, max and average values don't refresh
 
 # ![version 2.2.1](https://img.shields.io/badge/version-2.2.1-brightgreen.svg?style=flat) ![date 2017-03-24](https://img.shields.io/badge/date-2017--03--24-red.svg?style=flat)
 

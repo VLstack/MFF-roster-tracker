@@ -120,6 +120,7 @@ MFF.LAYOUT.DETAIL.GEARS =
      tr = all[i].parentNode.parentNode;
      all[i].selectedIndex = this.selectedIndex;
      all[i].parentNode.nextSibling.firstChild.value = 0;
+     changeMinMax.call(all[i], null);
      checkValues(tr, true);
     }
    }
