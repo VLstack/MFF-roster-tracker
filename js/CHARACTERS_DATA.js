@@ -45,7 +45,7 @@ MFF.CHARACTERS.DATA =
                       },
 "angela" :           {
                       "uniform" : "modern",
-                      "tiers" : [1],
+                      "tiers" : [1, 2],
                       "uniforms" :
                       {
                        // TODO : image need to be recreated from game

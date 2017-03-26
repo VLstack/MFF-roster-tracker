@@ -1,12 +1,8 @@
-# Unreleased ![version 2.3.0](https://img.shields.io/badge/version-2.3.0-brightgreen.svg?style=flat) ![date 2017-03-24](https://img.shields.io/badge/date-2017--03--24-red.svg?style=flat)
+# Unreleased ![version 2.3.0](https://img.shields.io/badge/version-2.3.0-brightgreen.svg?style=flat) ![date 2017-03-27](https://img.shields.io/badge/date-2017--03--27-red.svg?style=flat)
 
 **In progress**
 
 - More javascript refactor
-
-**Enhancements:**
-
-- Consistent 2 digits float values
 
 **Added:**
 
@@ -21,6 +17,11 @@
 - Leaving the mouse too quickly from the characters list to the detail no longer trigger an incomplete character state
 - Correctly save uniform attributes when not setting the new value
 - Drastically reduce invisible recursive calls to gears completion
+- [#35](https://github.com/Mokhet/MFF-roster-tracker/issues/35) Data error
+  - add Loki T2
+  - add Angela T2
+  - update Satana side from vilain to hero
+- Consistent 2 digits float values
 
 # ![version 2.2.1](https://img.shields.io/badge/version-2.2.1-brightgreen.svg?style=flat) ![date 2017-03-24](https://img.shields.io/badge/date-2017--03--24-red.svg?style=flat)
 
