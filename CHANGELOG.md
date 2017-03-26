@@ -11,9 +11,9 @@
 **Added:**
 
 - [#15](https://github.com/Mokhet/MFF-roster-tracker/issues/15) Global development score
- - Previous development percent is now Gears Development
- - Added a skills development score
- - Added an uniform development score
+  - Previous development percent is now Gears Development
+  - Added a skills development score
+  - Added an uniform development score
 - Since 2.2.0 added combat power, now you can also track related Rank
 
 **Fixed bugs:**
