@@ -2,6 +2,14 @@
 MFF.PERCENT =
 {
  "all" : null,
+ "map" :
+ {
+  "gears" : { "key" : "percent_gears", "label" : "Gears", "compute" : "computePercentGears", "refresh" : "refreshPercentGears" },
+  "skills" : { "key" : "percent_skills", "label" : "Skills", "compute" : "computePercentSkills", "refresh" : "refreshPercentSkills" },
+  "uniform" : { "key" : "percent_uniform", "label" : "Uniform", "compute" : "computePercentUniform", "refresh" : "refreshPercentUniform" }
+ },
+ "isActive" : function(key) { return localStorage.getItem(MFF.PERCENT.map[key].key) === "N" ? false : true; },
+ "setActive" : function(key, state) {localStorage.setItem(MFF.PERCENT.map[key].key, state ? "Y" : "N"); },
  "init" : function(characterId)
  {
   if ( MFF.PERCENT.all === null )
@@ -25,16 +33,31 @@ MFF.PERCENT =
   MFF.PERCENT.computeUniform(characterId, true);
   MFF.PERCENT.compute(characterId, true);
  },
+ "recomputeAll" : function(key, exceptCharacter)
+ {
+  var k;
+  for ( k in MFF.PERCENT.all )
+  {
+   if ( MFF.PERCENT.all.hasOwnProperty(k) && k != exceptCharacter )
+   {
+    API.EVT.dispatch(MFF.PERCENT.map[key].compute, k);
+   }
+  }
+ },
  "compute" : function(characterId, preventDispatch)
  {
-  var nb = 2,
-      total = MFF.PERCENT.all[characterId].gears + MFF.PERCENT.all[characterId].skills;
-  if ( MFF.PERCENT.all[characterId].uniform !== null )
-  {
-   nb++;
-   total += MFF.PERCENT.all[characterId].uniform;
-  }
-  MFF.PERCENT.all[characterId].global = total / nb;
+  var map = ["gears", "skills", "uniform"],
+      nb = 0,
+      total = 0;
+  map.forEach(function(item)
+              {
+               if ( MFF.PERCENT.isActive(item) && MFF.PERCENT.all[characterId][item] !== null )
+               {
+                nb++;
+                total += MFF.PERCENT.all[characterId][item];
+               }
+              });
+  MFF.PERCENT.all[characterId].global = nb ? total / nb : 0;
   if( preventDispatch !== true )
   {
    API.EVT.dispatch("refreshPercentGlobal", characterId);
