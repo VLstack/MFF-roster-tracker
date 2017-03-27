@@ -166,7 +166,7 @@ MFF.LAYOUT.CHARTS =
   div.id = id;
   div.className = "chart bgOpaque";
   new Highcharts.Chart({
-                        "chart" : { "polar" : true, "renderTo" : id, "type" : "line", "backgroundColor" : null },
+                        "chart" : { "polar" : true, "renderTo" : id, "type" : "area", "backgroundColor" : null },
                         "pane" : { "background" : { "backgroundColor" : "rgba(255, 255, 255, 0.5)", "outerRadius" : "100%" } },
                         "title" : { "useHTML" : true, "text" : "Skills" },
                         "xAxis" : { "categories" : categories, "lineWidth" : 0, "labels" : { "style" : { "color" : "#FFFFFF" } } },
@@ -174,6 +174,7 @@ MFF.LAYOUT.CHARTS =
                         "credits" : { "enabled" : false },
                         "tooltip" : { "pointFormat" : "level {point.y}" },
                         "legend" : { "enabled" : false },
+                        "plotOptions" : { "series" : { "color" : "#1b25e4" } },
                         "series" : [{ "name" : "Skills", "data" : data.skills }]
                        });
   MFF.LAYOUT.CHARTS.fixHighchartsTitles();
@@ -196,7 +197,7 @@ MFF.LAYOUT.CHARTS =
    all[i].style.overflow = "hidden";
    all[i].style.borderTopLeftRadius = "4px";
    all[i].style.borderTopRightRadius = "4px";
-   all[i].style.font = "100 14px/24px verdana";
+   all[i].style.font = "100 12px/24px verdana";
   }
  }
 };
