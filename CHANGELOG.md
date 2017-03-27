@@ -4,6 +4,12 @@
 
 - More javascript refactor
 
+**Enhancements:**
+
+- [#13](https://github.com/Mokhet/MFF-roster-tracker/issues/13) Correct naming of all gears based on active uniform
+  - Except for Dormammu since I don't have him in my roster yet
+  - Except for Captain Marvel with uniform "Secret wars: Captain Marvel & The Carol corp" because it is impossible to have this costume now
+
 **Added:**
 
 - [#15](https://github.com/Mokhet/MFF-roster-tracker/issues/15) Global development score
