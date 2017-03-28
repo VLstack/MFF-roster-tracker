@@ -119,12 +119,15 @@ MFF.PERCENT =
     if ( data.gear[i][j].pref )
     {
      type = data.gear[i][j].type;
-     cur = data.gear[i][j].val || 0;
-     min = MFF.GEARS[i][type].range[j].min;
-     max = MFF.GEARS[i][type].range[j].max;
-     if ( cur < min ) { cur = min; }
-     else if ( cur > max ) { cur = max; }
-     total += MFF.PERCENT.individual(cur, min, max);
+     if ( type && (type in MFF.GEARS[i]) )
+     {
+      cur = data.gear[i][j].val || 0;
+      min = MFF.GEARS[i][type].range[j].min;
+      max = MFF.GEARS[i][type].range[j].max;
+      if ( cur < min ) { cur = min; }
+      else if ( cur > max ) { cur = max; }
+      total += MFF.PERCENT.individual(cur, min, max);
+     }
     }
    }
   }

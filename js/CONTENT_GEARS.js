@@ -61,10 +61,11 @@ MFF.LAYOUT.DETAIL.GEARS =
 
   function getMax(select) { return parseFloat(select.options[select.selectedIndex].dataset.rangeMax); }
 
-  function checkValues(tr, save)
+  function checkValues(tr)
   {
    var div, gear, type, pref,
        select = tr.childNodes[1].firstChild,
+       checkbox = tr.childNodes[0].firstChild,
        cur = tr.childNodes[2].firstChild.value,
        min = getMin(select),
        max = getMax(select),
@@ -80,15 +81,13 @@ MFF.LAYOUT.DETAIL.GEARS =
 //   curPercent.innerHTML = "({0}%)".format(parseInt(MFF.getIndividualPercent(cur, min, max)));
    curPercent.innerHTML = "({0}%)".format(parseInt(MFF.PERCENT.individual(cur, min, max)));
    tr.className = cName;
-   if ( save )
-   {
-    div = API.DOM.parent(tr, "div", "gear");
-    gear = div.dataset.gearIndex;
-    type = select.options[select.selectedIndex].value;
-    pref = tr.childNodes[0].firstChild.checked;
-    MFF.saveCharacter({ "mode" : "gear", "gear" : gear, "gearIndex" : tr.dataset.gearIndex, "type" : type, "val" : parseFloat(cur), "pref" : pref/*, "percent" : MFF.getIndividualPercent(cur, min, max)*/ });
-    API.EVT.dispatch("computePercentGears", tr.dataset.character);
-   }
+   div = API.DOM.parent(tr, "div", "gear");
+   gear = div.dataset.gearIndex;
+   type = select.options[select.selectedIndex].value;
+   if ( type === "" ) { checkbox.checked = false; }
+   pref = checkbox.checked;
+   MFF.saveCharacter({ "mode" : "gear", "gear" : gear, "gearIndex" : tr.dataset.gearIndex, "type" : type, "val" : parseFloat(cur), "pref" : pref/*, "percent" : MFF.getIndividualPercent(cur, min, max)*/ });
+   API.EVT.dispatch("computePercentGears", tr.dataset.character);
   }
 
   function changeMinMax(evt)
@@ -106,7 +105,7 @@ MFF.LAYOUT.DETAIL.GEARS =
    moySpan.innerHTML = moy;
    maxSpan.innerHTML = max;
    if ( evt !== null ) { cur.value = 0; }
-   checkValues(tr, false);
+   checkValues(tr);
   }
 
   function changeAll()
@@ -126,7 +125,7 @@ MFF.LAYOUT.DETAIL.GEARS =
      select.selectedIndex = this.selectedIndex;
      input.value = 0;
      changeMinMax.call(select, null);
-     checkValues(tr, true);
+     //checkValues(tr);
     }
    }
    this.selectedIndex = 0;
@@ -170,7 +169,7 @@ MFF.LAYOUT.DETAIL.GEARS =
     input.type = "checkbox";
     input.title = "Set as favorite statistic once checked";
     input.setAttribute("tabindex", -1);
-    input.onchange = function() { checkValues(API.DOM.parent(this, "tr"), true); };
+    input.onchange = function() { checkValues(API.DOM.parent(this, "tr")); };
     input.checked = data.gear[i][j].pref;
     td2 = tr.appendChild(document.createElement("td"));
     td2.style.width = "100%";
@@ -223,13 +222,13 @@ MFF.LAYOUT.DETAIL.GEARS =
      if ( MFF.toid ) { MFF.toid = clearTimeout(MFF.toid); }
      MFF.toid = setTimeout(function()
                            {
-                            checkValues(API.DOM.parent(that, "tr"), true);
+                            checkValues(API.DOM.parent(that, "tr"));
                            }, 250);
     };
     curStat.onchange = function()
     {
      if ( MFF.toid ) { MFF.toid = clearTimeout(MFF.toid); }
-     checkValues(API.DOM.parent(this, "tr"), true);
+     checkValues(API.DOM.parent(this, "tr"));
     };
     // min
     td2 = tr.appendChild(document.createElement("td"));
