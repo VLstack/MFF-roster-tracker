@@ -103,14 +103,16 @@ MFF.LAYOUT.ACTION =
                   { "id" : "export", "content" : "Export characters", "fa" : "upload", "callback" : MFF.EXPORT.selectCharacters },
                   { "id" : "import", "content" : "Import characters", "fa" : "download", "callback" : MFF.IMPORT.pasteContent },
                  ] });
-  new ImageButton({ "renderTo" : container, "type" : "combat", "image" : "combat.png", "checked" : true, "callback" : MFF.toggleClass("type") });
-  new ImageButton({ "renderTo" : container, "type" : "speed", "image" : "speed.png", "checked" : true, "callback" : MFF.toggleClass("type") });
-  new ImageButton({ "renderTo" : container, "type" : "blast", "image" : "blast.png", "checked" : true, "callback" : MFF.toggleClass("type") });
-  new ImageButton({ "renderTo" : container, "type" : "universal", "image" : "universal.png", "checked" : true, "callback" : MFF.toggleClass("type") });
-  new ImageButton({ "renderTo" : container, "type" : "hero", "image" : "hero.png", "checked" : true, "callback" : MFF.toggleClass("side") });
-  new ImageButton({ "renderTo" : container, "type" : "vilain", "image" : "vilain.png", "checked" : true, "callback" : MFF.toggleClass("side") });
-  new ImageButton({ "renderTo" : container, "type" : "male", "image" : "male.png", "checked" : true, "callback" : MFF.toggleClass("gender") });
-  new ImageButton({ "renderTo" : container, "type" : "female", "image" : "female.png", "checked" : true, "callback" : MFF.toggleClass("gender") });
+  new ImageButton({ "renderTo" : container, "type" : "combat", "title" : "Toggle combat type characters", "image" : "combat.png", "checked" : true, "callback" : MFF.toggleClass("type") });
+  new ImageButton({ "renderTo" : container, "type" : "speed", "title" : "Toggle speed type characters", "image" : "speed.png", "checked" : true, "callback" : MFF.toggleClass("type") });
+  new ImageButton({ "renderTo" : container, "type" : "blast", "title" : "Toggle blast type characters", "image" : "blast.png", "checked" : true, "callback" : MFF.toggleClass("type") });
+  new ImageButton({ "renderTo" : container, "type" : "universal", "title" : "Toggle universal type characters", "image" : "universal.png", "checked" : true, "callback" : MFF.toggleClass("type") });
+  new ImageButton({ "renderTo" : container, "type" : "tier1", "title" : "Toggle Tier1 characters", "image" : "t1.png", "checked" : true, "callback" : MFF.toggleClass("tier") });
+  new ImageButton({ "renderTo" : container, "type" : "tier2", "title" : "Toggle Tier2 characters", "image" : "t2.png", "checked" : true, "callback" : MFF.toggleClass("tier") });
+  new ImageButton({ "renderTo" : container, "type" : "hero", "title" : "Toggle hero characters", "image" : "hero.png", "checked" : true, "callback" : MFF.toggleClass("side") });
+  new ImageButton({ "renderTo" : container, "type" : "vilain", "title" : "Toggle vilain characters", "image" : "vilain.png", "checked" : true, "callback" : MFF.toggleClass("side") });
+  new ImageButton({ "renderTo" : container, "type" : "male", "title" : "Toggle male characters", "image" : "male.png", "checked" : true, "callback" : MFF.toggleClass("gender") });
+  new ImageButton({ "renderTo" : container, "type" : "female", "title" : "Toggle female characters", "image" : "female.png", "checked" : true, "callback" : MFF.toggleClass("gender") });
 
   input = container.appendChild(document.createElement("input"));
   input.type = "text";

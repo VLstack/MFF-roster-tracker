@@ -11,12 +11,13 @@ var MFF =
  "shownClassType" : ["combat", "speed", "blast", "universal"],
  "shownClassSide" : ["hero", "vilain", "neutral"],
  "shownClassGender" : ["male", "female", "neutral"],
+ "shownClassTier" : ["tier1", "tier2"],
  "toggleClass" : function(reference)
  {
   return function(checked, type)
   {
    var idx,
-       ref = { "type" : "shownClassType", "side" : "shownClassSide", "gender" : "shownClassGender" }[reference];
+       ref = { "type" : "shownClassType", "side" : "shownClassSide", "gender" : "shownClassGender", "tier" : "shownClassTier" }[reference];
    if ( checked )
    {
     if ( MFF[ref].indexOf(type) == -1 ) { MFF[ref].push(type); }
@@ -48,6 +49,7 @@ var MFF =
      break;
     }
    }
+   if ( showHide == "show" && MFF.shownClassTier.indexOf("tier" + data.tier) == -1 ) { showHide = "hide"; }
    if ( showHide == "show" )
    {
     gender = MFF.CHARACTERS.DATA[childs[i].id].uniforms[data.uniform].gender;

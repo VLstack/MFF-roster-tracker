@@ -17,19 +17,21 @@
   - Added a skills development score
   - Added an uniform development score
 - Since 2.2.0 added combat power, now you can also track related Rank
+- [#34](https://github.com/Mokhet/MFF-roster-tracker/issues/34) Add tier filter
+- Next to "Set all to ...", a new option "Set all unchecked to ..."
 
 **Fixed bugs:**
 
-- Leaving the mouse too quickly from the characters list to the detail no longer trigger an incomplete character state
-- Correctly save uniform attributes when not setting the new value
-- Drastically reduce invisible recursive calls to gears completion
+- Moving the mouse too quickly from the characters list to the detail no longer trigger an incomplete character state
+- Correctly save uniform attributes when no new value was set
+- Drastically reduce recursive calls to gears completion
 - [#35](https://github.com/Mokhet/MFF-roster-tracker/issues/35) Data error
   - add Loki T2
   - add Angela T2
   - fixed Satana side from vilain to hero
 - Consistent 2 digits float values
 - [#31](https://github.com/Mokhet/MFF-roster-tracker/issues/31) Removed waves effect on every elements
-- [#36](https://github.com/Mokhet/MFF-roster-tracker/issues/36) After "Set all ...", the min, max and average values don't refresh
+- [#36](https://github.com/Mokhet/MFF-roster-tracker/issues/36) After "Set all to ...", the min, max and average values don't refresh
 - [#37](https://github.com/Mokhet/MFF-roster-tracker/issues/37) Unable to remove gears
 
 # ![version 2.2.1](https://img.shields.io/badge/version-2.2.1-brightgreen.svg?style=flat) ![date 2017-03-24](https://img.shields.io/badge/date-2017--03--24-red.svg?style=flat)
