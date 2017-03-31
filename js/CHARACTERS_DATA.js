@@ -6,14 +6,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Agent 13", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
                         "skills" : ["Sliding Kick", "Back flip attack", "Covering Fire", "Backup", "Extreme Diversion"],
                         "gears" : ["S.H.I.E.L.D. pistol", "S.H.I.E.L.D. body suit", "Tactical duty belt", "Security communication device"]
                        },
-                       // TODO : image need to be recreated from game
                        "cacw" :
                        {
                         "name" : "Agent 13", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
@@ -29,14 +27,12 @@ MFF.CHARACTERS.DATA =
                        "tiers" : [1, 2],
                        "uniforms" :
                        {
-                        // TODO : image need to be recreated from game
                          "modern" :
                          {
                           "name" : "Ancient One", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
                           "skills" : ["Mystic discharge", "Mystic energy", "Ancient cure", "Inner self", "Ancient enchantment"],
                           "gears" : ["Vishanti magic", "Ancient dress", "Ancient official hat", "Gold neck ornament"]
                          },
-                        // TODO : image need to be recreated from game
                          "doc_strange" :
                          {
                           "name" : "Ancient One", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
@@ -52,14 +48,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Angela", "attackBase" : "physical", "species" : "alien", "gender" : "female", "side" : "hero", "type" : "universal",
                         "skills" : ["Angel's War Rage", "Blades of Ichor", "Sword blow", "Avenging angel", "Entangle"],
                         "gears" : ["Bladed bow", "Huntress armor", "Helm of angel", "Broad belt"]
                        },
-                       // TODO : image need to be recreated from game
                        "sw_1602" :
                        {
                         "name" : "Angela", "attackBase" : "physical", "species" : "alien", "gender" : "female", "side" : "hero", "type" : "universal",
@@ -68,7 +62,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["now/red_hulk", "anad/mockingbird", "anad/sister_grimm", "modern/daisy_johnson", "ll/loki"],
                         "gears" : ["Bladed bow", "Witch hunter armor", "Helm of the hunter", "Chain mail"]
                        },
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Angela", "attackBase" : "physical", "species" : "alien", "gender" : "female", "side" : "hero", "type" : "universal",
@@ -84,14 +77,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Ant-man", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
                         "skills" : ["Pym punch", "Speeding bullet", "Bug squash", "Flying rush", "Pym discs"],
                         "gears" : ["Pym particles", "Ant-man suit", "Cybernetic helmet", "Toolbot"]
                        },
-                       // TODO : image need to be recreated from game
                        "mam" :
                        {
                         "name" : "Ant-man", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -100,7 +91,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["spidoc/modok", "classic_70/ghost_rider", "armored/moon_knight", "anad/angela", "aaou_speed/ultron"],
                         "gears" : ["Pym particles", "Ant-man suit", "Cybernetic helmet", "Toolbot"]
                        },
-                       // TODO : image need to be recreated from game
                        "cacw" :
                        {
                         "name" : "Ant-man", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -116,14 +106,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Black bolt", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "universal",
                         "skills" : ["Electron channeling", "Anti-gravitational dash", "Power word", "Brutal whisper", "Quasi-sonic scream"],
                         "gears" : ["Quasi-sonic scream", "Electron harnessing suit", "Electron channeling antenna", "Anti-gravitons"]
                        },
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Black bolt", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "universal",
@@ -147,14 +135,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Black cat", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "vilain", "type" : "speed",
                         "skills" : ["Cat scratch", "Acrobatic kick", "Catlike reflex", "Cat hunt", "Cat lash"],
                         "gears" : ["Grappling hook", "Black cat costume", "Contact lenses", "Unique earrings"]
                        },
-                       // TODO : image need to be recreated from game
                        "claws" :
                        {
                         "name" : "Black cat", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "vilain", "type" : "speed",
@@ -163,7 +149,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["sw_red_skull/red_skull", "sw_zombies/elsa_bloodstone", "ati/war_machine", "cacw/winter_soldier", "prometheus/destroyer"],
                         "gears" : ["Grappling hook", "Black cat costume", "Black cat mask", "Unique earrings"]
                        },
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Black cat", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "vilain", "type" : "speed",
@@ -179,7 +164,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "infinity" :
                        {
                         "name" : "Black dwarf", "attackBase" : "physical", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "universal",
@@ -193,14 +177,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Black panther", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
                         "skills" : ["Energy spear", "Claw slash", "Energy dagger", "Essence of the panther", "Unseen predator"],
                         "gears" : ["Anti-metal claws", "Vibranium-weave uniform", "Vibranium boots", "Kimoyo card"]
                        },
-                       // TODO : image need to be recreated from game
                        "cacw" :
                        {
                         "name" : "Black panther", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -216,14 +198,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "avengers" :
                        {
                         "name" : "Black widow", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
                         "skills" : ["Widow's bite", "Acrobatic assault", "Infiltrator", "Systema", "Coup de grâce"],
                         "gears" : ["Black widow gauntlets", "Synthetic body suit", "Suction gloves", "Widow's line"]
                        },
-                       // TODO : image need to be recreated from game
                        "aaou" :
                        {
                         "name" : "Black widow", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
@@ -232,7 +212,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["cacw/captain_america", "unworthy/thor", "wj/punisher", "cacw/iron_man", "aaou_blast/ultron"],
                         "gears" : ["Black widow gauntlets", "Synthetic body suit", "Suction gloves", "Widow's line"]
                        },
-                       // TODO : image need to be recreated from game
                        "sw_2099" :
                        {
                         "name" : "Black widow", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
@@ -241,7 +220,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["maosq/daisy_johnson", "sw_thors/groot", "sw_renew/spider_man", "doc_strange/ancient_one", "cacw/agent_13"],
                         "gears" : ["Widow's claw", "Stealth body suit", "Suction gloves", "Widow's goggle"]
                        },
-                       // TODO : image need to be recreated from game
                        "cacw" :
                        {
                         "name" : "Black widow", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
@@ -257,14 +235,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Blade", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
                         "skills" : ["Sword edge", "Sword of storm", "Catching weak point", "Blood haze", "Hemorrhage"],
                         "gears" : ["Titanium swords", "Kevlar armor", "Leather gloves", "Sunglasses"]
                        },
-                       // TODO : image need to be recreated from game
                        "classic_70" :
                        {
                         "name" : "Blade", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -280,14 +256,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Bullseye", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
                         "skills" : ["Trick of card", "Storm of sword", "Assassination", "Card storm", "Madness knife"],
                         "gears" : ["Shurikens", "Kevlar body armor", "Vibranium laced bones", "Throwing cards"]
                        },
-                       // TODO : image need to be recreated from game
                        "sw_1872" :
                        {
                         "name" : "Bullseye", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -303,14 +277,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "avengers" :
                        {
                         "name" : "Captain america", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
                         "skills" : ["Shield throw", "Valor", "Ready for battle", "Shield strike", "Heroic fury"],
                         "gears" : ["Vibranium shield", "Kevlar-titanium uniform", "Helmet", "Utility belt"]
                        },
-                       // TODO : image need to be recreated from game
                        "aaou" :
                        {
                         "name" : "Captain america", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -319,7 +291,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["sw_red_skull/red_skull", "now/captain_america", "now/squirrel_girl", "classic_70/blade", "sw_2099/captain_america"],
                         "gears" : ["Vibranium shield", "Kevlar-titanium uniform", "Helmet", "Utility belt"]
                        },
-                       // TODO : image need to be recreated from game
                        "sw_2099" :
                        {
                         "name" : "Captain america", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "combat",
@@ -328,7 +299,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["anad/spider_man", "aaou/black_widow", "sw_2099/black_widow", "sw_1602/angela", "sw_armor_wars/kingpin"],
                         "gears" : ["Vibranium shield", "Alchemax bodysuit", "Mask", "Light wings"]
                        },
-                       // TODO : image need to be recreated from game
                        "catws" :
                        {
                         "name" : "Captain america", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -337,7 +307,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["anad/gamora", "iar/ghost_rider", "anad/wasp", "sw_thors/groot", "ms_marvel/captain_marvel"],
                         "gears" : ["Vibranium shield", "Field armor", "Helmet", "Utility belt"]
                        },
-                       // TODO : image need to be recreated from game
                        "cacw" :
                        {
                         "name" : "Captain america", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -346,7 +315,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["anad/wasp", "cacw/falcon", "cacw/black_panther", "annihilation/ronan", "cacw/iron_man"],
                         "gears" : ["Vibranium shield", "Kevlar-titanium uniform", "Helmet", "Utility belt"]
                        },
-                       // TODO : image need to be recreated from game
                        "now" :
                        {
                         "name" : "Captain america", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -362,14 +330,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Captain marvel", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "universal",
                         "skills" : ["Mighty straight", "Backflip blast", "Photon blast", "Binary explosion", "Radiant form"],
                         "gears" : ["Binary power", "Captain Marvel costume", "Battle boots", "Red fabric belt"]
                        },
-                       // TODO : image need to be recreated from game
                        "sw_carol_corp" :
                        {
                         "name" : "Captain marvel", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "universal",
@@ -378,7 +344,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["aaou/iron_man", "cacw/war_machine", "sw_thors/groot", "aaou/vision", "sw_future/hulk"],
                         "gears" : ["Unknwon gear 1", "Unknwon gear 2", "Unknown gear 3", "Uniform gear 4"]
                        },
-                       // TODO : image need to be recreated from game
                        "ms_marvel" :
                        {
                         "name" : "Captain marvel", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "universal",
@@ -394,7 +359,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Carnage", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "combat",
@@ -408,7 +372,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Clea", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "vilain", "type" : "universal",
@@ -422,7 +385,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "infinity" :
                        {
                         "name" : "Corvus glaive", "attackBase" : "physical", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "universal",
@@ -436,14 +398,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "cacw" :
                        {
                         "name" : "Crossbones", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "combat",
                         "skills" : ["Gauntlet punch", "Hitman", "Air combo", "Specialist", "Air strike"],
                         "gears" : ["Mechanical enhancement gloves", "Cross chest protectors", "Skull mask", "Grenade launcher"]
                        },
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Crossbones", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "combat",
@@ -472,14 +432,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "maos" :
                        {
                         "name" : "Daisy Johnson", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
                         "skills" : ["Pulse punch", "A real stunner", "More bang for your punch", "Vibrations", "Quake"],
                         "gears" : ["Vibration manipulation ability", "S.H.I.E.L.D. tactical gear", "Power-inhibiting gloves", "Inhuman genes"]
                        },
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Quake", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
@@ -488,7 +446,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["claws/black_cat", "wj/punisher", "aaou/captain_america", "classic_70/ghost_rider", "ultimate/green_goblin"],
                         "gears" : ["Vibration manipulation ability", "S.H.I.E.L.D. suit", "Special metal gloves", "Inhuman genes"]
                        },
-                       // TODO : image need to be recreated from game
                        "maosq" :
                        {
                         "name" : "Daisy Johnson", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
@@ -504,14 +461,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Daredevil", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
                         "skills" : ["Billy club shot", "Blind strike", "Club swing", "Staff splash", "Blind sided"],
                         "gears" : ["Billy club", "Red costume", "Horned mask", "Sunglasses"]
                        },
-                       // TODO : image need to be recreated from game
                        "dohk" :
                        {
                         "name" : "Daredevil", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -520,7 +475,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["anca/falcon", "capdoc/modok", "websuit/silk", "aaou/thor", "classic/nebula"],
                         "gears" : ["Billy club", "Enhanced red armor", "Horned mask", "Sunglasses"]
                        },
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Daredevil", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -536,14 +490,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "maos" :
                        {
                         "name" : "Deathlok", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
                         "skills" : ["Tactical shoot-out", "Covering fire", "S.H.I.E.L.D. soldier", "Upgraded missile", "Perfect shot"],
                         "gears" : ["Forearm rocket launcher", "Internal prostheses", "Ballistic armor", "Centipede device"]
                        },
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Deathlok", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
@@ -559,14 +511,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "classic" :
                        {
                         "name" : "Destroyer", "attackBase" : "energy", "species" : "creature", "gender" : "neutral", "side" : "neutral", "type" : "universal",
                         "skills" : ["Disintegration beam", "Crush", "Electromagnetic wave", "Obliteration wave", "Asgardian armament"],
                         "gears" : ["Destroyer helmet", "Unknown metal plates", "Odin's enchantment", "Strength of the All-father"]
                        },
-                       // TODO : image need to be recreated from game
                        "prometheus" :
                        {
                         "name" : "Destroyer", "attackBase" : "energy", "species" : "creature", "gender" : "neutral", "side" : "neutral", "type" : "universal",
@@ -582,14 +532,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Doctor Strange", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
                         "skills" : ["Crimson bands of Cyttorak", "Demons of Denak", "Eye of Agamotto", "All-seeing eye", "Sorcerer supreme"],
                         "gears" : ["Vishanti magic", "Blue tunic", "Cloak of levitation", "Eye of Agamotto"]
                        },
-                       // TODO : image need to be recreated from game
                        "doc_strange" :
                        {
                         "name" : "Doctor Strange", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
@@ -605,7 +553,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "classic" :
                        {
                         "name" : "Dormammu", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "universal",
@@ -618,14 +565,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "gg" :
                        {
                         "name" : "Drax", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
                         "skills" : ["Dagger fall", "Takedown", "Cry for blood", "Obliterate", "Blade retribution"],
                         "gears" : ["Dual knives", "Impact-resistant carbon plating", "Combat boots with sheath", "Regenerative healing factor"]
                        },
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Drax", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -641,7 +586,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "infinity" :
                        {
                         "name" : "Ebony maw", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "universal",
@@ -676,14 +620,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Elsa Bloodstone", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
                         "skills" : ["Bloodstone training", "Filled with hate", "Nowhere to hide", "No mercy", "No escape"],
                         "gears" : ["Hunting rifle", "Leather coat", "Enhanced tights", "Bloodstone choker"]
                        },
-                       // TODO : image need to be recreated from game
                        "sw_zombies" :
                        {
                         "name" : "Elsa Bloodstone", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
@@ -707,7 +649,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Enchantress", "attackBase" : "energy", "species" : "alien", "gender" : "female", "side" : "vilain", "type" : "blast",
@@ -721,14 +662,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "catws" :
                        {
                         "name" : "Falcon", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
                         "skills" : ["Vertical descent", "Swoop", "Raptor strafe", "Sky-high", "Air superiority"],
                         "gears" : ["Submachine gun", "EXO-7 Falcon", "Jump boots", "Goggles"]
                        },
-                       // TODO : image need to be recreated from game
                        "anca" :
                        {
                         "name" : "Falcon", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -737,7 +676,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["iar/ghost_rider", "sw_future/hulk", "unworthy/thor", "anad/iron_fist", "cacw/ant_man"],
                         "gears" : ["Vibranium shield", "STARK's vibranium wing", "Jump boots", "Goggles"]
                        },
-                       // TODO : image need to be recreated from game
                        "cacw" :
                        {
                         "name" : "Falcon", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -753,7 +691,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Fandral", "attackBase" : "physical`", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -767,14 +704,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "gg" :
                        {
                         "name" : "Gamora", "attackBase" : "physical", "species" : "alien", "gender" : "female", "side" : "hero", "type" : "speed",
                         "skills" : ["Dagger throw", "Death dealer", "Godslayer", "Spinning slash", "Slide n'slice"],
                         "gears" : ["God slayer", "Body suit", "Cybernetic skeleton", "Regeneration implant"]
                        },
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Gamora", "attackBase" : "physical", "species" : "alien", "gender" : "female", "side" : "hero", "type" : "speed",
@@ -790,14 +725,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "classic" :
                        {
                         "name" : "Ghost rider", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "universal",
                         "skills" : ["Chains ablaze", "Highway to hell", "Hellfire", "Damnation chains", "Penance stare"],
                         "gears" : ["Hellfire chains", "Rider's jacket", "Motorcycle gloves", "Motorcycle"]
                        },
-                       // TODO : image need to be recreated from game
                        "classic_70" :
                        {
                         "name" : "Ghost rider", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "universal",
@@ -806,7 +739,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["maosq/daisy_johnson", "doc_strange/doctor_strange", "sw_thors/groot", "doc_strange/ancient_one", "annihilation/ronan"],
                         "gears" : ["Hellfire chains", "Rider's suit", "Motorcycle gloves", "Classic bike"]
                        },
-                       // TODO : image need to be recreated from game
                        "iar" :
                        {
                         "name" : "Ghost rider", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "universal",
@@ -835,14 +767,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Giant man", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
                         "skills" : ["Jump kick", "Giant stomp", "Growing pains", "Crashing foot falls", "Giant jackhammer"],
                         "gears" : ["Pym particles", "Giant-man suit", "Cowl communicator", "Utility belt"]
                        },
-                       // TODO : image need to be recreated from game
                        "modern2" :
                        {
                         "name" : "Goliath", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -858,14 +788,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "classic" :
                        {
                         "name" : "Green goblin", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "speed",
                         "skills" : ["Pumpkin bombs", "Bag of tricks", "Pumpkin barrage", "Bombing run", "Aerial charge"],
                         "gears" : ["Pumpkin bombs", "Green goblin suit", "Goblin glider", "Bag of tricks"]
                        },
-                       // TODO : image need to be recreated from game
                        "ultimate" :
                        {
                         "name" : "Green goblin", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "combat",
@@ -880,14 +808,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "gg" :
                        {
                         "name" : "Groot", "attackBase" : "physical", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "combat",
                         "skills" : ["Branch crunch", "Root swipe", "Spore", "Groot smash", "We are Groot!"],
                         "gears" : ["\"I am Groot!\"", "Limbs", "Regeneration", "Little flower pot"]
                        },
-                       // TODO : image need to be recreated from game
                        "sw_thors" :
                        {
                         "name" : "Groot", "attackBase" : "physical", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "universal",
@@ -903,7 +829,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Gwenpool", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
@@ -930,14 +855,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "avengers" :
                        {
                         "name" : "Hawkeye", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
                         "skills" : ["Arrow barrage", "Sure shot", "Trick shot", "Piercing arrow", "Evasive shot"],
                         "gears" : ["Hawkeye's bow", "Armored suit", "Quick-release quiver", "Trick arrows"]
                        },
-                       // TODO : image need to be recreated from game
                        "aaou" :
                        {
                         "name" : "Hawkeye", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -946,7 +869,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["anca/falcon", "doc_strange/ancient_one", "sw_zombies/elsa_bloodstone", "noir/punisher", "modern/lash"],
                         "gears" : ["Hawkeye's bow", "Armored suit", "Quick-release quiver", "Trick arrows"]
                        },
-                       // TODO : image need to be recreated from game
                        "cacw" :
                        {
                         "name" : "Hawkeye", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -962,7 +884,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "now" :
                        {
                         "name" : "Hawkeye - Kate Bishop", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
@@ -976,7 +897,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Hela", "attackBase" : "energy", "species" : "alien", "gender" : "female", "side" : "vilain", "type" : "universal",
@@ -1003,7 +923,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Hellstrom", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "universal",
@@ -1017,7 +936,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Hogun", "attackBase" : "physical", "species" : "alien", "gender" : "female", "side" : "hero", "type" : "combat",
@@ -1031,14 +949,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "avengers" :
                        {
                         "name" : "Hulk", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
                         "skills" : ["Hulk charge", "Thunder clap", "Hulk smash", "Hulk stomp", "Hulk slam"],
                         "gears" : ["Rage", "Ripped pants", "Gamma radiation", "Dr. Banner glass"]
                        },
-                       // TODO : image need to be recreated from game
                        "sw_future" :
                        {
                         "name" : "Maestro", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "combat",
@@ -1047,7 +963,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["modern/lash", "anad/malekith", "wwh/hulk", "modern/deathlok", "anad/drax"],
                         "gears" : ["Rage", "Maestro pants", "Gamma radiation", "Ornament necklace"]
                        },
-                       // TODO : image need to be recreated from game
                        "wwh" :
                        {
                         "name" : "Hulk", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "combat",
@@ -1064,14 +979,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "tah" :
                        {
                         "name" : "Hulk Cho", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
                         "skills" : ["Tornado punch", "Counter slam", "Meteor drop", "Gamma stomp", "Tectonic toss"],
                         "gears" : ["Raging fist", "Tech pants", "Gamma radiation", "Wristbands"]
                        },
-                       // TODO : image need to be recreated from game
                        "unleashed" :
                        {
                         "name" : "Hulk Cho", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -1083,18 +996,16 @@ MFF.CHARACTERS.DATA =
                       }
                      },
 "hulkbuster" :       {
-                      "uniform" : "avengers",
-                      "tiers" : [1],
+                      "uniform" : "aaou",
+                      "tiers" : [1,2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
-                       "avengers" :
+                       "aaou" :
                        {
                         "name" : "Hulkbuster - Mark 44", "attackBase" : "physical", "species" : "creature", "gender" : "male", "side" : "hero", "type" : "combat",
                         "skills" : ["Repulsor smash", "Hydraulic boom", "Jet-assisted takedown", "Arc reactor burst", "Barrage strike"],
                         "gears" : ["Magno-hydraulic pseudo-muscilature", "Impact-resistant carbon plating", "Anchoring system", "Gamma radiation detector"]
                        },
-                       // TODO : image need to be recreated from game
                        "hda" :
                        {
                         "name" : "Hulkbuster - Mark 43", "attackBase" : "physical", "species" : "creature", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -1110,7 +1021,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "na" :
                        {
                         "name" : "Hulkling", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -1124,7 +1034,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Hyperion", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "universal",
@@ -1188,14 +1097,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "classic" :
                        {
                         "name" : "Iron man", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
                         "skills" : ["Repulsor Blast", "Repulsor ray", "Unibeam", "Missile Barrage", "The One-Off"],
                         "gears" : ["Repulsors", "Iron man suit", "Arc reactor", "J.A.R.V.I.S."]
                        },
-                       // TODO : image need to be recreated from game
                        "aaou" :
                        {
                         "name" : "Iron man", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
@@ -1204,7 +1111,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["anad/wasp", "noir/punisher", "maosq/daisy_johnson", "anad/rocket_raccoon", "sw_renew/spider_man"],
                         "gears" : ["Repulsors", "Iron man suit", "Arc reactor", "J.A.R.V.I.S."]
                        },
-                       // TODO : image need to be recreated from game
                        "sw_2099" :
                        {
                         "name" : "Iron man", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
@@ -1213,7 +1119,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["maos/daisy_johnson", "ca/winter_soldier", "sw_red_skull/red_skull", "wwh/hulk", "noir/punisher"],
                         "gears" : ["Repulsors", "2099 suit", "Arc reactor", "J.A.R.V.I.S."]
                        },
-                       // TODO : image need to be recreated from game
                        "cacw" :
                        {
                         "name" : "Iron man", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
@@ -1229,7 +1134,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "now" :
                        {
                         "name" : "Ironheart", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
@@ -1243,7 +1147,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Jessica Jones", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "combat",
@@ -1257,7 +1160,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "doc_strange" :
                        {
                         "name" : "Kaecilius", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "blast",
@@ -1305,14 +1207,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Kingpin", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "combat",
                         "skills" : ["Stick shot", "Jump strike", "Knock-out", "Body slam", "Criminal mastermind"],
                         "gears" : ["The walking stick", "White suit", "Pure muscle", "Diamond stickpin"]
                        },
-                       // TODO : image need to be recreated from game
                        "sw_armor_wars" :
                        {
                         "name" : "Kingpin", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "blast",
@@ -1328,14 +1228,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "maos" :
                        {
                         "name" : "Lash", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "blast",
                         "skills" : ["Found wanting", "Disintegrate", "Knock out", "Undeserving", "Cull the weak"],
                         "gears" : ["Energy conversion ability", "Black pants", "Wrist guards", "Inhuman genes"]
                        },
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Lash", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "blast",
@@ -1351,7 +1249,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "maos" :
                        {
                         "name" : "Lincoln Campbell", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
@@ -1365,14 +1262,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "avengers" :
                        {
                         "name" : "Loki", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "universal",
                         "skills" : ["Scepter bolt", "Arcane blast", "Energy barrier", "Astral projection", "Mind games"],
                         "gears" : ["Chitauri scepter", "Asgardian pauldron", "Horned helmet", "Green cape"]
                        },
-                       // TODO : image need to be recreated from game
                        "ll" :
                        {
                         "name" : "Loki", "attackBase" : "energy", "species" : "alien", "gender" : "female", "side" : "vilain", "type" : "universal",
@@ -1417,14 +1312,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "ttdw" :
                        {
                         "name" : "Malekith", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "blast",
                         "skills" : ["Aether bolt", "Shadow flurry", "Extinguish darkness", "Storm of the aether", "The accursed"],
                         "gears" : ["Aether", "Dark elven armor", "Svartafheim gauntlets", "Dark elven cape"]
                        },
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Malekith", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "blast",
@@ -1453,7 +1346,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Medusa", "attackBase" : "physical", "species" : "alien", "gender" : "female", "side" : "hero", "type" : "universal",
@@ -1467,10 +1359,9 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
-                        "name" : "Miles Morales", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
+                        "name" : "Spider-man : Miles Morales", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
                         "skills" : ["Foe flip", "Back bite", "Wild web", "Shock and awe", "Blasting burst"],
                         "gears" : ["Web-shooter", "Ultimate costume", "Ultimate spider mask", "Venom blasted"]
                        }
@@ -1481,7 +1372,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Misty Knight", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
@@ -1495,14 +1385,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "ha" :
                        {
                         "name" : "Mockingbird", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
                         "skills" : ["Twin stave attack", "Bo-staff kick", "Concentration", "Bo-staff strike", "Bo-staff take down"],
                         "gears" : ["Twin staves", "Bullet-proof suit", "Armored boots", "Night vision glasses"]
                        },
-                       // TODO : image need to be recreated from game
                        "maos" :
                        {
                         "name" : "Bobbi Morse", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
@@ -1511,7 +1399,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["ati/war_machine", "unleashed/hulk_cho", "doc_strange/wong", "sw_2099/black_widow", "anad/luke_cage"],
                         "gears" : ["Twin staves", "Bullet-proof suit", "Armored boots", "Fingerless gloves"]
                        },
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Mockingbird", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
@@ -1527,14 +1414,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "classic" :
                        {
                         "name" : "M.O.D.O.K.", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "blast",
                         "skills" : ["Dominance of spirit", "Doomsday chair shot", "Impending doom", "Telekinetic force blast", "Head-on"],
                         "gears" : ["Power focus headband", "Doomsday chair", "Force fields barriers", "Psychic amplifier"]
                        },
-                       // TODO : image need to be recreated from game
                        "spidoc" :
                        {
                         "name" : "M.O.D.O.K.", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "blast",
@@ -1543,7 +1428,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["doc_strange/doctor_strange", "modern/lash", "ll/loki", "wwh/hulk", "aaou/vision"],
                         "gears" : ["Hige spider mask", "Doomsday chair", "Spider suit", "Psychic amplifier"]
                        },
-                       // TODO : image need to be recreated from game
                        "capdoc" :
                        {
                         "name" : "M.O.D.O.K.", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "blast",
@@ -1572,14 +1456,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Moon knight", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
                         "skills" : ["Moon strike", "Crescent bommerang", "Staff slam", "Full moon", "Lunar eclipse"],
                         "gears" : ["Truncheon", "Chest armor", "Silver cloak", "Crescent dart"]
                        },
-                       // TODO : image need to be recreated from game
                        "armored" :
                        {
                         "name" : "Moon knight", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -1595,14 +1477,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "classic" :
                        {
                         "name" : "Baron Mordo", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "blast",
                         "skills" : ["Energy sphere", "Energy whip", "Energy shock", "Seeking spear", "Flame pillar"],
                         "gears" : ["Black magic", "Green tight", "Black collar", "Mordo's belt"]
                        },
-                       // TODO : image need to be recreated from game
                        "doc_strange" :
                        {
                         "name" : "Mordo", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -1618,7 +1498,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Ms marvel - Kamala Khan", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "combat",
@@ -1640,14 +1519,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "gg" :
                        {
                         "name" : "Nebula", "attackBase" : "physical", "species" : "alien", "gender" : "female", "side" : "vilain", "type" : "combat",
                         "skills" : ["Elegant kick", "Sudden strike", "Vicious spree", "Dagger dance", "Shooting star"],
                         "gears" : ["Electroshock batons", "Regeneration implant", "Cybernetic-enhancement", "Mechanical arm"]
                        },
-                       // TODO : image need to be recreated from game
                        "classic" :
                        {
                         "name" : "Nebula", "attackBase" : "physical", "species" : "alien", "gender" : "female", "side" : "vilain", "type" : "combat",
@@ -1663,14 +1540,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "classic" :
                        {
                         "name" : "Doctor Octopus", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "combat",
                         "skills" : ["Tentacle sling", "Rock throw", "Tentacle block", "Tentacle punch", "Armed and dangerous"],
                         "gears" : ["Tentacle harness", "Power suit", "Neural controller", "Sunglasses"]
                        },
-                       // TODO : image need to be recreated from game
                        "ssm" :
                        {
                         "name" : "Doctor Octopus", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -1686,7 +1561,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Odin", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "universal",
@@ -1700,7 +1574,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "maos" :
                        {
                         "name" : "Phil Coulson", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
@@ -1714,7 +1587,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "infinity" :
                        {
                         "name" : "Proxima midnight", "attackBase" : "energy", "species" : "alien", "gender" : "female", "side" : "vilain", "type" : "universal",
@@ -1765,14 +1637,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Red hulk", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "combat",
                         "skills" : ["Burning fury", "Hulk blast", "Irradiate", "Blazing leap", "Avalanche smash"],
                         "gears" : ["Gamma radiation emission", "Heat resistants pants", "Belching heat", "Rejuvenation"]
                        },
-                       // TODO : image need to be recreated from game
                        "now" :
                        {
                         "name" : "Red hulk", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -1788,14 +1658,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "catfa" :
                        {
                         "name" : "Red skull", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "blast",
                         "skills" : ["Rapid fire", "Fatal blow", "Strategist", "Cosmic cube destruction", "Legion of Hydra"],
                         "gears" : ["Tesseract", "Black leather coat", "HYDRA belt", "Kevlar vest"]
                        },
-                       // TODO : image need to be recreated from game
                        "sw_red_skull" :
                        {
                         "name" : "Red skull", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "speed",
@@ -1811,14 +1679,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "gg" :
                        {
                         "name" : "Rocket racoon", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "blast",
                         "skills" : ["Heavy machine gun", "Covering fire", "Trip mine", "Ion cannon", "I've got a plan"],
                         "gears" : ["Laser cannon", "Orange battle suit", "Cybernetic skeleton", "Jet pack"]
                        },
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Rocket racoon", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "blast",
@@ -1834,14 +1700,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "gg" :
                        {
                         "name" : "Ronan", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "universal",
                         "skills" : ["Tip the scales", "Universal weapon", "Arbitration", "Law enforcer", "Judgement call"],
                         "gears" : ["Universal weapon", "Kree armor", "Kree pauldron", "Protective shroud"]
                        },
-                       // TODO : image need to be recreated from game
                        "annihilation" :
                        {
                         "name" : "Ronan", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "universal",
@@ -1857,7 +1721,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Satana", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "universal",
@@ -1871,7 +1734,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "ca_75" :
                        {
                         "name" : "Sharon Rogers", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
@@ -1885,7 +1747,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Shang-Chi", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -1899,14 +1760,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "sw_a_force" :
                        {
                         "name" : "She-hulk", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "combat",
                         "skills" : ["Opening statement", "Move to strike", "Cross examination", "Objection !", "Exhibit A"],
                         "gears" : ["Mighty gloves", "A-Force uniform", "Gamme-charger", "Legal documents"]
                        },
-                       // TODO : image need to be recreated from game
                        "an" :
                        {
                         "name" : "She-hulk", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "combat",
@@ -1922,14 +1781,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "maos" :
                        {
                         "name" : "Sif", "attackBase" : "physical", "species" : "alien", "gender" : "female", "side" : "hero", "type" : "combat",
                         "skills" : ["Sudden stab", "Combat strike", "Attack edge", "For glory !", "For honor!"],
                         "gears" : ["Sword and shield", "Asgardian armor", "Chain mail", "Gaiters"]
                        },
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Sif", "attackBase" : "physical", "species" : "alien", "gender" : "female", "side" : "hero", "type" : "combat",
@@ -1945,14 +1802,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Silk", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
                         "skills" : ["Spider and fly", "Look behind you", "Shield smash", "Web rebound", "The yo-yo"],
                         "gears" : ["Organic web", "Red hood", "Silk costume", "Silk sense"]
                        },
-                       // TODO : image need to be recreated from game
                        "websuit" :
                        {
                         "name" : "Silk", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
@@ -1968,7 +1823,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Sin", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "vilain", "type" : "speed",
@@ -1982,7 +1836,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "sw_a_force" :
                        {
                         "name" : "Singularity", "attackBase" : "energy", "species" : "alien", "gender" : "female", "side" : "hero", "type" : "universal",
@@ -1996,14 +1849,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "sw_a_force" :
                        {
                         "name" : "Sister Grimm", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
                         "skills" : ["Float on", "Punish", "Angry like a wolf", "Now you see me", "Rock and roll"],
                         "gears" : ["The staff of One", "Black dress", "Witch arm", "Blood offering"]
                        },
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Sister Grimm", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
@@ -2019,7 +1870,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "na" :
                        {
                         "name" : "Songbird", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
@@ -2033,7 +1883,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Spider-Gwen", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
@@ -2047,14 +1896,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "classic" :
                        {
                         "name" : "Spider-man", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
                         "skills" : ["Web shot", "Web swing kick", "Webslinger", "Web fling", "Wrecking web"],
                         "gears" : ["Web-shooter", "Classic costume", "Spider mask", "Utility belt"]
                        },
-                       // TODO : image need to be recreated from game
                        "sw_renew" :
                        {
                         "name" : "Spider-man", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -2063,7 +1910,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["cacw/hawkeye", "sw_2099/iron_man", "doc_strange/ancient_one", "modern/crossbones", "maos/mockingbird"],
                         "gears" : ["Web-shooter", "Black costume", "Black mask", "Utility belt"]
                        },
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Spider-man", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -2072,7 +1918,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["anad/sister_grimm", "ssm/octopus", "cacw/war_machine", "mam/ant_man", "cacw/spider_man"],
                         "gears" : ["Web-shooter", "Parker tech suit", "Spider mask", "Utility belt"]
                        },
-                       // TODO : image need to be recreated from game
                        "cacw" :
                        {
                         "name" : "Spider-man", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -2088,14 +1933,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "na" :
                        {
                         "name" : "Squirrel girl", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
                         "skills" : ["Squirrel bombs", "Scurry roll", "Tail whip", "Squirrel army", "Squirrel sidekick"],
                         "gears" : ["Bushy tail", "Brown jacket", "Orange jumpsuit", "Tippy toe"]
                        },
-                       // TODO : image need to be recreated from game
                        "now" :
                        {
                         "name" : "Squirrel girl", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "speed",
@@ -2111,14 +1954,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "gg" :
                        {
                         "name" : "Star Lord", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "blast",
                         "skills" : ["Gravity grenade", "Hadron enforcer", "I have a plan", "Power of orb", "Come and get it"],
                         "gears" : ["Quad blasters", "Helmet", "Jet boots", "Cassette player"]
                        },
-                       // TODO : image need to be recreated from game
                        "sa" :
                        {
                         "name" : "Star Lord", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "blast",
@@ -2134,7 +1975,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "infinity" :
                        {
                         "name" : "Supergiant", "attackBase" : "energy", "species" : "alien", "gender" : "female", "side" : "vilain", "type" : "universal",
@@ -2148,7 +1988,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "infinity" :
                        {
                         "name" : "Thanos", "attackBase" : "physical", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "universal",
@@ -2162,14 +2001,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "avengers" :
                        {
                         "name" : "Thor", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "universal",
                         "skills" : ["Thunderstrike", "Hammer throw", "Call the lightning", "Battle rage", "Thundering maelstrom"],
                         "gears" : ["Mjolnir", "Battle armor", "Winged helmet", "Iron gauntlets"]
                        },
-                       // TODO : image need to be recreated from game
                        "aaou" :
                        {
                         "name" : "Thor", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "universal",
@@ -2178,7 +2015,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["sw_zombies/venom", "unworthy/thor", "modern/deathlok", "wj/punisher", "na/iron_fist"],
                         "gears" : ["Mjolnir", "Battle armor", "Winged helmet", "Iron gauntlets"]
                        },
-                       // TODO : image need to be recreated from game
                        "unworthy" :
                        {
                         "name" : "Thor", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "universal",
@@ -2191,10 +2027,9 @@ MFF.CHARACTERS.DATA =
                      },
 "thor_jane_foster" : {
                       "uniform" : "anad",
-                      "tiers" : [1],
+                      "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Thor - Jane Foster", "attackBase" : "energy", "species" : "human" ,"gender" : "female", "side" : "hero", "type" : "universal",
@@ -2208,7 +2043,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Ulik", "attackBase" : "physical", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "combat",
@@ -2222,14 +2056,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Ultron", "attackBase" : "energy", "species" : "creature", "gender" : "male", "side" : "vilain", "type" : "universal",
                         "skills" : ["Chest beam", "Robotic slam", "Encephalo-ray", "Electronic field", "No strings"],
                         "gears" : ["Concussion blasters", "Vibranium shell", "Small nuclear reactor", "Hive-mind technology"]
                        },
-                       // TODO : image need to be recreated from game
                        "aaou_blast" :
                        {
                         "name" : "Ultron prime", "attackBase" : "energy", "species" : "creature", "gender" : "male", "side" : "vilain", "type" : "universal",
@@ -2238,7 +2070,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["anad/angela", "annihilation/ronan", "anad/spider_man", "anad/gamora", "modern/daisy_johnson"],
                         "gears" : ["Concussion blasters", "Vibranium shell", "Small nuclear reactor", "Hive-mind technology"]
                        },
-                       // TODO : image need to be recreated from game
                        "aaou_combat" :
                        {
                         "name" : "Ultron mark 1", "attackBase" : "energy", "species" : "creature", "gender" : "male", "side" : "vilain", "type" : "universal",
@@ -2247,7 +2078,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["prometheus/destroyer", "catws/captain_america", "anad/black_cat", "ms_marvel/captain_marvel", "modern/daisy_johnson"],
                         "gears" : ["Concussion blasters", "Vibranium shell", "Small nuclear reactor", "Hive-mind technology"]
                        },
-                       // TODO : image need to be recreated from game
                        "aaou_speed" :
                        {
                         "name" : "Ultron mark 3", "attackBase" : "energy", "species" : "creature", "gender" : "male", "side" : "vilain", "type" : "universal",
@@ -2263,14 +2093,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "classic" :
                        {
                         "name" : "Venom", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "combat",
                         "skills" : ["Symbiote surge", "Tendril spike", "Parastic shot", "Deadly maw", "Lethal Symbiosis"],
                         "gears" : ["Claws", "Poisonous fangs", "Prehensile tongue", "The hunger"]
                        },
-                       // TODO : image need to be recreated from game
                        "sw_zombies" :
                        {
                         "name" : "Venom", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "combat",
@@ -2286,14 +2114,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Vision", "attackBase" : "energy", "species" : "creature", "gender" : "male", "side" : "hero", "type" : "blast",
                         "skills" : ["Physical disruption", "Solar energy beam", "Density shift", "Microwave pulse", "Dimensional attack"],
                         "gears" : ["Solar energy", "Density alteration system", "Self-repair system", "Optical scanners"]
                        },
-                       // TODO : image need to be recreated from game
                        "aaou" :
                        {
                         "name" : "Vision", "attackBase" : "energy", "species" : "creature", "gender" : "male", "side" : "hero", "type" : "universal",
@@ -2309,7 +2135,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Volstagg", "attackBase" : "physical", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -2323,14 +2148,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "War machine", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
                         "skills" : ["Suppression fire", "Armored clash", "Repulsor shot", "Minigun barrage", "Missile strafe"],
                         "gears" : ["Gatling gun", "War machine armor", "Power cells", "Heat seeking missiles"]
                        },
-                       // TODO : image need to be recreated from game
                        "ip" :
                        {
                         "name" : "War machine", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
@@ -2339,7 +2162,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["aaou/captain_america", "ssm/octopus", "now/squirrel_girl", "ati/war_machine", "classic_70/blade"],
                         "gears" : ["Gatling gun", "Iron patriot armor", "Power cells", "Heat seeking missiles"]
                        },
-                       // TODO : image need to be recreated from game
                        "ati" :
                        {
                         "name" : "War machine", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
@@ -2348,7 +2170,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["claws/black_cat", "aaou/iron_man", "anad/sister_grimm", "aaou/black_widow", "aaou/vision"],
                         "gears" : ["Combat cannon", "Assault armor", "Power cells", "Heat seeking missiles"]
                        },
-                       // TODO : image need to be recreated from game
                        "cacw" :
                        {
                         "name" : "War machine", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
@@ -2364,7 +2185,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "howling" :
                        {
                         "name" : "Warworlf", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
@@ -2378,14 +2198,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "modern" :
                        {
                         "name" : "Wasp", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
                         "skills" : ["Disrupting shot", "Blinding flash", "Encouragement", "Target rush", "Swarm shield"],
                         "gears" : ["Wasp's sting", "Wasp uniform", "Implanted insect wings", "Pym particles"]
                        },
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Wasp", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
@@ -2401,7 +2219,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "na" :
                        {
                         "name" : "White tiger", "attackBase" : "physical", "species" : "human", "gender" : "female", "side" : "hero", "type" : "combat",
@@ -2415,7 +2232,6 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "na" :
                        {
                         "name" : "Wiccan", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
@@ -2429,14 +2245,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "catws" :
                        {
                         "name" : "Winter soldier", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
                         "skills" : ["Suppressing fire", "Bionic combat", "Sensory array", "Snarpshooter", "Explosive sabotage"],
                         "gears" : ["Rifle mount grenade launcher", "Tactical suit", "Cybernetic arm", "Black mask"]
                        },
-                       // TODO : image need to be recreated from game
                        "cacw" :
                        {
                         "name" : "Winter soldier", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -2445,7 +2259,6 @@ MFF.CHARACTERS.DATA =
                         "links" : ["mam/ant_man", "modern2/giant_man", "aaou_combat/ultron", "cacw/ant_man", "aaou/hawkeye"],
                         "gears" : ["Rifle mount grenade launcher", "Combat vest", "Cybernetic arm", "Sniper rifle"]
                        },
-                       // TODO : image need to be recreated from game
                        "ca" :
                        {
                         "name" : "Winter soldier", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -2461,14 +2274,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Wong", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
                         "skills" : ["Wandering staff", "Scimitar spin", "Mystic shield", "Mystic wave", "Scimitar cyclone"],
                         "gears" : ["Runic staff", "Kamar-Taj uniform", "Gold fabric belt", "Scimitar"]
                        },
-                       // TODO : image need to be recreated from game
                        "doc_strange" :
                        {
                         "name" : "Wong", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
@@ -2484,14 +2295,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "mam" :
                        {
                         "name" : "Yellow jacket", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "blast",
                         "skills" : ["Stinger", "Flying barrage", "Now you see me", "Swarm shot", "Laser burst"],
                         "gears" : ["Robotic arms", "Yellow jacket suit", "Yellow jacked helmet", "Pym particles"]
                        },
-                       // TODO : image need to be recreated from game
                        "now" :
                        {
                         "name" : "Yellow jacket", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "blast",
@@ -2507,14 +2316,12 @@ MFF.CHARACTERS.DATA =
                       "tiers" : [1, 2],
                       "uniforms" :
                       {
-                       // TODO : image need to be recreated from game
                        "gg" :
                        {
                         "name" : "Yondu", "attackBase" : "physical", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "speed",
                         "skills" : ["Leap kick", "Barrage of arrows", "Arrow call", "Yaka arrow", "Ravager strike"],
                         "gears" : ["Yaka arrow", "Ravager coat", "Alpha centauri vest", "Toy doll"]
                        },
-                       // TODO : image need to be recreated from game
                        "anad" :
                        {
                         "name" : "Yondu", "attackBase" : "physical", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "speed",
