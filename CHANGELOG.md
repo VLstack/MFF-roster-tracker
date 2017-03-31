@@ -9,6 +9,7 @@
 - [#13](https://github.com/Mokhet/MFF-roster-tracker/issues/13) Correct naming of all gears based on active uniform
   - Except for Dormammu since I don't have him in my roster yet
   - Except for Captain Marvel with uniform "Secret wars: Captain Marvel & The Carol corp" because it is impossible to have this costume now
+- Resync every characters pictures with MFF 2.9.5
 
 **Added:**
 
@@ -28,7 +29,10 @@
 - [#35](https://github.com/Mokhet/MFF-roster-tracker/issues/35) Data error
   - add Loki T2
   - add Angela T2
+  - add Hulkbuster T2
+  - add Thor Jane Foster T2
   - fixed Satana side from vilain to hero
+  - fixed Hulkbuster uniform from "The avengers" to "Avengers : Age of ultron"
 - Consistent 2 digits float values
 - [#31](https://github.com/Mokhet/MFF-roster-tracker/issues/31) Removed waves effect on every elements
 - [#36](https://github.com/Mokhet/MFF-roster-tracker/issues/36) After "Set all to ...", the min, max and average values don't refresh
