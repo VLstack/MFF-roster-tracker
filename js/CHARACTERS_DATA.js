@@ -120,7 +120,7 @@ MFF.CHARACTERS.DATA =
                         "links" : ["cacw/ant_man", "anad/yondu", "cacw/captain_america", "anad/black_cat", "cacw/falcon"],
                         "gears" : ["Quasi-sonic scream", "Aerial combat suit", "Electron channeling antenna", "Anti-gravitons"]
                        },
-                       "attilanrising" :
+                       "iar" :
                        {
                         "name" : "Black bolt", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "universal",
                         "skills" : ["Electron channeling", "King's order", "Power word", "Brutal whisper", "Quasi-sonic scream"],
@@ -1184,7 +1184,7 @@ MFF.CHARACTERS.DATA =
                         "name" : "Karnak", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "speed",
                         "skills" : ["Side-splitter", "Gale", "Wave of wisdom", "Charging strike", "Death chop"],
                         "bonus" : ["Activation rate: 35% when debuffed", "Apply to: Self", "Remove all debuffs (2 sec.)", "Cooldown time 15 seconds"],
-                        "links" : ["unleashed/elsa_bloodstone", "attilanrising/black_bolt", "iar/ghost_rider", "anad/daredevil", "sw_2099/iron_man"],
+                        "links" : ["unleashed/elsa_bloodstone", "iar/black_bolt", "iar/ghost_rider", "anad/daredevil", "sw_2099/iron_man"],
                         "gears" : ["Slack bandage", "Frayed hood jacket", "Old cotton T-shirt", "Magister's tattoo"]
                        }
                       }
@@ -1627,7 +1627,7 @@ MFF.CHARACTERS.DATA =
                         "name" : "Punisher", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "hero", "type" : "combat",
                         "skills" : ["Grenade throw", "Flare", "Wild shot", "Rocket shower", "Smoke operation"],
                         "bonus" : ["Activation rate: 5% when attacking", "Apply to: Self", "Decrease skill cooldown by 30% (10 sec.)", "Cooldown time 20 seconds"],
-                        "links" : ["md/elektra", "anad/iron_fist", "attilanrising/black_bolt", "modern/crossbones", "modern2/giant_man"],
+                        "links" : ["md/elektra", "anad/iron_fist", "iar/black_bolt", "modern/crossbones", "modern2/giant_man"],
                         "gears" : ["Hand gun", "Kevlar suit", "Combat boots", "Black leather jacket"]
                        }
                       }

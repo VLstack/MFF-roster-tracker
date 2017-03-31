@@ -11,7 +11,6 @@ MFF.UNIFORMS.DATA =
  "anad" : "All-new, All-different",
  "anca" : "All-new Captain America",
  "ati" : "Avengers: The initiative",
- "attilanrising" : "Inhumans: Attilan rising",
  "avengers" : "The avengers",
  "ca" : "Captain America",
  "ca_75" : "Captain America 75th anniversary",

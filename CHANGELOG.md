@@ -33,6 +33,7 @@
   - add Thor Jane Foster T2
   - fixed Satana side from vilain to hero
   - fixed Hulkbuster uniform from "The avengers" to "Avengers : Age of ultron"
+  - fixed Black bolt duplicate uniform key from "attilanrising" to "iar"
 - Consistent 2 digits float values
 - [#31](https://github.com/Mokhet/MFF-roster-tracker/issues/31) Removed waves effect on every elements
 - [#36](https://github.com/Mokhet/MFF-roster-tracker/issues/36) After "Set all to ...", the min, max and average values don't refresh

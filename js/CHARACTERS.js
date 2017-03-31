@@ -91,7 +91,8 @@ MFF.CHARACTERS =
  if ( !(id in MFF.CHARACTERS.DATA) ) { return "The character \"{0}\" is not a known character".format(id); }
  if ( !data.uniform ) { return "The uniform of the character \"{0}\" is not defined".format(id); }
  if ( id == "hulkbuster" && data.uniform == "avengers" ) { data.uniform = "aaou"; } // fix data error corrected in 2.3
- // if ( !(data.uniform in MFF.CHARACTERS.DATA[id].uniforms) ) { return "The uniform \"{0}\" of the character \"{1}\" is not a known uniform".format(data.uniform, id); }
+ if ( id == "black_bolt" && data.uniform == "attilanrising" ) { data.uniform = "iar"; } // fix data error corrected in 2.3
+ if ( !(data.uniform in MFF.CHARACTERS.DATA[id].uniforms) ) { return "The uniform \"{0}\" of the character \"{1}\" is not a known uniform".format(data.uniform, id); }
  name = MFF.CHARACTERS.getNameForUniform(id, data.uniform);
  if ( !("gear" in data) ) { return "Gears for the character \"{0}\" are not defined".format(name); }
  if ( !Array.isArray(data.gear) || data.gear.length != 4 ) { return "Gears for the character \"{0}\" is not a valid array of 4 items".format(name); }
@@ -120,15 +121,20 @@ MFF.CHARACTERS =
    if ( !("energy" in all[k].defense) ) { all[k].defense.energy = 0; }
    if ( !("skills" in all[k]) || !Array.isArray(all[k].skills) || all[k].skills.length != 5 ) { all[k].skills = [0, 0, 0, 0, 0]; }
    if ( k == "hulkbuster" && all[k].uniform == "avengers" ) { all[k].uniform = "aaou"; } // fix data error corrected in 2.3
+   if ( k == "black_bolt" && all[k].uniform == "attilanrising" ) { all[k].uniform = "iar"; } // fix data error corrected in 2.3
    if ( "uniforms" in all[k] )
    {
     for ( kk in all[k].uniforms )
     {
      if ( all[k].uniforms.hasOwnProperty(kk) )
      {
+      if ( k == "black_bolt" && kk == "attilanrising" ) // fix data error corrected in 2.3
+      {
+       all[k].uniforms.iar = all[k].uniforms[kk];
+       delete all[k].uniforms[kk];
+      }
       if ( !("rank" in all[k].uniforms[kk]) || !(all[k].uniforms[kk].rank in MFF.UNIFORMS.RANKS) )
       {
-       alert(kk);
        delete all[k].uniforms[kk];
       }
      }
