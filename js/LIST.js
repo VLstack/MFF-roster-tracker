@@ -88,7 +88,7 @@ MFF.LAYOUT.LIST =
   var img, p, span, lineGear, i, progressBar, name,
       li = document.getElementById(character),
       data = MFF.CHARACTERS.get(character);
-  name = MFF.CHARACTERS.DATA[character].uniforms[data.uniform].name;
+  name = MFF.CHARACTERS.getNameForUniform(character, data.uniform);
   API.DOM.flush(li);
   MFF.LAYOUT.LIST.setClassType(character);
   MFF.LAYOUT.LIST.setTier(character);
