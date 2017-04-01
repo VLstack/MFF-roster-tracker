@@ -102,7 +102,7 @@ MFF.CHARACTERS =
 "getAll" : function() { return MFF.CHARACTERS._all; },
 "setAll" : function(all)
 {
- var k, kk, v,
+ var k, kk, v, toDelete,
      toImport = {};
  for ( k in all )
  {
@@ -124,21 +124,24 @@ MFF.CHARACTERS =
    if ( k == "black_bolt" && all[k].uniform == "attilanrising" ) { all[k].uniform = "iar"; } // fix data error corrected in 2.3
    if ( "uniforms" in all[k] )
    {
+    if ( k == "black_bolt" && ("attilanrising" in all[k].uniforms) ) // fix data error corrected in 2.3
+    {
+     all[k].uniforms.iar = all[k].uniforms.attilanrising;
+     delete all[k].uniforms.attilanrising;
+    }
+    // fix invalid uniforms
+    toDelete = [];
     for ( kk in all[k].uniforms )
     {
      if ( all[k].uniforms.hasOwnProperty(kk) )
      {
-      if ( k == "black_bolt" && kk == "attilanrising" ) // fix data error corrected in 2.3
-      {
-       all[k].uniforms.iar = all[k].uniforms[kk];
-       delete all[k].uniforms[kk];
-      }
       if ( !("rank" in all[k].uniforms[kk]) || !(all[k].uniforms[kk].rank in MFF.UNIFORMS.RANKS) )
       {
-       delete all[k].uniforms[kk];
+       toDelete.push(kk);
       }
      }
     }
+    if ( toDelete.length ) { toDelete.forEach(function(uniform) { delete all[k].uniforms[uniform]; }); }
    }
    all[k].id = k;
    toImport[k] = all[k];
