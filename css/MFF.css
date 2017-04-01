@@ -24,6 +24,7 @@ span.button.sorterDirection { margin-left:-24px; border-left:0; border-top-left-
 #panelListTab { top:0; left:0; right:0; height:24px; background: #12192b }
 #panelListContent { top:25px; left:0; right:0; bottom:0; background: #12192b }
 
+#filteredCharacters { font-size:12px; margin-left:5px; font-weight:normal; color:#aaaaaa }
 ul#panelListContent { list-style-type:none }
 ul#panelListContent>li { transition:background-color 1s ease; border:1px solid rgba(255, 255, 255, 0.2); border-radius:4px; padding:3px; line-height:0; margin:2px; background-color:#3c4460; cursor:pointer; position:relative; overflow:hidden }
 

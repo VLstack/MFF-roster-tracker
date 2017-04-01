@@ -18,6 +18,10 @@ MFF.LAYOUT.LIST =
   node = MFF.LAYOUT.LIST._tab.getNode();
   MFF.LAYOUT.LIST._btnList = new Button({ "small" : true, "renderTo" : node, "fa" : "bars", "callback" : cb("list"), "listener" : listener("list") });
   MFF.LAYOUT.LIST._btnIcon = new Button({ "small" : true, "renderTo" : node, "fa" : "th", "callback" : cb("icon"), "listener" : listener("icon") });
+  MFF.LAYOUT.LIST.filteredCharacters = node.appendChild(document.createElement("span"));
+  MFF.LAYOUT.LIST.filteredCharacters.id = "filteredCharacters";
+
+  API.EVT.on("totalFiltered", MFF.LAYOUT.LIST.totalFiltered);
 
   MFF.LAYOUT.LIST.draw();
 
@@ -29,6 +33,10 @@ MFF.LAYOUT.LIST =
 
   API.EVT.dispatch("switchList", localStorage.getItem("list") || "list");
   API.EVT.dispatch("sortList");
+ },
+ "totalFiltered" : function(params)
+ {
+  MFF.LAYOUT.LIST.filteredCharacters.innerHTML = params.nb == params.total ? params.total + " characters" : "{0} / {1} characters".format(params.nb, params.total);
  },
  "switchTo" : function(format)
  {
@@ -51,6 +59,7 @@ MFF.LAYOUT.LIST =
     MFF.LAYOUT.LIST.drawCharacter(character);
    }
   }
+  API.EVT.dispatch("totalFiltered", { "nb" : ul.childNodes.length, "total" : ul.childNodes.length });
   ul.onclick = function(evt)
   {
    var target = API.EVT.getParentTarget(evt, "li");

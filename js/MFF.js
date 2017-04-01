@@ -34,6 +34,7 @@ var MFF =
  "filters" : function()
  {
   var i, j, showHide, data, gender, side,
+      nb = 0,
       reduce = function(str) { return str.trim().toLowerCase().replace(/[^a-z]/g, ""); },
       query = reduce(document.getElementById("query").value),
       childs = document.getElementById("panelListContent").childNodes;
@@ -65,7 +66,9 @@ var MFF =
     showHide = "hide";
    }
    childs[i].style.display = showHide == "show" ? "" : "none";
+   if ( showHide == "show" ) { nb++; }
   }
+  API.EVT.dispatch("totalFiltered", { "nb" : nb, "total" : childs.length });
   if ( MFF.LAYOUT.CHARTS._panel.isShown() ) { API.EVT.dispatch("globalChart", "show"); }
  },
  "queryToid" : null,

@@ -20,6 +20,7 @@
 - Since 2.2.0 added combat power, now you can also track related Rank
 - [#34](https://github.com/Mokhet/MFF-roster-tracker/issues/34) Add tier filter
 - Next to "Set all to ...", a new option "Set all unchecked to ..."
+- Show total filtered characters
 
 **Fixed bugs:**
 
