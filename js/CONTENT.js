@@ -1,4 +1,4 @@
-/* global MFF, Panel, API */
+/* global MFF, Panel, API, ToggleSwitch */
 MFF.LAYOUT.DETAIL =
 {
  "init" : function()
@@ -10,6 +10,30 @@ MFF.LAYOUT.DETAIL =
   MFF.LAYOUT.DETAIL._panelContent = new Panel({ "id" : "panelDetailContent", "parent" : node, "relative" : true });
   MFF.LAYOUT.DETAIL.GEARS.init(node);
   MFF.LAYOUT.DETAIL.drawEmpty();
+  API.EVT.on("refreshPercentGlobal", function(characterId)
+                                     {
+                                      var div = document.getElementById("dev_percent_gbl");
+                                      if ( div ) { div.innerHTML = MFF.PERCENT.get(characterId, true) + "%"; }
+                                     });
+  API.EVT.on("refreshPercentGears", function(characterId)
+                                    {
+                                     var div = document.getElementById("dev_percent_gears");
+                                     if ( div ) { div.innerHTML = MFF.PERCENT.getGears(characterId, true) + "%"; }
+                                    });
+  API.EVT.on("refreshPercentSkills", function(characterId)
+                                     {
+                                      var div = document.getElementById("dev_percent_skills");
+                                      if ( div ) { div.innerHTML = MFF.PERCENT.getSkills(characterId, true) + "%"; }
+                                     });
+  API.EVT.on("refreshPercentUniform", function(characterId)
+                                      {
+                                       var tmp, div = document.getElementById("dev_percent_uniform");
+                                       if ( div )
+                                       {
+                                        tmp = MFF.PERCENT.getUniform(characterId, true, true);
+                                        div.innerHTML = tmp === null ? "n/a" : tmp + "%";
+                                       }
+                                      });
  },
  "randomBackground" : function()
  {
@@ -79,23 +103,39 @@ MFF.LAYOUT.DETAIL =
    };
   }
 
+  function htmlCb(item)
+  {
+   new ToggleSwitch({
+                     "renderTo" : this, "content" : MFF.PERCENT.map[item.key].label,
+                     "checked" : MFF.PERCENT.isActive(item.key),
+                     "data" : item,
+                     "callback" : function(checked, data)
+                     {
+                      MFF.PERCENT.setActive(data.key, checked);
+                      MFF.PERCENT.recomputeAll(data.key, data.character);
+                      API.EVT.dispatch(MFF.PERCENT.map[data.key].compute, data.character);
+                     }
+                    });
+  }
+
   // ATTACK
   MFF.LAYOUT.DETAIL.drawFormTable(container, character, data, "Attacks",
                                   [
                                    [
                                     { "key" : "atk_base", "label" : "Base", "tag" : "span", "attributes" : { "id" : "attack_base", "innerHTML" : MFF.CHARACTERS.DATA[character].uniforms[data.uniform].attackBase == "physical" ? "Physical" : "Energy" } },
-                                    { "key" : "atkspeed", "type" : "float", "label" : "Attack speed", "tabindex" : 200 },
-                                    { "key" : "defpen", "type" : "float", "label" : "Ignore defense", "tabindex" : 300 }
+                                    { "key" : "critrate", "type" : "float", "label" : "Critical rate", "tabindex" : 200 }
                                    ],
                                    [
                                     { "key" : "atk_physical", "type" : "int", "label" : "Physical", "onchange" : saveAtk, "value" : data.attack.physical || 0, "tabindex" : 100 },
-                                    { "key" : "critrate", "type" : "float", "label" : "Critical rate", "tabindex" : 201 },
-                                    { "key" : "ignore_dodge", "type" : "float", "label" : "Ignore dodge", "tabindex" : 301 }
+                                    { "key" : "critdamage", "type" : "float", "label" : "Critical damage", "tabindex" : 201 }
                                    ],
                                    [
                                     { "key" : "atk_energy", "type" : "int", "label" : "Energy", "onchange" : saveAtk, "value" : data.attack.energy || 0, "tabindex" : 101 },
-                                    { "key" : "critdamage", "type" : "float", "label" : "Critical damage", "tabindex" : 202 },
-                                    null
+                                    { "key" : "defpen", "type" : "float", "label" : "Ignore defense", "tabindex" : 202 }
+                                   ],
+                                   [
+                                    { "key" : "atkspeed", "type" : "float", "label" : "Attack speed", "tabindex" : 102 },
+                                    { "key" : "ignore_dodge", "type" : "float", "label" : "Ignore dodge", "tabindex" : 203 }
                                    ]
                                   ]);
   // DEFENSE
@@ -112,7 +152,8 @@ MFF.LAYOUT.DETAIL =
                                    [
                                     { "key" : "average_defense", "label" : "Average", "tag" : "span", "attributes" : { "id" : "average_defense", "innerHTML" : "0", "tabindex" : 402 } },
                                     { "key" : "dodge", "type" : "float", "label" : "Dodge", "tabindex" : 502 }
-                                   ]
+                                   ],
+                                   [null, null]
                                   ]);
   // DEBUFF
   MFF.LAYOUT.DETAIL.drawFormTable(container, character, data, "Debuff",
@@ -125,11 +166,35 @@ MFF.LAYOUT.DETAIL =
                                    ],
                                    [
                                     { "key" : "scd", "type" : "float", "label" : "Skill cooldown", "tabindex" : 602 }
+                                   ],
+                                   [null]
+                                  ]);
+  // DEBUFF
+  MFF.LAYOUT.DETAIL.drawFormTable(container, character, data, "Developments %",
+                                  [
+                                   [
+                                    { "key" : "percent_global", "label" : "Global", "tag" : "span", "attributes" : { "id" : "dev_percent_gbl" } }//,
+                                    //null
+                                   ],
+                                   [
+                                    { "key" : "gears", "htmlCb" : htmlCb, "character" : character, "tag" : "span", "attributes" : { "id" : "dev_percent_gears" } }//,
+                                    //{ "key" : "percent_uru", "label" : "Uru", "tag" : "span", "attributes" : { "id" : "dev_percent_uru", "innerHTML" : "0%" } }
+                                   ],
+                                   [
+                                    { "key" : "skills", "htmlCb" : htmlCb, "character" : character, "tag" : "span", "attributes" : { "id" : "dev_percent_skills" } }//,
+                                    //{ "key" : "percent_obelisk", "label" : "Obelisk", "tag" : "span", "attributes" : { "id" : "dev_percent_obelisk", "innerHTML" : "0%" } }
+                                   ],
+                                   [
+                                    { "key" : "uniform", "htmlCb" : htmlCb, "character" : character, "tag" : "span", "attributes" : { "id" : "dev_percent_uniform" } }//,
+                                  //  null
                                    ]
                                   ]);
-
   // compute values
   showAvgDef()();
+  API.EVT.dispatch("refreshPercentGlobal", character);
+  API.EVT.dispatch("refreshPercentGears", character);
+  API.EVT.dispatch("refreshPercentSkills", character);
+  API.EVT.dispatch("refreshPercentUniform", character);
  },
  "drawSkills" : function(container, data)
  {
@@ -147,7 +212,12 @@ MFF.LAYOUT.DETAIL =
    }
    select.selectedIndex = data.skills[i];
    select.dataset.skill = i;
-   select.onchange = function() { MFF.saveCharacter({ "mode" : "skill", "skill" : this.dataset.skill, "lvl" : this.options[this.selectedIndex].value }); };
+   select.dataset.character = data.id;
+   select.onchange = function()
+                     {
+                      MFF.saveCharacter({ "mode" : "skill", "skill" : this.dataset.skill, "lvl" : this.options[this.selectedIndex].value });
+                      API.EVT.dispatch("computePercentSkills", this.dataset.character);
+                     };
   }
  },
  "drawFormTable" : function(container, character, data, tableLabel, items)
@@ -174,7 +244,10 @@ MFF.LAYOUT.DETAIL =
    if ( item )
    {
     th = tr.appendChild(document.createElement("th"));
-    th.appendChild(document.createTextNode(item.label));
+    if ( ("html" in item) && Array.isArray(item.html) ) { item.html.forEach(function(html) { this.appendChild(html); }, th); }
+    else if ( "html" in item ) { th.innerHTML = item.html; }
+    else if ( "htmlCb" in item ) { item.htmlCb.call(th, item); }
+    else { th.appendChild(document.createTextNode(item.label)); }
     td = tr.appendChild(document.createElement("td"));
     if ( "tag" in item )
     {
@@ -216,6 +289,7 @@ MFF.LAYOUT.DETAIL =
    {
     td = tr.appendChild(document.createElement("td"));
     td.colSpan = 2;
+    td.innerHTML = "&nbsp;";
    }
   }
   div.className = "forms bgOpaque";
@@ -283,8 +357,8 @@ MFF.LAYOUT.DETAIL =
    API.EVT.dispatch("globalChart", "hide");
    if ( MFF.currentCharacter )
    {
-    MFF.LAYOUT.LIST.synchroDetailGear(MFF.currentCharacter);
-    MFF.LAYOUT.LIST.synchroDevelomment(MFF.currentCharacter);
+    // MFF.LAYOUT.LIST.synchroDetailGear(MFF.currentCharacter);
+    //MFF.LAYOUT.LIST.synchroDevelomment(MFF.currentCharacter);
     MFF.LAYOUT.LIST.setClassType(MFF.currentCharacter);
     MFF.LAYOUT.LIST.setTier(MFF.currentCharacter);
     if ( MFF.currentCharacter == character && !keep )
@@ -332,7 +406,7 @@ MFF.LAYOUT.DETAIL =
   div = td.appendChild(document.createElement("div"));
   div.id = "current_percent";
   div.className = "bgOpaque";
-  div.innerHTML = API.numberToFixed(MFF.computePercent(character), 2) + "%";
+  div.innerHTML = MFF.PERCENT.get(character, true) + "%";
 
   div = td.appendChild(document.createElement("div"));
   div.id = "attributes";
@@ -356,13 +430,30 @@ MFF.LAYOUT.DETAIL =
   h1.className = "bgOpaque";
 
   span = h1.appendChild(document.createElement("label"));
+  span.id = "lblRank";
+  span.appendChild(document.createTextNode("Rank"));
+  input = span.appendChild(document.createElement("input"));
+  input.type = "text";
+  input.setAttribute("tabindex", 4);
+  input.value = data.rank || "";
+  input.placeholder = "unranked";
+  input.onchange = function()
+                   {
+                    var v = parseInt(this.value, 10);
+                    if ( isNaN(v) ) { v = 0; }
+                    this.value = v || "";
+                    // set value twice to fix Safari placeholder bug not showing if set only once
+                    this.value = v || "";
+                    MFF.saveCharacter({ "mode" : "rank", "rank" : v });
+                   };
+
+  span = h1.appendChild(document.createElement("label"));
   span.id = "lblCombatPower";
   span.appendChild(document.createTextNode("Combat power"));
   input = span.appendChild(document.createElement("input"));
   input.type = "text";
   input.setAttribute("tabindex", 3);
-  input.value = data.combatPower || "";
-  input.placeholder = "unranked";
+  input.value = data.combatPower || 0;
   input.onchange = function()
                    {
                     var v = parseInt(this.value, 10);

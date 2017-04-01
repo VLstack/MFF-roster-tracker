@@ -72,6 +72,7 @@ function ImageButton(options)
  node.className = "imageButton";
  if ( options.className ) { node.classList.add(options.className); }
  if ( options.checked ) { node.classList.add("checked"); }
+ if ( options.title ) { node.title = options.title; }
  node.onclick = function()
  {
   this.classList.toggle("checked");

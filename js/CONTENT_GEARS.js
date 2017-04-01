@@ -54,17 +54,18 @@ MFF.LAYOUT.DETAIL.GEARS =
  },
  "drawGears" : function()
  {
-  var i, j, k, div, table, tbody, tr, td2, input, select, option, idx, curStat, selectChangeAll,
+  var i, j, k, div, table, tbody, tr, td2, input, select, option, idx, curStat, selectChangeAll, selectChangeAllUnchecked, h1,
       data = MFF.CHARACTERS.get(MFF.currentCharacter || MFF.lastTarget);
 
   function getMin(select) { return parseFloat(select.options[select.selectedIndex].dataset.rangeMin); }
 
   function getMax(select) { return parseFloat(select.options[select.selectedIndex].dataset.rangeMax); }
 
-  function checkValues(tr, save)
+  function checkValues(tr)
   {
    var div, gear, type, pref,
        select = tr.childNodes[1].firstChild,
+       checkbox = tr.childNodes[0].firstChild,
        cur = tr.childNodes[2].firstChild.value,
        min = getMin(select),
        max = getMax(select),
@@ -77,16 +78,16 @@ MFF.LAYOUT.DETAIL.GEARS =
    else if ( cur == max ) { cName = "max"; }
    else if ( cur < moy && cur > min ) { cName = "inf"; }
    else if ( cur > moy && cur < max ) { cName = "sup"; }
-   curPercent.innerHTML = "({0}%)".format(parseInt(MFF.getIndividualPercent(cur, min, max)));
+//   curPercent.innerHTML = "({0}%)".format(parseInt(MFF.getIndividualPercent(cur, min, max)));
+   curPercent.innerHTML = "({0}%)".format(parseInt(MFF.PERCENT.individual(cur, min, max)));
    tr.className = cName;
-   if ( save )
-   {
-    div = API.DOM.parent(tr, "div", "gear");
-    gear = div.dataset.gearIndex;
-    type = select.options[select.selectedIndex].value;
-    pref = tr.childNodes[0].firstChild.checked;
-    MFF.saveCharacter({ "mode" : "gear", "gear" : gear, "gearIndex" : tr.dataset.gearIndex, "type" : type, "val" : parseFloat(cur), "pref" : pref, "percent" : MFF.getIndividualPercent(cur, min, max) });
-   }
+   div = API.DOM.parent(tr, "div", "gear");
+   gear = div.dataset.gearIndex;
+   type = select.options[select.selectedIndex].value;
+   if ( type === "" ) { checkbox.checked = false; }
+   pref = checkbox.checked;
+   MFF.saveCharacter({ "mode" : "gear", "gear" : gear, "gearIndex" : tr.dataset.gearIndex, "type" : type, "val" : parseFloat(cur), "pref" : pref/*, "percent" : MFF.getIndividualPercent(cur, min, max)*/ });
+   API.EVT.dispatch("computePercentGears", tr.dataset.character);
   }
 
   function changeMinMax(evt)
@@ -99,26 +100,32 @@ MFF.LAYOUT.DETAIL.GEARS =
        maxSpan = tr.childNodes[7];
    min = getMin(this);
    max = getMax(this);
-   moy = API.numberToFixed((min + max) / 2, 2);
+   moy = API.numberToFixed((min + max) / 2, 2, true);
    minSpan.innerHTML = min;
    moySpan.innerHTML = moy;
    maxSpan.innerHTML = max;
    if ( evt !== null ) { cur.value = 0; }
-   checkValues(tr, false);
+   checkValues(tr);
   }
 
   function changeAll()
   {
-   var i, tr,
-       all = this.nextSibling.querySelectorAll("select");
+   var i, tr, canChange, checkbox, input, select,
+       all = this.parentNode.querySelectorAll("table select");
    for ( i = 0; i < all.length; i++ )
    {
-    if ( all[i].value != this.value )
+    tr = all[i].parentNode.parentNode;
+    checkbox = tr.childNodes[0].firstChild;
+    select = tr.childNodes[1].firstChild;
+    input = tr.childNodes[2].firstChild;
+    if ( this.classList.contains("onlyUnchecked") ) { canChange = !checkbox.checked && this.value != select.value; }
+    else { canChange = this.value != select.value; }
+    if ( canChange )
     {
-     tr = all[i].parentNode.parentNode;
-     all[i].selectedIndex = this.selectedIndex;
-     all[i].parentNode.nextSibling.firstChild.value = 0;
-     checkValues(tr, true);
+     select.selectedIndex = this.selectedIndex;
+     input.value = 0;
+     changeMinMax.call(select, null);
+     //checkValues(tr);
     }
    }
    this.selectedIndex = 0;
@@ -129,26 +136,40 @@ MFF.LAYOUT.DETAIL.GEARS =
   for ( i = 0; i < MFF.GEARS.length; i++ )
   {
    div = MFF.LAYOUT.DETAIL.GEARS._content.appendChild(document.createElement("div"));
-   div.className = "gear";
+   div.className = "gear bgOpaque";
    div.dataset.gearIndex = i;
+   div.dataset.character = data.id;
+
+   h1 = div.appendChild(document.createElement("h1"));
+   h1.innerHTML = MFF.UNIFORMS.getGearName(data.id, data.uniform, i);
+
    selectChangeAll = div.appendChild(document.createElement("select"));
    selectChangeAll.onchange = changeAll;
    selectChangeAll.className = "changeAll";
    option = selectChangeAll.appendChild(document.createElement("option"));
    option.value = "";
    option.text = "Set all to ...";
+
+   selectChangeAllUnchecked =  div.appendChild(document.createElement("select"));
+   selectChangeAllUnchecked.onchange = changeAll;
+   selectChangeAllUnchecked.className = "changeAll onlyUnchecked";
+   option = selectChangeAllUnchecked.appendChild(document.createElement("option"));
+   option.value = "";
+   option.text = "Set all unchecked to ...";
+
    table = div.appendChild(document.createElement("table"));
    tbody = table.appendChild(document.createElement("tbody"));
    for ( j = 0; j < 8; j++ )
    {
     tr = tbody.appendChild(document.createElement("tr"));
     tr.dataset.gearIndex = j;
+    tr.dataset.character = data.id;
     td2 = tr.appendChild(document.createElement("td"));
     input = td2.appendChild(document.createElement("input"));
     input.type = "checkbox";
     input.title = "Set as favorite statistic once checked";
     input.setAttribute("tabindex", -1);
-    input.onchange = function() { checkValues(API.DOM.parent(this, "tr"), true); };
+    input.onchange = function() { checkValues(API.DOM.parent(this, "tr")); };
     input.checked = data.gear[i][j].pref;
     td2 = tr.appendChild(document.createElement("td"));
     td2.style.width = "100%";
@@ -174,6 +195,10 @@ MFF.LAYOUT.DETAIL.GEARS =
        option = selectChangeAll.appendChild(document.createElement("option"));
        option.value = k;
        option.text = "Set all to " + MFF.GEARS[i][k].name;
+
+       option = selectChangeAllUnchecked.appendChild(document.createElement("option"));
+       option.value = k;
+       option.text = "Set all unchecked to " + MFF.GEARS[i][k].name;
       }
       option = select.appendChild(document.createElement("option"));
       option.value = k;
@@ -197,13 +222,13 @@ MFF.LAYOUT.DETAIL.GEARS =
      if ( MFF.toid ) { MFF.toid = clearTimeout(MFF.toid); }
      MFF.toid = setTimeout(function()
                            {
-                            checkValues(API.DOM.parent(that, "tr"), true);
+                            checkValues(API.DOM.parent(that, "tr"));
                            }, 250);
     };
     curStat.onchange = function()
     {
      if ( MFF.toid ) { MFF.toid = clearTimeout(MFF.toid); }
-     checkValues(API.DOM.parent(this, "tr"), true);
+     checkValues(API.DOM.parent(this, "tr"));
     };
     // min
     td2 = tr.appendChild(document.createElement("td"));

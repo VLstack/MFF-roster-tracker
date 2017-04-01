@@ -6,6 +6,13 @@ MFF.LAYOUT.CHARTS =
   MFF.LAYOUT.CHARTS._panel = new Panel({ "id" : "panelGlobalChart", "hide" : true });
   API.EVT.on("globalChart", function(param) { MFF.LAYOUT.CHARTS[param == "show" ? "showGlobal" : "hideGlobal"](); });
   API.EVT.on("detailChart", function(param) { MFF.LAYOUT.CHARTS[param == "show" ? "showDetail" : "hideDetail"](); });
+  API.EVT.on("refreshPercentSkills", function(characterId)
+                                     {
+                                      if ( MFF.LAYOUT.DETAIL.GEARS._btnDetailCharts.isActive() && characterId == MFF.currentCharacter )
+                                      {
+                                       MFF.LAYOUT.CHARTS.renderDetail();
+                                      }
+                                     });
  },
  "hideGlobal" : function()
  {
@@ -27,8 +34,8 @@ MFF.LAYOUT.CHARTS =
     character = MFF.CHARACTERS.get(id);
     tmpX = MFF.axisItems[xAxis].callback(character);
     tmpY = MFF.axisItems[yAxis].callback(character);
-    x = tmpX.percent ? API.numberToFixed(tmpX.value, 2) : parseInt(tmpX.value, 10);
-    y = tmpY.percent ? API.numberToFixed(tmpY.value, 2) : parseInt(tmpY.value, 10);
+    x = tmpX.percent ? API.numberToFixed(tmpX.value, 2, true) : parseInt(tmpX.value, 10);
+    y = tmpY.percent ? API.numberToFixed(tmpY.value, 2, true) : parseInt(tmpY.value, 10);
     labelX = MFF.axisItems[xAxis].label;
     labelY = MFF.axisItems[yAxis].label;
     if ( xAxis == "attack" )
@@ -103,10 +110,8 @@ MFF.LAYOUT.CHARTS =
  },
  "renderDetail" : function()
  {
-  var i, j, k, val, nb, div, id, color,
+  var i, j, k, val, nb, div, id, color, serie, categories, min, max,
       data = MFF.CHARACTERS.get(MFF.currentCharacter || MFF.lastTarget),
-      categories = [],
-      serie = [],
       container = MFF.LAYOUT.DETAIL.GEARS._content.getNode();
   MFF.LAYOUT.DETAIL.GEARS._content.flush();
   for ( i = 0; i < MFF.GEARS.length; i++ )
@@ -115,20 +120,22 @@ MFF.LAYOUT.CHARTS =
    div = container.appendChild(document.createElement("div"));
    div.id = id;
    div.className = "chart bgOpaque";
-   categories[i] = [];
-   serie[i] = [];
+   categories = [];
+   serie = [];
    for ( k in MFF.GEARS[i] )
    {
     if ( MFF.GEARS[i].hasOwnProperty(k) )
     {
      val = 0; nb = 0;
-     categories[i].push(MFF.GEARS[i][k].name);
+     categories.push(MFF.GEARS[i][k].name);
      for ( j = 0; j < MFF.GEARS[i][k].range.length; j++ )
      {
       if ( data.gear[i][j].type == k && data.gear[i][j].pref )
       {
        nb++;
-       val += data.gear[i][j].percent;
+       min = MFF.GEARS[i][data.gear[i][j].type].range[j].min;
+       max = MFF.GEARS[i][data.gear[i][j].type].range[j].max;
+       val += MFF.PERCENT.individual(data.gear[i][j].val, min, max);
       }
      }
      val = val / nb;
@@ -138,19 +145,19 @@ MFF.LAYOUT.CHARTS =
      else if ( val > 50 ) { color = "#CCFFCC"; }
      else if ( val == 50 ) { color = "#99CCFF"; }
      else { color = "#FFCCCC"; }
-     serie[i].push({ "y" : val, "color" : color });
+     serie.push({ "y" : val, "color" : color });
     }
    }
    new Highcharts.Chart({
                          "chart" : { "polar" : true, "renderTo" : id, "type" : "bar", "backgroundColor" : null },
                          "pane" : { "background" : { "backgroundColor" : "rgba(255, 255, 255, 0.5)", "outerRadius" : "100%" } },
-                         "title" : { "useHTML" : true, "text" : "Gear {0}".format(i + 1) },
-                         "xAxis" : { "categories" : categories[i], "lineWidth" : 0, "labels" : { "style" : { "color" : "#FFFFFF" } } },
+                         "title" : { "useHTML" : true, "text" : MFF.UNIFORMS.getGearName(data.id, data.uniform, i) },
+                         "xAxis" : { "categories" : categories, "lineWidth" : 0, "labels" : { "style" : { "color" : "#FFFFFF" } } },
                          "yAxis" : { "gridLineInterpolation" : "circle", "lineWidth" : 0, "min" : 0, "max" : 100, "labels" : { "enabled" : false }, "tickInterval" : 25 },
                          "credits" : { "enabled" : false },
                          "tooltip" : { "pointFormat" : "{point.y:,.2f}%" },
                          "legend" : { "enabled" : false },
-                         "series" : [{ "name" : "Current", "data" : serie[i] }]
+                         "series" : [{ "name" : "Current", "data" : serie }]
                         });
   }
   categories = MFF.CHARACTERS.DATA[MFF.currentCharacter || MFF.lastTarget].uniforms[data.uniform].skills;
@@ -159,7 +166,7 @@ MFF.LAYOUT.CHARTS =
   div.id = id;
   div.className = "chart bgOpaque";
   new Highcharts.Chart({
-                        "chart" : { "polar" : true, "renderTo" : id, "type" : "line", "backgroundColor" : null },
+                        "chart" : { "polar" : true, "renderTo" : id, "type" : "area", "backgroundColor" : null },
                         "pane" : { "background" : { "backgroundColor" : "rgba(255, 255, 255, 0.5)", "outerRadius" : "100%" } },
                         "title" : { "useHTML" : true, "text" : "Skills" },
                         "xAxis" : { "categories" : categories, "lineWidth" : 0, "labels" : { "style" : { "color" : "#FFFFFF" } } },
@@ -167,6 +174,7 @@ MFF.LAYOUT.CHARTS =
                         "credits" : { "enabled" : false },
                         "tooltip" : { "pointFormat" : "level {point.y}" },
                         "legend" : { "enabled" : false },
+                        "plotOptions" : { "series" : { "color" : "#1b25e4" } },
                         "series" : [{ "name" : "Skills", "data" : data.skills }]
                        });
   MFF.LAYOUT.CHARTS.fixHighchartsTitles();
@@ -181,13 +189,15 @@ MFF.LAYOUT.CHARTS =
    all[i].style.top = 0;
    all[i].style.left = 0;
    all[i].style.right = 0;
-   all[i].style.padding = "3px 0";
-   all[i].style.color = "#333";
-   all[i].style.backgroundColor = "#FFF";
+   all[i].style.width = "100%";
+   all[i].style.padding = "2px 0";
+   all[i].style.color = "#fff";
+   all[i].style.background = "linear-gradient(to bottom, #666e92 0%, #3c4460 50%, #12192b 100%)";
    all[i].style.textAlign = "center";
+   all[i].style.overflow = "hidden";
    all[i].style.borderTopLeftRadius = "4px";
    all[i].style.borderTopRightRadius = "4px";
-   all[i].style.font = "14px/18px verdana";
+   all[i].style.font = "100 12px/24px verdana";
   }
  }
 };

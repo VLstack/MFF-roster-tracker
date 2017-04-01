@@ -1,15 +1,53 @@
-# Unreleased ![version 2.3.0](https://img.shields.io/badge/version-2.3.0-brightgreen.svg?style=flat) ![date 2017-03-23](https://img.shields.io/badge/date-2017--03--27-red.svg?style=flat)
+# Unreleased ![version 2.4.0](https://img.shields.io/badge/version-2.4.0-brightgreen.svg?style=flat) ![date 2017-04-01](https://img.shields.io/badge/date-2017--04--01-red.svg?style=flat)
 
 **In progress**
 
 - More javascript refactor
+
+
+![version 2.3.0](https://img.shields.io/badge/version-2.3.0-brightgreen.svg?style=flat) ![date 2017-04-01](https://img.shields.io/badge/date-2017--04--01-red.svg?style=flat)
+
+**Enhancements:**
+
+- [#13](https://github.com/Mokhet/MFF-roster-tracker/issues/13) Correct naming of all gears based on active uniform
+  - Except for Dormammu since I don't have him in my roster yet
+  - Except for Captain Marvel with uniform "Secret wars: Captain Marvel & The Carol corp" because it is impossible to have this costume now
+- Resync every characters pictures with MFF 2.9.5
+
+**Added:**
+
+- [#15](https://github.com/Mokhet/MFF-roster-tracker/issues/15) Global development score
+  - Previous development percent is now Gears Development
+  - Added a skills development score
+  - Added an uniform development score
+- Since 2.2.0 added combat power, now you can also track related Rank
+- [#34](https://github.com/Mokhet/MFF-roster-tracker/issues/34) Add tier filter
+- Next to "Set all to ...", a new option "Set all unchecked to ..."
+- Show total filtered characters
+
+**Fixed bugs:**
+
+- Moving the mouse too quickly from the characters list to the detail no longer trigger an incomplete character state
+- Correctly save uniform attributes when no new value was set
+- Drastically reduce recursive calls to gears completion
+- [#35](https://github.com/Mokhet/MFF-roster-tracker/issues/35) Data error
+  - add Hulkbuster T2
+  - add Thor Jane Foster T2
+  - fixed Hulkbuster uniform from "The avengers" to "Avengers : Age of ultron"
+  - fixed Black bolt duplicate uniform key from "attilanrising" to "iar"
+- Consistent 2 digits float values
+- [#31](https://github.com/Mokhet/MFF-roster-tracker/issues/31) Removed waves effect on every elements
+- [#36](https://github.com/Mokhet/MFF-roster-tracker/issues/36) After "Set all to ...", the min, max and average values don't refresh
+- [#37](https://github.com/Mokhet/MFF-roster-tracker/issues/37) Unable to remove gears
+
 
 # ![version 2.2.3](https://img.shields.io/badge/version-2.2.3-brightgreen.svg?style=flat) ![date 2017-03-27](https://img.shields.io/badge/date-2017--03--27-red.svg?style=flat)
 
 - [#35](https://github.com/Mokhet/MFF-roster-tracker/issues/35) Data error
   - add Loki T2
   - add Angela T2
-  - update Satana side from vilain to hero
+  - fixed Satana side from vilain to hero
+
 
 # ![version 2.2.2](https://img.shields.io/badge/version-2.2.2-brightgreen.svg?style=flat) ![date 2017-03-25](https://img.shields.io/badge/date-2017--03--25-red.svg?style=flat)
 
@@ -22,6 +60,7 @@
 **Fixed bugs:**
 
 - [#31](https://github.com/Mokhet/MFF-roster-tracker/issues/31) Removed waves effect on every elements
+
 
 # ![version 2.2.0](https://img.shields.io/badge/version-2.2.0-brightgreen.svg?style=flat) ![date 2017-03-23](https://img.shields.io/badge/date-2017--03--23-red.svg?style=flat)
 
@@ -45,6 +84,7 @@
 - Fix Chrome issue with the search input (Chrome macOs Sierra, I have no clue for windows)
 - [#29](https://github.com/Mokhet/MFF-roster-tracker/issues/29) Fix chart when filtering return no matching character
 
+
 # ![version 2.1.0](https://img.shields.io/badge/version-2.1.0-brightgreen.svg?style=flat) ![date 2017-03-15](https://img.shields.io/badge/date-2017--03--15-red.svg?style=flat)
 
 **Added:**
@@ -64,6 +104,7 @@
 - Fix global chart not covering the whole area
 - [#25](https://github.com/Mokhet/MFF-roster-tracker/issues/25) Chart button stay active
 
+
 # ![version 2.0.1](https://img.shields.io/badge/version-2.0.1-brightgreen.svg?style=flat) ![date 2017-03-11](https://img.shields.io/badge/date-2017--03--11-red.svg?style=flat)
 
 **Fixed bugs:**
@@ -71,6 +112,7 @@
 - Issue #4 : Default sort not correctly applied
 - Issue #5 : Missing "character" variable when creating empty data
 - Issue #6 : Global chart not showing, related to issue #4
+
 
 # ![version 2.0.0](https://img.shields.io/badge/version-2.0.0-brightgreen.svg?style=flat) ![date 2017-03-09](https://img.shields.io/badge/date-2017--03--09-red.svg?style=flat)
 
@@ -93,6 +135,7 @@
 
 - Fix a filtering issue with "Destroyer" (it has a "neutral" side and a "neutral" gender)
 - Add missing "Attack speed"
+
 
 # ![version 1.9.0](https://img.shields.io/badge/version-1.9.0-brightgreen.svg?style=flat) ![date 2017-02-15](https://img.shields.io/badge/date-2017--02--15-red.svg?style=flat)
 

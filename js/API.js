@@ -284,17 +284,19 @@ API.numberToFixed = (function()
   s = P(s, 1 + D, "0");
   d = s.substring(0, t = (s.length - D));
   f = s.substring(t);
+  // if ( f ) { f = "." + (f + "00").substr(0, 2); }
+  // else { f = f + ".00"; }
   if ( f ) { f = "." + f; }
-  return d + f; // avoid "0."
+  return d + f;
  }
 
- return function(N/*ombre*/, D/*igits*/)
+ return function(N/*ombre*/, D/*igits*/, asNumber)
  {
   var
    n/*ombre*/ = parseFloat((N || "0").toString().replace(",", ".").replace(/[^0-9e\.\-+]/g, "")) || 0,
    u/*nsigned*/ = U(Math.abs(n), D);
   if ( isNaN(u) ) { u = 0; }
   u = (n < 0 ? "-" : "") + u;
-  return Number(u);
+  return asNumber ? Number(u) : u;
  };
 })();

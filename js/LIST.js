@@ -18,14 +18,25 @@ MFF.LAYOUT.LIST =
   node = MFF.LAYOUT.LIST._tab.getNode();
   MFF.LAYOUT.LIST._btnList = new Button({ "small" : true, "renderTo" : node, "fa" : "bars", "callback" : cb("list"), "listener" : listener("list") });
   MFF.LAYOUT.LIST._btnIcon = new Button({ "small" : true, "renderTo" : node, "fa" : "th", "callback" : cb("icon"), "listener" : listener("icon") });
+  MFF.LAYOUT.LIST.filteredCharacters = node.appendChild(document.createElement("span"));
+  MFF.LAYOUT.LIST.filteredCharacters.id = "filteredCharacters";
+
+  API.EVT.on("totalFiltered", MFF.LAYOUT.LIST.totalFiltered);
 
   MFF.LAYOUT.LIST.draw();
+
+  API.EVT.on("refreshPercentGlobal", MFF.LAYOUT.LIST.synchroDevelomment);
+  API.EVT.on("refreshPercentGears", MFF.LAYOUT.LIST.synchroDetailGear);
 
   API.EVT.on("switchList", MFF.LAYOUT.LIST.switchTo);
   API.EVT.on("sortList", MFF.LAYOUT.LIST.sort);
 
   API.EVT.dispatch("switchList", localStorage.getItem("list") || "list");
   API.EVT.dispatch("sortList");
+ },
+ "totalFiltered" : function(params)
+ {
+  MFF.LAYOUT.LIST.filteredCharacters.innerHTML = params.nb == params.total ? params.total + " characters" : "{0} / {1} characters".format(params.nb, params.total);
  },
  "switchTo" : function(format)
  {
@@ -48,6 +59,7 @@ MFF.LAYOUT.LIST =
     MFF.LAYOUT.LIST.drawCharacter(character);
    }
   }
+  API.EVT.dispatch("totalFiltered", { "nb" : ul.childNodes.length, "total" : ul.childNodes.length });
   ul.onclick = function(evt)
   {
    var target = API.EVT.getParentTarget(evt, "li");
@@ -70,6 +82,14 @@ MFF.LAYOUT.LIST =
     MFF.LAYOUT.DETAIL.drawCharacter(null, false);
    }
   };
+  ul.onmouseleave = function()
+  {
+   if ( !MFF.currentCharacter )
+   {
+    MFF.lastTarget = null;
+    MFF.LAYOUT.DETAIL.drawCharacter(null, false);
+   }
+  };
   MFF.googleAnalytics("render-list");
  },
  "drawCharacter" : function(character)
@@ -77,7 +97,7 @@ MFF.LAYOUT.LIST =
   var img, p, span, lineGear, i, progressBar, name,
       li = document.getElementById(character),
       data = MFF.CHARACTERS.get(character);
-  name = MFF.CHARACTERS.DATA[character].uniforms[data.uniform].name;
+  name = MFF.CHARACTERS.getNameForUniform(character, data.uniform);
   API.DOM.flush(li);
   MFF.LAYOUT.LIST.setClassType(character);
   MFF.LAYOUT.LIST.setTier(character);
@@ -109,6 +129,7 @@ MFF.LAYOUT.LIST =
    lineGear.id = "{0}_lineDetailGear_{1}".format(character, i + 1);
    lineGear.className = "lineDetailGear lineDetailGear{0}".format(i + 1);
   }
+  MFF.PERCENT.init(character);
   MFF.LAYOUT.LIST.synchroDetailGear(character);
   MFF.LAYOUT.LIST.synchroDevelomment(character);
  },
@@ -152,8 +173,9 @@ MFF.LAYOUT.LIST =
  },
  "synchroDetailGear" : function(character)
  {
-  var lineGear, i, j, cName, span,
+  var lineGear, i, j, cName, span, percent, min, max,
       data = MFF.CHARACTERS.get(character);
+      //TODO : vérifier si ca existe encore ça
   if ( (span = document.getElementById("{0}_level".format(character))) ) { span.innerHTML = "#" + data.level; }
   if ( (span = document.getElementById("{0}_tier".format(character))) ) { span.innerHTML = "/T" + data.tier; }
   for ( i = 0; i < 4; i++ )
@@ -166,11 +188,22 @@ MFF.LAYOUT.LIST =
     if ( data.gear[i][j].type )
     {
      if ( !data.gear[i][j].pref ) { cName = "undef"; }
-     else if ( data.gear[i][j].percent == 100 ) { cName = "max"; }
-     else if ( data.gear[i][j].percent > 50 ) { cName = "sup"; }
-     else if ( data.gear[i][j].percent == 50 ) { cName = "moy"; }
-     else if ( data.gear[i][j].percent > 0 ) { cName = "inf"; }
-     else if ( data.gear[i][j].percent == 0 ) { cName = "min"; }
+     else
+     {
+      min = MFF.GEARS[i][data.gear[i][j].type].range[j].min;
+      max = MFF.GEARS[i][data.gear[i][j].type].range[j].max;
+      percent = MFF.PERCENT.individual(data.gear[i][j].val, min, max);
+      if ( percent == 100 ) { cName = "max"; }
+      else if ( percent > 50 ) { cName = "sup"; }
+      else if ( percent == 50 ) { cName = "moy"; }
+      else if ( percent > 0 ) { cName = "inf"; }
+      else if ( percent == 0 ) { cName = "min"; }
+     }
+     // else if ( data.gear[i][j].percent == 100 ) { cName = "max"; }
+     // else if ( data.gear[i][j].percent > 50 ) { cName = "sup"; }
+     // else if ( data.gear[i][j].percent == 50 ) { cName = "moy"; }
+     // else if ( data.gear[i][j].percent > 0 ) { cName = "inf"; }
+     // else if ( data.gear[i][j].percent == 0 ) { cName = "min"; }
     }
     span = lineGear.appendChild(document.createElement("span"));
     span.className = cName;
@@ -181,7 +214,7 @@ MFF.LAYOUT.LIST =
  {
   var cName = "undef",
       li = document.getElementById(character),
-      percent = MFF.computePercent(character);
+      percent = MFF.PERCENT.get(character);
   if ( percent == 100 ) { cName = "max"; }
   else if ( percent > 50 ) { cName = "sup"; }
   else if ( percent == 50 ) { cName = "moy"; }
@@ -246,7 +279,6 @@ MFF.LAYOUT.LIST =
     case "combat_power":
      v = parseInt(tmp.value, 10);
      if ( isNaN(v) ) { v = 0; }
-     if ( !v ) { v = "unranked"; }
     break;
     default:
      if ( tmp.percent ) { v = API.numberToFixed(tmp.value, 2) + "%"; }
