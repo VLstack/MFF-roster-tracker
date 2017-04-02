@@ -94,9 +94,9 @@ var MFF =
   "critrate" :         { "label" : "Critical rate", "max" : 75, "callback" : function(character) { var v = character.critrate; return { "value" : v, "percent" : true }; } },
   // TODO : need max debuff duration
   "debuff" :           { "label" : "Debuff duration", "callback" : function(character) { var v = character.debuff; return { "value" : v, "percent" : true }; } },
-  "defense_average" :  { "label" : "Defense average", "callback" : function(character) { var v = (character.defense.physical + character.defense.energy) / 2; return { "value" : v, "percent" : false }; } },
-  "defense_energy" :   { "label" : "Defense energy", "callback" : function(character) { var v = character.defense.energy; return { "value" : v, "percent" : false }; } },
-  "defense_physical" : { "label" : "Defense physical", "callback" : function(character) { var v = character.defense.physical; return { "value" : v, "percent" : false }; } },
+  "defense_average" :  { "label" : "Average defense", "callback" : function(character) { var v = (character.defense.physical + character.defense.energy) / 2; return { "value" : v, "percent" : false }; } },
+  "defense_energy" :   { "label" : "Energy defense", "callback" : function(character) { var v = character.defense.energy; return { "value" : v, "percent" : false }; } },
+  "defense_physical" : { "label" : "Physical defense", "callback" : function(character) { var v = character.defense.physical; return { "value" : v, "percent" : false }; } },
   "dodge" :            { "label" : "Dodge", "max" : 75, "callback" : function(character) { var v = character.dodge; return { "value" : v, "percent" : true }; } },
   "hp" :               { "label" : "Hit points", "callback" : function(character) { var v = character.hp; return { "value" : v, "percent" : false }; } },
   "defpen" :           { "label" : "Ignore defense", "max" : 50, "callback" : function(character) { var v = character.defpen; return { "value" : v, "percent" : true }; } },
