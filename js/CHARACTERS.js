@@ -176,6 +176,11 @@ MFF.CHARACTERS =
    MFF.CHARACTERS._all[character].skills[parseInt(data.skill)] = parseInt(data.lvl) || 0;
   break;
   case "uniform" :
+   if ( !(data.uniform in MFF.CHARACTERS._all[character].uniforms) ) { MFF.CHARACTERS._all[character].uniforms[data.uniform] = { "rank" : "unowned", "options" : [null, null, null, null, null] }; }
+   if ( MFF.CHARACTERS._all[character].uniforms[data.uniform].rank == "unowned" )
+   {
+    MFF.CHARACTERS._all[character].uniforms[data.uniform].rank = "normal";
+   }
    MFF.CHARACTERS._all[character].uniform = data.uniform;
   break;
   case "attribute" :
