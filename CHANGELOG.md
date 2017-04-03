@@ -1,8 +1,14 @@
-# Unreleased ![version 2.4.0](https://img.shields.io/badge/version-2.4.0-brightgreen.svg?style=flat) ![date 2017-04-01](https://img.shields.io/badge/date-2017--04--01-red.svg?style=flat)
+# Unreleased ![version 2.4.0](https://img.shields.io/badge/version-2.4.0-brightgreen.svg?style=flat)
 
 **In progress**
 
 - More javascript refactor
+
+![version 2.3.1](https://img.shields.io/badge/version-2.3.1-brightgreen.svg?style=flat) ![date 2017-04-03](https://img.shields.io/badge/date-2017--04--03-red.svg?style=flat)
+
+**Enhancements:**
+
+- [#39](https://github.com/Mokhet/MFF-roster-tracker/issues/39) When selecting an uniform, auto set rank to normal if not owned
 
 
 ![version 2.3.0](https://img.shields.io/badge/version-2.3.0-brightgreen.svg?style=flat) ![date 2017-04-01](https://img.shields.io/badge/date-2017--04--01-red.svg?style=flat)
