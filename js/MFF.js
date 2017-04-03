@@ -3,7 +3,7 @@
 // localStorage.removeItem("sorter");
 var MFF =
 {
- "version" : "2.3.0",
+ "version" : "2.4.0",
  "versionMFF" : "2.9.5",
  "localStorageKey" : "characters",
  "toid" : null,

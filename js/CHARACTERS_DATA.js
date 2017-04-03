@@ -4,6 +4,7 @@ MFF.CHARACTERS.DATA =
 "agent_13" :         {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -23,29 +24,31 @@ MFF.CHARACTERS.DATA =
                       }
                      },
 "ancient_one" :      {
-                       "uniform" : "modern",
-                       "tiers" : [1, 2],
-                       "uniforms" :
+                      "uniform" : "modern",
+                      "tiers" : [1, 2],
+                      "immunities" : [],
+                      "uniforms" :
+                      {
+                       "modern" :
                        {
-                         "modern" :
-                         {
-                          "name" : "Ancient One", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
-                          "skills" : ["Mystic discharge", "Mystic energy", "Ancient cure", "Inner self", "Ancient enchantment"],
-                          "gears" : ["Vishanti magic", "Ancient dress", "Ancient official hat", "Gold neck ornament"]
-                         },
-                         "doc_strange" :
-                         {
-                          "name" : "Ancient One", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
-                          "skills" : ["Mystic discharge", "Mystic energy", "Ancient cure", "Inner self", "Ancient enchantment"],
-                          "bonus" : ["Apply to: Self", "Increase all debuffs effect by 15%", "Increase all buffs effect by 15%"],
-                          "links" : ["cacw/black_panther", "anad/angela", "catws/captain_america", "sw_1872/bullseye", "maos/mockingbird"],
-                          "gears" : ["Vishanti magic", "Ancient dress", "Belt of mentor", "Gold neck ornament"]
-                         }
-                        }
-                      },
+                        "name" : "Ancient One", "attackBase" : "energy", "species" : "human", "gender" : "male", "side" : "hero", "type" : "blast",
+                        "skills" : ["Mystic discharge", "Mystic energy", "Ancient cure", "Inner self", "Ancient enchantment"],
+                        "gears" : ["Vishanti magic", "Ancient dress", "Ancient official hat", "Gold neck ornament"]
+                       },
+                       "doc_strange" :
+                       {
+                        "name" : "Ancient One", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
+                        "skills" : ["Mystic discharge", "Mystic energy", "Ancient cure", "Inner self", "Ancient enchantment"],
+                        "bonus" : ["Apply to: Self", "Increase all debuffs effect by 15%", "Increase all buffs effect by 15%"],
+                        "links" : ["cacw/black_panther", "anad/angela", "catws/captain_america", "sw_1872/bullseye", "maos/mockingbird"],
+                        "gears" : ["Vishanti magic", "Ancient dress", "Belt of mentor", "Gold neck ornament"]
+                       }
+                      }
+                     },
 "angela" :           {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -75,6 +78,7 @@ MFF.CHARACTERS.DATA =
 "ant_man" :          {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -104,6 +108,7 @@ MFF.CHARACTERS.DATA =
 "black_bolt" :       {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -133,6 +138,7 @@ MFF.CHARACTERS.DATA =
 "black_cat" :        {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -162,6 +168,7 @@ MFF.CHARACTERS.DATA =
 "black_dwarf" :      {
                       "uniform" : "infinity",
                       "tiers" : [2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "infinity" :
@@ -175,6 +182,7 @@ MFF.CHARACTERS.DATA =
 "black_panther" :    {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -196,6 +204,7 @@ MFF.CHARACTERS.DATA =
 "black_widow" :      {
                       "uniform" : "avengers",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "avengers" :
@@ -233,6 +242,7 @@ MFF.CHARACTERS.DATA =
 "blade" :            {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -254,6 +264,7 @@ MFF.CHARACTERS.DATA =
 "bullseye" :         {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -275,6 +286,7 @@ MFF.CHARACTERS.DATA =
 "captain_america" :  {
                       "uniform" : "avengers",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "avengers" :
@@ -328,6 +340,7 @@ MFF.CHARACTERS.DATA =
 "captain_marvel" :   {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -357,6 +370,7 @@ MFF.CHARACTERS.DATA =
 "carnage" :          {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -370,6 +384,7 @@ MFF.CHARACTERS.DATA =
 "clea" :             {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -383,6 +398,7 @@ MFF.CHARACTERS.DATA =
 "corvus_glaive" :    {
                       "uniform" : "infinity",
                       "tiers" : [2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "infinity" :
@@ -396,6 +412,7 @@ MFF.CHARACTERS.DATA =
 "crossbones" :       {
                       "uniform" : "cacw",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "cacw" :
@@ -417,6 +434,7 @@ MFF.CHARACTERS.DATA =
 "crystal" :          {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -430,6 +448,7 @@ MFF.CHARACTERS.DATA =
 "daisy_johnson" :    {
                       "uniform" : "maos",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "maos" :
@@ -459,6 +478,7 @@ MFF.CHARACTERS.DATA =
 "daredevil" :        {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -488,6 +508,7 @@ MFF.CHARACTERS.DATA =
 "deathlok" :         {
                       "uniform" : "maos",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "maos" :
@@ -509,6 +530,7 @@ MFF.CHARACTERS.DATA =
 "destroyer" :        {
                       "uniform" : "classic",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "classic" :
@@ -530,6 +552,7 @@ MFF.CHARACTERS.DATA =
 "doctor_strange" :  {
                       "uniform" : "anad",
                       "tiers" : [2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -551,6 +574,7 @@ MFF.CHARACTERS.DATA =
 "dormammu" :        {
                       "uniform" : "classic",
                       "tiers" : [2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "classic" :
@@ -563,6 +587,7 @@ MFF.CHARACTERS.DATA =
 "drax" :             {
                       "uniform" : "gg",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "gg" :
@@ -584,6 +609,7 @@ MFF.CHARACTERS.DATA =
 "ebony_maw" :        {
                       "uniform" : "infinity",
                       "tiers" : [2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "infinity" :
@@ -597,6 +623,7 @@ MFF.CHARACTERS.DATA =
 "elektra" :          {
                       "uniform" : "classic",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "classic" :
@@ -618,6 +645,7 @@ MFF.CHARACTERS.DATA =
 "elsa_bloodstone" :  {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -647,6 +675,7 @@ MFF.CHARACTERS.DATA =
 "enchantress" :      {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -660,6 +689,7 @@ MFF.CHARACTERS.DATA =
 "falcon" :           {
                       "uniform" : "catws",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "catws" :
@@ -689,6 +719,7 @@ MFF.CHARACTERS.DATA =
 "fandral" :          {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -702,6 +733,7 @@ MFF.CHARACTERS.DATA =
 "gamora" :           {
                       "uniform" : "gg",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "gg" :
@@ -723,6 +755,7 @@ MFF.CHARACTERS.DATA =
 "ghost_rider" :      {
                       "uniform" : "classic",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "classic" :
@@ -752,6 +785,7 @@ MFF.CHARACTERS.DATA =
 "ghostrider_reyes" : {
                       "uniform" : "now",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "now" :
@@ -765,6 +799,7 @@ MFF.CHARACTERS.DATA =
 "giant_man" :        {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -786,6 +821,7 @@ MFF.CHARACTERS.DATA =
 "green_goblin" :     {
                       "uniform" : "classic",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "classic" :
@@ -806,6 +842,7 @@ MFF.CHARACTERS.DATA =
 "groot" :            {
                       "uniform" : "gg",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "gg" :
@@ -827,6 +864,7 @@ MFF.CHARACTERS.DATA =
 "gwenpool" :         {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -840,6 +878,7 @@ MFF.CHARACTERS.DATA =
 "gorgon" :           {
                       "uniform" : "warofking",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "warofking" :
@@ -853,6 +892,7 @@ MFF.CHARACTERS.DATA =
 "hawkeye" :          {
                       "uniform" : "avengers",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "avengers" :
@@ -882,6 +922,7 @@ MFF.CHARACTERS.DATA =
 "hawkeye_kate" :     {
                       "uniform" : "now",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "now" :
@@ -895,6 +936,7 @@ MFF.CHARACTERS.DATA =
 "hela" :             {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -908,6 +950,7 @@ MFF.CHARACTERS.DATA =
 "hellcat" :          {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -921,6 +964,7 @@ MFF.CHARACTERS.DATA =
 "hellstrom" :        {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -934,6 +978,7 @@ MFF.CHARACTERS.DATA =
 "hogun" :            {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -947,6 +992,7 @@ MFF.CHARACTERS.DATA =
 "hulk" :             {
                       "uniform" : "avengers",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "avengers" :
@@ -977,6 +1023,7 @@ MFF.CHARACTERS.DATA =
 "hulk_cho" :         {
                       "uniform" : "tah",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "tah" :
@@ -998,6 +1045,7 @@ MFF.CHARACTERS.DATA =
 "hulkbuster" :       {
                       "uniform" : "aaou",
                       "tiers" : [1,2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "aaou" :
@@ -1019,6 +1067,7 @@ MFF.CHARACTERS.DATA =
 "hulkling" :         {
                       "uniform" : "na",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "na" :
@@ -1032,6 +1081,7 @@ MFF.CHARACTERS.DATA =
 "hyperion" :         {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -1045,6 +1095,7 @@ MFF.CHARACTERS.DATA =
 "inferno" :          {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -1058,6 +1109,7 @@ MFF.CHARACTERS.DATA =
 "iron_fist" :        {
                       "uniform" : "classic",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "classic" :
@@ -1095,6 +1147,7 @@ MFF.CHARACTERS.DATA =
 "iron_man" :         {
                       "uniform" : "classic",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "classic" :
@@ -1132,6 +1185,7 @@ MFF.CHARACTERS.DATA =
 "ironheart" :        {
                       "uniform" : "now",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "now" :
@@ -1145,6 +1199,7 @@ MFF.CHARACTERS.DATA =
 "jessica_jones" :    {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -1158,6 +1213,7 @@ MFF.CHARACTERS.DATA =
 "kaecilius" :        {
                       "uniform" : "doc_strange",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "doc_strange" :
@@ -1171,6 +1227,7 @@ MFF.CHARACTERS.DATA =
 "karnak" :           {
                       "uniform" : "warofking",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "warofking" :
@@ -1192,6 +1249,7 @@ MFF.CHARACTERS.DATA =
 "kidkaiju" :         {
                       "uniform" : "unleashed",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "unleashed" :
@@ -1205,6 +1263,7 @@ MFF.CHARACTERS.DATA =
 "kingpin" :          {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -1226,6 +1285,7 @@ MFF.CHARACTERS.DATA =
 "lash" :             {
                       "uniform" : "maos",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "maos" :
@@ -1247,6 +1307,7 @@ MFF.CHARACTERS.DATA =
 "lincoln_campbell" : {
                       "uniform" : "maos",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "maos" :
@@ -1260,6 +1321,7 @@ MFF.CHARACTERS.DATA =
 "loki" :             {
                       "uniform" : "avengers",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "avengers" :
@@ -1281,6 +1343,7 @@ MFF.CHARACTERS.DATA =
 "luke_cage" :        {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -1310,6 +1373,7 @@ MFF.CHARACTERS.DATA =
 "malekith" :         {
                       "uniform" : "ttdw",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "ttdw" :
@@ -1331,6 +1395,7 @@ MFF.CHARACTERS.DATA =
 "maximus" :          {
                       "uniform" : "warofking",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "warofking" :
@@ -1344,6 +1409,7 @@ MFF.CHARACTERS.DATA =
 "medusa" :           {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -1357,6 +1423,7 @@ MFF.CHARACTERS.DATA =
 "miles_morales" :    {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -1370,6 +1437,7 @@ MFF.CHARACTERS.DATA =
 "misty_knight" :     {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -1383,6 +1451,7 @@ MFF.CHARACTERS.DATA =
 "mockingbird" :      {
                       "uniform" : "ha",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "ha" :
@@ -1412,6 +1481,7 @@ MFF.CHARACTERS.DATA =
 "modok" :            {
                       "uniform" : "classic",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "classic" :
@@ -1441,6 +1511,7 @@ MFF.CHARACTERS.DATA =
 "moon_girl" :        {
                       "uniform" : "now",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "now" :
@@ -1454,6 +1525,7 @@ MFF.CHARACTERS.DATA =
 "moon_knight" :      {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -1475,6 +1547,7 @@ MFF.CHARACTERS.DATA =
 "mordo" :            {
                       "uniform" : "classic",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "classic" :
@@ -1496,6 +1569,7 @@ MFF.CHARACTERS.DATA =
 "ms_marvel" :        {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -1517,6 +1591,7 @@ MFF.CHARACTERS.DATA =
 "nebula" :           {
                       "uniform" : "gg",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "gg" :
@@ -1538,6 +1613,7 @@ MFF.CHARACTERS.DATA =
 "octopus" :          {
                       "uniform" : "classic",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "classic" :
@@ -1559,6 +1635,7 @@ MFF.CHARACTERS.DATA =
 "odin" :             {
                       "uniform" : "modern",
                       "tiers" : [2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -1572,6 +1649,7 @@ MFF.CHARACTERS.DATA =
 "phil_coulson" :     {
                       "uniform" : "maos",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "maos" :
@@ -1585,6 +1663,7 @@ MFF.CHARACTERS.DATA =
 "proxima_midnight" : {
                       "uniform" : "infinity",
                       "tiers" : [2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "infinity" :
@@ -1598,6 +1677,7 @@ MFF.CHARACTERS.DATA =
 "punisher" :         {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -1635,6 +1715,7 @@ MFF.CHARACTERS.DATA =
 "red_hulk" :         {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -1656,6 +1737,7 @@ MFF.CHARACTERS.DATA =
 "red_skull" :        {
                       "uniform" : "catfa",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "catfa" :
@@ -1677,6 +1759,7 @@ MFF.CHARACTERS.DATA =
 "rocket_raccoon" :   {
                       "uniform" : "gg",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "gg" :
@@ -1698,6 +1781,7 @@ MFF.CHARACTERS.DATA =
 "ronan" :            {
                       "uniform" : "gg",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "gg" :
@@ -1719,6 +1803,7 @@ MFF.CHARACTERS.DATA =
 "satana" :           {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -1732,6 +1817,7 @@ MFF.CHARACTERS.DATA =
 "sharon_rogers" :    {
                       "uniform" : "ca_75",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "ca_75" :
@@ -1745,6 +1831,7 @@ MFF.CHARACTERS.DATA =
 "shang_chi" :        {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -1758,6 +1845,7 @@ MFF.CHARACTERS.DATA =
 "she_hulk" :         {
                       "uniform" : "sw_a_force",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "sw_a_force" :
@@ -1779,6 +1867,7 @@ MFF.CHARACTERS.DATA =
 "sif" :              {
                       "uniform" : "maos",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "maos" :
@@ -1800,6 +1889,7 @@ MFF.CHARACTERS.DATA =
 "silk" :             {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -1821,6 +1911,7 @@ MFF.CHARACTERS.DATA =
 "sin" :              {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -1834,6 +1925,7 @@ MFF.CHARACTERS.DATA =
 "singularity" :      {
                       "uniform" : "sw_a_force",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "sw_a_force" :
@@ -1847,6 +1939,7 @@ MFF.CHARACTERS.DATA =
 "sister_grimm" :     {
                       "uniform" : "sw_a_force",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "sw_a_force" :
@@ -1868,6 +1961,7 @@ MFF.CHARACTERS.DATA =
 "songbird" :         {
                       "uniform" : "na",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "na" :
@@ -1881,6 +1975,7 @@ MFF.CHARACTERS.DATA =
 "spider_gwen" :      {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -1894,6 +1989,7 @@ MFF.CHARACTERS.DATA =
 "spider_man" :       {
                       "uniform" : "classic",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "classic" :
@@ -1931,6 +2027,7 @@ MFF.CHARACTERS.DATA =
 "squirrel_girl" :    {
                       "uniform" : "na",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "na" :
@@ -1952,6 +2049,7 @@ MFF.CHARACTERS.DATA =
 "star_lord" :        {
                       "uniform" : "gg",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "gg" :
@@ -1973,6 +2071,7 @@ MFF.CHARACTERS.DATA =
 "supergiant" :       {
                       "uniform" : "infinity",
                       "tiers" : [2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "infinity" :
@@ -1986,6 +2085,7 @@ MFF.CHARACTERS.DATA =
 "thanos" :           {
                       "uniform" : "infinity",
                       "tiers" : [2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "infinity" :
@@ -1999,6 +2099,7 @@ MFF.CHARACTERS.DATA =
 "thor" :             {
                       "uniform" : "avengers",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "avengers" :
@@ -2028,6 +2129,7 @@ MFF.CHARACTERS.DATA =
 "thor_jane_foster" : {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -2041,6 +2143,7 @@ MFF.CHARACTERS.DATA =
 "ulik" :             {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -2054,6 +2157,7 @@ MFF.CHARACTERS.DATA =
 "ultron" :           {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -2091,6 +2195,7 @@ MFF.CHARACTERS.DATA =
 "venom" :            {
                       "uniform" : "classic",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "classic" :
@@ -2112,6 +2217,7 @@ MFF.CHARACTERS.DATA =
 "vision" :           {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -2133,6 +2239,7 @@ MFF.CHARACTERS.DATA =
 "volstagg" :         {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -2146,6 +2253,7 @@ MFF.CHARACTERS.DATA =
 "war_machine" :      {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -2183,6 +2291,7 @@ MFF.CHARACTERS.DATA =
 "warwolf" :          {
                       "uniform" : "howling",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "howling" :
@@ -2196,6 +2305,7 @@ MFF.CHARACTERS.DATA =
 "wasp" :             {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "modern" :
@@ -2217,6 +2327,7 @@ MFF.CHARACTERS.DATA =
 "white_tiger" :      {
                       "uniform" : "na",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "na" :
@@ -2230,6 +2341,7 @@ MFF.CHARACTERS.DATA =
 "wiccan" :           {
                       "uniform" : "na",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "na" :
@@ -2243,6 +2355,7 @@ MFF.CHARACTERS.DATA =
 "winter_soldier" :   {
                       "uniform" : "catws",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "catws" :
@@ -2272,6 +2385,7 @@ MFF.CHARACTERS.DATA =
 "wong" :             {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "anad" :
@@ -2293,6 +2407,7 @@ MFF.CHARACTERS.DATA =
 "yellow_jacket" :    {
                       "uniform" : "mam",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "mam" :
@@ -2314,6 +2429,7 @@ MFF.CHARACTERS.DATA =
 "yondu" :            {
                       "uniform" : "gg",
                       "tiers" : [1, 2],
+                      "immunities" : [],
                       "uniforms" :
                       {
                        "gg" :
