@@ -13,7 +13,8 @@ function Button(options)
   if ( !Array.isArray(options.content) ) { options.content = [options.content]; }
   options.content.forEach(function(node)
                           {
-                           if ( typeof node == "string" ) { this.innerHTML += node; }
+                           if ( typeof node == "string" ) { this.appendChild(document.createTextNode(node)); }
+                           else if ( typeof node == "function" ) { node.call(this, this); }
                            else { this.appendChild(node); }
                           }, this._node);
   this._node.classList.add("content");
@@ -90,25 +91,26 @@ function ToggleSwitch(options)
  this._input = this._node.appendChild(document.createElement("input"));
  this._input.type = "checkbox";
  this._input.checked = !!options.checked;
+ this._input.value = "value" in options ? options.value : "";
  div = this._node.appendChild(document.createElement("div"));
  div.className = "slider";
  this._node.className = "switch";
+ if ( !options.id ) { options.id = "autoToggleId" + ToggleSwitch.UID++; }
  if ( options.content )
  {
   this._label = API.DOM.getById(options.renderTo).appendChild(document.createElement("label"));
   this._label.classList.add("labelSwitch");
-  if ( options.id ) { this._label.htmlFor = options.id; }
+  this._label.htmlFor = options.id;
   this._label.appendChild(document.createTextNode(options.content));
  }
  if ( options.large ) { this._node.classList.add("large"); }
- if ( options.id )
- {
-  this._id = options.id;
-  this._input.id = options.id;
- }
+ this._id = options.id;
+ this._input.id = options.id;
  if ( options.callback ) { this._node.onchange = (function(toggleSwitch, cb, data) { return function() { cb.call(toggleSwitch, toggleSwitch._input.checked, data || null); }; })(this, options.callback, options.data); }
  this.setDisabled(!!options.disabled);
 }
+
+ToggleSwitch.UID = 0;
 
 ToggleSwitch.prototype =
 {
@@ -130,7 +132,34 @@ function Dropdown(options)
  this.items = options.items;
 }
 
-Dropdown.listenerDocument = false;
+Dropdown.listener = function(evt)
+                    {
+                     var item,
+                         target = API.EVT.getParentTarget(evt, "li", "dropdown-item");
+                     if ( target && Dropdown.current )
+                     {
+                      item = Dropdown.current.items.find(function(item) { return item.id == target.dataset.itemId; });
+                      if ( item && item.callback ) { item.callback.call(target); }
+                      Dropdown.hide(!target || !target.classList.contains("preventAutoclose"));
+                      return false;
+                     }
+                     Dropdown.hide();
+                    };
+
+Dropdown.hide = function(allowed)
+{
+ var ul;
+ if ( allowed !== false )
+ {
+  ul = document.getElementById("dropdown-items");
+  if ( ul && ul.parentNode )
+  {
+   ul.parentNode.removeChild(ul);
+   document.body.removeEventListener("click", Dropdown.listener, false);
+   Dropdown.current = null;
+  }
+ }
+};
 
 Dropdown.prototype =
 {
@@ -139,14 +168,17 @@ Dropdown.prototype =
   var that = this;
   return function(evt)
   {
-   var bounding = that.btn._node.getBoundingClientRect(),
-       ul = document.getElementById("dropdown-items");
-   if ( ul && ul.parentNode ) { ul.parentNode.removeChild(ul); }
+   var ul,
+       bounding = that.btn._node.getBoundingClientRect();
+   Dropdown.hide();
+   if ( Dropdown.current == that ) { return false; }
+   document.body.removeEventListener("click", Dropdown.listener, false);
+   Dropdown.current = that;
    ul = document.body.appendChild(document.createElement("ul"));
    ul.id = "dropdown-items";
    that.items.forEach(function(item)
                       {
-                       var span,
+                       var span, k,
                            li = this.appendChild(document.createElement("li"));
                        li.className = "dropdown-item";
                        if ( item.fa )
@@ -157,32 +189,33 @@ Dropdown.prototype =
                        }
                        if ( item.content )
                        {
-                        span = li.appendChild(document.createElement("span"));
+                        if ( !Array.isArray(item.content) ) { item.content = [item.content]; }
+                        item.content.forEach(function(node)
+                                             {
+                                              if ( typeof node == "string" ) { this.appendChild(document.createTextNode(node)); }
+                                              else if ( typeof node == "function" ) { node.call(this, this); }
+                                              else { this.appendChild(node); }
+                                             }, li);
                         li.classList.add("content");
-                        span.innerHTML = item.content;
                        }
+                       if ( "class" in item ) { li.classList.add(item["class"]); }
+                       if ( item.title ) { li.title = item.title; }
                        li.dataset.itemId = item.id;
+                       if ( item.events )
+                       {
+                        for ( k in item.events )
+                        {
+                         if ( item.events.hasOwnProperty(k) )
+                         {
+                          li.addEventListener(k, item.events[k], false);
+                         }
+                        }
+                       }
                       }, ul);
    ul.style.top = (bounding.top + bounding.height) + "px";
    ul.style.left = bounding.left + "px";
    evt.stopPropagation();
-   if ( !Dropdown.listenerDocument )
-   {
-    document.body.addEventListener("click", function(evt)
-                                            {
-                                             var item,
-                                                 target = API.EVT.getParentTarget(evt, "li", "dropdown-item");
-                                                 ul = document.getElementById("dropdown-items");
-                                             if ( ul && ul.parentNode ) { ul.parentNode.removeChild(ul); }
-                                             if ( target )
-                                             {
-                                              item = that.items.find(function(item) { return item.id == target.dataset.itemId; });
-                                              if ( item && item.callback ) { item.callback(); }
-                                              return false;
-                                             }
-                                            }, false);
-    Dropdown.listenerDocument = true;
-   }
+   document.body.addEventListener("click", Dropdown.listener, false);
   };
  }
 };

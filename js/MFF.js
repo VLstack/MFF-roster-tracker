@@ -65,6 +65,10 @@ var MFF =
    {
     showHide = "hide";
    }
+   if ( showHide == "show" && MFF.IMMUNITIES.filters.length > 0 && !MFF.IMMUNITIES.hasFilteredImmunities(childs[i].id) )
+   {
+    showHide = "hide";
+   }
    childs[i].style.display = showHide == "show" ? "" : "none";
    if ( showHide == "show" ) { nb++; }
   }

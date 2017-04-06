@@ -61,7 +61,7 @@ MFF.LAYOUT.DETAIL.GEARS =
 
   function getMax(select) { return parseFloat(select.options[select.selectedIndex].dataset.rangeMax); }
 
-  function checkValues(tr)
+  function checkValues(tr, save)
   {
    var div, gear, type, pref,
        select = tr.childNodes[1].firstChild,
@@ -86,7 +86,7 @@ MFF.LAYOUT.DETAIL.GEARS =
    type = select.options[select.selectedIndex].value;
    if ( type === "" ) { checkbox.checked = false; }
    pref = checkbox.checked;
-   MFF.saveCharacter({ "mode" : "gear", "gear" : gear, "gearIndex" : tr.dataset.gearIndex, "type" : type, "val" : parseFloat(cur), "pref" : pref/*, "percent" : MFF.getIndividualPercent(cur, min, max)*/ });
+   if ( save ) { MFF.saveCharacter({ "mode" : "gear", "gear" : gear, "gearIndex" : tr.dataset.gearIndex, "type" : type, "val" : parseFloat(cur), "pref" : pref/*, "percent" : MFF.getIndividualPercent(cur, min, max)*/ }); }
    API.EVT.dispatch("computePercentGears", tr.dataset.character);
   }
 
@@ -105,7 +105,7 @@ MFF.LAYOUT.DETAIL.GEARS =
    moySpan.innerHTML = moy;
    maxSpan.innerHTML = max;
    if ( evt !== null ) { cur.value = 0; }
-   checkValues(tr);
+   checkValues(tr, evt !== null);
   }
 
   function changeAll()

@@ -169,7 +169,7 @@ MFF.LAYOUT.DETAIL =
                                    ],
                                    [null]
                                   ]);
-  // DEBUFF
+  // DEVELOPMENT
   MFF.LAYOUT.DETAIL.drawFormTable(container, character, data, "Developments %",
                                   [
                                    [
@@ -189,6 +189,8 @@ MFF.LAYOUT.DETAIL =
                                   //  null
                                    ]
                                   ]);
+  // IMMUNTIIES
+  MFF.IMMUNITIES.draw(container, character);
   // compute values
   showAvgDef()();
   API.EVT.dispatch("refreshPercentGlobal", character);
