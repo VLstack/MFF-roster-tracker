@@ -12,6 +12,12 @@ var MFF =
  "shownClassSide" : ["hero", "vilain", "neutral"],
  "shownClassGender" : ["male", "female", "neutral"],
  "shownClassTier" : ["tier1", "tier2"],
+ "showFavorites" : false,
+ "toggleFavorite" : function(checked)
+ {
+  MFF.showFavorites = checked;
+  MFF.filters();
+ },
  "toggleClass" : function(reference)
  {
   return function(checked, type)
@@ -42,32 +48,39 @@ var MFF =
   {
    data = MFF.CHARACTERS.get(childs[i].id);
    showHide = "hide";
-   for ( j = 0; j < MFF.shownClassType.length; j++ )
+   if ( MFF.showFavorites )
    {
-    if ( childs[i].classList.contains(MFF.shownClassType[j]) )
+    if ( data.favorite ) { showHide = "show"; }
+   }
+   else
+   {
+    for ( j = 0; j < MFF.shownClassType.length; j++ )
     {
-     showHide = "show";
-     break;
+     if ( childs[i].classList.contains(MFF.shownClassType[j]) )
+     {
+      showHide = "show";
+      break;
+     }
     }
-   }
-   if ( showHide == "show" && MFF.shownClassTier.indexOf("tier" + data.tier) == -1 ) { showHide = "hide"; }
-   if ( showHide == "show" )
-   {
-    gender = MFF.CHARACTERS.DATA[childs[i].id].uniforms[data.uniform].gender;
-    if ( MFF.shownClassGender.indexOf(gender) == -1 ) { showHide = "hide"; }
-   }
-   if ( showHide == "show" )
-   {
-    side = MFF.CHARACTERS.DATA[childs[i].id].uniforms[data.uniform].side;
-    if ( MFF.shownClassSide.indexOf(side) == -1 ) { showHide = "hide"; }
-   }
-   if ( showHide == "show" && query && reduce(MFF.CHARACTERS.DATA[childs[i].id].uniforms[data.uniform].name).indexOf(query) == -1 )
-   {
-    showHide = "hide";
-   }
-   if ( showHide == "show" && MFF.IMMUNITIES.filters.length > 0 && !MFF.IMMUNITIES.hasFilteredImmunities(childs[i].id) )
-   {
-    showHide = "hide";
+    if ( showHide == "show" && MFF.shownClassTier.indexOf("tier" + data.tier) == -1 ) { showHide = "hide"; }
+    if ( showHide == "show" )
+    {
+     gender = MFF.CHARACTERS.DATA[childs[i].id].uniforms[data.uniform].gender;
+     if ( MFF.shownClassGender.indexOf(gender) == -1 ) { showHide = "hide"; }
+    }
+    if ( showHide == "show" )
+    {
+     side = MFF.CHARACTERS.DATA[childs[i].id].uniforms[data.uniform].side;
+     if ( MFF.shownClassSide.indexOf(side) == -1 ) { showHide = "hide"; }
+    }
+    if ( showHide == "show" && query && reduce(MFF.CHARACTERS.DATA[childs[i].id].uniforms[data.uniform].name).indexOf(query) == -1 )
+    {
+     showHide = "hide";
+    }
+    if ( showHide == "show" && MFF.IMMUNITIES.filters.length > 0 && !MFF.IMMUNITIES.hasFilteredImmunities(childs[i].id) )
+    {
+     showHide = "hide";
+    }
    }
    childs[i].style.display = showHide == "show" ? "" : "none";
    if ( showHide == "show" ) { nb++; }

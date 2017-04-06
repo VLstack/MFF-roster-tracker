@@ -466,6 +466,18 @@ MFF.LAYOUT.DETAIL =
                     MFF.saveCharacter({ "mode" : "combatPower", "combatPower" : v });
                    };
 
+  span = h1.appendChild(document.createElement("img"));
+  span.src = "images/star_{0}.png".format(data.favorite ? "yellow" : "grey");
+  span.id = "character_favorite";
+  span.title = "Toggle favorite";
+  span.onclick = function()
+  {
+   var checked = this.src.indexOf("yellow") != -1;
+   this.src = "images/star_{0}.png".format(checked ? "grey" : "yellow");
+   MFF.saveCharacter({ "mode" : "favorite", "favorite" : !checked });
+   MFF.filters();
+  };
+
   span = h1.appendChild(document.createElement("label"));
   span.htmlFor = "character_level";
   span.appendChild(document.createTextNode("#"));

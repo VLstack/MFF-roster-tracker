@@ -162,6 +162,7 @@ MFF.LAYOUT.ACTION =
    }
   }
   new Dropdown({ "renderTo" : container, "fa" : "medkit", "title" : "Filter by immunities", "items" : items });
+  new ImageButton({ "renderTo" : container, "type" : "favorite", "title" : "Toggle favorites characters", "switchImage" : { "checked" : "star_yellow.png", "unchecked" : "star_grey.png" }, "checked" : false, "callback" : MFF.toggleFavorite });
   new ImageButton({ "renderTo" : container, "type" : "combat", "title" : "Toggle combat type characters", "image" : "combat.png", "checked" : true, "callback" : MFF.toggleClass("type") });
   new ImageButton({ "renderTo" : container, "type" : "speed", "title" : "Toggle speed type characters", "image" : "speed.png", "checked" : true, "callback" : MFF.toggleClass("type") });
   new ImageButton({ "renderTo" : container, "type" : "blast", "title" : "Toggle blast type characters", "image" : "blast.png", "checked" : true, "callback" : MFF.toggleClass("type") });

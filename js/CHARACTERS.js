@@ -197,6 +197,9 @@ MFF.CHARACTERS =
   case "rank" :
    MFF.CHARACTERS._all[character].rank = data.rank;
   break;
+  case "favorite" :
+   MFF.CHARACTERS._all[character].favorite = data.favorite;
+  break;
  }
  MFF.CHARACTERS._all[character].lastUpdate = (new Date()).valueOf();
 }

@@ -68,19 +68,38 @@ Button.prototype =
 // TODO : inherit from Button
 function ImageButton(options)
 {
- var img,
-     node = API.DOM.getById(options.renderTo).appendChild(document.createElement("span"));
+ var src,
+     node = API.DOM.getById(options.renderTo).appendChild(document.createElement("span")),
+     img = node.appendChild(document.createElement("img"));
  node.className = "imageButton";
  if ( options.className ) { node.classList.add(options.className); }
  if ( options.checked ) { node.classList.add("checked"); }
  if ( options.title ) { node.title = options.title; }
- node.onclick = function()
+ if ( options.switchImage )
  {
-  this.classList.toggle("checked");
-  options.callback(this.classList.contains("checked"), options.type);
- };
- img = node.appendChild(document.createElement("img"));
- img.src = "images/" + options.image;
+  src = options.switchImage[options.checked ? "checked" : "unchecked"];
+  node.classList.add("switchImage");
+  node.dataset.switchChecked = options.switchImage.checked;
+  node.dataset.switchUnchecked = options.switchImage.unchecked;
+  node.onclick = function()
+  {
+   var checked;
+   this.classList.toggle("checked");
+   checked = this.classList.contains("checked");
+   this.firstChild.src = "images/" + this.dataset[checked ? "switchChecked" : "switchUnchecked"];
+   options.callback(checked, options.type);
+  };
+ }
+ else
+ {
+  src = options.image;
+  node.onclick = function()
+  {
+   this.classList.toggle("checked");
+   options.callback(this.classList.contains("checked"), options.type);
+  };
+ }
+ img.src = "images/" + src;
  return this;
 }
 
