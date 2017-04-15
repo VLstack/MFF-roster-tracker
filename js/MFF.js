@@ -125,8 +125,8 @@ var MFF =
   "rank" :             { "label" : "Rank", "callback" : function(character) { var v = character.rank || 0; return { "value" : v, "percent" : false }; } },
   "recorate" :         { "label" : "Recovery rate", "max" : 250, "callback" : function(character) { var v = character.recorate; return { "value" : v, "percent" : true }; } },
   "scd" :              { "label" : "Skill cooldown", "max" : 50, "callback" : function(character) { var v = character.scd; return { "value" : v, "percent" : true }; } },
-  "defense_all" :      { "disableCharts" : true, "disableSort" : true, "label" : "All defenses" },
-  "attack_all" :       { "disableCharts" : true, "disableSort" : true, "label" : "All attacks" }
+  "defense_all" :      { "disableChart" : true, "disableSort" : true, "label" : "All defenses" },
+  "attack_all" :       { "disableChart" : true, "disableSort" : true, "label" : "All attacks" }
  },
  "cbImportExport" : function()
  {

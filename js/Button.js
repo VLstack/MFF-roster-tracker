@@ -151,6 +151,7 @@ function Dropdown(options)
  this.items = options.items;
 }
 
+Dropdown.current = null;
 Dropdown.listener = function(evt)
                     {
                      var item,
@@ -187,11 +188,12 @@ Dropdown.prototype =
   var that = this;
   return function(evt)
   {
-   var ul,
-       bounding = that.btn._node.getBoundingClientRect();
+   var ul, bounding,
+       cancel = false;
+   if ( Dropdown.current == that ) { cancel = true; }
    Dropdown.hide();
-   if ( Dropdown.current == that ) { return false; }
    document.body.removeEventListener("click", Dropdown.listener, false);
+   if ( cancel ) { return false; }
    Dropdown.current = that;
    ul = document.body.appendChild(document.createElement("ul"));
    ul.id = "dropdown-items";
@@ -231,6 +233,7 @@ Dropdown.prototype =
                         }
                        }
                       }, ul);
+   bounding = that.btn._node.getBoundingClientRect();
    ul.style.top = (bounding.top + bounding.height) + "px";
    ul.style.left = bounding.left + "px";
    evt.stopPropagation();

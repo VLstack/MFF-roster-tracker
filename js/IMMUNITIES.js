@@ -4,12 +4,18 @@ MFF.IMMUNITIES =
  "filters" : [],
  "states" :
  {
+  "all" : "All damage",
+  "all_energy" : "All energy damage",
+  "all_physical" : "All physical damage",
   "bleed" : "Bleed",
   "burn" : "Burn",
   "cancel" : "Cancel",
   "charm" : "Charm",
+  "cold" : "Cold damage",
   "fear" : "Fear",
+  "fire" : "Fire damage",
   "guard_break" : "Guard break",
+  "invincible" : "Invincible",
   "lightning" : "Lightning damage",
   "mind" : "Mind damage",
   "movement" : "Movement speed",
@@ -23,7 +29,9 @@ MFF.IMMUNITIES =
  {
   "P" : "Passive",
   "T2" : "Tier2",
-  "U" : "Uniform"
+  "U" : "Uniform",
+  "S" : "Skill",
+  "L" : "Leadership"
  },
  "draw" : function(container, characterId)
  {
@@ -48,23 +56,47 @@ MFF.IMMUNITIES =
  {
   var all = [],
       data = MFF.CHARACTERS.get(characterId),
-      cData = data.id in MFF.CHARACTERS.DATA ? MFF.CHARACTERS.DATA[data.id] : {},
       uData = (data.id in MFF.CHARACTERS.DATA) && (data.uniform in MFF.CHARACTERS.DATA[data.id].uniforms) ? MFF.CHARACTERS.DATA[data.id].uniforms[data.uniform] : {};
-  if ( "immunities" in cData )
-  {
-   cData.immunities.forEach(function(immunity)
-                            {
-                             var tmp = immunity.split("/");
-                             all.push({ "type" : tmp[0], "state" : tmp[1] });
-                            });
-  }
   if ( "immunities" in uData )
   {
-   uData.immunities.forEach(function(immunity)
-                            {
-                             var tmp = immunity.split("/");
-                             all.push({ "type" : tmp[0], "state" : tmp[1] });
-                            });
+   all = uData.immunities.map(function(immunity)
+                              {
+                               var tmp = immunity.split("/"),
+                                   type = tmp[0],
+                                   state = tmp[1],
+                                   line = { "type" : type, "state" : state, "when" : "permanent" };
+                               if ( tmp[2] == "skill" )
+                               {
+                                line.when = "skill";
+                                line.skill = tmp[3];
+                                line.skill_name = MFF.CHARACTERS.DATA[data.id].uniforms[data.uniform].skills[tmp[3] - 1];
+                                line.percent = tmp[4];
+                                line.duration = tmp[5];
+                               }
+                               else if ( tmp[2] == "hit" || tmp[2] == "attack" )
+                               {
+                                line.when = tmp[2];
+                                line.rate = tmp[3];
+                                line.percent = tmp[4];
+                                line.duration = tmp[5];
+                               }
+                               else if ( tmp[2] == "hpB" )
+                               {
+                                line.when = tmp[2];
+                                line.hp = tmp[3];
+                                line.percent = tmp[4];
+                                line.duration = tmp[5];
+                               }
+                               else if ( tmp[2] && Number.isNumeric(tmp[2]) )
+                               {
+                                if ( tmp[3] && tmp[3] == "rng" && tmp[4] && Number.isNumeric(tmp[4]) )
+                                {
+                                 line.random = tmp[4];
+                                }
+                                line.percent = tmp[2];
+                               }
+                               return line;
+                              });
   }
   return all;
  },
@@ -90,11 +122,45 @@ MFF.IMMUNITIES =
   {
    all.forEach(function(immunity)
                {
-                var tr = MFF.IMMUNITIES._node.appendChild(document.createElement("tr"));
+                var tr = MFF.IMMUNITIES._node.appendChild(document.createElement("tr")),
+                    th = tr.appendChild(document.createElement("th")),
                     td = tr.appendChild(document.createElement("th"));
-                td.innerHTML = MFF.IMMUNITIES.types[immunity.type];
-                td = tr.appendChild(document.createElement("th"));
+                th.innerHTML = MFF.IMMUNITIES.types[immunity.type];
                 td.innerHTML = MFF.IMMUNITIES.states[immunity.state];
+                switch ( immunity.when )
+                {
+                 case "skill":
+                  tr.title = "When skill \"{0}\" is used\n{1}% immunity for {2} seconds".format(immunity.skill_name, immunity.percent, immunity.duration);
+                 break;
+                 case "hit":
+                  tr.title = "{0}% when hit\n{1}% immunity for {2} seconds".format(immunity.rate, immunity.percent, immunity.duration);
+                 break;
+                 case "attack":
+                  tr.title = "{0}% when attacking\n{1}% immunity for {2} seconds".format(immunity.rate, immunity.percent, immunity.duration);
+                 break;
+                 case "hpB":
+                  tr.title = "When HP below {0}%\n{1}% immunity for {2} seconds".format(immunity.hp, immunity.percent, immunity.duration);
+                 break;
+                 default:
+                  if ( immunity.percent )
+                  {
+                   if ( immunity.random )
+                   {
+                    td.innerHTML = "{0}% {1} (RNG {2}%)".format(immunity.percent, MFF.IMMUNITIES.states[immunity.state], immunity.random);
+                    tr.title = "{0}% immunity (RNG {2}%)".format(immunity.percent, immunity.random);
+                   }
+                   else
+                   {
+                    td.innerHTML = "{0}% {1}".format(immunity.percent, MFF.IMMUNITIES.states[immunity.state]);
+                    tr.title = "{0}% immunity".format(immunity.percent);
+                   }
+                  }
+                  else
+                  {
+                   tr.title = "Permanent immunity";
+                  }
+                 break;
+                }
                });
   }
   else

@@ -1,3 +1,26 @@
+/* NUMBER */
+
+Number.isInteger = Number.isInteger || function(value)
+{
+ return typeof value === "number" && isFinite(value) && Math.floor(value) === value;
+};
+
+Number.isNumeric = function(n) { return Number(n) + "" === n; };
+
+/* ARRAY */
+
+Array.prototype.contains = function(O/*bject*/)
+{
+ return this.indexOf(O) != -1;
+};
+
+Array.isArray = Array.isArray || function(arg)
+{
+ return Object.prototype.toString.call(arg) === "[object Array]";
+};
+
+/* STRING */
+
 if ( !String.prototype.format )
 {
  String.prototype.format = function()
@@ -17,7 +40,7 @@ if ( !String.prototype.format )
 
 if ( !String.prototype.trim )
 {
- String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, ""); };
+ String.prototype.trim = function () { return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, ""); };
 }
 
 
