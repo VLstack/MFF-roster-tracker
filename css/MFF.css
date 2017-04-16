@@ -154,11 +154,9 @@ span.skill_lvl { display:inline-block; width:calc(20% - 8px); margin:2px; color:
 .skill_lvl > option { font:10px/16px arial }
 
 #panelFooter { bottom:0; left:0; right:0; height:30px; overflow:hidden; background-color:#12192b }
-#panelFooter span { display:inline-block; font:10px/18px arial; color:white; padding:1px 5px; border:1px solid rgba(255, 255, 255, 0.5) }
+#panelFooter span { display:inline-block; font:10px/18px arial; color:white; padding:1px 5px; border:1px solid rgba(255, 255, 255, 0.5); margin:5px 5px 0 5px }
+#panelFooter span a:link, #panelFooter span a:visited { color:white }
 #panelFooter span#MFFversion { position:absolute; right:3px; bottom:3px }
-#panelFooter span#nbTiers { position:absolute; left:3px; bottom:3px }
-#panelFooter span#submitIssues { position:absolute; left:170px; bottom:3px }
-#panelFooter span#submitIssues a:link, #panelFooter span#submitIssues a:visited { color:white }
 
 #panelFooter span#MFFversion.beta::before { content:"BETA"; background-color:#630000; color:white; position:absolute; left:-40px; padding:1px 5px; border-radius:4px }
 #panelFooter span#MFFversion.localhost::before { content:"localhost"; background-color:#006363; color:white; position:absolute; left:-60px; padding:1px 5px; border-radius:4px }
@@ -242,3 +240,11 @@ h2.rank.mythical { color:red }
 .dropdown-item.immunity-inline-33 { display:inline-block; width:calc(33% - 12px); text-align:center }
 
 .immunity-actions-title { cursor:default; text-align:center }
+
+#OCRDropArea { position:absolute; top:10px; left:10px; bottom:30px; right:10px; border:2px dashed #999999; paddinxg-top:75px; border-radius:10px }
+#OCRDropArea.OCRDragOver { border-color:#ffffff; color:#ffffff }
+#OCRDropArea div.text { text-align:center; font:20px/80px arial; color:#999999 }
+#OCRDropArea div#OCRList { position:absolute; top:90px; left:20px; right:20px; bottom:0; overflow:auto }
+#OCRDropArea img { position:absolute; top:0; height:120px; border:4px solid #ffffff; box-shadow:0 0 10px rgba(0, 0, 0, 0.1); border-radius:4px }
+#OCRTextRecap { position:absolute; bottom:10px; left:10px; right:10px; height:20px; text-align:center; font:12px/20px arial; color:#999999 }
+

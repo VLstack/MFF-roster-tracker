@@ -28,6 +28,7 @@ var MODAL =
   if ( options.body )
   {
    if ( typeof options.body == "string" ) { body.innerHTML = options.body; }
+   else if ( Array.isArray(options.body) ) { options.body.forEach(function(node) { this.appendChild(node); }, body); }
    else { body.appendChild(options.body); }
   }
   footer = wrapper.appendChild(document.createElement("div"));

@@ -147,6 +147,7 @@ MFF.LAYOUT.ACTION =
                  [
                   { "id" : "export", "content" : "Export characters", "fa" : "upload", "callback" : MFF.EXPORT.selectCharacters },
                   { "id" : "import", "content" : "Import characters", "fa" : "download", "callback" : MFF.IMPORT.pasteContent },
+                  { "id" : "importOCR", "content" : "Import from screenshots", "fa" : "download", "callback" : MFF.OCR.selectScreenshots }
                  ] });
   items = [
            { "id" : "immunity-check-all", "fa" : "toggle-on", "class" : "immunity-inline-33 preventAutoclose", "callback" : cbImmunityAll("check"), "events" : { "mouseenter" : showImmunityTitle("Check all"), "mouseleave" : defaultImmunityTitle } },
