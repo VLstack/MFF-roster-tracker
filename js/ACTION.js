@@ -142,12 +142,12 @@ MFF.LAYOUT.ACTION =
   MFF.LAYOUT.ACTION._panel = new Panel({ "id" : "panelAction" });
   container = MFF.LAYOUT.ACTION._panel.getNode();
 
-  new Dropdown({ "renderTo" : container, "fa" : "upload", "title" : "Import / Export",
+  new Dropdown({ "renderTo" : container, "fa" : "upload", "title" : "Import / Export", "onshow" : MFF.OCR.getAvailabilityTag,
                  "items" :
                  [
                   { "id" : "export", "content" : "Export characters", "fa" : "upload", "callback" : MFF.EXPORT.selectCharacters },
                   { "id" : "import", "content" : "Import characters", "fa" : "download", "callback" : MFF.IMPORT.pasteContent },
-                  { "id" : "importOCR", "content" : "Import from screenshots", "fa" : "download", "callback" : MFF.OCR.selectScreenshots }
+                  { "id" : "importOCR", "content" : ["Import from screenshots", MFF.OCR.getAvailabilityTag()], "fa" : "download", "callback" : MFF.OCR.selectScreenshots }
                  ] });
   items = [
            { "id" : "immunity-check-all", "fa" : "toggle-on", "class" : "immunity-inline-33 preventAutoclose", "callback" : cbImmunityAll("check"), "events" : { "mouseenter" : showImmunityTitle("Check all"), "mouseleave" : defaultImmunityTitle } },

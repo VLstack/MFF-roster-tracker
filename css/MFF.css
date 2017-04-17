@@ -247,4 +247,14 @@ h2.rank.mythical { color:red }
 #OCRDropArea div#OCRList { position:absolute; top:90px; left:20px; right:20px; bottom:0; overflow:auto }
 #OCRDropArea img { position:absolute; top:0; height:120px; border:4px solid #ffffff; box-shadow:0 0 10px rgba(0, 0, 0, 0.1); border-radius:4px }
 #OCRTextRecap { position:absolute; bottom:10px; left:10px; right:10px; height:20px; text-align:center; font:12px/20px arial; color:#999999 }
-
+#OCRLoading { position:absolute; top:2px; left:2px; height:4px; right:2px; background-color:red }
+#OCRLoading>div { height:4px; background-color:green; transition:width 1s ease }
+#OCRProcessContent { position:absolute; top:10px; left:2px; right:2px; bottom:2px }
+#OCRProcessContent li { color:#999999; margin-bottom:10px }
+#OCRProcessContent li:not(#OCRProcessRecap) span { margin-left:5px; font:12px/20px arial }
+#OCRProcessContent li:not(#OCRProcessRecap) div { margin:5px }
+#OCRProcessRecap { font:12px/20px arial; text-align:center }
+#OCRAvailability { display:inline-block; color:white; padding:0px 10px; border-radius:4px; margin-left:5px; vertical-align:middle; font-size:8px }
+#OCRAvailability.OCRAvailabilityCheck { background-color:#006363 }
+#OCRAvailability.OCRAvailabilityTRUE { background-color:#006363 }
+#OCRAvailability.OCRAvailabilityFALSE { background-color:#630000 }

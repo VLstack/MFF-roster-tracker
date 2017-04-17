@@ -170,6 +170,7 @@ var MFF =
    try { data = JSON.parse(data); MFF.CHARACTERS.setAll(data); }
    catch(ex) { }
   }
+  MFF.OCR.checkAvailability();
   /* compatibility 2.1.0 start */
   data = localStorage.getItem("sorter");
   if ( data && data != null && data != undefined && data != "null" && data != "undefined" && (typeof data == "string") )

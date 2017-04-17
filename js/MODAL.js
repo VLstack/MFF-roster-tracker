@@ -43,8 +43,41 @@ var MODAL =
    }
   }
  },
+ "getButton" : function(idx) { return MODAL.buttons[idx]; },
+ "getButtonById" : function(id)
+ {
+  var i;
+  for ( i = MODAL.buttons.length; i--; )
+  {
+   if ( MODAL.buttons[i].getId() == id ) { return MODAL.buttons[i]; }
+  }
+  return null;
+ },
+ "toidHide" : null,
+ "intervalHide" : null,
+ "clearDelayHide" : function()
+ {
+  if ( MODAL.toidHide ) { clearTimeout(MODAL.toidHide); }
+  if ( MODAL.intervalHide ) { clearInterval(MODAL.intervalHide); }
+  MODAL.toidHide = null;
+  MODAL.intervalHide = null;
+ },
+ "delayHide" : function(ms, intervalCb, intervalMs)
+ {
+  MODAL.clearDelayHide();
+  ms = parseInt(ms);
+  if ( isNaN(ms) || !ms ) { ms = 5000; }
+  if ( intervalCb )
+  {
+   intervalMs = parseInt(intervalMs);
+   if ( isNaN(intervalMs) || !intervalMs ) { intervalMs = 1000; }
+   MODAL.intervalHide = setInterval(intervalCb, intervalMs);
+  }
+  MODAL.toidHide = setTimeout(MODAL.hide, ms);
+ },
  "hide" : function()
  {
+  MODAL.clearDelayHide();
   if ( MODAL._node ) { MODAL._node.parentNode.removeChild(MODAL._node); }
   MODAL._node = null;
  }

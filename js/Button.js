@@ -8,17 +8,7 @@ function Button(options)
  if ( options.id ) { this._id = options.id; }
  if ( options.noHover ) { this._node.classList.add("noHover"); }
  if ( options.className ) { this._node.classList.add(options.className); }
- if ( options.content )
- {
-  if ( !Array.isArray(options.content) ) { options.content = [options.content]; }
-  options.content.forEach(function(node)
-                          {
-                           if ( typeof node == "string" ) { this.appendChild(document.createTextNode(node)); }
-                           else if ( typeof node == "function" ) { node.call(this, this); }
-                           else { this.appendChild(node); }
-                          }, this._node);
-  this._node.classList.add("content");
- }
+ if ( options.content ) { this.setContent(options.content); }
  if ( options.fa ) { this.setIcon(options.fa); }
  if ( options.styles ) { for ( k in options.styles ) { if ( options.styles.hasOwnProperty(k) ) { this._node.style[k] = options.styles[k]; } } }
  if ( options.callback ) { this._node.onclick = (function(btn, cb) { return function(evt) { if ( btn.isEnabled() ) { cb.call(btn, evt); } }; })(this, options.callback); }
@@ -44,6 +34,23 @@ Button.prototype =
  "show" : function() { this._node.style.display = ""; },
  "hide" : function() { this._node.style.display = "none"; },
  "getId" : function() { return this._id; },
+ "removeContent" : function()
+ {
+  this._node.classList.remove("content");
+  this._node.innerHTML = "";
+ },
+ "setContent" : function(content)
+ {
+  this.removeContent();
+  if ( !Array.isArray(content) ) { content = [content]; }
+  content.forEach(function(node)
+                  {
+                   if ( typeof node == "string" ) { this.appendChild(document.createTextNode(node)); }
+                   else if ( typeof node == "function" ) { node.call(this, this); }
+                   else { this.appendChild(node); }
+                  }, this._node);
+  this._node.classList.add("content");
+ },
  "setDisabled" : function(state) { this._node.classList[state ? "add" : "remove"]("disabled"); },
  "isDisabled" : function() { return this._node.classList.contains("disabled"); },
  "setEnabled" : function(state) { this.setDisabled(!state); },
@@ -147,6 +154,7 @@ function Dropdown(options)
      map = ["renderTo", "id", "noHover", "className", "content", "fa", "styles", "small", "listener", "hide", "active", "title"];
  map.forEach(function(item) { if ( options[item] ) { opt[item] = options[item]; } });
  opt.callback = this.showItems();
+ this.onshow = options.onshow;
  this.btn = new Button(opt);
  this.items = options.items;
 }
@@ -238,6 +246,7 @@ Dropdown.prototype =
    ul.style.left = bounding.left + "px";
    evt.stopPropagation();
    document.body.addEventListener("click", Dropdown.listener, false);
+   if ( that.onshow && (typeof that.onshow == "function") ) { that.onshow.call(that); }
   };
  }
 };
