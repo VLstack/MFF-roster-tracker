@@ -1,6 +1,7 @@
 /* global MFF, API, ToggleSwitch */
 MFF.UNIFORMS =
 {
+ "toid" : null,
  "getValue" : function(uniform)
  {
   return uniform in MFF.UNIFORMS.DATA ? MFF.UNIFORMS.DATA[uniform] : null;
@@ -387,6 +388,15 @@ MFF.UNIFORMS =
                   {
                    div.classList.remove("disabled");
                    current.onchange = checkValues;
+                   current.onkeyup = function(evt)
+                   {
+                    var that = this;
+                    if ( MFF.UNIFORMS.toid ) { MFF.UNIFORMS.toid = clearTimeout(MFF.UNIFORMS.toid); }
+                    MFF.UNIFORMS.toid = setTimeout(function()
+                                                   {
+                                                    checkValues.call(that, evt);
+                                                   }, 250);
+                   };
                    select.onchange = setMinMax;
                    setMinMax.call(select, true);
                    locker.style.display = "none";
