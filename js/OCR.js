@@ -175,7 +175,7 @@ MFF.OCR =
     file.cbApply.call(file.cbContext, file);
     file.cbOnEnd.call(file.cbContext);
    }
-   catch(ex) { alert("An error occured with file \"{0}\"\nPlease report the issue with the message \"{1}\" and the screenshot used pleased".format(file.name, ex)); }
+   catch(ex) { alert("An error occured with file \"{0}\"\nPlease report the issue with the message \"{1}\" and the screenshot used pleased".format(file.file.name, ex)); }
   };
  },
  "doUpload" : function()

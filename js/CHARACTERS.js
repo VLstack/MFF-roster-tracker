@@ -91,6 +91,11 @@ MFF.CHARACTERS =
   data.attack = { "physical" : physical, "energy" : energy };
  }
  if ( !("uniforms" in data) ) { data.uniforms = {}; } // compatibility any to 2.2
+ if ( "last_update" in data ) // bug found in 2.4, dunno since when it was here
+ {
+  data.lastUpdate = data.last_update;
+  delete data.last_update;
+ }
  return data;
 },
 "isValidData" : function(id, data)

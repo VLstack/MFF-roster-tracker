@@ -119,7 +119,7 @@ var MFF =
   "defpen" :           { "label" : "Ignore defense", "max" : 50, "callback" : function(character) { var v = character.defpen; return { "value" : v, "percent" : true }; } },
   // TODO : check if max ignore dodge is really 75
   "ignore_dodge" :     { "label" : "Ignore dodge", "max" : 75, "callback" : function(character) { var v = character.ignore_dodge; return { "value" : v, "percent" : true }; } },
-  "last_update" :      { "disableChart" : true, "label" : "Last update", "callback" : function(character) { return { "value" : character.lastUpdate || null, "percent" : false }; } },
+  "lastUpdate" :       { "disableChart" : true, "label" : "Last update", "callback" : function(character) { return { "value" : character.lastUpdate || null, "percent" : false }; } },
   "level" :            { "label" : "Level", "callback" : function(character) { var v = character.level; return { "value" : v, "percent" : false }; } },
   "movspeed" :         { "label" : "Movement speed", "max" : 130, "callback" : function(character) { var v = character.movspeed; return { "value" : v, "percent" : true }; } },
   "rank" :             { "label" : "Rank", "callback" : function(character) { var v = character.rank || 0; return { "value" : v, "percent" : false }; } },

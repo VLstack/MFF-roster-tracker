@@ -259,7 +259,7 @@ MFF.LAYOUT.LIST =
    tmp = MFF.axisItems[attribute].callback(MFF.CHARACTERS.get(character));
    switch ( attribute )
    {
-    case "last_update":
+    case "lastUpdate":
      if ( tmp.value )
      {
       tmp = new Date(tmp.value);
