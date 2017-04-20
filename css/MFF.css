@@ -260,7 +260,7 @@ h2.rank.mythical { color:red }
 #OCRAvailability.OCRAvailabilityFALSE { background-color:#630000 }
 table.OCRExtract { width:100% }
 table.OCRExtract td { vertical-align:top }
-table.OCRExtract label { display:inline-block; width:90px; font:10px/16px arial; color:#999999 }
+table.OCRExtract label { display:inline-block; width:90px; font:10px/16px arial; color:#999999; white-space:nowrap }
 table.OCRExtract label.gearName { width:auto }
 table.OCRExtract input { width:50px; text-align:center; font:10px/14px arial }
 table.OCRExtract select { width:150px }
