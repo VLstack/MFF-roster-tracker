@@ -331,8 +331,9 @@ MFF.OCR =
         var v = li.querySelector(selector);
         return v ? v.value : null;
         }
-        if ( li && (characterId = getValue("select[name=character]")) && (gear = (file.data.content.char_list[characterId] - 1)) )
+        if ( li && (characterId = getValue("select[name=character]")) && (gear = (file.data.content.char_list[characterId])) )
         {
+         gear = gear - 1;
          data = MFF.CHARACTERS.get(characterId);
          for ( gearIndex = 0; gearIndex < 8; gearIndex++ )
          {
@@ -468,7 +469,6 @@ MFF.OCR =
          var v = li.querySelector(selector);
          return v ? v.value : null;
         }
-        alert(li + "//" + getValue("select[name=character]"));
 
         if ( li && (characterId = getValue("select[name=character]")) )
         {
