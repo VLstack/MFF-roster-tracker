@@ -40,7 +40,15 @@ MFF.CHARACTERS =
                                    })
         };
 },
-"getNameForUniform" : function(character, uniform) { return (character in MFF.CHARACTERS.DATA) && (uniform in MFF.CHARACTERS.DATA[character].uniforms) ? MFF.CHARACTERS.DATA[character].uniforms[uniform].name : character; },
+"getNameForUniform" : function(character, uniform)
+{
+ if ( character in MFF.CHARACTERS.DATA )
+ {
+  if ( !uniform || !(uniform in MFF.CHARACTERS.DATA[character].uniforms) ) { uniform = MFF.CHARACTERS.DATA[character].uniform; }
+  return MFF.CHARACTERS.DATA[character].uniforms[uniform].name;
+ }
+ return character;
+},
 "getImageUrlForUniform" : function(character, uniform) { return "images/characters/{0}/{1}.png".format(uniform, character); },
 "getImageForUniform" : function(character, uniform)
 {
@@ -165,12 +173,12 @@ MFF.CHARACTERS =
    MFF.CHARACTERS._all[character].tier = parseInt(data.tier) || 1;
   break;
   case "attack" :
-   MFF.CHARACTERS._all[character].attack.physical = parseInt(data.physical) || 0;
-   MFF.CHARACTERS._all[character].attack.energy = parseInt(data.energy) || 0;
+   if ( "physical" in data ) { MFF.CHARACTERS._all[character].attack.physical = parseInt(data.physical) || 0; }
+   if ( "energy" in data ) { MFF.CHARACTERS._all[character].attack.energy = parseInt(data.energy) || 0; }
   break;
   case "defense" :
-   MFF.CHARACTERS._all[character].defense.physical = parseInt(data.physical) || 0;
-   MFF.CHARACTERS._all[character].defense.energy = parseInt(data.energy) || 0;
+   if ( "physical" in data ) { MFF.CHARACTERS._all[character].defense.physical = parseInt(data.physical) || 0; }
+   if ( "energy" in data ) { MFF.CHARACTERS._all[character].defense.energy = parseInt(data.energy) || 0; }
   break;
   case "skill" :
    MFF.CHARACTERS._all[character].skills[parseInt(data.skill)] = parseInt(data.lvl) || 0;

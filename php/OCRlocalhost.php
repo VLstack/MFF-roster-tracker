@@ -10,6 +10,9 @@ if ( $rnd >= 90 )
 // 50+ => gear
 else if ( $rnd >= 50 )
 {
+ $char_list = array("warwolf" => 4);
+ // ambigous 50%
+ if ( rand(0, 100) > 50 ) { $char_list["hulk"] = 2; }
  $arr = array("content" => array("gear_val" => array(array("val" => 8.0, "type" => "critical_damage"),
                                                      array("val" => 34.0, "type" => "critical_rate"),
                                                      array("val" => 66.0, "type" => "critical_rate"),
@@ -17,17 +20,17 @@ else if ( $rnd >= 50 )
                                                      array("val" => 143.0, "type" => "critical_damage"),
                                                      array("val" => 194.0, "type" => "critical_damage"),
                                                      array("val" => 257.0, "type" => "critical_damage"),
-                                                     array("val" => 331.0, "type" => "defense_penetration"))),
-              "char_list" => array(array("id" => "warwolf", "gear_num" => 4)),
+                                                     array("val" => 331.0, "type" => "defense_penetration")),
+                                 "char_list" => $char_list),
               "type" => "gear",
               "success" => TRUE);
 }
 // else => details
 else
 {
- $arr = array("content" => array("tier" => 2, "uniform" => "",
+ $arr = array("content" => array("tier" => 2, "uniform" => "cacw",
                                  "phys_att" => 12060, "phys_def" => 6239,
-                                 "id" => "warwolf", "energy_att" => 5729,
+                                 "id" => "agent_13", "energy_att" => 5729,
                                  "defpen" => 32.92, "hp" => 24225,
                                  "energy_def" => 5293, "atkspeed" => 109.69,
                                  "debuff" => 4.83, "crit_rate" => 69.83,

@@ -224,41 +224,22 @@ var MFF =
  //  */
  // },
  "toid2" : null,
- "saveCharacter" : function(data)
+ "saveCharacter" : function(data, characterId)
  {
-  MFF.CHARACTERS.setProperty(MFF.currentCharacter || MFF.lastTarget, data);
+  characterId = characterId || MFF.currentCharacter || MFF.lastTarget;
+  MFF.CHARACTERS.setProperty(characterId, data);
   localStorage.setItem(MFF.localStorageKey, JSON.stringify(MFF.CHARACTERS.getAll()));
   if ( data.mode == "tier" )
   {
    API.EVT.dispatch("updateTier");
-   MFF.LAYOUT.LIST.setTier(MFF.currentCharacter);
+   MFF.LAYOUT.LIST.setTier(characterId);
   }
-//   else if ( data.mode == "gear" || data.mode == "skill" )
-//   {
-//    MFF.toid2 = clearTimeout(MFF.toid2);
-//    MFF.toid2 = setTimeout(function()
-//                           {
-//                            var div = document.getElementById("current_percent");
-//                            if ( div && MFF.currentCharacter )
-//                            {
-// //                            div.innerHTML = API.numberToFixed(MFF.computePercent(MFF.currentCharacter), 2) + "%";
-//                             div.innerHTML = MFF.PERCENT.get(MFF.currentCharacter, true) + "%";
-//                             API.EVT.dispatch("updateTier");
-//                             if ( MFF.LAYOUT.DETAIL.GEARS._btnDetailCharts.isActive() )
-//                             {
-//                              MFF.LAYOUT.CHARTS.renderDetail();
-//                             }
-//                             MFF.LAYOUT.LIST.setSub(MFF.currentCharacter);
-//                             MFF.LAYOUT.LIST.synchroDetailGear(MFF.currentCharacter);
-//                            }
-//                           }, 250);
-//   }
   else if ( data.mode == "uniform" )
   {
-   MFF.LAYOUT.DETAIL.drawCharacter(MFF.currentCharacter, true, true);
-   MFF.LAYOUT.LIST.drawCharacter(MFF.currentCharacter);
+   MFF.LAYOUT.DETAIL.drawCharacter(characterId, true, true);
+   MFF.LAYOUT.LIST.drawCharacter(characterId);
   }
-  MFF.LAYOUT.LIST.setSub(MFF.currentCharacter);
+  MFF.LAYOUT.LIST.setSub(characterId);
  }
 };
 

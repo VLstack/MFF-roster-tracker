@@ -5552,15 +5552,15 @@
         "options": [
           [
             "scd",
-            476
+            725
           ],
           [
             "attack_physical",
             198
           ],
           [
-            "hp",
-            1176
+            "scd",
+            1218
           ],
           null,
           null
@@ -5583,7 +5583,7 @@
         ]
       }
     },
-    "lastUpdate": 1492112306875,
+    "lastUpdate": 1492638571710,
     "combatPower": 50071,
     "rank": 2024
   },
@@ -6525,8 +6525,8 @@
     ],
     "uniform": "unleashed",
     "defense": {
-      "physical": 7857,
-      "energy": 6831
+      "physical": 7928,
+      "energy": 6902
     },
     "hp": 21332,
     "critrate": 30.92,
@@ -6554,7 +6554,7 @@
           ],
           [
             "scd",
-            1071
+            1225
           ],
           [
             "dodge",
@@ -6577,9 +6577,9 @@
         ]
       }
     },
-    "lastUpdate": 1492112083792,
-    "combatPower": 77141,
-    "rank": 2508
+    "lastUpdate": 1492638922077,
+    "combatPower": 77923,
+    "rank": 2354
   },
   "captain_marvel": {
     "level": 60,
@@ -8299,9 +8299,12 @@
     "id": "wasp",
     "uniforms": {
       "anad": {
-        "rank": "normal",
+        "rank": "advanced",
         "options": [
-          null,
+          [
+            "dodge",
+            0
+          ],
           null,
           null,
           null,
@@ -8309,7 +8312,7 @@
         ]
       }
     },
-    "lastUpdate": 1491100208883
+    "lastUpdate": 1492638471348
   },
   "sharon_rogers": {
     "level": 60,
@@ -9996,22 +9999,22 @@
         "options": [
           [
             "dodge",
-            751
+            920
           ],
           [
-            "attack_energy",
-            208
+            "hp",
+            727
           ],
           [
             "atkspeed",
-            643
+            892
           ],
           null,
           null
         ]
       }
     },
-    "lastUpdate": 1491101871929,
+    "lastUpdate": 1492638906035,
     "combatPower": 52701
   },
   "moon_knight": {
@@ -10703,9 +10706,12 @@
     "id": "she_hulk",
     "uniforms": {
       "an": {
-        "rank": "normal",
+        "rank": "advanced",
         "options": [
-          null,
+          [
+            "dodge",
+            480
+          ],
           null,
           null,
           null,
@@ -10713,7 +10719,7 @@
         ]
       }
     },
-    "lastUpdate": 1490726813448,
+    "lastUpdate": 1492638888689,
     "combatPower": 31530
   },
   "red_hulk": {
@@ -10951,9 +10957,12 @@
     "id": "red_hulk",
     "uniforms": {
       "now": {
-        "rank": "normal",
+        "rank": "advanced",
         "options": [
-          null,
+          [
+            "atkspeed",
+            0
+          ],
           null,
           null,
           null,
@@ -10961,7 +10970,7 @@
         ]
       }
     },
-    "lastUpdate": 1491100056552
+    "lastUpdate": 1492638410329
   },
   "ms_marvel": {
     "level": 60,
@@ -12698,7 +12707,7 @@
         ]
       }
     },
-    "lastUpdate": 1491101863381,
+    "lastUpdate": 1492638723391,
     "combatPower": 51341
   },
   "falcon": {
@@ -13913,23 +13922,23 @@
         "rank": "heroic",
         "options": [
           [
+            "scd",
+            500
+          ],
+          [
+            "hp",
+            726
+          ],
+          [
             "atkspeed",
-            0
-          ],
-          [
-            "attack_physical",
-            0
-          ],
-          [
-            "recorate",
-            0
+            637
           ],
           null,
           null
         ]
       }
     },
-    "lastUpdate": 1491101890982
+    "lastUpdate": 1492638811007
   },
   "silk": {
     "level": 60,
@@ -16327,9 +16336,12 @@
         ]
       },
       "na": {
-        "rank": "normal",
+        "rank": "advanced",
         "options": [
-          null,
+          [
+            "dodge",
+            1062
+          ],
           null,
           null,
           null,
@@ -16337,7 +16349,7 @@
         ]
       }
     },
-    "lastUpdate": 1491101416779
+    "lastUpdate": 1492638488058
   },
   "jessica_jones": {
     "level": 55,
@@ -18001,23 +18013,26 @@
     "id": "sister_grimm",
     "uniforms": {
       "anad": {
-        "rank": "rare",
+        "rank": "heroic",
         "options": [
           [
             "scd",
-            490
+            739
           ],
           [
             "attack_energy",
             196
           ],
-          null,
+          [
+            "scd",
+            653
+          ],
           null,
           null
         ]
       }
     },
-    "lastUpdate": 1492111897815
+    "lastUpdate": 1492638599850
   },
   "star_lord": {
     "level": 60,

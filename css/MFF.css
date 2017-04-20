@@ -251,10 +251,22 @@ h2.rank.mythical { color:red }
 #OCRLoading>div { height:4px; background-color:green; transition:width 1s ease }
 #OCRProcessContent { position:absolute; top:10px; left:2px; right:2px; bottom:2px }
 #OCRProcessContent li { color:#999999; margin-bottom:10px }
-#OCRProcessContent li:not(#OCRProcessRecap) span { margin-left:5px; font:12px/20px arial }
-#OCRProcessContent li:not(#OCRProcessRecap) div { margin:5px }
+#OCRProcessContent li:not(#OCRProcessRecap) div.result { margin-left:5px; font:12px/20px arial }
+#OCRProcessContent li:not(#OCRProcessRecap) div.content { margin:5px }
 #OCRProcessRecap { font:12px/20px arial; text-align:center }
 #OCRAvailability { display:inline-block; color:white; padding:0px 10px; border-radius:4px; margin-left:5px; vertical-align:middle; font-size:8px }
 #OCRAvailability.OCRAvailabilityCheck { background-color:#006363 }
 #OCRAvailability.OCRAvailabilityTRUE { background-color:#006363 }
 #OCRAvailability.OCRAvailabilityFALSE { background-color:#630000 }
+table.OCRExtract { width:100% }
+table.OCRExtract td { vertical-align:top }
+table.OCRExtract label { display:inline-block; width:90px; font:10px/16px arial; color:#999999 }
+table.OCRExtract label.gearName { width:auto }
+table.OCRExtract input { width:50px; text-align:center; font:10px/14px arial }
+table.OCRExtract select { width:150px }
+table.OCRExtract option { font:10px/14px arial }
+table.OCRExtract img { width:120px }
+.OCRbtn { font:9px/12px arial; padding:2px 7px; margin:2px; border-radius:4px; cursor:pointer; color:#ffffff; opacity:0.7 }
+.OCRbtn:hover { opacity:1 }
+.OCRbtn.OCRapply { background-color:#008214; margin-left:8px }
+.OCRbtn.OCRremove { background-color:#9d0f0f; margin-right:8px }

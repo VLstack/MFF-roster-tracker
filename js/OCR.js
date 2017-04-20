@@ -86,6 +86,7 @@ MFF.OCR =
 
   if ( MFF.OCR.available )
   {
+   MFF.LAYOUT.DETAIL.drawEmpty();
    dropArea.id = "OCRDropArea";
    dropArea.ondragover = function(evt)
    {
@@ -165,6 +166,18 @@ MFF.OCR =
   MFF.OCR.files = [];
   MFF.OCR.drawFilesToUpload();
  },
+ "doApply" : function(file)
+ {
+  return function()
+  {
+   try
+   {
+    file.cbApply.call(file.cbContext, file);
+    file.cbOnEnd.call(file.cbContext);
+   }
+   catch(ex) { alert("An error occured with file \"{0}\"\nPlease report the issue with the message \"{1}\" and the screenshot used pleased".format(file.name, ex)); }
+  };
+ },
  "doUpload" : function()
  {
   var divLoading, content, li;
@@ -201,9 +214,9 @@ MFF.OCR =
     }
    }
   }
-  function setStep(index, state, paramA, paramB)
+  function setStep(index, state, paramA, paramB, cbApply)
   {
-   var span, fa, faColor,
+   var div, btn, span, i,
        map =
        {
         "uploading" : "uploading, waiting for server answer",
@@ -220,39 +233,87 @@ MFF.OCR =
         "UndefinedId" : "The character id is not defined"
        },
        li = document.getElementById("OCRProcessFile_" + index);
-   if ( li && (span = li.firstChild) )
+   function removeLine()
    {
+    var li = API.DOM.parent(this, "li"),
+        idx = li.dataset.fileIndex;
+    MFF.OCR.files = MFF.OCR.files.filter(function(file) { return idx != file.idx; });
+    li.parentNode.removeChild(li);
+    MFF.OCR.checkRemainingData();
+   }
+   if ( li && (div = li.firstChild) )
+   {
+    div.innerHTML = "";
     MFF.OCR.files[index].state = state;
+    MFF.OCR.files[index].idx = index;
     if ( state == "complete" )
     {
      MFF.OCR.files[index].data = paramA;
-     span.innerHTML = "<i class=\"fa fa-caret-down\"></i> Image \"{0}\": Success".format(MFF.OCR.files[index].file.name);
-     span.style.cursor = "pointer";
-     span.onclick = function()
+     MFF.OCR.files[index].cbApply = cbApply;
+     MFF.OCR.files[index].cbOnEnd = removeLine;
+     // collapser
+     i = div.appendChild(document.createElement("i"));
+     i.className = "fa fa-caret-down";
+     // apply
+     btn = div.appendChild(document.createElement("span"));
+     MFF.OCR.files[index].cbContext = btn;
+     btn.innerHTML = "Apply";
+     btn.className = "OCRbtn OCRapply";
+     btn.onclick = MFF.OCR.doApply(MFF.OCR.files[index]);
+     // ignore
+     btn = div.appendChild(document.createElement("span"));
+     btn.innerHTML = "Remove";
+     btn.className = "OCRbtn OCRremove";
+     btn.onclick = removeLine;
+     // text
+     span = div.appendChild(document.createElement("span"));
+     if ( paramB === "ambiguous" )
      {
-      var collapsed = this.firstChild.classList.contains("fa-caret-down");
-      this.firstChild.classList.remove("fa-caret-down fa-caret-right");
-      this.firstChild.classList.add(collapsed ? "fa-caret-right" : "fa-caret-down");
-      this.nextSibling.style.display = collapsed ? "none" : "";
+      span.innerHTML = "Success [ambiguous character] for image \"{0}\"".format(MFF.OCR.files[index].file.name);
+     }
+     else
+     {
+      span.innerHTML = "Success for image \"{0}\"".format(MFF.OCR.files[index].file.name);
+     }
+
+     span.style.cursor = i.style.cursor = "pointer";
+     span.onclick = i.onclick = function(evt)
+     {
+      var p = API.EVT.getParentTarget(evt, "li"),
+          i = p.firstChild.firstChild,
+          collapsed = i.classList.contains("fa-caret-down");
+      i.classList.remove("fa-caret-down fa-caret-right");
+      i.classList.add(collapsed ? "fa-caret-right" : "fa-caret-down");
+      p.lastChild.style.display = collapsed ? "none" : "";
      };
     }
     else
     {
-     fa = state == "uploading" ? "fa-spinner fa-pulse fa-fw" : "fa-exclamation-triangle";
-     faColor = state == "uploading" ? "#999999" : "#df0000";
-     span.innerHTML = "<i class=\"fa {0}\" style=\"color:{1}\"></i> Image \"{2}\": {3}".format(fa, faColor, MFF.OCR.files[index].file.name, map[state]);
+     i = div.appendChild(document.createElement("i"));
+     i.className = state == "uploading" ? "fa fa-spinner fa-pulse fa-fw" : "fa fa-exclamation-triangle";
+     i.style.color = state == "uploading" ? "#999999" : "#df0000";
+     if ( state != "uploading" )
+     {
+      // ignore
+      btn = div.appendChild(document.createElement("span"));
+      btn.innerHTML = "Remove";
+      btn.className = "OCRbtn OCRremove";
+      btn.onclick = removeLine;
+     }
+     // text
+     span = div.appendChild(document.createElement("span"));
+     span.innerHTML = "Image \"{0}\": {1}".format(MFF.OCR.files[index].file.name, map[state]);
     }
     syncLoading();
    }
   }
-  function showBasics(index, data)
+  function showBasics(index, data, cbApply, ambiguous)
   {
    var div, li;
-   if ( !data.id ) { setStep(index, "UndefinedId"); }
-   else if ( !(data.id in MFF.CHARACTERS.DATA) ) { setStep(index, "UndefinedId", data.id); }
+   if ( !("content" in data) ) { setStep(index, "JSONError"); }
    else if ( (li = document.getElementById("OCRProcessFile_" + index)) && (div = li.lastChild) )
    {
-    setStep(index, "complete", data);
+    setStep(index, "complete", data, ambiguous, cbApply);
     div.className = "bgOpaque";
     div.style.display = "";
    }
@@ -260,33 +321,264 @@ MFF.OCR =
   }
   function showGear(index, data)
   {
-   var div = showBasics(index, data);
+   var
+       cbApply = function(file)
+       {
+        var gear, type, gearIndex, characterId, data, pref, value,
+            li = document.getElementById("OCRProcessFile_" + file.idx);
+        function getValue(selector)
+        {
+        var v = li.querySelector(selector);
+        return v ? v.value : null;
+        }
+        if ( li && (characterId = getValue("select[name=character]")) && (gear = (file.data.content.char_list[characterId] - 1)) )
+        {
+         data = MFF.CHARACTERS.get(characterId);
+         for ( gearIndex = 0; gearIndex < 8; gearIndex++ )
+         {
+          if ( (value = getValue("input[name=gear{0}]".format(gearIndex))) && (type = getValue("input[name=type{0}]".format(gearIndex))) )
+          {
+           pref = (data.gear[gear][gearIndex].type == "" && data.gear[gear][gearIndex].val == 0) || (data.gear[gear][gearIndex].type == type && data.gear[gear][gearIndex].pref);
+           MFF.saveCharacter({ "mode" : "gear", "gear" : gear, "gearIndex" : gearIndex, "type" : type, "val" : parseFloat(value), "pref" : pref }, characterId);
+          }
+         }
+        }
+        API.EVT.dispatch("computePercentGears", characterId);
+       },
+       isAmbiguousCharacter = function(data)
+       {
+        var k,
+            nb = 0;
+        if ( data && ("content" in data) && ("char_list" in data.content) )
+        {
+         for ( k in data.content.char_list )
+         {
+          if ( data.content.char_list.hasOwnProperty(k) )
+          {
+           nb++;
+           if ( nb > 1 ) { return "ambiguous"; }
+          }
+         }
+        }
+        return null;
+       },
+       div = showBasics(index, data, cbApply, isAmbiguousCharacter(data));
+
+   function drawGear(div, data, characterId)
+   {
+    var i, j, table, tbody, tr, td, select, option, label, k, v, input,
+        uniformId = MFF.CHARACTERS.DATA[characterId].uniform,
+        gearIndex = parseInt(data.content.char_list[characterId], 10) - 1;
+    API.DOM.flush(div);
+    table = div.appendChild(document.createElement("table"));
+    table.className = "OCRExtract";
+    tbody = table.appendChild(document.createElement("tbody"));
+    tr = tbody.appendChild(document.createElement("tr"));
+    td = tr.appendChild(document.createElement("td"));
+    td.rowSpan = 9;
+    td.appendChild(MFF.CHARACTERS.getImageForUniform(characterId, uniformId));
+
+    td = tr.appendChild(document.createElement("td"));
+    select = td.appendChild(document.createElement("select"));
+    select.name = "character";
+    select.onchange = (function(div, data)
+                       {
+                        return function()
+                        {
+                         drawGear(div, data, this.value);
+                        };
+                       })(div, data);
+    i = 0;
+    for ( k in data.content.char_list )
+    {
+     if ( data.content.char_list.hasOwnProperty(k) )
+     {
+      option = select.appendChild(document.createElement("option"));
+      option.value = k;
+      option.text = MFF.CHARACTERS.getNameForUniform(k);
+      if ( k == characterId ) { select.selectedIndex = i; }
+      i++;
+     }
+    }
+
+    td = tr.appendChild(document.createElement("td"));
+    td.colSpan = 2;
+    td.style.width = "100%";
+    label = td.appendChild(document.createElement("label"));
+    label.className = "gearName";
+    label.innerHTML = "Gear {0} : {1}".format(gearIndex + 1, MFF.CHARACTERS.DATA[characterId].uniforms[uniformId].gears[gearIndex]);
+
+    for ( i = 0; i < data.content.gear_val.length / 2; i++ )
+    {
+     tr = tbody.appendChild(document.createElement("tr"));
+     for ( j = 0; j < 2; j++ )
+     {
+      k = data.content.gear_val[i + j * 4].type;
+      v = data.content.gear_val[i + j * 4].val;
+      td = tr.appendChild(document.createElement("td"));
+      td.style.width = "25%";
+      label = td.appendChild(document.createElement("label"));
+      td = tr.appendChild(document.createElement("td"));
+      td.style.width = "25%";
+      if ( k in MFF.GEARS[gearIndex] )
+      {
+       label.innerHTML = "{0}) {1}".format(1 + i + j * 4, MFF.GEARS[gearIndex][k].name);
+       input = td.appendChild(document.createElement("input"));
+       input.type = "text";
+       input.name = "gear" + (i + j * 4);
+       input.value = v;
+       input = td.appendChild(document.createElement("input"));
+       input.type = "hidden";
+       input.name = "type" + (i + j * 4);
+       input.value = k;
+      }
+      else
+      {
+       label.innerHTML = "{0}) Invalid property \"{1}\"".format(1 + i + j * 4, k);
+       label = td.appendChild(document.createElement("label"));
+       label.innerHTML = v;
+      }
+     }
+    }
+   }
+
    if ( div )
    {
-    div.innerHTML = "gear";
-    console.dir(data);
+    drawGear(div, data, Object.keys(data.content.char_list)[0]);
    }
   }
   function showDetail(index, data)
   {
-   var i,
-       map = ["phys_att", "energy_att", "atkspeed", "crit_rate", "critdamage", "defpen", "ignore_dodge", "phys_def", "energy_def", "hp", "recorate", "dodge", "movspeed", "debuff", "scd"],
-       div = showBasics(index, data);
+   var k, idx, table, tbody, tr, td, select, option, uniformId, characterId, tier1, tier2,
+       map = [
+              ["phys_att", "defpen", "recorate"],
+              ["energy_att", "ignore_dodge", "dodge"],
+              ["atkspeed", "phys_def", "movspeed"],
+              ["crit_rate", "energy_def", "debuff"],
+              ["critdamage", "hp", "scd"]
+             ],
+       cbApply = function(file)
+       {
+        var characterId, k, v, i,
+            map = ["atkspeed", "critrate", "critdamage", "debuff", "defpen", "dodge", "hp", "ignore_dodge", "movspeed", "recorate", "scd"],
+            //content = file.data.content,
+            li = document.getElementById("OCRProcessFile_" + file.idx);
+        function getValue(selector)
+        {
+         var v = li.querySelector(selector);
+         return v ? v.value : null;
+        }
+        alert(li + "//" + getValue("select[name=character]"));
 
-// "tier" => 2, "uniform" => "",
-//                                 "" => 12060, "" => 6239,
-//                                 "id" => "warwolf", "" => 5729,
-//                                 "" => 32.92, "" => 24225,
-//                                 "" => 5293, ", " => 109.69,
-//                                 "" => 4.83, "" => 69.83,
-//                                 "" => 14.3, "" => 212.25,
-//                                 "scd" => 24.9, "" => 166.86,
-//                                 "" => 10.0, "" => 100.0
+        if ( li && (characterId = getValue("select[name=character]")) )
+        {
+         for ( i = 0; i < map.length; i++ )
+         {
+          k = map[i];
+          if ( (v = getValue("input[name=" + k + "]")) ) { MFF.saveCharacter({ "mode" : "attribute", "type" : k, "value" : v }, characterId); }
+         }
+         k = { "mode" : "attack" };
+         if ( (v = getValue("input[name=attack_physical]")) ) { k.physical = v; }
+         if ( (v = getValue("input[name=attack_energy]")) ) { k.energy = v; }
+         if ( ("physical" in k) || ("energy" in k) ) { MFF.saveCharacter(k, characterId); }
+         k = { "mode" : "defense" };
+         if ( (v = getValue("input[name=defense_physical]")) ) { k.physical = v; }
+         if ( (v = getValue("input[name=defense_energy]")) ) { k.energy = v; }
+         if ( ("physical" in k) || ("energy" in k) ) { MFF.saveCharacter(k, characterId); }
+         if ( (v = getValue("select[name=tier]")) )
+         {
+          MFF.saveCharacter({ "mode" : "tier", "tier" : v }, characterId);
+          if ( v == 2 ) { MFF.saveCharacter({ "mode" : "level", "level" : 60 }, characterId); }
+         }
+        }
+       },
+       div = showBasics(index, data, cbApply);
 
    if ( div )
    {
-    div.innerHTML = "detail";
-    console.dir(data);
+    if ( !data.content.id ) { setStep(index, "UndefinedId"); }
+    else if ( !(data.content.id in MFF.CHARACTERS.DATA) ) { setStep(index, "InvalidId", data.content.id); }
+    else
+    {
+     characterId = data.content.id;
+     uniformId = data.content.uniform && (data.content.uniform in MFF.CHARACTERS.DATA[characterId].uniforms) ? data.content.uniform : MFF.CHARACTERS.DATA[characterId].uniform;
+
+     table = div.appendChild(document.createElement("table"));
+     table.className = "OCRExtract";
+     tbody = table.appendChild(document.createElement("tbody"));
+     tr = tbody.appendChild(document.createElement("tr"));
+     td = tr.appendChild(document.createElement("td"));
+     td.rowSpan = 6;
+     td.appendChild(MFF.CHARACTERS.getImageForUniform(characterId, uniformId));
+
+     td = tr.appendChild(document.createElement("td"));
+     td.colSpan = 2;
+     select = td.appendChild(document.createElement("select"));
+     select.name = "character";
+     option = select.appendChild(document.createElement("option"));
+     option.value = characterId;
+     option.text = MFF.CHARACTERS.getNameForUniform(characterId, uniformId);
+
+     td = tr.appendChild(document.createElement("td"));
+     td.colSpan = 2;
+     select = td.appendChild(document.createElement("select"));
+     select.name = "uniform";
+     idx = 0;
+     for ( k in MFF.CHARACTERS.DATA[characterId].uniforms )
+     {
+      if ( MFF.CHARACTERS.DATA[characterId].uniforms.hasOwnProperty(k) && (k in MFF.UNIFORMS.DATA) )
+      {
+       option = select.appendChild(document.createElement("option"));
+       option.value = k;
+       option.text = MFF.UNIFORMS.DATA[k];
+       if ( uniformId == k ) { select.selectedIndex = idx; }
+       idx++;
+      }
+     }
+
+     td = tr.appendChild(document.createElement("td"));
+     td.colSpan = 2;
+     select = td.appendChild(document.createElement("select"));
+     select.name = "tier";
+     option = select.appendChild(document.createElement("option"));
+     option.value = 0;
+     option.text = "Tier unknown";
+     tier1 = select.appendChild(document.createElement("option"));
+     tier1.value = 1;
+     tier1.text = "Tier 1";
+     tier2 = select.appendChild(document.createElement("option"));
+     tier2.value = 2;
+     tier2.text = "Tier 2";
+     select.selectedIndex = data.content.tier == 2 ? 2 : data.content.tier == 1 ? 1 : 0;
+     if ( MFF.CHARACTERS.DATA[characterId].tiers[0] != 1 ) { select.removeChild(tier1); }
+     if ( MFF.CHARACTERS.DATA[characterId].tiers.indexOf(2) === -1 ) { select.removeChild(tier2); }
+
+     map.forEach(function(column)
+                 {
+                  var tr = tbody.appendChild(document.createElement("tr"));
+                  column.forEach(function(cell)
+                                 {
+                                  var label, input,
+                                      axisMap =
+                                      {
+                                       "phys_att" : "attack_physical",
+                                       "energy_att" : "attack_energy",
+                                       "crit_rate" : "critrate",
+                                       "phys_def" : "defense_physical",
+                                       "energy_def" : "defense_energy"
+                                      },
+                                      td = tr.appendChild(document.createElement("td"));
+                                  axisMap = cell in axisMap ? axisMap[cell] : cell;
+                                  label = td.appendChild(document.createElement("label"));
+                                  label.innerHTML = axisMap in MFF.axisItems ? MFF.axisItems[axisMap].label : axisMap;
+                                  td = tr.appendChild(document.createElement("td"));
+                                  input = td.appendChild(document.createElement("input"));
+                                  input.type = "text";
+                                  input.name = axisMap;
+                                  input.value = data.content[cell];
+                                 });
+                 });
+    }
    }
   }
   function processFile(file, index)
@@ -297,8 +589,11 @@ MFF.OCR =
    {
     li = content.appendChild(document.createElement("li"));
     li.id = "OCRProcessFile_" + index;
-    li.appendChild(document.createElement("span"));
+    li.dataset.fileIndex = index;
     div = li.appendChild(document.createElement("div"));
+    div.className = "result";
+    div = li.appendChild(document.createElement("div"));
+    div.className = "content";
     div.style.display = "none";
     form = document.createElement("form");
     //form.method = "POST";
@@ -374,7 +669,7 @@ MFF.OCR =
                "body" : [divLoading, content],
                "buttons" : [
                             { "id" : "OCRRemoveErrors", "disabled" : true, "hide" : true, "content" : "Remove errors", "callback" : MFF.OCR.removeErrors },
-                            { "id" : "OCRApplyAll", "disabled" : true, "content" : "Apply all" }
+                            { "id" : "OCRApplyAll", "disabled" : true, "content" : "Apply all", "callback" : MFF.OCR.applyAll }
                            ]
               });
    MFF.OCR.files.forEach(processFile);
@@ -402,6 +697,12 @@ MFF.OCR =
    MODAL.delayHide(5000, intervalCb, 1000);
   }
  },
+ "applyAll" : function()
+ {
+  var toApply = MFF.OCR.files.filter(function(file) { return file.state == "complete"; });
+  toApply.forEach(function(file) { MFF.OCR.doApply(file)(); });
+ },
+ //
  "removeErrors" : function()
  {
   var btn = MODAL.getButtonById("OCRRemoveErrors");
@@ -410,10 +711,10 @@ MFF.OCR =
    btn.hide();
    btn.setEnabled(false);
   }
-  MFF.OCR.files = MFF.OCR.files.filter(function(file, index)
+  MFF.OCR.files = MFF.OCR.files.filter(function(file)
                                        {
                                         var isValid = file.state == "complete" || file.state == "uploading" || file.state === null,
-                                            li = document.getElementById("OCRProcessFile_" + index);
+                                            li = document.getElementById("OCRProcessFile_" + file.idx);
                                         if ( !isValid && li && li.parentNode ) { li.parentNode.removeChild(li); }
                                         return isValid;
                                        });

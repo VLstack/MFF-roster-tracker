@@ -316,6 +316,7 @@ MFF.LAYOUT.DETAIL =
  "drawEmpty" : function()
  {
   var msg = "<div class=\"choose_character\"><span class=\"bgOpaque\">Select a character</span></div><div class=\"copyright bgOpaque\">The Marvel Logo, images and all characters that appear on this website and the distinctive likeness(es) thereof are Trademarks of Marvel Entertainment, LLC and Netmarble Games. This site is not affiliated with Marvel Entertainment or Netmarble Games.</div>";
+  if ( MFF.currentCharacter ) { document.getElementById(MFF.currentCharacter).classList.remove("active"); }
   MFF.currentCharacter = null;
   MFF.LAYOUT.DETAIL._panelContent.setHTML(msg);
   MFF.LAYOUT.DETAIL.GEARS._tab.hide();
