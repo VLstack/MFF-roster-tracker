@@ -245,6 +245,9 @@ h2.rank.mythical { color:red }
 #OCRDropArea.OCRDragOver { border-color:#ffffff; color:#ffffff }
 #OCRDropArea div.text { text-align:center; font:20px/80px arial; color:#999999 }
 #OCRDropArea div#OCRList { position:absolute; top:90px; left:20px; right:20px; bottom:0; overflow:auto }
+#OCRFilesFallback { position:absolute; left:0; right:0; bottom:0; height:40px; text-align:center }
+#OCRFilesFallback span { font:12px/40px arial; color:#999999; margin-right:5px }
+#OCRFilesFallback input { color:#999999 }
 #OCRDropArea img { position:absolute; top:0; height:120px; border:4px solid #ffffff; box-shadow:0 0 10px rgba(0, 0, 0, 0.1); border-radius:4px }
 #OCRTextRecap { position:absolute; bottom:10px; left:10px; right:10px; height:20px; text-align:center; font:12px/20px arial; color:#999999 }
 #OCRLoading { position:absolute; top:2px; left:2px; height:4px; right:2px; background-color:red }
