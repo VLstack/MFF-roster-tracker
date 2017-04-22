@@ -34,3 +34,4 @@ input:focus + .slider { box-shadow:0 0 1px #2196F3 }
 #dropdown-items li { padding:3px 5px; color:white; font:12px/18px arial; border:1px solid #3c4460; cursor:pointer }
 #dropdown-items li.content.image i { margin-right:5px }
 #dropdown-items li:hover { border:1px solid gold }
+#dropdown-items li.disabledItem { font-style:italic; color:#666666; cursor:not-allowed }

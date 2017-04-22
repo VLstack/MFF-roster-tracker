@@ -167,8 +167,11 @@ Dropdown.listener = function(evt)
                      if ( target && Dropdown.current )
                      {
                       item = Dropdown.current.items.find(function(item) { return item.id == target.dataset.itemId; });
-                      if ( item && item.callback ) { item.callback.call(target); }
-                      Dropdown.hide(!target || !target.classList.contains("preventAutoclose"));
+                      if ( item && item.li && !item.li.classList.contains("disabledItem") )
+                      {
+                       if ( item.callback ) { item.callback.call(target); }
+                       Dropdown.hide(!target || !target.classList.contains("preventAutoclose"));
+                      }
                       return false;
                      }
                      Dropdown.hide();
@@ -191,6 +194,13 @@ Dropdown.hide = function(allowed)
 
 Dropdown.prototype =
 {
+ "setEnabledItem" : function(id, state)
+ {
+  var item = this.items.find(function(item) { return item.id == id; });
+  if ( item && item.li ) { item.li.classList[state ? "remove" : "add"]("disabledItem"); }
+ },
+ "enableItem" : function(id) { this.setEnabledItem(id, true); },
+ "disableItem" : function(id) { this.setEnabledItem(id, false); },
  "showItems" : function()
  {
   var that = this;
@@ -209,6 +219,7 @@ Dropdown.prototype =
                       {
                        var span, k,
                            li = this.appendChild(document.createElement("li"));
+                       item.li = li;
                        li.className = "dropdown-item";
                        if ( item.fa )
                        {
@@ -228,6 +239,7 @@ Dropdown.prototype =
                         li.classList.add("content");
                        }
                        if ( "class" in item ) { li.classList.add(item["class"]); }
+                       if ( item.disabled ) { li.classList.add("disabledItem"); }
                        if ( item.title ) { li.title = item.title; }
                        li.dataset.itemId = item.id;
                        if ( item.events )

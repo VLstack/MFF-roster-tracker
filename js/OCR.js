@@ -1,4 +1,4 @@
-/* global MFF, MODAL, API, compressImages, Uint8Array */
+/* global MFF, MODAL, API, compressImages, Uint8Array, Dropdown */
 
 "use strict";
 
@@ -12,6 +12,7 @@ MFF.OCR =
  "getAvailabilityTag" : function()
  {
   var cName, txt,
+      activateDropdown = false,
       span = document.getElementById("OCRAvailability");
   if ( !span )
   {
@@ -29,12 +30,15 @@ MFF.OCR =
    {
     txt = "BETA";
     cName = "OCRAvailabilityTRUE";
+    activateDropdown = true;
    }
    else
    {
     txt = "BETA unavailable";
     cName = "OCRAvailabilityFALSE";
+    activateDropdown = true;
    }
+   if ( activateDropdown && Dropdown.current ) { Dropdown.current.enableItem("importOCR"); }
    span.innerHTML = txt;
    span.className = cName;
   }
