@@ -449,14 +449,15 @@ MFF.OCR =
       option = select.appendChild(document.createElement("option"));
       option.value = "";
       option.text = " ";
+      idx = 1;
       if ( k && !(k in MFF.GEARS[gearIndex]) )
       {
        option = select.appendChild(document.createElement("option"));
        option.value = "";
        option.text = "{0}) Invalid \"{1}\"".format(1 + i + j * 4, k);
        select.selectedIndex = 1;
+       idx++;
       }
-      idx = 0;
       for ( l in MFF.GEARS[gearIndex] )
       {
        if ( MFF.GEARS[gearIndex].hasOwnProperty(l) )
