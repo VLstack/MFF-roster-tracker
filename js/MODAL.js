@@ -53,6 +53,14 @@ var MODAL =
   }
   return null;
  },
+ "setTitle" : function(html)
+ {
+  var div;
+  if ( (div = document.querySelector("#modalHeader")) )
+  {
+   div.innerHTML = html;
+  }
+ },
  "toidHide" : null,
  "intervalHide" : null,
  "clearDelayHide" : function()
