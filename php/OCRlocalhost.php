@@ -13,14 +13,21 @@ else if ( $rnd >= 50 )
  $char_list = array("warwolf" => 4);
  // ambigous 50%
  if ( rand(0, 100) > 50 ) { $char_list["hulk"] = 2; }
- $arr = array("content" => array("gear_val" => array(array("val" => 8.0, "type" => "critical_damage"),
-                                                     array("val" => 34.0, "type" => "critical_rate"),
-                                                     array("val" => 66.0, "type" => "critical_rate"),
-                                                     array("val" => 99.0, "type" => "skill_cooldown"),
-                                                     array("val" => 143.0, "type" => "critical_damage"),
-                                                     array("val" => 194.0, "type" => "critical_damage"),
-                                                     array("val" => 257.0, "type" => "critical_damage"),
-                                                     array("val" => 331.0, "type" => "defense_penetration")),
+ $gear_val = array(array("val" => 8.0, "type" => "critical_damage"),
+                   array("val" => 34.0, "type" => "critical_rate"),
+                   array("val" => 66.0, "type" => "critical_rate"),
+                   array("val" => 99.0, "type" => "skill_cooldown"),
+                   array("val" => 143.0, "type" => "critical_damage"),
+                   array("val" => 194.0, "type" => "critical_damage"),
+                   array("val" => 257.0, "type" => "critical_damage"),
+                   array("val" => 331.0, "type" => "defense_penetration"));
+ // not level 20 50%
+ if ( rand(0, 100) > 50 ) { $gear_val[6] = $gear_val[7] = array("val" => 0, "type" => ""); }
+ // error ocr on type 50%
+ if ( rand(0, 100) > 50 ) { $gear_val[2]["type"] = ""; }
+ // error ocr on value 50%
+ if ( rand(0, 100) > 50 ) { $gear_val[2]["val"] = ""; }
+ $arr = array("content" => array("gear_val" => $gear_val,
                                  "char_list" => $char_list),
               "type" => "gear",
               "success" => TRUE);

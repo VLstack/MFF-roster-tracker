@@ -1,4 +1,4 @@
-/* global MFF, MODAL, FileReader, API */
+/* global MFF, MODAL, FileReader, API, compressImages */
 
 "use strict";
 
@@ -60,28 +60,32 @@ MFF.OCR =
  },
  "addFiles" : function(files)
  {
-  var i, fileReader, file,
+  var i, div,
+      arr = [],
       errors = [];
   for ( i = 0; i < files.length; i++ )
   {
-   file = files[i];
-   if ( file.type.match("image.*") )
-   {
-    fileReader = new FileReader();
-    fileReader.onload = (function(file)
-                         {
-                          return function(/*e*/)
-                          {
-                           MFF.OCR.files.push({ "file" : file, "content" : this.result, "state" : null });
-                           if ( MFF.OCR.toid ) { MFF.OCR.toid = window.clearTimeout(MFF.OCR.toid); }
-                           MFF.OCR.toid = window.setTimeout(MFF.OCR.drawFilesToUpload, 250);
-                          };
-                         })(file);
-    fileReader.readAsDataURL(file);
-   }
-   else { errors.push("File \"{0}\" is not an image".format(file.name)); }
+   if ( files[i].type.match("image.*") ) { arr.push(files[i]); }
+   else { errors.push("File \"{0}\" is not an image".format(files[i].name)); }
   }
   if ( errors.length ) { alert("Errors occured\n\n" + errors.join("\n")); }
+  if ( arr.length )
+  {
+   if ( (div = document.querySelector("#OCRList")) ) { div.innerHTML = "<div style=\"font:18px/40px arial; color:#999; text-align:center\">Compressing {0} {1}</div>".format(arr.length, arr.length > 1 ? "images" : "image"); }
+   compressImages(arr,
+                  { "maxSize" : 1, "speed" : 10 },
+                  function(files, errors)
+                  {
+                   if ( errors.length )
+                   {
+                    errors = errors.map(function(err) { return "File \"{0}\" : {1}".format(err.file, err.error); });
+                    alert("Errors occured\n\n" + errors.join("\n"));
+                   }
+                   files.forEach(function(item) { MFF.OCR.files.push({ "file" : item.file, "content" : item.dataUrl, "state" : null }); });
+                   if ( MFF.OCR.toid ) { MFF.OCR.toid = window.clearTimeout(MFF.OCR.toid); }
+                   MFF.OCR.toid = window.setTimeout(MFF.OCR.drawFilesToUpload, 250);
+                  });
+  }
  },
  "drawFilesToUpload" : function()
  {
