@@ -74,7 +74,7 @@ MFF.OCR =
   {
    if ( (div = document.querySelector("#OCRList")) ) { div.innerHTML = "<div style=\"font:18px/40px arial; color:#999; text-align:center\">Compressing {0} {1}</div>".format(arr.length, arr.length > 1 ? "images" : "image"); }
    compressImages(arr,
-                  { "maxSize" : 1, "speed" : 10 },
+                  { "maxSize" : 0.1, "speed" : 3 },
                   function(files, errors)
                   {
                    if ( errors.length )
