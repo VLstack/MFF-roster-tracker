@@ -1,4 +1,4 @@
-/* global MFF, MODAL, FileReader, API, compressImages */
+/* global MFF, MODAL, API, compressImages, Uint8Array */
 
 "use strict";
 
@@ -621,6 +621,16 @@ MFF.OCR =
   {
    var li, form, formData, xhr, div,
        content = document.getElementById("OCRProcessContent");
+   function dataURLtoBlob(dataurl)
+   {
+    var arr = dataurl.split(","),
+        mime = arr[0].match(/:(.*?);/)[1],
+        bstr = atob(arr[1]),
+        n = bstr.length,
+        u8arr = new Uint8Array(n);
+    while ( n-- ) { u8arr[n] = bstr.charCodeAt(n); }
+    return new Blob([u8arr], { "type" : mime });
+   }
    if ( content )
    {
     li = content.appendChild(document.createElement("li"));
@@ -636,7 +646,7 @@ MFF.OCR =
     form.enctype = "multipart/form-data";
     formData = new FormData(form);
     formData.append("mode", "single");
-    formData.append("file", file.file, file.file.name);
+    formData.append("file", dataURLtoBlob(file.content), file.file.name);
     xhr = new XMLHttpRequest();
     xhr.open("POST", MFF.OCR.url, true);
     xhr.onerror = (function(index, setStep)
