@@ -29,8 +29,6 @@ MFF.CHARACTERS =
          "movspeed" : 0, // 1.8 addition
          "debuff" : 0, // 1.8 addition
          "skills" : [0, 0, 0, 0, 0],
-         // NB : ES6 not activated yet until IE11 support drop
-         //"gear" : Array(4).fill(Array(8).fill({ "type" : "", "val" : 0, "pref" : false, "percent" : 0 }))
          "gear" : [0, 0, 0, 0].map(function()
                                    {
                                     return [0, 0, 0, 0, 0, 0, 0, 0].map(function()
