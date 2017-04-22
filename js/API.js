@@ -265,7 +265,7 @@ API.EVT =
 "on" : function(method, callback, context) { API.CALLBACKS.on("events", method, callback, context); },
 "off" : function(method, callback, context) { API.CALLBACKS.off("events", method, callback, context); },
 "dispatch" : function(method, params) { API.CALLBACKS.dispatch("events", method, params); },
-"dispatchBinded" : function(method, params) { return API.CALLBACKS.dispatchBinded("events", method, params); },
+"dispatchBinded" : function(method, params) { return API.CALLBACKS.dispatchBinded("events", method, params); }
 };
 
 API.numberToFixed = (function()
