@@ -3,6 +3,7 @@
 #modalHeader { font:18px/30px verdana; position:absolute; top:0; left:0; right:0; height:26px; overflow:hidden; padding:2px 5px; color:#FFFFFF }
 #modalHeader span { float:right; color:#CCCCCC; cursor:pointer }
 #modalHeader span:hover { color:#FFF }
+#modalHeader i { font-style:normal }
 #modalBody { padding:5px; position:absolute; top:30px; left:0; right:0; bottom:40px; overflow:auto }
 #modalBody textarea { resize:none; width:calc(100% - 2px); height:calc(100% - 2px); background:#FFFFFF; font:10px/12px verdana; border:1px inset #ffffff }
 #modalFooter { position:absolute; left:0; right:0; bottom:0; height:40px; overflow:hidden; text-align:center }

@@ -15,7 +15,8 @@ var MODAL =
   closer = header.appendChild(document.createElement("span"));
   closer.className = "fa fa-times";
   closer.onclick = MODAL.hide;
-  header.appendChild(document.createTextNode(options.title || " "));
+  i = header.appendChild(document.createElement("i"));
+  i.innerHTML = options.title || " ";
   if ( options.actions )
   {
    actions = wrapper.appendChild(document.createElement("h2"));
@@ -58,7 +59,7 @@ var MODAL =
   var div;
   if ( (div = document.querySelector("#modalHeader")) )
   {
-   div.innerHTML = html;
+   div.lastChild.innerHTML = html;
   }
  },
  "toidHide" : null,
