@@ -24,6 +24,21 @@ MFF.CHARACTERS.DATA =
                        }
                       }
                      },
+"agent_venom" :      {
+                      "uniform" : "anad",
+                      "tiers" : [1, 2],
+                      "uniforms" :
+                      {
+                       "anad" :
+                       {
+                        "image_version" : 3.0,
+                        "name" : "Agent Venom", "attackBase" : "physical", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "combat",
+                        "skills" : ["Symbiote restraint", "Venom lash", "Thorn shield", "Venom swing", "Symbiote rage"],
+                        "gears" : ["Claws", "Space knight costume", "Venom symbiote", "Symbiotic shifting"],
+                        "immunities" : ["S/invincible/skill/5/100/5"]
+                       }
+                      }
+                     },
 "ancient_one" :      {
                       "uniform" : "modern",
                       "tiers" : [1, 2],
@@ -359,7 +374,7 @@ MFF.CHARACTERS.DATA =
                         "skills" : ["Mighty straight", "Backflip blast", "Photon blast", "Binary explosion", "Radiant form"],
                         "bonus" : ["Add guard break effect on skill: Mighty straight", "7 seconds increase to duration of Radiant form"],
                         "links" : ["aaou/iron_man", "cacw/war_machine", "sw_thors/groot", "aaou/vision", "sw_future/hulk"],
-                        "gears" : ["Unknwon gear 1", "Unknwon gear 2", "Unknown gear 3", "Uniform gear 4"],
+                        "gears" : ["Binary power", "Captain Marvel costume", "Battle boots", "Red fabric belt"],
                         "immunities" : ["S/all/skill/4/100/5"]
                        },
                        "ms_marvel" :
@@ -579,7 +594,8 @@ MFF.CHARACTERS.DATA =
                        "classic" :
                        {
                         "name" : "Dormammu", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "vilain", "type" : "universal",
-                        "skills" : ["Lava extrusion", "Dread flame", "Deadly laser", "Flame shield", "Dark dimension"]
+                        "skills" : ["Lava extrusion", "Dread flame", "Deadly laser", "Flame shield", "Dark dimension"],
+                        "gears" : ["Faltine magic", "Lord of darkness' battle armor", "Dread horn adornment", "Belt of chaos"]
                        }
                       }
                      },
@@ -746,6 +762,16 @@ MFF.CHARACTERS.DATA =
                         "bonus" : ["Increase bleed damage"],
                         "links" : ["dohk/daredevil", "catws/captain_america", "ssm/octopus", "cacw/hawkeye", "anad/daredevil"],
                         "gears" : ["God slayer", "Dire cloak", "Cybernetic skeleton", "Regeneration implant"]
+                       },
+                       "gg2" :
+                       {
+                        "image_version" : 3.0,
+                        "name" : "Gamora", "attackBase" : "physical", "species" : "alien", "gender" : "female", "side" : "hero", "type" : "speed",
+                        "skills" : ["Dagger throw", "Death dealer", "Godslayer", "Spinning slash", "Slide n'slice"],
+                        "bonus" : ["Apply to: Self", "30% ignore defense"],
+                        // TODO : check ultron link
+                        "links" : ["aaou/vision", "aaou_combat/ultron", "anad/mockingbird", "wj/punisher", "mlc/luke_cage"],
+                        "gears" : ["God slayer", "Body suit", "Cybernetic skeleton", "Regeneration implant"]
                        }
                       }
                      },
@@ -859,7 +885,16 @@ MFF.CHARACTERS.DATA =
                         "links" : ["now/captain_america", "modern/sif", "doc_strange/wong", "an/she_hulk", "modern/daisy_johnson"],
                         "gears" : ["\"I am Thor!\"", "Limbs", "Leaves cape", "Little flower pot"],
                         "immunities" : ["U/lightning"]
-                       }
+                       },
+                       "gg2" :
+                       {
+                        "image_version" : 3.0,
+                        "name" : "Groot", "attackBase" : "physical", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "speed",
+                        "skills" : ["Growth spurt", "Root swipe", "Blossoming sprout", "Troublemaker", "We are Groot!"],
+                        "bonus" : ["Apply to: Self", "Increase recovery rate by 15%", "Increase dodge rate by 7%"],
+                        "links" : ["cacw/captain_america", "now/squirrel_girl", "annihilation/ronan", "mif/iron_fist", "prometheus/destroyer"],
+                        "gears" : ["\"I am Groot!\"", "Limbs", "Regeneration", "Little flower pot"]
+                       },
                       }
                      },
 "gwenpool" :         {
@@ -1410,6 +1445,20 @@ MFF.CHARACTERS.DATA =
                        }
                       }
                      },
+"mantis" :           {
+                      "uniform" : "gg2",
+                      "tiers" : [1, 2],
+                      "uniforms" :
+                      {
+                       "gg2" :
+                       {
+                        "image_version" : 3.0,
+                        "name" : "Mantis", "attackBase" : "energy", "species" : "alien", "gender" : "female", "side" : "hero", "type" : "blast",
+                        "skills" : ["Bursting buds", "Back leap", "Sensing danger", "Energy sawtooth", "Psychomancy"],
+                        "gears" : ["Green arm pad", "Green top", "Green pants", "Antenna"]
+                       }
+                      }
+                     },
 "miles_morales" :    {
                       "uniform" : "anad",
                       "tiers" : [1, 2],
@@ -1756,6 +1805,15 @@ MFF.CHARACTERS.DATA =
                         "bonus" : ["Increase number of mines"],
                         "links" : ["cacw/spider_man", "aaou/thor", "aaou_combat/ultron", "anad/mockingbird", "modern/crossbones"],
                         "gears" : ["Quad-plasma cannon", "Yellow battle suit", "Cybernetic skeleton", "Rocket-powered jet boots"]
+                       },
+                       "gg2" :
+                       {
+                        "image_version" : 3.0,
+                        "name" : "Rocket racoon", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "blast",
+                        "skills" : ["Heavy machine gun", "Covering fire", "Trip mine", "Ion cannon", "I've got a plan"],
+                        "bonus" : ["Actication rate: 20% chance when attacking", "Apply to: Self", "Recovers by 5% of max HP (1 sec.)", "Cooldown time 15 seconds"],
+                        "links" : ["md/punisher", "aaou/hawkeye", "ultimate/green_goblin", "sw_2099/captain_america", "anad/yondu"],
+                        "gears" : ["Laser cannon", "Old battle suit", "Cybernetic skeleton", "Jet pack"]
                        }
                       }
                      },
@@ -1804,6 +1862,15 @@ MFF.CHARACTERS.DATA =
                         "name" : "Sharon Rogers", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
                         "skills" : ["Riposte strike", "Sky dragoon", "Javelin blast", "Paladin blast", "Freedom strike"],
                         "gears" : ["Energy blast lance", "Kevlar-titanium uniform", "Helmet", "Vibranium shield"],
+                        "immunities" : ["S/all/skill/3/100/5"]
+                       },
+                       "starlight_armor" :
+                       {
+                        "image_version" : 3.0,
+                        "name" : "Sharon Rogers", "attackBase" : "energy", "species" : "human", "gender" : "female", "side" : "hero", "type" : "blast",
+                        "skills" : ["Counter offensive", "Sky dragoon", "Energy beam", "Paladin blast", "Freedom strike"],
+                        "gears" : ["Starlight lance", "Starlight armor", "Scouter", "Starlight shield"],
+                        "links" : ["noir/punisher", "anad/angela", "anad/karnak", "anad/gamora", "modern/deathlok"],
                         "immunities" : ["S/all/skill/3/100/5"]
                        }
                       }
@@ -2043,6 +2110,15 @@ MFF.CHARACTERS.DATA =
                         "bonus" : ["Apply to: Self", "Critical damage +15%"],
                         "links" : ["hda/hulkbuster", "cacw/spider_man", "sw_2099/iron_man", "classic_70/blade", "modern/daisy_johnson"],
                         "gears" : ["Quad blasters", "Space armor", "Jet boots", "Element gun"]
+                       },
+                       "gg2" :
+                       {
+                        "image_version" : 3.0,
+                        "name" : "Star Lord", "attackBase" : "energy", "species" : "alien", "gender" : "male", "side" : "hero", "type" : "blast",
+                        "skills" : ["Gravity grenade", "Hadron enforcer", "I have a plan", "Power of orb", "Come and get it"],
+                        "bonus" : ["Apply to: Self", "Increase dodge rate by 10%", "Enhances effect of skill \"Legendary outlaw\""],
+                        "links" : ["classic/nebula", "karachi/ms_marvel", "maos/mockingbird", "ip/war_machine", "modern/sif"],
+                        "gears" : ["Quad blasters", "Helmet", "Long coat", "Cassette player"]
                        }
                       }
                      },
@@ -2303,6 +2379,20 @@ MFF.CHARACTERS.DATA =
                         "links" : ["na/iron_fist", "armored/moon_knight", "doc_strange/mordo", "classic_70/blade", "anad/drax"],
                         "gears" : ["Wasp's sting", "Wasp uniform", "Implanted insect wings", "Pym particles"],
                         "immunities" : ["S/all/skill/5/100/14"]
+                       }
+                      }
+                     },
+"whiplash" :         {
+                      "uniform" : "mim2",
+                      "tiers" : [1, 2],
+                      "uniforms" :
+                      {
+                       "mim2" :
+                       {
+                        "image_version" : 3.0,
+                        "name" : "Whiplash", "attackBase" : "physical", "species" : "human", "gender" : "male", "side" : "vilain", "type" : "blast",
+                        "skills" : ["Whip shot", "Cross slash", "Whip snare", "High voltage", "Whip storm"],
+                        "gears" : ["Energy whip", "Modified suit", "Frayed pants", "Arc reactor"]
                        }
                       }
                      },
