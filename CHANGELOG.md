@@ -1,15 +1,32 @@
-# Unreleased ![version 2.4.0](https://img.shields.io/badge/version-2.4.0-brightgreen.svg?style=flat)
+# Unreleased ![version 2.5.0](https://img.shields.io/badge/version-2.5.0-brightgreen.svg?style=flat)
 
 **In progress**
 
 - More javascript refactor
+
+![version 2.4.0](https://img.shields.io/badge/version-2.4.0-brightgreen.svg?style=flat) ![date 2017-04-30](https://img.shields.io/badge/date-2017--04--30-red.svg?style=flat)
+
+**Enhancements:**
+[#44](https://github.com/Mokhet/MFF-roster-tracker/issues/44) Uniform field need to loose focus to start computing the total development
+[#50](https://github.com/Mokhet/MFF-roster-tracker/issues/50) Disable/Enable dropdown items
+Move to strict notation to prevent recent bugs the jslinter could not find
+
+**Added:**
+[#40](https://github.com/Mokhet/MFF-roster-tracker/issues/40) Track states immunities. Natural immunities are now tracked, however more immunities will come once gear tracking is activated.
+[#18](https://github.com/Mokhet/MFF-roster-tracker/issues/18) Flag to keep track of characters up to date with game data
+[#43](https://github.com/Mokhet/MFF-roster-tracker/issues/43) New screenshot web API. Upload your screenshots and auto-sync data.
+
+**Fixed bugs:**
+[#45](https://github.com/Mokhet/MFF-roster-tracker/issues/45) IE 11 - win7 - Cannot click on dropdown
+Fix a chrome bug on last update sort
+Fix modal title position
+Fix json format for IE11 preventing it to correctly open the tool, but IE11 is still not recommended :)
 
 ![version 2.3.1](https://img.shields.io/badge/version-2.3.1-brightgreen.svg?style=flat) ![date 2017-04-03](https://img.shields.io/badge/date-2017--04--03-red.svg?style=flat)
 
 **Enhancements:**
 
 - [#39](https://github.com/Mokhet/MFF-roster-tracker/issues/39) When selecting an uniform, auto set rank to normal if not owned
-
 
 ![version 2.3.0](https://img.shields.io/badge/version-2.3.0-brightgreen.svg?style=flat) ![date 2017-04-01](https://img.shields.io/badge/date-2017--04--01-red.svg?style=flat)
 
