@@ -12,6 +12,7 @@
 Move to strict notation to prevent recent bugs the jslinter could not find
 
 **Added:**
+MFF 3.0 Compliant. Agent Venom, Whiplash and Mantis are available. Guardians of the Galaxy 2 uniforms also.
 [#40](https://github.com/Mokhet/MFF-roster-tracker/issues/40) Track states immunities. Natural immunities are now tracked, however more immunities will come once gear tracking is activated.
 [#18](https://github.com/Mokhet/MFF-roster-tracker/issues/18) Flag to keep track of characters up to date with game data
 [#43](https://github.com/Mokhet/MFF-roster-tracker/issues/43) New screenshot web API. Upload your screenshots and auto-sync data.
