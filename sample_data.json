@@ -6,206 +6,174 @@
       [
         {
           "type": "physical_attack_by_level",
-          "val": 49.1,
-          "pref": true,
-          "percent": 54.67
+          "val": 51.4,
+          "pref": true
         },
         {
           "type": "physical_attack_by_level",
-          "val": 50.7,
-          "pref": true,
-          "percent": 76
+          "val": 52.1,
+          "pref": true
         },
         {
           "type": "physical_attack",
-          "val": 57,
-          "pref": true,
-          "percent": 62.5
+          "val": 59,
+          "pref": true
         },
         {
           "type": "physical_attack",
-          "val": 88,
-          "pref": true,
-          "percent": 69.23
+          "val": 91,
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 123,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 154,
-          "pref": true,
-          "percent": 95.45
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 178,
-          "pref": true,
-          "percent": 92.31
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 220,
-          "pref": true,
-          "percent": 90.63
+          "pref": true
         }
       ],
       [
         {
           "type": "physical_defense_by_level",
           "val": 52.2,
-          "pref": true,
-          "percent": 96
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 22,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 48,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
-          "val": 74,
-          "pref": true,
-          "percent": 72.73
+          "val": 76,
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 108,
-          "pref": true,
-          "percent": 87.5
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 146,
-          "pref": true,
-          "percent": 95.24
+          "pref": true
         },
         {
           "type": "all_defense",
-          "val": 161,
-          "pref": true,
-          "percent": 78.26
+          "val": 163,
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 193,
-          "pref": true,
-          "percent": 89.29
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
-          "val": 182.1,
-          "pref": true,
-          "percent": 62.18
+          "val": 190.2,
+          "pref": true
         },
         {
           "type": "hp_by_level",
           "val": 191.8,
-          "pref": true,
-          "percent": 97.45
+          "pref": true
         },
         {
-          "type": "hp",
-          "val": 206,
-          "pref": true,
-          "percent": 74.19
+          "type": "dodge",
+          "val": 67,
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 101,
-          "pref": true,
-          "percent": 85.71
+          "pref": true
         },
         {
           "type": "hp",
-          "val": 411,
-          "pref": true,
-          "percent": 62.9
+          "val": 425,
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 207,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
-          "type": "hp",
-          "val": 610,
-          "pref": true,
-          "percent": 73.63
+          "type": "dodge",
+          "val": 256,
+          "pref": true
         },
         {
           "type": "hp",
           "val": 784,
-          "pref": true,
-          "percent": 100
+          "pref": true
         }
       ],
       [
         {
           "type": "defense_penetration",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "defense_penetration",
-          "val": 34,
-          "pref": true,
-          "percent": 60
+          "val": 36,
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 67,
-          "pref": true,
-          "percent": 80
+          "pref": true
         },
         {
           "type": "defense_penetration",
-          "val": 100,
-          "pref": true,
-          "percent": 78.57
+          "val": 102,
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 146,
-          "pref": true,
-          "percent": 81.82
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 205,
-          "pref": true,
-          "percent": 93.1
+          "pref": true
         },
         {
           "type": "defense_penetration",
-          "val": 250,
-          "pref": true,
-          "percent": 72.97
+          "val": 256,
+          "pref": true
         },
         {
           "type": "defense_penetration",
-          "val": 335,
-          "pref": true,
-          "percent": 76
+          "val": 343,
+          "pref": true
         }
       ]
     ],
     "attack": {
-      "physical": 14061,
+      "physical": 14072,
       "energy": 5615
     },
     "skills": [
@@ -217,15 +185,15 @@
     ],
     "uniform": "anad",
     "defense": {
-      "physical": 6818,
-      "energy": 5627
+      "physical": 6822,
+      "energy": 5632
     },
-    "hp": 22027,
+    "hp": 21189,
     "critrate": "42.20",
     "critdamage": "134.80",
-    "dodge": 25.81,
+    "dodge": 28.23,
     "ignore_dodge": 10,
-    "defpen": 34.11,
+    "defpen": 34.2,
     "scd": "32.48",
     "atkspeed": 101.82,
     "recorate": 193.86,
@@ -233,8 +201,9 @@
     "debuff": "0.00",
     "id": "carnage",
     "uniforms": {},
-    "lastUpdate": 1490312883813,
-    "combatPower": 79434
+    "lastUpdate": 1492108645830,
+    "combatPower": 79602,
+    "rank": 6374
   },
   "deathlok": {
     "level": 60,
@@ -473,7 +442,10 @@
       "modern": {
         "rank": "advanced",
         "options": [
-          null,
+          [
+            "dodge",
+            471
+          ],
           null,
           null,
           null,
@@ -481,7 +453,7 @@
         ]
       }
     },
-    "lastUpdate": 1490305207480
+    "lastUpdate": 1491101881101
   },
   "hyperion": {
     "level": 60,
@@ -726,232 +698,202 @@
         {
           "type": "physical_attack_by_level",
           "val": 52.5,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "physical_attack_by_level",
           "val": 50.2,
-          "pref": true,
-          "percent": 69.33
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 59,
-          "pref": true,
-          "percent": 87.5
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 91,
-          "pref": true,
-          "percent": 92.31
+          "pref": true
         },
         {
-          "type": "physical_attack",
-          "val": 116,
-          "pref": true,
-          "percent": 58.82
+          "type": "all_attack",
+          "val": 119,
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 152,
-          "pref": true,
-          "percent": 86.36
+          "pref": true
         },
         {
           "type": "physical_attack",
-          "val": 171,
-          "pref": true,
-          "percent": 65.38
+          "val": 179,
+          "pref": true
         },
         {
-          "type": "physical_attack",
-          "val": 216,
-          "pref": true,
-          "percent": 78.13
+          "type": "all_attack",
+          "val": 217,
+          "pref": true
         }
       ],
       [
         {
           "type": "physical_defense_by_level",
           "val": 50.5,
-          "pref": true,
-          "percent": 73.33
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 21,
-          "pref": true,
-          "percent": 75
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 45,
-          "pref": true,
-          "percent": 57.14
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 73,
-          "pref": true,
-          "percent": 63.64
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 106,
-          "pref": true,
-          "percent": 75
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 146,
-          "pref": true,
-          "percent": 95.24
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 165,
-          "pref": true,
-          "percent": 95.65
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 190,
-          "pref": true,
-          "percent": 78.57
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
-          "val": 185,
-          "pref": true,
-          "percent": 72.73
+          "val": 191,
+          "pref": true
         },
         {
-          "type": "dodge",
-          "val": 35,
-          "pref": true,
-          "percent": 80
+          "type": "hp_by_level",
+          "val": 191.5,
+          "pref": true
         },
         {
           "type": "recovery_rate",
           "val": 69,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "hp",
           "val": 313,
-          "pref": true,
-          "percent": 76.09
+          "pref": true
         },
         {
           "type": "hp",
           "val": 423,
-          "pref": true,
-          "percent": 82.26
+          "pref": true
         },
         {
           "type": "hp",
           "val": 539,
-          "pref": true,
-          "percent": 94.81
+          "pref": true
         },
         {
           "type": "recovery_rate",
           "val": 259,
-          "pref": true,
-          "percent": 97.3
+          "pref": true
         },
         {
           "type": "recovery_rate",
           "val": 343,
-          "pref": true,
-          "percent": 92
+          "pref": true
         }
       ],
       [
         {
-          "type": "skill_cooldown",
+          "type": "defense_penetration",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
-          "type": "critical_rate",
-          "val": 36,
-          "pref": true,
-          "percent": 100
+          "type": "defense_penetration",
+          "val": 35,
+          "pref": true
         },
         {
-          "type": "skill_cooldown",
-          "val": 69,
-          "pref": true,
-          "percent": 100
+          "type": "defense_penetration",
+          "val": 68,
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 100,
-          "pref": true,
-          "percent": 78.57
+          "pref": true
         },
         {
           "type": "defense_penetration",
-          "val": 144,
-          "pref": true,
-          "percent": 72.73
+          "val": 148,
+          "pref": true
         },
         {
           "type": "defense_penetration",
-          "val": 198,
-          "pref": true,
-          "percent": 68.97
+          "val": 202,
+          "pref": true
         },
         {
-          "type": "critical_damage",
-          "val": 251,
-          "pref": true,
-          "percent": 75.68
+          "type": "defense_penetration",
+          "val": 252,
+          "pref": true
         },
         {
-          "type": "critical_rate",
+          "type": "defense_penetration",
           "val": 345,
-          "pref": true,
-          "percent": 96
+          "pref": true
         }
       ]
     ],
     "attack": {
-      "physical": 13320,
-      "energy": 6842
+      "physical": 13793,
+      "energy": 7428
     },
     "skills": [
       6,
       6,
-      5,
-      5,
+      6,
+      6,
       6
     ],
     "uniform": "infinity",
     "defense": {
-      "physical": 7775,
-      "energy": 7665
+      "physical": 8051,
+      "energy": 7975
     },
-    "hp": "21727",
-    "critrate": "39.31",
-    "critdamage": "135.99",
-    "dodge": "15.32",
+    "hp": 22026,
+    "critrate": 38.2,
+    "critdamage": 133.48,
+    "dodge": 0,
     "ignore_dodge": "34.39",
-    "defpen": "26.74",
-    "scd": "24.79",
+    "defpen": 31.72,
+    "scd": 24.4,
     "atkspeed": "100.00",
-    "recorate": "239.90",
+    "recorate": 240.9,
     "movspeed": "101.86",
-    "debuff": "11.75",
+    "debuff": 12.56,
     "id": "thanos",
-    "uniforms": {}
+    "uniforms": {},
+    "lastUpdate": 1491069425278,
+    "combatPower": 57874
   },
   "destroyer": {
     "level": 60,
@@ -1186,7 +1128,19 @@
     "movspeed": "100.00",
     "debuff": "3.76",
     "id": "destroyer",
-    "uniforms": {}
+    "uniforms": {
+      "prometheus": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101389350
   },
   "black_bolt": {
     "level": 60,
@@ -1196,232 +1150,227 @@
         {
           "type": "energy_attack_by_level",
           "val": 50.6,
-          "pref": true,
-          "percent": 74.67
+          "pref": true
         },
         {
           "type": "energy_attack_by_level",
           "val": 51,
-          "pref": true,
-          "percent": 80
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 58,
-          "pref": true,
-          "percent": 75
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 92,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 120,
-          "pref": true,
-          "percent": 82.35
+          "pref": true
         },
         {
           "type": "all_attack",
-          "val": 148,
-          "pref": true,
-          "percent": 68.18
+          "val": 152,
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 180,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 220,
-          "pref": true,
-          "percent": 90.63
+          "pref": true
         }
       ],
       [
         {
           "type": "energy_defense_by_level",
           "val": 51.7,
-          "pref": true,
-          "percent": 89.33
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 22,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 46,
-          "pref": true,
-          "percent": 71.43
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 75,
-          "pref": true,
-          "percent": 81.82
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 110,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
-          "val": 138,
-          "pref": true,
-          "percent": 57.14
+          "val": 143,
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 159,
-          "pref": true,
-          "percent": 69.57
+          "pref": true
         },
         {
           "type": "all_defense",
-          "val": 189,
-          "pref": true,
-          "percent": 75
+          "val": 194,
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 191.3,
-          "pref": true,
-          "percent": 95.64
+          "pref": true
         },
         {
           "type": "hp_by_level",
-          "val": 191.3,
-          "pref": true,
-          "percent": 95.64
+          "val": 191,
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 65,
-          "pref": true,
-          "percent": 60
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 102,
-          "pref": true,
-          "percent": 92.86
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 140,
-          "pref": true,
-          "percent": 54.55
+          "pref": true
         },
         {
           "type": "hp",
           "val": 532,
-          "pref": true,
-          "percent": 85.71
+          "pref": true
         },
         {
           "type": "dodge",
-          "val": 243,
-          "pref": true,
-          "percent": 54.05
+          "val": 258,
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 345,
-          "pref": true,
-          "percent": 96
+          "pref": true
         }
       ],
       [
         {
-          "type": "critical_rate",
+          "type": "defense_penetration",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
-          "type": "critical_rate",
+          "type": "defense_penetration",
           "val": 34,
-          "pref": true,
-          "percent": 60
+          "pref": true
         },
         {
-          "type": "critical_damage",
-          "val": 67,
-          "pref": true,
-          "percent": 80
+          "type": "defense_penetration",
+          "val": 66,
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 101,
-          "pref": true,
-          "percent": 85.71
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 150,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
-          "type": "critical_rate",
-          "val": 205,
-          "pref": true,
-          "percent": 93.1
+          "type": "defense_penetration",
+          "val": 206,
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 260,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
-          "type": "skill_cooldown",
-          "val": 337,
-          "pref": true,
-          "percent": 80
+          "type": "defense_penetration",
+          "val": 346,
+          "pref": true
         }
       ]
     ],
     "attack": {
-      "physical": 7934,
-      "energy": 10530
+      "physical": 0,
+      "energy": 0
     },
     "skills": [
-      5,
-      5,
-      5,
-      5,
-      5
+      6,
+      6,
+      6,
+      6,
+      6
     ],
-    "uniform": "attilanrising",
+    "uniform": "iar",
     "defense": {
-      "physical": 5124,
-      "energy": 6364
+      "physical": 5785,
+      "energy": 7126
     },
-    "hp": "19202",
-    "critrate": "54.52",
-    "critdamage": "120.77",
-    "dodge": "27.48",
-    "ignore_dodge": "0.00",
-    "defpen": "32.65",
-    "scd": "27.49",
-    "atkspeed": "108.53",
+    "hp": 20889,
+    "critrate": 39.92,
+    "critdamage": 120.1,
+    "dodge": 28.4,
+    "ignore_dodge": 35.82,
+    "defpen": 37.76,
+    "scd": 26.97,
+    "atkspeed": 109.3,
     "recorate": "129.27",
     "movspeed": "104.43",
     "debuff": "0.00",
     "id": "black_bolt",
-    "uniforms": {}
+    "uniforms": {
+      "anad": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "iar": {
+        "rank": "advanced",
+        "options": [
+          [
+            "scd",
+            513
+          ],
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491671908204,
+    "combatPower": 65427,
+    "rank": 1166
   },
   "loki": {
     "level": 60,
@@ -1656,7 +1605,19 @@
     "movspeed": "100.00",
     "debuff": "3.58",
     "id": "loki",
-    "uniforms": {}
+    "uniforms": {
+      "ll": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101375017
   },
   "yellow_jacket": {
     "level": 60,
@@ -1897,7 +1858,7 @@
         "options": [
           [
             "scd",
-            869
+            1023
           ],
           [
             "attack_energy",
@@ -1912,7 +1873,7 @@
         ]
       }
     },
-    "lastUpdate": 1490349158212,
+    "lastUpdate": 1491101869839,
     "combatPower": 58176
   },
   "spider_man": {
@@ -2148,7 +2109,39 @@
     "movspeed": "101.65",
     "debuff": "0.00",
     "id": "spider_man",
-    "uniforms": {}
+    "uniforms": {
+      "anad": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "cacw": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "sw_renew": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101432120
   },
   "black_panther": {
     "level": 60,
@@ -2383,7 +2376,19 @@
     "movspeed": 0,
     "debuff": 0,
     "id": "black_panther",
-    "uniforms": {}
+    "uniforms": {
+      "cacw": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101393464
   },
   "groot": {
     "level": 60,
@@ -2391,202 +2396,170 @@
     "gear": [
       [
         {
-          "type": "all_attack",
-          "val": 12,
-          "pref": false,
-          "percent": 50
+          "type": "physical_attack_by_level",
+          "val": 51.1,
+          "pref": true
         },
         {
-          "type": "all_attack",
-          "val": 26,
-          "pref": false,
-          "percent": 25
+          "type": "physical_attack_by_level",
+          "val": 51.7,
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 54,
-          "pref": true,
-          "percent": 25
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 87,
-          "pref": true,
-          "percent": 61.54
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 116,
-          "pref": true,
-          "percent": 58.82
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 149,
-          "pref": true,
-          "percent": 72.73
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 160,
-          "pref": true,
-          "percent": 23.08
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 205,
-          "pref": true,
-          "percent": 43.75
+          "pref": true
         }
       ],
       [
         {
           "type": "physical_defense_by_level",
           "val": 51.4,
-          "pref": true,
-          "percent": 85.33
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 21,
-          "pref": true,
-          "percent": 75
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 41,
-          "pref": true,
-          "percent": 0
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 69,
-          "pref": true,
-          "percent": 27.27
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 105,
-          "pref": true,
-          "percent": 68.75
+          "pref": true
         },
         {
-          "type": "energy_defense_by_level",
-          "val": 45.5,
-          "pref": false,
-          "percent": 6.67
+          "type": "all_defense",
+          "val": 140,
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 165,
-          "pref": true,
-          "percent": 95.65
+          "pref": true
         },
         {
-          "type": "physical_defense",
-          "val": 168,
-          "pref": false,
-          "percent": 0
+          "type": "all_defense",
+          "val": 186,
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 180.2,
-          "pref": true,
-          "percent": 55.27
+          "pref": true
         },
         {
           "type": "hp",
           "val": 102,
-          "pref": false,
-          "percent": 37.5
+          "pref": false
         },
         {
           "type": "hp",
           "val": 209,
-          "pref": true,
-          "percent": 83.87
+          "pref": true
         },
         {
           "type": "hp",
           "val": 299,
-          "pref": false,
-          "percent": 45.65
+          "pref": true
         },
         {
           "type": "hp",
           "val": 433,
-          "pref": true,
-          "percent": 98.39
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 188,
-          "pref": false,
-          "percent": 34.48
+          "pref": true
         },
         {
-          "type": "hp_by_level",
-          "val": 178.8,
-          "pref": false,
-          "percent": 50.18
+          "type": "recovery_rate",
+          "val": 232,
+          "pref": true
         },
         {
-          "type": "hp_by_level",
-          "val": 182,
-          "pref": false,
-          "percent": 61.82
+          "type": "dodge",
+          "val": 313,
+          "pref": true
         }
       ],
       [
         {
-          "type": "skill_cooldown",
-          "val": 7,
-          "pref": false,
-          "percent": 0
+          "type": "defense_penetration",
+          "val": 8,
+          "pref": true
         },
         {
-          "type": "skill_cooldown",
-          "val": 31,
-          "pref": false,
-          "percent": 0
+          "type": "defense_penetration",
+          "val": 33,
+          "pref": true
         },
         {
-          "type": "skill_cooldown",
-          "val": 67,
-          "pref": true,
-          "percent": 80
+          "type": "defense_penetration",
+          "val": 69,
+          "pref": true
         },
         {
-          "type": "skill_cooldown",
-          "val": 103,
-          "pref": true,
-          "percent": 100
+          "type": "defense_penetration",
+          "val": 96,
+          "pref": true
         },
         {
-          "type": "skill_cooldown",
-          "val": 143,
-          "pref": true,
-          "percent": 68.18
+          "type": "defense_penetration",
+          "val": 149,
+          "pref": true
         },
         {
-          "type": "attack_speed",
-          "val": 184,
-          "pref": false,
-          "percent": 20.69
+          "type": "defense_penetration",
+          "val": 187,
+          "pref": true
         },
         {
-          "type": "critical_damage",
-          "val": 245,
-          "pref": true,
-          "percent": 59.46
+          "type": "defense_penetration",
+          "val": 228,
+          "pref": true
         },
         {
-          "type": "critical_rate",
-          "val": 297,
-          "pref": false,
-          "percent": 0
+          "type": "defense_penetration",
+          "val": 336,
+          "pref": true
         }
       ]
     ],
@@ -2595,11 +2568,11 @@
       "energy": 6296
     },
     "skills": [
-      5,
-      5,
-      4,
-      4,
-      4
+      6,
+      6,
+      6,
+      6,
+      6
     ],
     "uniform": "sw_thors",
     "defense": {
@@ -2618,7 +2591,19 @@
     "movspeed": "100.00",
     "debuff": "4.12",
     "id": "groot",
-    "uniforms": {}
+    "uniforms": {
+      "sw_thors": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101285360
   },
   "nebula": {
     "level": 60,
@@ -2853,7 +2838,19 @@
     "movspeed": "101.97",
     "debuff": 0,
     "id": "nebula",
-    "uniforms": {}
+    "uniforms": {
+      "classic": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101760399
   },
   "captain_america": {
     "level": 60,
@@ -2867,16 +2864,16 @@
           "percent": 74.67
         },
         {
-          "type": "all_attack",
-          "val": 28,
-          "pref": false,
-          "percent": 75
+          "type": "physical_attack_by_level",
+          "val": 51.3,
+          "pref": true,
+          "percent": 84
         },
         {
-          "type": "all_attack",
-          "val": 52,
+          "type": "physical_attack",
+          "val": 57,
           "pref": true,
-          "percent": 0
+          "percent": 62.5
         },
         {
           "type": "all_attack",
@@ -2897,16 +2894,16 @@
           "percent": 77.27
         },
         {
-          "type": "all_attack",
-          "val": 167,
+          "type": "physical_attack",
+          "val": 177,
           "pref": true,
-          "percent": 50
+          "percent": 88.46
         },
         {
           "type": "all_attack",
-          "val": 207,
+          "val": 211,
           "pref": true,
-          "percent": 50
+          "percent": 62.5
         }
       ],
       [
@@ -2917,16 +2914,16 @@
           "percent": 66.67
         },
         {
-          "type": "all_defense",
-          "val": 20,
+          "type": "energy_defense_by_level",
+          "val": 49.7,
           "pref": true,
-          "percent": 50
+          "percent": 62.67
         },
         {
           "type": "all_defense",
-          "val": 44,
+          "val": 48,
           "pref": true,
-          "percent": 42.86
+          "percent": 100
         },
         {
           "type": "all_defense",
@@ -2967,10 +2964,10 @@
           "percent": 74.18
         },
         {
-          "type": "hp",
-          "val": 109,
-          "pref": false,
-          "percent": 81.25
+          "type": "hp_by_level",
+          "val": 190.9,
+          "pref": true,
+          "percent": 94.18
         },
         {
           "type": "hp",
@@ -2980,9 +2977,9 @@
         },
         {
           "type": "hp",
-          "val": 283,
-          "pref": false,
-          "percent": 10.87
+          "val": 323,
+          "pref": true,
+          "percent": 97.83
         },
         {
           "type": "hp",
@@ -3003,66 +3000,66 @@
           "percent": 94.51
         },
         {
-          "type": "recovery_rate",
-          "val": 325,
-          "pref": false,
-          "percent": 56
+          "type": "hp",
+          "val": 768,
+          "pref": true,
+          "percent": 85.71
         }
       ],
       [
         {
-          "type": "critical_rate",
+          "type": "defense_penetration",
           "val": 8,
           "pref": true,
           "percent": 100
         },
         {
-          "type": "critical_rate",
-          "val": 32,
-          "pref": false,
-          "percent": 20
-        },
-        {
-          "type": "critical_rate",
-          "val": 65,
+          "type": "defense_penetration",
+          "val": 35,
           "pref": true,
-          "percent": 60
+          "percent": 80
         },
         {
-          "type": "critical_rate",
+          "type": "defense_penetration",
+          "val": 67,
+          "pref": true,
+          "percent": 80
+        },
+        {
+          "type": "defense_penetration",
           "val": 102,
           "pref": true,
           "percent": 92.86
         },
         {
-          "type": "critical_rate",
-          "val": 143,
+          "type": "defense_penetration",
+          "val": 149,
           "pref": true,
-          "percent": 68.18
+          "percent": 95.45
         },
         {
-          "type": "critical_rate",
-          "val": 197,
+          "type": "defense_penetration",
+          "val": 199,
           "pref": true,
-          "percent": 65.52
+          "percent": 72.41
         },
         {
-          "type": "critical_rate",
-          "val": 257,
+          "type": "defense_penetration",
+          "val": 249,
           "pref": true,
-          "percent": 91.89
+          "percent": 70.27
         },
         {
-          "type": "critical_rate",
-          "val": 332,
+          "type": "defense_penetration",
+          "val": 339,
           "pref": true,
-          "percent": 70
+          "percent": 84
         }
       ]
     ],
     "attack": {
-      "physical": 10940,
-      "energy": 6238
+      "physical": 11062,
+      "energy": 5893
     },
     "skills": [
       6,
@@ -3071,24 +3068,80 @@
       6,
       6
     ],
-    "uniform": "cacw",
+    "uniform": "now",
     "defense": {
-      "physical": 6422,
-      "energy": 5495
+      "physical": 6403,
+      "energy": 5512
     },
-    "hp": "21619",
-    "critrate": "50.98",
+    "hp": 0,
+    "critrate": 42.46,
     "critdamage": "132.58",
     "dodge": "50.31",
     "ignore_dodge": "33.44",
-    "defpen": "21.07",
+    "defpen": 28.21,
     "scd": "35.41",
-    "atkspeed": 0,
+    "atkspeed": 101.76,
     "recorate": "138.16",
-    "movspeed": 0,
+    "movspeed": 100,
     "debuff": "0.00",
     "id": "captain_america",
-    "uniforms": {}
+    "uniforms": {
+      "aaou": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "sw_2099": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "catws": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "cacw": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "now": {
+        "rank": "advanced",
+        "options": [
+          [
+            "dodge",
+            715
+          ],
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101864263,
+    "combatPower": 56898
   },
   "ronan": {
     "level": 60,
@@ -3323,7 +3376,19 @@
     "movspeed": "100.00",
     "debuff": "5.82",
     "id": "ronan",
-    "uniforms": {}
+    "uniforms": {
+      "annihilation": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101777384
   },
   "hulkbuster": {
     "level": 60,
@@ -3333,200 +3398,168 @@
         {
           "type": "physical_attack_by_level",
           "val": 51.3,
-          "pref": true,
-          "percent": 84
+          "pref": true
         },
         {
           "type": "physical_attack_by_level",
           "val": 50.5,
-          "pref": true,
-          "percent": 73.33
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 59,
-          "pref": true,
-          "percent": 87.5
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 88,
-          "pref": true,
-          "percent": 69.23
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 118,
-          "pref": true,
-          "percent": 70.59
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 148,
-          "pref": true,
-          "percent": 68.18
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 178,
-          "pref": true,
-          "percent": 92.31
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 216,
-          "pref": true,
-          "percent": 78.13
+          "pref": true
         }
       ],
       [
         {
           "type": "energy_defense_by_level",
           "val": 51.8,
-          "pref": true,
-          "percent": 90.67
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 21,
-          "pref": true,
-          "percent": 75
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 45,
-          "pref": true,
-          "percent": 57.14
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 74,
-          "pref": true,
-          "percent": 72.73
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 106,
-          "pref": true,
-          "percent": 75
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 145,
-          "pref": true,
-          "percent": 90.48
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 157,
-          "pref": true,
-          "percent": 60.87
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 196,
-          "pref": true,
-          "percent": 100
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 190.1,
-          "pref": true,
-          "percent": 91.27
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 35,
-          "pref": true,
-          "percent": 80
+          "pref": true
         },
         {
           "type": "hp",
           "val": 205,
-          "pref": true,
-          "percent": 70.97
+          "pref": true
         },
         {
           "type": "hp",
           "val": 322,
-          "pref": true,
-          "percent": 95.65
+          "pref": true
         },
         {
           "type": "hp",
           "val": 411,
-          "pref": true,
-          "percent": 62.9
+          "pref": true
         },
         {
           "type": "hp",
           "val": 518,
-          "pref": true,
-          "percent": 67.53
+          "pref": true
         },
         {
           "type": "hp",
           "val": 624,
-          "pref": true,
-          "percent": 89.01
+          "pref": true
         },
         {
           "type": "hp",
           "val": 772,
-          "pref": true,
-          "percent": 89.29
+          "pref": true
         }
       ],
       [
         {
           "type": "skill_cooldown",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "critical_rate",
           "val": 34,
-          "pref": true,
-          "percent": 60
+          "pref": true
         },
         {
           "type": "critical_rate",
           "val": 69,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "skill_cooldown",
           "val": 103,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 148,
-          "pref": true,
-          "percent": 90.91
+          "pref": true
         },
         {
           "type": "skill_cooldown",
           "val": 205,
-          "pref": true,
-          "percent": 93.1
+          "pref": true
         },
         {
           "type": "critical_damage",
           "val": 251,
-          "pref": true,
-          "percent": 75.68
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 323,
-          "pref": true,
-          "percent": 52
+          "pref": true
         }
       ]
     ],
@@ -3541,7 +3574,7 @@
       3,
       4
     ],
-    "uniform": "avengers",
+    "uniform": "hda",
     "defense": {
       "physical": 6244,
       "energy": 5878
@@ -3558,7 +3591,19 @@
     "movspeed": 0,
     "debuff": "5.82",
     "id": "hulkbuster",
-    "uniforms": {}
+    "uniforms": {
+      "hda": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101379276
   },
   "ant_man": {
     "level": 60,
@@ -3831,7 +3876,7 @@
         {
           "type": "all_attack",
           "val": 29,
-          "pref": false,
+          "pref": true,
           "percent": 100
         },
         {
@@ -3848,15 +3893,15 @@
         },
         {
           "type": "all_attack",
-          "val": 107,
+          "val": 118,
           "pref": true,
-          "percent": 5.88
+          "percent": 70.59
         },
         {
-          "type": "all_attack",
-          "val": 143,
+          "type": "energy_attack",
+          "val": 152,
           "pref": true,
-          "percent": 45.45
+          "percent": 86.36
         },
         {
           "type": "all_attack",
@@ -3892,21 +3937,21 @@
         },
         {
           "type": "all_defense",
-          "val": 68,
+          "val": 73,
           "pref": true,
-          "percent": 18.18
+          "percent": 63.64
         },
         {
           "type": "all_defense",
-          "val": 95,
+          "val": 110,
           "pref": true,
-          "percent": 6.25
+          "percent": 100
         },
         {
           "type": "all_defense",
-          "val": 133,
+          "val": 147,
           "pref": true,
-          "percent": 33.33
+          "percent": 100
         },
         {
           "type": "all_defense",
@@ -3929,10 +3974,10 @@
           "percent": 61.09
         },
         {
-          "type": "hp",
-          "val": 97,
-          "pref": false,
-          "percent": 6.25
+          "type": "hp_by_level",
+          "val": 191.3,
+          "pref": true,
+          "percent": 95.64
         },
         {
           "type": "hp",
@@ -3942,9 +3987,9 @@
         },
         {
           "type": "hp",
-          "val": 297,
-          "pref": false,
-          "percent": 41.3
+          "val": 303,
+          "pref": true,
+          "percent": 54.35
         },
         {
           "type": "hp",
@@ -3973,34 +4018,34 @@
       ],
       [
         {
-          "type": "skill_cooldown",
-          "val": 7,
-          "pref": false,
-          "percent": 0
-        },
-        {
-          "type": "skill_cooldown",
-          "val": 31,
-          "pref": false,
-          "percent": 0
-        },
-        {
-          "type": "skill_cooldown",
-          "val": 62,
-          "pref": false,
-          "percent": 30
-        },
-        {
-          "type": "skill_cooldown",
-          "val": 98,
+          "type": "defense_penetration",
+          "val": 8,
           "pref": true,
-          "percent": 64.29
+          "percent": 100
         },
         {
-          "type": "skill_cooldown",
-          "val": 139,
-          "pref": false,
-          "percent": 50
+          "type": "defense_penetration",
+          "val": 36,
+          "pref": true,
+          "percent": 100
+        },
+        {
+          "type": "defense_penetration",
+          "val": 66,
+          "pref": true,
+          "percent": 70
+        },
+        {
+          "type": "defense_penetration",
+          "val": 102,
+          "pref": true,
+          "percent": 92.86
+        },
+        {
+          "type": "defense_penetration",
+          "val": 150,
+          "pref": true,
+          "percent": 100
         },
         {
           "type": "defense_penetration",
@@ -4009,22 +4054,22 @@
           "percent": 55.17
         },
         {
-          "type": "skill_cooldown",
-          "val": 250,
+          "type": "defense_penetration",
+          "val": 243,
           "pref": true,
-          "percent": 72.97
+          "percent": 54.05
         },
         {
-          "type": "critical_damage",
-          "val": 339,
+          "type": "defense_penetration",
+          "val": 323,
           "pref": true,
-          "percent": 84
+          "percent": 52
         }
       ]
     ],
     "attack": {
-      "physical": 7954,
-      "energy": 10384
+      "physical": 0,
+      "energy": 0
     },
     "skills": [
       6,
@@ -4035,22 +4080,45 @@
     ],
     "uniform": "unworthy",
     "defense": {
-      "physical": 6222,
-      "energy": 6904
+      "physical": 0,
+      "energy": 0
     },
-    "hp": "20510",
-    "critrate": "42.28",
-    "critdamage": "133.17",
-    "dodge": "14.89",
-    "ignore_dodge": "0.00",
-    "defpen": "33.10",
-    "scd": "27.34",
-    "atkspeed": "109.08",
-    "recorate": "138.16",
-    "movspeed": "100.00",
-    "debuff": "0.00",
+    "hp": 0,
+    "critrate": 0,
+    "critdamage": 0,
+    "dodge": 0,
+    "ignore_dodge": 0,
+    "defpen": 0,
+    "scd": 0,
+    "atkspeed": 0,
+    "recorate": 0,
+    "movspeed": 0,
+    "debuff": 0,
     "id": "thor",
-    "uniforms": {}
+    "uniforms": {
+      "unworthy": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "aaou": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1490454611464,
+    "combatPower": 54538
   },
   "lash": {
     "level": 60,
@@ -4533,7 +4601,19 @@
     "movspeed": "112.16",
     "debuff": 0,
     "id": "sif",
-    "uniforms": {}
+    "uniforms": {
+      "modern": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101044739
   },
   "mockingbird": {
     "level": 60,
@@ -4768,7 +4848,29 @@
     "movspeed": "101.54",
     "debuff": "0.00",
     "id": "mockingbird",
-    "uniforms": {}
+    "uniforms": {
+      "anad": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "maos": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101570660
   },
   "hawkeye": {
     "level": 60,
@@ -5013,9 +5115,19 @@
           null,
           null
         ]
+      },
+      "cacw": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "lastUpdate": 1490304835069
+    "lastUpdate": 1491101437712
   },
   "agent_13": {
     "level": 60,
@@ -5025,205 +5137,173 @@
         {
           "type": "physical_attack_by_level",
           "val": 50.2,
-          "pref": true,
-          "percent": 69.33
+          "pref": true
         },
         {
           "type": "physical_attack_by_level",
           "val": 51.9,
-          "pref": true,
-          "percent": 92
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 59,
-          "pref": true,
-          "percent": 87.5
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 89,
-          "pref": true,
-          "percent": 76.92
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 122,
-          "pref": true,
-          "percent": 94.12
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 150,
-          "pref": true,
-          "percent": 77.27
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 178,
-          "pref": true,
-          "percent": 92.31
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 210,
-          "pref": true,
-          "percent": 59.38
+          "pref": true
         }
       ],
       [
         {
           "type": "physical_defense_by_level",
           "val": 50.5,
-          "pref": true,
-          "percent": 73.33
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 21,
-          "pref": true,
-          "percent": 75
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 45,
-          "pref": true,
-          "percent": 57.14
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 77,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 109,
-          "pref": true,
-          "percent": 93.75
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 137,
-          "pref": true,
-          "percent": 52.38
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 156,
-          "pref": true,
-          "percent": 56.52
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 196,
-          "pref": true,
-          "percent": 100
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 184.2,
-          "pref": true,
-          "percent": 69.82
+          "pref": true
         },
         {
           "type": "hp_by_level",
           "val": 191.9,
-          "pref": true,
-          "percent": 97.82
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 69,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 98,
-          "pref": true,
-          "percent": 64.29
+          "pref": true
         },
         {
           "type": "hp",
           "val": 425,
-          "pref": true,
-          "percent": 85.48
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 201,
-          "pref": true,
-          "percent": 79.31
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 244,
-          "pref": true,
-          "percent": 56.76
+          "pref": true
         },
         {
           "type": "hp",
           "val": 761,
-          "pref": true,
-          "percent": 79.46
+          "pref": true
         }
       ],
       [
         {
-          "type": "skill_cooldown",
+          "type": "defense_penetration",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
-          "type": "attack_speed",
-          "val": 36,
-          "pref": true,
-          "percent": 100
+          "type": "defense_penetration",
+          "val": 34,
+          "pref": true
         },
         {
-          "type": "critical_damage",
-          "val": 66,
-          "pref": true,
-          "percent": 70
+          "type": "defense_penetration",
+          "val": 69,
+          "pref": true
         },
         {
-          "type": "critical_damage",
-          "val": 97,
-          "pref": true,
-          "percent": 57.14
+          "type": "defense_penetration",
+          "val": 100,
+          "pref": true
         },
         {
-          "type": "critical_damage",
-          "val": 143,
-          "pref": true,
-          "percent": 68.18
+          "type": "defense_penetration",
+          "val": 147,
+          "pref": true
         },
         {
-          "type": "critical_damage",
-          "val": 207,
-          "pref": true,
-          "percent": 100
+          "type": "defense_penetration",
+          "val": 199,
+          "pref": true
         },
         {
-          "type": "critical_rate",
-          "val": 258,
-          "pref": true,
-          "percent": 94.59
+          "type": "defense_penetration",
+          "val": 250,
+          "pref": true
         },
         {
-          "type": "critical_damage",
-          "val": 329,
-          "pref": true,
-          "percent": 64
+          "type": "defense_penetration",
+          "val": 341,
+          "pref": true
         }
       ]
     ],
     "attack": {
-      "physical": 9329,
+      "physical": 9502,
       "energy": 5864
     },
     "skills": [
@@ -5238,19 +5318,32 @@
       "physical": 6764,
       "energy": 5732
     },
-    "hp": "19435",
-    "critrate": "40.01",
-    "critdamage": "168.43",
+    "hp": null,
+    "critrate": 38.07,
+    "critdamage": 126.27,
     "dodge": "23.39",
-    "ignore_dodge": "10.00",
-    "defpen": "24.96",
-    "scd": "32.38",
-    "atkspeed": "106.23",
+    "ignore_dodge": 33.7,
+    "defpen": 32.1,
+    "scd": 32.34,
+    "atkspeed": 106.12,
     "recorate": "125.60",
     "movspeed": "100.00",
     "debuff": "3.58",
     "id": "agent_13",
-    "uniforms": {}
+    "uniforms": {
+      "cacw": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1490726813288,
+    "combatPower": 40307
   },
   "angela": {
     "level": 60,
@@ -5260,206 +5353,174 @@
         {
           "type": "physical_attack_by_level",
           "val": 49.6,
-          "pref": true,
-          "percent": 61.33
+          "pref": true
         },
         {
           "type": "physical_attack_by_level",
           "val": 52.2,
-          "pref": true,
-          "percent": 96
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 57,
-          "pref": true,
-          "percent": 62.5
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 88,
-          "pref": true,
-          "percent": 69.23
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 117,
-          "pref": true,
-          "percent": 64.71
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 147,
-          "pref": true,
-          "percent": 63.64
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 179,
-          "pref": true,
-          "percent": 96.15
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 215,
-          "pref": true,
-          "percent": 75
+          "pref": true
         }
       ],
       [
         {
           "type": "physical_defense_by_level",
           "val": 49.7,
-          "pref": true,
-          "percent": 62.67
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 21,
-          "pref": true,
-          "percent": 75
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 48,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 76,
-          "pref": true,
-          "percent": 90.91
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 109,
-          "pref": true,
-          "percent": 93.75
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 138,
-          "pref": true,
-          "percent": 57.14
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 156,
-          "pref": true,
-          "percent": 56.52
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 185,
-          "pref": true,
-          "percent": 60.71
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 191.2,
-          "pref": true,
-          "percent": 95.27
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 35,
-          "pref": true,
-          "percent": 80
+          "pref": true
         },
         {
           "type": "hp",
           "val": 213,
-          "pref": true,
-          "percent": 96.77
+          "pref": true
         },
         {
           "type": "hp",
           "val": 308,
-          "pref": true,
-          "percent": 65.22
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 146,
-          "pref": true,
-          "percent": 81.82
+          "pref": true
         },
         {
           "type": "hp",
           "val": 525,
-          "pref": true,
-          "percent": 76.62
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 256,
-          "pref": true,
-          "percent": 89.19
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 340,
-          "pref": true,
-          "percent": 86
+          "pref": true
         }
       ],
       [
         {
           "type": "attack_speed",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "critical_damage",
           "val": 35,
-          "pref": true,
-          "percent": 80
+          "pref": true
         },
         {
           "type": "critical_rate",
           "val": 69,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "critical_rate",
           "val": 99,
-          "pref": true,
-          "percent": 71.43
+          "pref": true
         },
         {
           "type": "critical_damage",
           "val": 143,
-          "pref": true,
-          "percent": 68.18
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 195,
-          "pref": true,
-          "percent": 58.62
+          "pref": true
         },
         {
           "type": "critical_damage",
           "val": 247,
-          "pref": true,
-          "percent": 64.86
+          "pref": true
         },
         {
           "type": "critical_damage",
           "val": 325,
-          "pref": true,
-          "percent": 56
+          "pref": true
         }
       ]
     ],
     "attack": {
-      "physical": 9335,
-      "energy": 6759
+      "physical": 10435,
+      "energy": 6935
     },
     "skills": [
       5,
@@ -5470,16 +5531,16 @@
     ],
     "uniform": "sw_1602",
     "defense": {
-      "physical": 6031,
-      "energy": 4914
+      "physical": 6346,
+      "energy": 5169
     },
-    "hp": "17777",
-    "critrate": "41.02",
-    "critdamage": "143.76",
-    "dodge": "36.38",
-    "ignore_dodge": "0.00",
-    "defpen": "22.34",
-    "scd": "34.31",
+    "hp": 19013,
+    "critrate": 39.76,
+    "critdamage": 136.26,
+    "dodge": 21.17,
+    "ignore_dodge": 26.79,
+    "defpen": 28.4,
+    "scd": 36.99,
     "atkspeed": "101.78",
     "recorate": "138.16",
     "movspeed": "100.00",
@@ -5487,17 +5548,44 @@
     "id": "angela",
     "uniforms": {
       "sw_1602": {
-        "rank": "advanced",
+        "rank": "heroic",
         "options": [
+          [
+            "scd",
+            725
+          ],
+          [
+            "attack_physical",
+            198
+          ],
+          [
+            "scd",
+            1218
+          ],
           null,
-          null,
+          null
+        ]
+      },
+      "anad": {
+        "rank": "rare",
+        "options": [
+          [
+            "scd",
+            520
+          ],
+          [
+            "defense_physical",
+            254
+          ],
           null,
           null,
           null
         ]
       }
     },
-    "lastUpdate": 1490347700511
+    "lastUpdate": 1492638571710,
+    "combatPower": 50071,
+    "rank": 2024
   },
   "black_cat": {
     "level": 60,
@@ -5732,7 +5820,29 @@
     "movspeed": "100.44",
     "debuff": "3.65",
     "id": "black_cat",
-    "uniforms": {}
+    "uniforms": {
+      "anad": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "claws": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101647218
   },
   "black_widow": {
     "level": 60,
@@ -5742,200 +5852,168 @@
         {
           "type": "physical_attack_by_level",
           "val": 50.1,
-          "pref": true,
-          "percent": 68
+          "pref": true
         },
         {
           "type": "physical_attack_by_level",
           "val": 50.9,
-          "pref": true,
-          "percent": 78.67
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 57,
-          "pref": true,
-          "percent": 62.5
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 92,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 116,
-          "pref": true,
-          "percent": 58.82
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 147,
-          "pref": true,
-          "percent": 63.64
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 173,
-          "pref": true,
-          "percent": 73.08
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 212,
-          "pref": true,
-          "percent": 65.63
+          "pref": true
         }
       ],
       [
         {
           "type": "energy_defense_by_level",
           "val": 50.2,
-          "pref": true,
-          "percent": 69.33
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 22,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 45,
-          "pref": true,
-          "percent": 57.14
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 73,
-          "pref": true,
-          "percent": 63.64
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 109,
-          "pref": true,
-          "percent": 93.75
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 147,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 158,
-          "pref": true,
-          "percent": 65.22
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 191,
-          "pref": true,
-          "percent": 82.14
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 189.6,
-          "pref": true,
-          "percent": 89.45
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 36,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 69,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "hp",
           "val": 318,
-          "pref": true,
-          "percent": 86.96
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 149,
-          "pref": true,
-          "percent": 95.45
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 194,
-          "pref": true,
-          "percent": 55.17
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 250,
-          "pref": true,
-          "percent": 72.97
+          "pref": true
         },
         {
           "type": "hp",
           "val": 736,
-          "pref": true,
-          "percent": 57.14
+          "pref": true
         }
       ],
       [
         {
           "type": "defense_penetration",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 35,
-          "pref": true,
-          "percent": 80
+          "pref": true
         },
         {
           "type": "critical_rate",
           "val": 66,
-          "pref": true,
-          "percent": 70
+          "pref": true
         },
         {
           "type": "critical_damage",
           "val": 99,
-          "pref": true,
-          "percent": 71.43
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 149,
-          "pref": true,
-          "percent": 95.45
+          "pref": true
         },
         {
           "type": "skill_cooldown",
           "val": 199,
-          "pref": true,
-          "percent": 72.41
+          "pref": true
         },
         {
           "type": "critical_rate",
           "val": 252,
-          "pref": true,
-          "percent": 78.38
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 328,
-          "pref": true,
-          "percent": 62
+          "pref": true
         }
       ]
     ],
@@ -5950,7 +6028,7 @@
       6,
       6
     ],
-    "uniform": "avengers",
+    "uniform": "cacw",
     "defense": {
       "physical": 6290,
       "energy": 5421
@@ -5977,9 +6055,29 @@
           null,
           null
         ]
+      },
+      "sw_2099": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "cacw": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "lastUpdate": 1490304932776
+    "lastUpdate": 1491671277026
   },
   "daredevil": {
     "level": 60,
@@ -6214,7 +6312,32 @@
     "movspeed": "100.00",
     "debuff": "0.00",
     "id": "daredevil",
-    "uniforms": {}
+    "uniforms": {
+      "dohk": {
+        "rank": "advanced",
+        "options": [
+          [
+            "scd",
+            487
+          ],
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "anad": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101899691
   },
   "elsa_bloodstone": {
     "level": 60,
@@ -6224,206 +6347,174 @@
         {
           "type": "physical_attack_by_level",
           "val": 50.7,
-          "pref": true,
-          "percent": 76
+          "pref": true
         },
         {
           "type": "physical_attack_by_level",
           "val": 51.9,
-          "pref": true,
-          "percent": 92
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 59,
-          "pref": true,
-          "percent": 87.5
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 88,
-          "pref": true,
-          "percent": 69.23
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 121,
-          "pref": true,
-          "percent": 88.24
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 147,
-          "pref": true,
-          "percent": 63.64
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 180,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 221,
-          "pref": true,
-          "percent": 93.75
+          "pref": true
         }
       ],
       [
         {
           "type": "energy_defense_by_level",
           "val": 49.8,
-          "pref": true,
-          "percent": 64
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 21,
-          "pref": true,
-          "percent": 75
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 46,
-          "pref": true,
-          "percent": 71.43
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 77,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 108,
-          "pref": true,
-          "percent": 87.5
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 143,
-          "pref": true,
-          "percent": 80.95
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 161,
-          "pref": true,
-          "percent": 78.26
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 194,
-          "pref": true,
-          "percent": 92.86
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 189.8,
-          "pref": true,
-          "percent": 90.18
+          "pref": true
         },
         {
           "type": "hp_by_level",
           "val": 191,
-          "pref": true,
-          "percent": 94.55
+          "pref": true
         },
         {
           "type": "hp",
           "val": 214,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "hp",
           "val": 316,
-          "pref": true,
-          "percent": 82.61
+          "pref": true
         },
         {
           "type": "hp",
           "val": 425,
-          "pref": true,
-          "percent": 85.48
+          "pref": true
         },
         {
           "type": "hp",
           "val": 514,
-          "pref": true,
-          "percent": 62.34
+          "pref": true
         },
         {
           "type": "hp",
           "val": 631,
-          "pref": true,
-          "percent": 96.7
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 337,
-          "pref": true,
-          "percent": 80
+          "pref": true
         }
       ],
       [
         {
           "type": "critical_damage",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 34,
-          "pref": true,
-          "percent": 60
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 69,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 99,
-          "pref": true,
-          "percent": 71.43
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 148,
-          "pref": true,
-          "percent": 90.91
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 201,
-          "pref": true,
-          "percent": 79.31
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 250,
-          "pref": true,
-          "percent": 72.97
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 333,
-          "pref": true,
-          "percent": 72
+          "pref": true
         }
       ]
     ],
     "attack": {
-      "physical": 12811,
-      "energy": 8100
+      "physical": 12907,
+      "energy": 8192
     },
     "skills": [
       6,
@@ -6434,16 +6525,16 @@
     ],
     "uniform": "unleashed",
     "defense": {
-      "physical": 7764,
-      "energy": 6738
+      "physical": 7928,
+      "energy": 6902
     },
-    "hp": 21225,
+    "hp": 21332,
     "critrate": 30.92,
-    "critdamage": 133.73,
-    "dodge": 37.49,
-    "ignore_dodge": 27.46,
+    "critdamage": 134.09,
+    "dodge": 41.79,
+    "ignore_dodge": 76.3,
     "defpen": 28.5,
-    "scd": 35.75,
+    "scd": 37.84,
     "atkspeed": "103.08",
     "recorate": "125.60",
     "movspeed": "101.97",
@@ -6463,11 +6554,11 @@
           ],
           [
             "scd",
-            653
+            1225
           ],
           [
             "dodge",
-            939
+            1262
           ],
           null
         ]
@@ -6486,8 +6577,9 @@
         ]
       }
     },
-    "lastUpdate": 1490348002210,
-    "combatPower": 66085
+    "lastUpdate": 1492638922077,
+    "combatPower": 77923,
+    "rank": 2354
   },
   "captain_marvel": {
     "level": 60,
@@ -6497,206 +6589,174 @@
         {
           "type": "energy_attack_by_level",
           "val": 51.7,
-          "pref": true,
-          "percent": 89.33
+          "pref": true
         },
         {
           "type": "energy_attack_by_level",
           "val": 52.1,
-          "pref": true,
-          "percent": 94.67
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 60,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "energy_attack",
           "val": 89,
-          "pref": true,
-          "percent": 76.92
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 120,
-          "pref": true,
-          "percent": 82.35
+          "pref": true
         },
         {
           "type": "energy_attack",
           "val": 152,
-          "pref": true,
-          "percent": 86.36
+          "pref": true
         },
         {
           "type": "energy_attack",
-          "val": 173,
-          "pref": true,
-          "percent": 73.08
+          "val": 177,
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 219,
-          "pref": true,
-          "percent": 87.5
+          "pref": true
         }
       ],
       [
         {
           "type": "energy_defense_by_level",
           "val": 51.5,
-          "pref": true,
-          "percent": 86.67
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 22,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 48,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 74,
-          "pref": true,
-          "percent": 72.73
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 110,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
-          "val": 138,
-          "pref": true,
-          "percent": 57.14
+          "val": 147,
+          "pref": true
         },
         {
           "type": "all_defense",
-          "val": 155,
-          "pref": true,
-          "percent": 52.17
+          "val": 165,
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 194,
-          "pref": true,
-          "percent": 92.86
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 190,
-          "pref": true,
-          "percent": 90.91
+          "pref": true
         },
         {
           "type": "hp_by_level",
           "val": 192.4,
-          "pref": true,
-          "percent": 99.64
+          "pref": true
         },
         {
           "type": "hp",
           "val": 205,
-          "pref": true,
-          "percent": 70.97
+          "pref": true
         },
         {
-          "type": "dodge",
-          "val": 97,
-          "pref": true,
-          "percent": 57.14
+          "type": "hp",
+          "val": 319,
+          "pref": true
         },
         {
           "type": "hp",
           "val": 426,
-          "pref": true,
-          "percent": 87.1
+          "pref": true
         },
         {
-          "type": "dodge",
-          "val": 195,
-          "pref": true,
-          "percent": 58.62
+          "type": "hp",
+          "val": 533,
+          "pref": true
         },
         {
           "type": "hp",
           "val": 629,
-          "pref": true,
-          "percent": 94.51
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 341,
-          "pref": true,
-          "percent": 88
+          "pref": true
         }
       ],
       [
         {
           "type": "attack_speed",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 35,
-          "pref": true,
-          "percent": 80
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 67,
-          "pref": true,
-          "percent": 80
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 102,
-          "pref": true,
-          "percent": 92.86
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 148,
-          "pref": true,
-          "percent": 90.91
+          "pref": true
         },
         {
           "type": "defense_penetration",
-          "val": 198,
-          "pref": true,
-          "percent": 68.97
+          "val": 201,
+          "pref": true
         },
         {
           "type": "defense_penetration",
-          "val": 248,
-          "pref": true,
-          "percent": 67.57
+          "val": 253,
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 335,
-          "pref": true,
-          "percent": 76
+          "pref": true
         }
       ]
     ],
     "attack": {
-      "physical": 7607,
-      "energy": 10677
+      "physical": 0,
+      "energy": 0
     },
     "skills": [
       6,
@@ -6707,24 +6767,48 @@
     ],
     "uniform": "ms_marvel",
     "defense": {
-      "physical": 6214,
-      "energy": 7492
+      "physical": 6911,
+      "energy": 8480
     },
-    "hp": 18452,
+    "hp": 19348,
     "critrate": 36.34,
     "critdamage": 134.42,
-    "dodge": 21.2,
-    "ignore_dodge": 23.08,
-    "defpen": 32.84,
-    "scd": 27.15,
+    "dodge": 22.42,
+    "ignore_dodge": 35.46,
+    "defpen": 32.88,
+    "scd": 30.43,
     "atkspeed": 109.98,
     "recorate": "125.60",
     "movspeed": "104.76",
     "debuff": "0.00",
     "id": "captain_marvel",
-    "uniforms": {},
-    "lastUpdate": 1490319396916,
-    "combatPower": 44394
+    "uniforms": {
+      "ms_marvel": {
+        "rank": "legendary",
+        "options": [
+          [
+            "dodge",
+            760
+          ],
+          [
+            "attack_energy",
+            449
+          ],
+          [
+            "scd",
+            905
+          ],
+          [
+            "defense_all",
+            281
+          ],
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491673397078,
+    "combatPower": 64257,
+    "rank": 723
   },
   "singularity": {
     "level": 60,
@@ -7194,7 +7278,29 @@
     "movspeed": "101.58",
     "debuff": "7.27",
     "id": "ghost_rider",
-    "uniforms": {}
+    "uniforms": {
+      "iar": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "classic_70": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101459661
   },
   "ultron": {
     "level": 60,
@@ -7308,10 +7414,10 @@
           "percent": 66.91
         },
         {
-          "type": "dodge",
-          "val": 35,
-          "pref": false,
-          "percent": 80
+          "type": "hp_by_level",
+          "val": 190.4,
+          "pref": true,
+          "percent": 92.36
         },
         {
           "type": "hp",
@@ -7352,40 +7458,40 @@
       ],
       [
         {
-          "type": "critical_rate",
+          "type": "defense_penetration",
           "val": 8,
           "pref": true,
           "percent": 100
         },
         {
-          "type": "critical_damage",
-          "val": 36,
+          "type": "defense_penetration",
+          "val": 35,
           "pref": true,
-          "percent": 100
+          "percent": 80
         },
         {
-          "type": "critical_damage",
-          "val": 69,
+          "type": "defense_penetration",
+          "val": 65,
           "pref": true,
-          "percent": 100
+          "percent": 60
+        },
+        {
+          "type": "defense_penetration",
+          "val": 100,
+          "pref": true,
+          "percent": 78.57
         },
         {
           "type": "skill_cooldown",
-          "val": 101,
+          "val": 150,
           "pref": true,
-          "percent": 85.71
+          "percent": 100
         },
         {
-          "type": "critical_rate",
-          "val": 149,
+          "type": "defense_penetration",
+          "val": 203,
           "pref": true,
-          "percent": 95.45
-        },
-        {
-          "type": "critical_damage",
-          "val": 200,
-          "pref": true,
-          "percent": 75.86
+          "percent": 86.21
         },
         {
           "type": "defense_penetration",
@@ -7394,10 +7500,10 @@
           "percent": 67.57
         },
         {
-          "type": "critical_damage",
-          "val": 325,
+          "type": "defense_penetration",
+          "val": 339,
           "pref": true,
-          "percent": 56
+          "percent": 84
         }
       ]
     ],
@@ -7429,7 +7535,40 @@
     "movspeed": "100.00",
     "debuff": "0.00",
     "id": "ultron",
-    "uniforms": {}
+    "uniforms": {
+      "aaou_blast": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "aaou_combat": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "aaou_speed": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1490447607150,
+    "combatPower": 51192
   },
   "vision": {
     "level": 60,
@@ -7664,7 +7803,19 @@
     "movspeed": "104.61",
     "debuff": "15.00",
     "id": "vision",
-    "uniforms": {}
+    "uniforms": {
+      "aaou": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101463713
   },
   "blade": {
     "level": 60,
@@ -8146,7 +8297,22 @@
     "movspeed": "103.00",
     "debuff": "5.37",
     "id": "wasp",
-    "uniforms": {}
+    "uniforms": {
+      "anad": {
+        "rank": "advanced",
+        "options": [
+          [
+            "dodge",
+            0
+          ],
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1492638471348
   },
   "sharon_rogers": {
     "level": 60,
@@ -9086,7 +9252,19 @@
     "movspeed": 0,
     "debuff": "0.00",
     "id": "bullseye",
-    "uniforms": {}
+    "uniforms": {
+      "sw_1872": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101444899
   },
   "crossbones": {
     "level": 60,
@@ -9321,7 +9499,19 @@
     "movspeed": 0,
     "debuff": "0.00",
     "id": "crossbones",
-    "uniforms": {}
+    "uniforms": {
+      "modern": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101039468
   },
   "drax": {
     "level": 60,
@@ -9556,7 +9746,19 @@
     "movspeed": 0,
     "debuff": "0.00",
     "id": "drax",
-    "uniforms": {}
+    "uniforms": {
+      "anad": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101384414
   },
   "hulk_cho": {
     "level": 60,
@@ -9797,22 +9999,22 @@
         "options": [
           [
             "dodge",
-            751
+            920
           ],
           [
-            "attack_energy",
-            208
+            "hp",
+            727
           ],
           [
             "atkspeed",
-            643
+            892
           ],
           null,
           null
         ]
       }
     },
-    "lastUpdate": 1490348261187,
+    "lastUpdate": 1492638906035,
     "combatPower": 52701
   },
   "moon_knight": {
@@ -9823,200 +10025,168 @@
         {
           "type": "physical_attack_by_level",
           "val": 50.8,
-          "pref": true,
-          "percent": 77.33
+          "pref": true
         },
         {
           "type": "physical_attack_by_level",
           "val": 51.1,
-          "pref": true,
-          "percent": 81.33
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 57,
-          "pref": true,
-          "percent": 62.5
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 89,
-          "pref": true,
-          "percent": 76.92
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 116,
-          "pref": true,
-          "percent": 58.82
+          "pref": true
         },
         {
           "type": "physical_attack",
-          "val": 147,
-          "pref": true,
-          "percent": 63.64
+          "val": 150,
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 179,
-          "pref": true,
-          "percent": 96.15
+          "pref": true
         },
         {
           "type": "all_attack",
-          "val": 217,
-          "pref": true,
-          "percent": 81.25
+          "val": 222,
+          "pref": true
         }
       ],
       [
         {
           "type": "physical_defense_by_level",
           "val": 49.2,
-          "pref": true,
-          "percent": 56
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 21,
-          "pref": true,
-          "percent": 75
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 47,
-          "pref": true,
-          "percent": 85.71
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 73,
-          "pref": true,
-          "percent": 63.64
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 104,
-          "pref": true,
-          "percent": 62.5
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 138,
-          "pref": true,
-          "percent": 57.14
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 160,
-          "pref": true,
-          "percent": 73.91
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 191,
-          "pref": true,
-          "percent": 82.14
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 191.4,
-          "pref": true,
-          "percent": 96
+          "pref": true
         },
         {
           "type": "hp_by_level",
           "val": 191.2,
-          "pref": true,
-          "percent": 95.27
+          "pref": true
         },
         {
           "type": "hp",
           "val": 208,
-          "pref": true,
-          "percent": 80.65
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 98,
-          "pref": true,
-          "percent": 64.29
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 149,
-          "pref": true,
-          "percent": 95.45
+          "pref": true
         },
         {
           "type": "hp",
           "val": 534,
-          "pref": true,
-          "percent": 88.31
+          "pref": true
         },
         {
           "type": "hp",
           "val": 605,
-          "pref": true,
-          "percent": 68.13
+          "pref": true
         },
         {
           "type": "hp",
           "val": 731,
-          "pref": true,
-          "percent": 52.68
+          "pref": true
         }
       ],
       [
         {
-          "type": "skill_cooldown",
+          "type": "defense_penetration",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
-          "type": "critical_damage",
+          "type": "defense_penetration",
           "val": 34,
-          "pref": true,
-          "percent": 60
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 68,
-          "pref": true,
-          "percent": 90
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 98,
-          "pref": true,
-          "percent": 64.29
+          "pref": true
         },
         {
-          "type": "skill_cooldown",
-          "val": 143,
-          "pref": true,
-          "percent": 68.18
+          "type": "defense_penetration",
+          "val": 147,
+          "pref": true
         },
         {
-          "type": "skill_cooldown",
-          "val": 207,
-          "pref": true,
-          "percent": 100
+          "type": "defense_penetration",
+          "val": 205,
+          "pref": true
         },
         {
-          "type": "critical_damage",
-          "val": 255,
-          "pref": true,
-          "percent": 86.49
+          "type": "defense_penetration",
+          "val": 254,
+          "pref": true
         },
         {
-          "type": "critical_rate",
-          "val": 345,
-          "pref": true,
-          "percent": 96
+          "type": "defense_penetration",
+          "val": 340,
+          "pref": true
         }
       ]
     ],
@@ -10050,20 +10220,23 @@
     "id": "moon_knight",
     "uniforms": {
       "armored": {
-        "rank": "advanced",
+        "rank": "rare",
         "options": [
           [
             "scd",
             512
           ],
-          null,
+          [
+            "attack_physical",
+            191
+          ],
           null,
           null,
           null
         ]
       }
     },
-    "lastUpdate": 1490303793244,
+    "lastUpdate": 1491101861274,
     "combatPower": 64425
   },
   "hulk": {
@@ -10327,7 +10500,7 @@
         ]
       }
     },
-    "lastUpdate": 1490305008763,
+    "lastUpdate": 1491101882057,
     "combatPower": 60570
   },
   "she_hulk": {
@@ -10338,200 +10511,168 @@
         {
           "type": "physical_attack_by_level",
           "val": 52.5,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 25,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "all_attack",
           "val": 54,
-          "pref": true,
-          "percent": 25
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 88,
-          "pref": true,
-          "percent": 69.23
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 114,
-          "pref": true,
-          "percent": 47.06
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 136,
-          "pref": true,
-          "percent": 13.64
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 157,
-          "pref": true,
-          "percent": 11.54
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 193,
-          "pref": true,
-          "percent": 6.25
+          "pref": true
         }
       ],
       [
         {
           "type": "physical_defense_by_level",
           "val": 51.6,
-          "pref": true,
-          "percent": 88
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 21,
-          "pref": true,
-          "percent": 75
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 43,
-          "pref": true,
-          "percent": 28.57
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 69,
-          "pref": true,
-          "percent": 27.27
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 110,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 130,
-          "pref": true,
-          "percent": 19.05
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 147,
-          "pref": true,
-          "percent": 17.39
+          "pref": true
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 182,
-          "pref": true,
-          "percent": 61.82
+          "pref": true
         },
         {
           "type": "hp_by_level",
           "val": 191.6,
-          "pref": true,
-          "percent": 96.73
+          "pref": true
         },
         {
           "type": "hp",
           "val": 203,
-          "pref": true,
-          "percent": 64.52
+          "pref": true
         },
         {
           "type": "hp",
           "val": 320,
-          "pref": true,
-          "percent": 91.3
+          "pref": true
         },
         {
           "type": "hp",
           "val": 399,
-          "pref": false,
-          "percent": 43.55
+          "pref": false
         },
         {
           "type": "hp",
           "val": 521,
-          "pref": true,
-          "percent": 71.43
+          "pref": true
         },
         {
           "type": "hp",
           "val": 578,
-          "pref": false,
-          "percent": 38.46
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         }
       ],
       [
         {
           "type": "critical_damage",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "critical_rate",
           "val": 32,
-          "pref": false,
-          "percent": 20
+          "pref": false
         },
         {
           "type": "critical_rate",
           "val": 61,
-          "pref": false,
-          "percent": 20
+          "pref": false
         },
         {
           "type": "critical_damage",
           "val": 98,
-          "pref": true,
-          "percent": 64.29
+          "pref": true
         },
         {
           "type": "critical_damage",
           "val": 139,
-          "pref": false,
-          "percent": 50
+          "pref": false
         },
         {
           "type": "critical_rate",
           "val": 202,
-          "pref": true,
-          "percent": 82.76
+          "pref": true
         },
         {
           "type": "skill_cooldown",
           "val": 249,
-          "pref": true,
-          "percent": 70.27
+          "pref": true
         },
         {
           "type": "skill_cooldown",
           "val": 321,
-          "pref": false,
-          "percent": 48
+          "pref": false
         }
       ]
     ],
@@ -10565,9 +10706,12 @@
     "id": "she_hulk",
     "uniforms": {
       "an": {
-        "rank": "normal",
+        "rank": "advanced",
         "options": [
-          null,
+          [
+            "dodge",
+            480
+          ],
           null,
           null,
           null,
@@ -10575,7 +10719,7 @@
         ]
       }
     },
-    "lastUpdate": 1490348861608,
+    "lastUpdate": 1492638888689,
     "combatPower": 31530
   },
   "red_hulk": {
@@ -10811,7 +10955,22 @@
     "movspeed": 0,
     "debuff": 0,
     "id": "red_hulk",
-    "uniforms": {}
+    "uniforms": {
+      "now": {
+        "rank": "advanced",
+        "options": [
+          [
+            "atkspeed",
+            0
+          ],
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1492638410329
   },
   "ms_marvel": {
     "level": 60,
@@ -11046,7 +11205,19 @@
     "movspeed": "112.05",
     "debuff": "0.00",
     "id": "ms_marvel",
-    "uniforms": {}
+    "uniforms": {
+      "karachi": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101352821
   },
   "octopus": {
     "level": 60,
@@ -11281,7 +11452,19 @@
     "movspeed": 0,
     "debuff": "0.00",
     "id": "octopus",
-    "uniforms": {}
+    "uniforms": {
+      "ssm": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101020552
   },
   "warwolf": {
     "level": 60,
@@ -11528,200 +11711,168 @@
         {
           "type": "energy_attack_by_level",
           "val": 52,
-          "pref": true,
-          "percent": 93.33
+          "pref": true
         },
         {
           "type": "energy_attack_by_level",
           "val": 51.1,
-          "pref": true,
-          "percent": 81.33
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 60,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 90,
-          "pref": true,
-          "percent": 84.62
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 122,
-          "pref": true,
-          "percent": 94.12
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 154,
-          "pref": true,
-          "percent": 95.45
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 177,
-          "pref": true,
-          "percent": 88.46
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 211,
-          "pref": true,
-          "percent": 62.5
+          "pref": true
         }
       ],
       [
         {
           "type": "energy_defense_by_level",
           "val": 50.8,
-          "pref": true,
-          "percent": 77.33
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 21,
-          "pref": true,
-          "percent": 75
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 47,
-          "pref": true,
-          "percent": 85.71
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 72,
-          "pref": true,
-          "percent": 54.55
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 107,
-          "pref": true,
-          "percent": 81.25
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 139,
-          "pref": true,
-          "percent": 61.9
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 165,
-          "pref": true,
-          "percent": 95.65
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 186,
-          "pref": true,
-          "percent": 64.29
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 183.7,
-          "pref": true,
-          "percent": 68
+          "pref": true
         },
         {
           "type": "hp_by_level",
           "val": 190.6,
-          "pref": true,
-          "percent": 93.09
+          "pref": true
         },
         {
           "type": "hp",
           "val": 206,
-          "pref": true,
-          "percent": 74.19
+          "pref": true
         },
         {
           "type": "hp",
           "val": 315,
-          "pref": true,
-          "percent": 80.43
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 141,
-          "pref": true,
-          "percent": 59.09
+          "pref": true
         },
         {
           "type": "hp",
           "val": 506,
-          "pref": true,
-          "percent": 51.95
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 248,
-          "pref": true,
-          "percent": 67.57
+          "pref": true
         },
         {
           "type": "hp",
           "val": 755,
-          "pref": true,
-          "percent": 74.11
+          "pref": true
         }
       ],
       [
         {
           "type": "defense_penetration",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 36,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 69,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 98,
-          "pref": true,
-          "percent": 64.29
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 140,
-          "pref": true,
-          "percent": 54.55
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 204,
-          "pref": true,
-          "percent": 89.66
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 246,
-          "pref": true,
-          "percent": 62.16
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 339,
-          "pref": true,
-          "percent": 84
+          "pref": true
         }
       ]
     ],
@@ -11755,12 +11906,24 @@
     "id": "iron_man",
     "uniforms": {
       "aaou": {
-        "rank": "normal",
+        "rank": "legendary",
         "options": [
-          null,
-          null,
-          null,
-          null,
+          [
+            "scd",
+            514
+          ],
+          [
+            "defense_energy",
+            180
+          ],
+          [
+            "recorate",
+            592
+          ],
+          [
+            "movspeed",
+            644
+          ],
           null
         ]
       },
@@ -11775,9 +11938,12 @@
         ]
       },
       "cacw": {
-        "rank": "normal",
+        "rank": "advanced",
         "options": [
-          null,
+          [
+            "scd",
+            486
+          ],
           null,
           null,
           null,
@@ -11785,7 +11951,7 @@
         ]
       }
     },
-    "lastUpdate": 1490315420372,
+    "lastUpdate": 1491672564850,
     "combatPower": 49723
   },
   "rocket_raccoon": {
@@ -12021,7 +12187,19 @@
     "movspeed": "103.47",
     "debuff": "6.46",
     "id": "rocket_raccoon",
-    "uniforms": {}
+    "uniforms": {
+      "anad": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491100223159
   },
   "daisy_johnson": {
     "level": 60,
@@ -12283,7 +12461,7 @@
   },
   "elektra": {
     "level": 60,
-    "tier": 1,
+    "tier": 2,
     "gear": [
       [
         {
@@ -12293,10 +12471,10 @@
           "percent": 65.33
         },
         {
-          "type": "all_attack",
-          "val": 25,
-          "pref": false,
-          "percent": 0
+          "type": "physical_attack_by_level",
+          "val": 51.6,
+          "pref": true,
+          "percent": 88
         },
         {
           "type": "all_attack",
@@ -12306,9 +12484,9 @@
         },
         {
           "type": "all_attack",
-          "val": 83,
+          "val": 89,
           "pref": true,
-          "percent": 30.77
+          "percent": 76.92
         },
         {
           "type": "physical_attack",
@@ -12324,15 +12502,15 @@
         },
         {
           "type": "all_attack",
-          "val": 157,
+          "val": 180,
           "pref": true,
-          "percent": 11.54
+          "percent": 100
         },
         {
-          "type": "physical_attack_by_level",
-          "val": 52.3,
-          "pref": false,
-          "percent": 97.33
+          "type": "all_attack",
+          "val": 210,
+          "pref": true,
+          "percent": 59.38
         }
       ],
       [
@@ -12343,10 +12521,10 @@
           "percent": 28
         },
         {
-          "type": "all_defense",
-          "val": 20,
+          "type": "physical_defense_by_level",
+          "val": 50.8,
           "pref": true,
-          "percent": 50
+          "percent": 77.33
         },
         {
           "type": "all_defense",
@@ -12361,16 +12539,16 @@
           "percent": 90.91
         },
         {
-          "type": "physical_defense",
-          "val": 95,
-          "pref": false,
-          "percent": 6.25
+          "type": "all_defense",
+          "val": 110,
+          "pref": true,
+          "percent": 100
         },
         {
-          "type": "energy_defense_by_level",
-          "val": 45.8,
-          "pref": false,
-          "percent": 10.67
+          "type": "all_defense",
+          "val": 138,
+          "pref": true,
+          "percent": 57.14
         },
         {
           "type": "all_defense",
@@ -12379,10 +12557,10 @@
           "percent": 60.87
         },
         {
-          "type": "physical_defense",
-          "val": 169,
-          "pref": false,
-          "percent": 3.57
+          "type": "all_defense",
+          "val": 183,
+          "pref": true,
+          "percent": 53.57
         }
       ],
       [
@@ -12393,10 +12571,10 @@
           "percent": 63.64
         },
         {
-          "type": "hp",
-          "val": 101,
-          "pref": false,
-          "percent": 31.25
+          "type": "hp_by_level",
+          "val": 192.5,
+          "pref": true,
+          "percent": 100
         },
         {
           "type": "hp",
@@ -12423,48 +12601,48 @@
           "percent": 65.52
         },
         {
-          "type": "recovery_rate",
-          "val": 229,
-          "pref": false,
-          "percent": 16.22
+          "type": "dodge",
+          "val": 254,
+          "pref": true,
+          "percent": 83.78
         },
         {
-          "type": "movement_speed",
-          "val": 330,
-          "pref": false,
-          "percent": 66
+          "type": "dodge",
+          "val": 337,
+          "pref": true,
+          "percent": 80
         }
       ],
       [
         {
-          "type": "skill_cooldown",
+          "type": "defense_penetration",
           "val": 8,
           "pref": true,
           "percent": 100
         },
         {
-          "type": "skill_cooldown",
+          "type": "defense_penetration",
           "val": 34,
           "pref": true,
           "percent": 60
         },
         {
-          "type": "skill_cooldown",
-          "val": 59,
-          "pref": false,
-          "percent": 0
+          "type": "defense_penetration",
+          "val": 65,
+          "pref": true,
+          "percent": 60
         },
         {
-          "type": "skill_cooldown",
+          "type": "defense_penetration",
           "val": 98,
           "pref": true,
           "percent": 64.29
         },
         {
-          "type": "critical_rate",
-          "val": 144,
+          "type": "defense_penetration",
+          "val": 141,
           "pref": true,
-          "percent": 72.73
+          "percent": 59.09
         },
         {
           "type": "defense_penetration",
@@ -12473,48 +12651,64 @@
           "percent": 55.17
         },
         {
-          "type": "attack_speed",
-          "val": 241,
-          "pref": false,
-          "percent": 48.65
+          "type": "defense_penetration",
+          "val": 259,
+          "pref": true,
+          "percent": 97.3
         },
         {
-          "type": "skill_cooldown",
-          "val": 340,
+          "type": "defense_penetration",
+          "val": 331,
           "pref": true,
-          "percent": 86
+          "percent": 68
         }
       ]
     ],
     "attack": {
-      "physical": 8378,
-      "energy": 5017
+      "physical": 9805,
+      "energy": 5975
     },
     "skills": [
-      5,
-      5,
-      5,
-      5,
+      6,
+      6,
+      6,
+      6,
       6
     ],
-    "uniform": "classic",
+    "uniform": "md",
     "defense": {
-      "physical": 5361,
-      "energy": 4209
+      "physical": 6236,
+      "energy": 5246
     },
-    "hp": "15182",
-    "critrate": "51.43",
-    "critdamage": "141.24",
-    "dodge": "14.44",
+    "hp": 0,
+    "critrate": 52.43,
+    "critdamage": 142.94,
+    "dodge": 18.87,
     "ignore_dodge": "77.54",
-    "defpen": "27.00",
-    "scd": "29.54",
-    "atkspeed": "106.74",
-    "recorate": "127.04",
-    "movspeed": "102.53",
+    "defpen": 34.7,
+    "scd": 26.85,
+    "atkspeed": 107.55,
+    "recorate": 125.6,
+    "movspeed": 101.54,
     "debuff": "0.00",
     "id": "elektra",
-    "uniforms": {}
+    "uniforms": {
+      "md": {
+        "rank": "advanced",
+        "options": [
+          [
+            "scd",
+            515
+          ],
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1492638723391,
+    "combatPower": 51341
   },
   "falcon": {
     "level": 60,
@@ -12749,7 +12943,29 @@
     "movspeed": "106.00",
     "debuff": "0.00",
     "id": "falcon",
-    "uniforms": {}
+    "uniforms": {
+      "anca": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "cacw": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101664072
   },
   "gamora": {
     "level": 60,
@@ -12984,7 +13200,19 @@
     "movspeed": "100.00",
     "debuff": "0.00",
     "id": "gamora",
-    "uniforms": {}
+    "uniforms": {
+      "anad": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101034583
   },
   "gwenpool": {
     "level": 60,
@@ -13693,15 +13921,24 @@
       "sw_red_skull": {
         "rank": "heroic",
         "options": [
-          null,
-          null,
-          null,
+          [
+            "scd",
+            500
+          ],
+          [
+            "hp",
+            726
+          ],
+          [
+            "atkspeed",
+            637
+          ],
           null,
           null
         ]
       }
     },
-    "lastUpdate": 1490303141089
+    "lastUpdate": 1492638811007
   },
   "silk": {
     "level": 60,
@@ -14653,7 +14890,19 @@
     "movspeed": "100.00",
     "debuff": "0.00",
     "id": "squirrel_girl",
-    "uniforms": {}
+    "uniforms": {
+      "now": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101547617
   },
   "yondu": {
     "level": 60,
@@ -14888,7 +15137,19 @@
     "movspeed": "100.00",
     "debuff": "0.00",
     "id": "yondu",
-    "uniforms": {}
+    "uniforms": {
+      "anad": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101399712
   },
   "winter_soldier": {
     "level": 60,
@@ -14898,200 +15159,168 @@
         {
           "type": "physical_attack_by_level",
           "val": 51.4,
-          "pref": true,
-          "percent": 85.33
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 26,
-          "pref": false,
-          "percent": 25
+          "pref": false
         },
         {
           "type": "all_attack",
           "val": 60,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 81,
-          "pref": true,
-          "percent": 15.38
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 121,
-          "pref": true,
-          "percent": 88.24
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 151,
-          "pref": true,
-          "percent": 81.82
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 179,
-          "pref": true,
-          "percent": 96.15
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 207,
-          "pref": true,
-          "percent": 50
+          "pref": true
         }
       ],
       [
         {
           "type": "physical_defense_by_level",
           "val": 50.3,
-          "pref": true,
-          "percent": 70.67
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 19,
-          "pref": false,
-          "percent": 25
+          "pref": false
         },
         {
           "type": "all_defense",
           "val": 48,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 75,
-          "pref": true,
-          "percent": 81.82
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 102,
-          "pref": true,
-          "percent": 50
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 147,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 159,
-          "pref": true,
-          "percent": 69.57
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 183,
-          "pref": true,
-          "percent": 53.57
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 186,
-          "pref": true,
-          "percent": 76.36
+          "pref": true
         },
         {
           "type": "hp",
           "val": 110,
-          "pref": false,
-          "percent": 87.5
+          "pref": false
         },
         {
           "type": "hp",
           "val": 189,
-          "pref": false,
-          "percent": 19.35
+          "pref": false
         },
         {
           "type": "hp",
           "val": 287,
-          "pref": false,
-          "percent": 19.57
+          "pref": false
         },
         {
           "type": "hp",
           "val": 430,
-          "pref": true,
-          "percent": 93.55
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 207,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 247,
-          "pref": true,
-          "percent": 64.86
+          "pref": true
         },
         {
           "type": "hp",
           "val": 681,
-          "pref": false,
-          "percent": 8.04
+          "pref": false
         }
       ],
       [
         {
           "type": "skill_cooldown",
           "val": 7,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "skill_cooldown",
           "val": 33,
-          "pref": false,
-          "percent": 40
+          "pref": false
         },
         {
           "type": "skill_cooldown",
           "val": 69,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "skill_cooldown",
           "val": 91,
-          "pref": false,
-          "percent": 14.29
+          "pref": false
         },
         {
           "type": "critical_rate",
           "val": 139,
-          "pref": false,
-          "percent": 50
+          "pref": false
         },
         {
           "type": "critical_damage",
           "val": 201,
-          "pref": true,
-          "percent": 79.31
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 260,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "critical_rate",
           "val": 321,
-          "pref": false,
-          "percent": 48
+          "pref": false
         }
       ]
     ],
@@ -15129,7 +15358,7 @@
         "options": [
           [
             "atkspeed",
-            0
+            924
           ],
           null,
           null,
@@ -15148,7 +15377,7 @@
         ]
       }
     },
-    "lastUpdate": 1490348566129,
+    "lastUpdate": 1491100665483,
     "combatPower": 29667
   },
   "giant_man": {
@@ -15384,7 +15613,19 @@
     "movspeed": 0,
     "debuff": "0.00",
     "id": "giant_man",
-    "uniforms": {}
+    "uniforms": {
+      "modern2": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101500078
   },
   "green_goblin": {
     "level": 60,
@@ -15619,7 +15860,22 @@
     "movspeed": 0,
     "debuff": "6.48",
     "id": "green_goblin",
-    "uniforms": {}
+    "uniforms": {
+      "ultimate": {
+        "rank": "advanced",
+        "options": [
+          [
+            "scd",
+            476
+          ],
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491672481697
   },
   "hulkling": {
     "level": 40,
@@ -15629,200 +15885,168 @@
         {
           "type": "physical_attack",
           "val": 13,
-          "pref": false,
-          "percent": 100
+          "pref": false
         },
         {
           "type": "physical_attack",
           "val": 27,
-          "pref": false,
-          "percent": 50
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         }
       ],
       [
         {
           "type": "physical_defense_by_level",
           "val": 49.4,
-          "pref": true,
-          "percent": 58.67
+          "pref": true
         },
         {
           "type": "energy_defense",
           "val": 18,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 178,
-          "pref": true,
-          "percent": 47.27
+          "pref": true
         },
         {
           "type": "hp_by_level",
           "val": 168,
-          "pref": false,
-          "percent": 10.91
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         }
       ],
       [
         {
           "type": "defense_penetration",
           "val": 7,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "attack_speed",
           "val": 33,
-          "pref": false,
-          "percent": 40
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         }
       ]
     ],
@@ -15854,7 +16078,8 @@
     "movspeed": 0,
     "debuff": 0,
     "id": "hulkling",
-    "uniforms": {}
+    "uniforms": {},
+    "lastUpdate": 1491071018108
   },
   "iron_fist": {
     "level": 60,
@@ -16072,7 +16297,7 @@
       6,
       6
     ],
-    "uniform": "na",
+    "uniform": "mif",
     "defense": {
       "physical": 0,
       "energy": 0
@@ -16089,7 +16314,42 @@
     "movspeed": 0,
     "debuff": 0,
     "id": "iron_fist",
-    "uniforms": {}
+    "uniforms": {
+      "anad": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "mif": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "na": {
+        "rank": "advanced",
+        "options": [
+          [
+            "dodge",
+            1062
+          ],
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1492638488058
   },
   "jessica_jones": {
     "level": 55,
@@ -16559,7 +16819,19 @@
     "movspeed": "100.00",
     "debuff": "0.00",
     "id": "kingpin",
-    "uniforms": {}
+    "uniforms": {
+      "sw_armor_wars": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101509246
   },
   "lincoln_campbell": {
     "level": 60,
@@ -17029,7 +17301,32 @@
     "movspeed": "100.00",
     "debuff": "0.00",
     "id": "modok",
-    "uniforms": {}
+    "uniforms": {
+      "capdoc": {
+        "rank": "advanced",
+        "options": [
+          [
+            "dodge",
+            510
+          ],
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "spidoc": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491672631654
   },
   "malekith": {
     "level": 60,
@@ -17264,7 +17561,19 @@
     "movspeed": "100.00",
     "debuff": "4.39",
     "id": "malekith",
-    "uniforms": {}
+    "uniforms": {
+      "anad": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101334394
   },
   "phil_coulson": {
     "level": 60,
@@ -17509,226 +17818,194 @@
         {
           "type": "energy_attack_by_level",
           "val": 52,
-          "pref": true,
-          "percent": 93.33
+          "pref": true
+        },
+        {
+          "type": "energy_attack_by_level",
+          "val": 52.1,
+          "pref": true
         },
         {
           "type": "all_attack",
-          "val": 25,
-          "pref": false,
-          "percent": 0
-        },
-        {
-          "type": "all_attack",
-          "val": 53,
-          "pref": true,
-          "percent": 12.5
+          "val": 58,
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 90,
-          "pref": true,
-          "percent": 84.62
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 118,
-          "pref": true,
-          "percent": 70.59
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 153,
-          "pref": true,
-          "percent": 90.91
+          "pref": true
         },
         {
-          "type": "all_attack",
-          "val": 167,
-          "pref": true,
-          "percent": 50
+          "type": "energy_attack",
+          "val": 173,
+          "pref": true
         },
         {
           "type": "energy_attack",
           "val": 219,
-          "pref": true,
-          "percent": 87.5
+          "pref": true
         }
       ],
       [
         {
           "type": "physical_defense_by_level",
           "val": 51.3,
-          "pref": true,
-          "percent": 84
+          "pref": true
         },
         {
-          "type": "all_defense",
-          "val": 19,
-          "pref": true,
-          "percent": 25
+          "type": "energy_defense_by_level",
+          "val": 51.6,
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 45,
-          "pref": true,
-          "percent": 57.14
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 74,
-          "pref": true,
-          "percent": 72.73
+          "pref": true
         },
         {
           "type": "all_defense",
-          "val": 99,
-          "pref": true,
-          "percent": 31.25
+          "val": 108,
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 137,
-          "pref": true,
-          "percent": 52.38
+          "pref": true
         },
         {
           "type": "all_defense",
-          "val": 149,
-          "pref": true,
-          "percent": 26.09
+          "val": 162,
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 186,
-          "pref": true,
-          "percent": 64.29
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 182,
-          "pref": true,
-          "percent": 61.82
+          "pref": true
         },
         {
-          "type": "hp",
-          "val": 104,
-          "pref": false,
-          "percent": 50
+          "type": "hp_by_level",
+          "val": 190.7,
+          "pref": true
         },
         {
           "type": "hp",
           "val": 199,
-          "pref": true,
-          "percent": 51.61
+          "pref": true
         },
         {
           "type": "hp",
           "val": 313,
-          "pref": true,
-          "percent": 76.09
+          "pref": true
         },
         {
           "type": "hp",
           "val": 426,
-          "pref": true,
-          "percent": 87.1
+          "pref": true
         },
         {
           "type": "hp",
           "val": 506,
-          "pref": true,
-          "percent": 51.95
+          "pref": true
         },
         {
           "type": "recovery_rate",
           "val": 257,
-          "pref": false,
-          "percent": 91.89
+          "pref": true
         },
         {
           "type": "hp",
           "val": 738,
-          "pref": true,
-          "percent": 58.93
+          "pref": true
         }
       ],
       [
         {
           "type": "critical_damage",
-          "val": 7,
-          "pref": false,
-          "percent": 0
+          "val": 8,
+          "pref": true
         },
         {
           "type": "skill_cooldown",
           "val": 36,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "skill_cooldown",
           "val": 68,
-          "pref": true,
-          "percent": 90
+          "pref": true
         },
         {
-          "type": "skill_cooldown",
-          "val": 93,
-          "pref": false,
-          "percent": 28.57
+          "type": "critical_rate",
+          "val": 103,
+          "pref": true
         },
         {
           "type": "skill_cooldown",
           "val": 141,
-          "pref": true,
-          "percent": 59.09
+          "pref": true
         },
         {
           "type": "skill_cooldown",
           "val": 197,
-          "pref": true,
-          "percent": 65.52
+          "pref": true
         },
         {
           "type": "skill_cooldown",
           "val": 247,
-          "pref": true,
-          "percent": 64.86
+          "pref": true
         },
         {
           "type": "defense_penetration",
-          "val": 304,
-          "pref": false,
-          "percent": 14
+          "val": 339,
+          "pref": true
         }
       ]
     ],
     "attack": {
-      "physical": 0,
-      "energy": 0
+      "physical": 6215,
+      "energy": 14164
     },
     "skills": [
-      5,
       6,
-      5,
       6,
-      3
+      6,
+      6,
+      6
     ],
     "uniform": "anad",
     "defense": {
-      "physical": 5232,
-      "energy": 6876
+      "physical": 5759,
+      "energy": 7606
     },
-    "hp": "18437",
-    "critrate": "39.36",
-    "critdamage": "132.56",
-    "dodge": "17.57",
-    "ignore_dodge": "0.00",
-    "defpen": "31.03",
-    "scd": "33.74",
+    "hp": 16978,
+    "critrate": 40.24,
+    "critdamage": 132.57,
+    "dodge": 22.45,
+    "ignore_dodge": 53.63,
+    "defpen": 32.6,
+    "scd": 35.73,
     "atkspeed": "107.65",
     "recorate": "127.21",
     "movspeed": "100.00",
@@ -17736,17 +18013,26 @@
     "id": "sister_grimm",
     "uniforms": {
       "anad": {
-        "rank": "normal",
+        "rank": "heroic",
         "options": [
-          null,
-          null,
-          null,
+          [
+            "scd",
+            739
+          ],
+          [
+            "attack_energy",
+            196
+          ],
+          [
+            "scd",
+            653
+          ],
           null,
           null
         ]
       }
     },
-    "lastUpdate": 1490303151480
+    "lastUpdate": 1492638599850
   },
   "star_lord": {
     "level": 60,
@@ -17981,7 +18267,19 @@
     "movspeed": "101.76",
     "debuff": "3.76",
     "id": "star_lord",
-    "uniforms": {}
+    "uniforms": {
+      "sa": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491100823412
   },
   "war_machine": {
     "level": 60,
@@ -18954,7 +19252,19 @@
     "movspeed": 0,
     "debuff": 0,
     "id": "venom",
-    "uniforms": {}
+    "uniforms": {
+      "sw_zombies": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101552214
   },
   "punisher": {
     "level": 60,
@@ -19232,200 +19542,168 @@
         {
           "type": "physical_attack_by_level",
           "val": 52.4,
-          "pref": true,
-          "percent": 98.67
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 28,
-          "pref": false,
-          "percent": 75
+          "pref": false
         },
         {
           "type": "all_attack",
           "val": 58,
-          "pref": true,
-          "percent": 75
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 80,
-          "pref": true,
-          "percent": 7.69
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 107,
-          "pref": true,
-          "percent": 5.88
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 141,
-          "pref": true,
-          "percent": 36.36
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 180,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 214,
-          "pref": true,
-          "percent": 71.88
+          "pref": true
         }
       ],
       [
         {
           "type": "physical_defense_by_level",
           "val": 50.2,
-          "pref": true,
-          "percent": 69.33
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 18,
-          "pref": true,
-          "percent": 0
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 43,
-          "pref": true,
-          "percent": 28.57
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 68,
-          "pref": true,
-          "percent": 18.18
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 98,
-          "pref": true,
-          "percent": 25
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 146,
-          "pref": true,
-          "percent": 95.24
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 165,
-          "pref": true,
-          "percent": 95.65
+          "pref": true
         },
         {
           "type": "physical_defense",
           "val": 192,
-          "pref": false,
-          "percent": 85.71
+          "pref": false
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 190.2,
-          "pref": true,
-          "percent": 91.64
+          "pref": true
         },
         {
           "type": "hp",
           "val": 98,
-          "pref": false,
-          "percent": 12.5
+          "pref": false
         },
         {
           "type": "hp",
           "val": 211,
-          "pref": true,
-          "percent": 90.32
+          "pref": true
         },
         {
           "type": "hp",
           "val": 320,
-          "pref": true,
-          "percent": 91.3
+          "pref": true
         },
         {
           "type": "hp",
           "val": 414,
-          "pref": true,
-          "percent": 67.74
+          "pref": true
         },
         {
           "type": "hp",
           "val": 511,
-          "pref": true,
-          "percent": 58.44
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 260,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "hp",
           "val": 717,
-          "pref": false,
-          "percent": 40.18
+          "pref": false
         }
       ],
       [
         {
           "type": "critical_rate",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "critical_rate",
           "val": 36,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "critical_damage",
           "val": 68,
-          "pref": true,
-          "percent": 90
+          "pref": true
         },
         {
           "type": "critical_rate",
           "val": 97,
-          "pref": true,
-          "percent": 57.14
+          "pref": true
         },
         {
           "type": "critical_rate",
           "val": 146,
-          "pref": true,
-          "percent": 81.82
+          "pref": true
         },
         {
           "type": "critical_rate",
           "val": 189,
-          "pref": false,
-          "percent": 37.93
+          "pref": false
         },
         {
           "type": "critical_rate",
           "val": 241,
-          "pref": false,
-          "percent": 48.65
+          "pref": false
         },
         {
           "type": "skill_cooldown",
           "val": 321,
-          "pref": false,
-          "percent": 48
+          "pref": false
         }
       ]
     ],
@@ -19479,7 +19757,7 @@
         ]
       }
     },
-    "lastUpdate": 1490304121741
+    "lastUpdate": 1491069425669
   },
   "black_dwarf": {
     "level": 45,
@@ -21146,200 +21424,168 @@
         {
           "type": "energy_attack_by_level",
           "val": 49.4,
-          "pref": true,
-          "percent": 58.67
+          "pref": true
         },
         {
           "type": "energy_attack_by_level",
           "val": 50.2,
-          "pref": true,
-          "percent": 69.33
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 53,
-          "pref": true,
-          "percent": 12.5
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 89,
-          "pref": true,
-          "percent": 76.92
+          "pref": true
         },
         {
           "type": "energy_attack",
           "val": 113,
-          "pref": true,
-          "percent": 41.18
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 143,
-          "pref": true,
-          "percent": 45.45
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 177,
-          "pref": true,
-          "percent": 88.46
+          "pref": true
         },
         {
           "type": "energy_attack",
           "val": 223,
-          "pref": true,
-          "percent": 100
+          "pref": true
         }
       ],
       [
         {
           "type": "energy_defense_by_level",
           "val": 46.5,
-          "pref": true,
-          "percent": 20
+          "pref": true
         },
         {
           "type": "energy_defense_by_level",
           "val": 49.8,
-          "pref": true,
-          "percent": 64
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 41,
-          "pref": true,
-          "percent": 0
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 69,
-          "pref": true,
-          "percent": 27.27
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 110,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 134,
-          "pref": true,
-          "percent": 38.1
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 144,
-          "pref": true,
-          "percent": 4.35
+          "pref": true
         },
         {
           "type": "energy_defense_by_level",
           "val": 51.6,
-          "pref": false,
-          "percent": 88
+          "pref": false
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 171.3,
-          "pref": true,
-          "percent": 22.91
+          "pref": true
         },
         {
           "type": "hp_by_level",
           "val": 183.7,
-          "pref": true,
-          "percent": 68
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 59,
-          "pref": true,
-          "percent": 0
+          "pref": true
         },
         {
           "type": "hp",
           "val": 323,
-          "pref": true,
-          "percent": 97.83
+          "pref": true
         },
         {
           "type": "hp",
           "val": 383,
-          "pref": true,
-          "percent": 17.74
+          "pref": true
         },
         {
           "type": "recovery_rate",
           "val": 178,
-          "pref": true,
-          "percent": 0
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 250,
-          "pref": true,
-          "percent": 72.97
+          "pref": true
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         }
       ],
       [
         {
           "type": "critical_damage",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "critical_damage",
           "val": 31,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "critical_damage",
           "val": 63,
-          "pref": false,
-          "percent": 40
+          "pref": false
         },
         {
           "type": "critical_damage",
           "val": 96,
-          "pref": false,
-          "percent": 50
+          "pref": false
         },
         {
           "type": "critical_damage",
           "val": 128,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "critical_damage",
           "val": 179,
-          "pref": false,
-          "percent": 3.45
+          "pref": false
         },
         {
           "type": "critical_damage",
           "val": 234,
-          "pref": false,
-          "percent": 29.73
+          "pref": false
         },
         {
           "type": "critical_rate",
           "val": 339,
-          "pref": true,
-          "percent": 84
+          "pref": true
         }
       ]
     ],
@@ -21371,7 +21617,7 @@
         ]
       }
     },
-    "lastUpdate": 1490348436336,
+    "lastUpdate": 1490726813614,
     "combatPower": 38367
   },
   "doctor_strange": {
@@ -21394,200 +21640,168 @@
         {
           "type": "energy_attack_by_level",
           "val": 51.2,
-          "pref": true,
-          "percent": 82.67
+          "pref": true
         },
         {
           "type": "energy_attack_by_level",
           "val": 51.1,
-          "pref": true,
-          "percent": 81.33
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 60,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "energy_attack",
           "val": 87,
-          "pref": true,
-          "percent": 61.54
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 122,
-          "pref": true,
-          "percent": 94.12
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 152,
-          "pref": true,
-          "percent": 86.36
+          "pref": true
         },
         {
           "type": "energy_attack",
           "val": 176,
-          "pref": true,
-          "percent": 84.62
+          "pref": true
         },
         {
           "type": "energy_attack",
           "val": 211,
-          "pref": true,
-          "percent": 62.5
+          "pref": true
         }
       ],
       [
         {
           "type": "energy_defense_by_level",
           "val": 50.1,
-          "pref": true,
-          "percent": 68
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 22,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 48,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 76,
-          "pref": true,
-          "percent": 90.91
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 108,
-          "pref": true,
-          "percent": 87.5
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 146,
-          "pref": true,
-          "percent": 95.24
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 161,
-          "pref": true,
-          "percent": 78.26
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 194,
-          "pref": true,
-          "percent": 92.86
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 186.4,
-          "pref": true,
-          "percent": 77.82
+          "pref": true
         },
         {
           "type": "hp_by_level",
           "val": 191.5,
-          "pref": true,
-          "percent": 96.36
+          "pref": true
         },
         {
           "type": "hp",
           "val": 208,
-          "pref": true,
-          "percent": 80.65
+          "pref": true
         },
         {
           "type": "recovery_rate",
           "val": 97,
-          "pref": true,
-          "percent": 57.14
+          "pref": true
         },
         {
           "type": "recovery_rate",
           "val": 146,
-          "pref": true,
-          "percent": 81.82
+          "pref": true
         },
         {
           "type": "recovery_rate",
           "val": 199,
-          "pref": true,
-          "percent": 72.41
+          "pref": true
         },
         {
           "type": "recovery_rate",
           "val": 245,
-          "pref": true,
-          "percent": 59.46
+          "pref": true
         },
         {
           "type": "hp",
           "val": 735,
-          "pref": true,
-          "percent": 56.25
+          "pref": true
         }
       ],
       [
         {
           "type": "defense_penetration",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 34,
-          "pref": true,
-          "percent": 60
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 69,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 102,
-          "pref": true,
-          "percent": 92.86
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 150,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 198,
-          "pref": true,
-          "percent": 68.97
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 249,
-          "pref": true,
-          "percent": 70.27
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 333,
-          "pref": true,
-          "percent": 72
+          "pref": true
         }
       ]
     ],
@@ -21609,7 +21823,7 @@
     "id": "doctor_strange",
     "uniforms": {
       "doc_strange": {
-        "rank": "rare",
+        "rank": "heroic",
         "options": [
           [
             "scd",
@@ -21619,13 +21833,16 @@
             "attack_energy",
             274
           ],
-          null,
+          [
+            "hp",
+            1067
+          ],
           null,
           null
         ]
       }
     },
-    "lastUpdate": 1490348626480,
+    "lastUpdate": 1491101835547,
     "combatPower": 66118
   },
   "kaecilius": {
@@ -22096,7 +22313,19 @@
     "movspeed": "108.66",
     "debuff": "0.00",
     "id": "wong",
-    "uniforms": {}
+    "uniforms": {
+      "doc_strange": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491101504514
   },
   "mordo": {
     "uniform": "doc_strange",
@@ -22118,200 +22347,168 @@
         {
           "type": "energy_attack_by_level",
           "val": 51.5,
-          "pref": true,
-          "percent": 86.67
+          "pref": true
         },
         {
           "type": "physical_attack",
           "val": 29,
-          "pref": false,
-          "percent": 100
+          "pref": false
         },
         {
           "type": "energy_attack",
           "val": 57,
-          "pref": false,
-          "percent": 62.5
+          "pref": false
         },
         {
           "type": "physical_attack",
           "val": 82,
-          "pref": false,
-          "percent": 23.08
+          "pref": false
         },
         {
           "type": "physical_attack",
           "val": 109,
-          "pref": false,
-          "percent": 17.65
+          "pref": false
         },
         {
           "type": "physical_attack_by_level",
           "val": 48.7,
-          "pref": false,
-          "percent": 49.33
+          "pref": false
         },
         {
           "type": "all_attack",
           "val": 175,
-          "pref": true,
-          "percent": 80.77
+          "pref": true
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         }
       ],
       [
         {
           "type": "energy_defense",
           "val": 10,
-          "pref": false,
-          "percent": 100
+          "pref": false
         },
         {
           "type": "physical_defense_by_level",
           "val": 50.5,
-          "pref": false,
-          "percent": 73.33
+          "pref": false
         },
         {
           "type": "all_defense",
           "val": 44,
-          "pref": true,
-          "percent": 42.86
+          "pref": true
         },
         {
           "type": "energy_defense",
           "val": 70,
-          "pref": false,
-          "percent": 36.36
+          "pref": false
         },
         {
           "type": "energy_defense",
           "val": 107,
-          "pref": false,
-          "percent": 81.25
+          "pref": false
         },
         {
           "type": "physical_defense",
           "val": 145,
-          "pref": false,
-          "percent": 90.48
+          "pref": false
         },
         {
           "type": "physical_defense_by_level",
           "val": 50.5,
-          "pref": false,
-          "percent": 73.33
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         }
       ],
       [
         {
           "type": "recovery_rate",
           "val": 8,
-          "pref": false,
-          "percent": 100
+          "pref": false
         },
         {
           "type": "hp_by_level",
           "val": 181.3,
-          "pref": false,
-          "percent": 59.27
+          "pref": false
         },
         {
           "type": "movement_speed",
           "val": 65,
-          "pref": false,
-          "percent": 60
+          "pref": false
         },
         {
           "type": "movement_speed",
           "val": 103,
-          "pref": false,
-          "percent": 100
+          "pref": false
         },
         {
           "type": "movement_speed",
           "val": 146,
-          "pref": false,
-          "percent": 81.82
+          "pref": false
         },
         {
           "type": "recovery_rate",
           "val": 204,
-          "pref": false,
-          "percent": 89.66
+          "pref": false
         },
         {
           "type": "dodge",
           "val": 225,
-          "pref": false,
-          "percent": 5.41
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         }
       ],
       [
         {
           "type": "critical_damage",
           "val": 7,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "attack_speed",
           "val": 36,
-          "pref": false,
-          "percent": 100
+          "pref": false
         },
         {
           "type": "critical_rate",
           "val": 69,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "skill_cooldown",
           "val": 99,
-          "pref": true,
-          "percent": 71.43
+          "pref": true
         },
         {
           "type": "skill_cooldown",
           "val": 144,
-          "pref": true,
-          "percent": 72.73
+          "pref": true
         },
         {
           "type": "critical_damage",
           "val": 182,
-          "pref": false,
-          "percent": 13.79
+          "pref": false
         },
         {
           "type": "critical_damage",
           "val": 257,
-          "pref": true,
-          "percent": 91.89
+          "pref": true
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         }
       ]
     ],
@@ -22343,7 +22540,7 @@
         ]
       }
     },
-    "lastUpdate": 1490303712214
+    "lastUpdate": 1491071008020
   },
   "clea": {
     "uniform": "modern",
@@ -23288,7 +23485,7 @@
   "enchantress": {
     "uniform": "modern",
     "level": 60,
-    "tier": 1,
+    "tier": 2,
     "attack": {
       "physical": 0,
       "energy": 0
@@ -23309,216 +23506,185 @@
     "movspeed": "100.00",
     "debuff": "4.65",
     "skills": [
-      4,
-      4,
-      4,
-      4,
-      4
+      6,
+      6,
+      6,
+      6,
+      6
     ],
     "gear": [
       [
         {
           "type": "energy_attack_by_level",
           "val": 49.2,
-          "pref": true,
-          "percent": 56
+          "pref": true
         },
         {
           "type": "energy_attack_by_level",
           "val": 51.4,
-          "pref": true,
-          "percent": 85.33
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 60,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 88,
-          "pref": true,
-          "percent": 69.23
+          "pref": true
         },
         {
           "type": "energy_attack",
           "val": 116,
-          "pref": true,
-          "percent": 58.82
+          "pref": true
         },
         {
           "type": "energy_attack",
           "val": 152,
-          "pref": true,
-          "percent": 86.36
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 179,
-          "pref": true,
-          "percent": 96.15
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 214,
-          "pref": true,
-          "percent": 71.88
+          "pref": true
         }
       ],
       [
         {
           "type": "physical_defense_by_level",
           "val": 49.8,
-          "pref": true,
-          "percent": 64
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 22,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 48,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 76,
-          "pref": true,
-          "percent": 90.91
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 104,
-          "pref": true,
-          "percent": 62.5
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 139,
-          "pref": true,
-          "percent": 61.9
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 162,
-          "pref": true,
-          "percent": 82.61
+          "pref": true
         },
         {
           "type": "all_defense",
           "val": 191,
-          "pref": true,
-          "percent": 82.14
+          "pref": true
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 186,
-          "pref": true,
-          "percent": 76.36
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 34,
-          "pref": true,
-          "percent": 60
+          "pref": true
         },
         {
           "type": "hp",
           "val": 209,
-          "pref": true,
-          "percent": 83.87
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 98,
-          "pref": true,
-          "percent": 64.29
+          "pref": true
         },
         {
           "type": "hp",
           "val": 434,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "hp",
           "val": 541,
-          "pref": true,
-          "percent": 97.4
+          "pref": true
         },
         {
           "type": "hp",
           "val": 608,
-          "pref": true,
-          "percent": 71.43
+          "pref": true
         },
         {
           "type": "dodge",
           "val": 325,
-          "pref": true,
-          "percent": 56
+          "pref": true
         }
       ],
       [
         {
           "type": "critical_damage",
           "val": 8,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "skill_cooldown",
           "val": 36,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "critical_rate",
           "val": 66,
-          "pref": true,
-          "percent": 70
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 98,
-          "pref": true,
-          "percent": 64.29
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 143,
-          "pref": true,
-          "percent": 68.18
+          "pref": true
         },
         {
           "type": "defense_penetration",
           "val": 200,
-          "pref": true,
-          "percent": 75.86
+          "pref": true
         },
         {
           "type": "critical_rate",
           "val": 245,
-          "pref": true,
-          "percent": 59.46
+          "pref": true
         },
         {
           "type": "critical_damage",
           "val": 339,
-          "pref": true,
-          "percent": 84
+          "pref": true
         }
       ]
     ],
     "id": "enchantress",
-    "uniforms": {}
+    "uniforms": {},
+    "lastUpdate": 1490726812259
   },
   "ironheart": {
     "uniform": "now",
@@ -24228,7 +24394,7 @@
     "uniforms": {}
   },
   "karnak": {
-    "uniform": "warofking",
+    "uniform": "anad",
     "level": 0,
     "tier": 1,
     "attack": {
@@ -24262,205 +24428,204 @@
         {
           "type": "physical_attack_by_level",
           "val": 50.6,
-          "pref": true,
-          "percent": 74.67
+          "pref": true
         },
         {
           "type": "all_attack",
           "val": 29,
-          "pref": true,
-          "percent": 100
+          "pref": true
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         }
       ],
       [
         {
           "type": "physical_defense",
           "val": 10,
-          "pref": false,
-          "percent": 100
+          "pref": false
         },
         {
           "type": "energy_defense",
           "val": 20,
-          "pref": false,
-          "percent": 50
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         }
       ],
       [
         {
           "type": "hp_by_level",
           "val": 183,
-          "pref": false,
-          "percent": 65.45
+          "pref": false
         },
         {
           "type": "hp",
           "val": 101,
-          "pref": false,
-          "percent": 31.25
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         }
       ],
       [
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         },
         {
           "type": "",
           "val": 0,
-          "pref": false,
-          "percent": 0
+          "pref": false
         }
       ]
     ],
     "id": "karnak",
-    "uniforms": {}
+    "uniforms": {
+      "anad": {
+        "rank": "advanced",
+        "options": [
+          [
+            "atkspeed",
+            1211
+          ],
+          [
+            "attack_physical",
+            0
+          ],
+          [
+            "recorate",
+            0
+          ],
+          null,
+          null
+        ]
+      },
+      "warofking": {
+        "rank": "normal",
+        "options": [
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "lastUpdate": 1491671793834
   },
   "fandral": {
     "uniform": "modern",
@@ -24931,5 +25096,209 @@
     ],
     "id": "crystal",
     "uniforms": {}
+  },
+  "moon_girl": {
+    "id": "moon_girl",
+    "uniform": "now",
+    "uniforms": {},
+    "level": 60,
+    "tier": 1,
+    "attack": {
+      "physical": 0,
+      "energy": 0
+    },
+    "defense": {
+      "physical": 0,
+      "energy": 0
+    },
+    "hp": 0,
+    "dodge": 0,
+    "ignore_dodge": 0,
+    "defpen": 0,
+    "scd": 0,
+    "critrate": 0,
+    "critdamage": 0,
+    "atkspeed": 0,
+    "recorate": 0,
+    "movspeed": 0,
+    "debuff": 0,
+    "skills": [
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "gear": [
+      [
+        {
+          "type": "physical_attack_by_level",
+          "val": 47.8,
+          "pref": true
+        },
+        {
+          "type": "physical_attack",
+          "val": 26,
+          "pref": true
+        },
+        {
+          "type": "physical_attack",
+          "val": 57,
+          "pref": true
+        },
+        {
+          "type": "physical_attack",
+          "val": 84,
+          "pref": true
+        },
+        {
+          "type": "physical_attack",
+          "val": 115,
+          "pref": true
+        },
+        {
+          "type": "all_attack",
+          "val": 141,
+          "pref": true
+        },
+        {
+          "type": "physical_attack_by_level",
+          "val": 47.8,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        }
+      ],
+      [
+        {
+          "type": "physical_defense_by_level",
+          "val": 45.8,
+          "pref": true
+        },
+        {
+          "type": "all_defense",
+          "val": 18,
+          "pref": true
+        },
+        {
+          "type": "all_defense",
+          "val": 43,
+          "pref": true
+        },
+        {
+          "type": "all_defense",
+          "val": 73,
+          "pref": true
+        },
+        {
+          "type": "all_defense",
+          "val": 107,
+          "pref": true
+        },
+        {
+          "type": "all_defense",
+          "val": 133,
+          "pref": true
+        },
+        {
+          "type": "physical_defense",
+          "val": 165,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        }
+      ],
+      [
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        }
+      ],
+      [
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        },
+        {
+          "type": "",
+          "val": 0,
+          "pref": false
+        }
+      ]
+    ],
+    "lastUpdate": 1491102192994
   }
 }

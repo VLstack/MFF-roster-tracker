@@ -29,8 +29,6 @@ MFF.CHARACTERS =
          "movspeed" : 0, // 1.8 addition
          "debuff" : 0, // 1.8 addition
          "skills" : [0, 0, 0, 0, 0],
-         // NB : ES6 not activated yet until IE11 support drop
-         //"gear" : Array(4).fill(Array(8).fill({ "type" : "", "val" : 0, "pref" : false, "percent" : 0 }))
          "gear" : [0, 0, 0, 0].map(function()
                                    {
                                     return [0, 0, 0, 0, 0, 0, 0, 0].map(function()
@@ -40,7 +38,15 @@ MFF.CHARACTERS =
                                    })
         };
 },
-"getNameForUniform" : function(character, uniform) { return (character in MFF.CHARACTERS.DATA) && (uniform in MFF.CHARACTERS.DATA[character].uniforms) ? MFF.CHARACTERS.DATA[character].uniforms[uniform].name : character; },
+"getNameForUniform" : function(character, uniform)
+{
+ if ( character in MFF.CHARACTERS.DATA )
+ {
+  if ( !uniform || !(uniform in MFF.CHARACTERS.DATA[character].uniforms) ) { uniform = MFF.CHARACTERS.DATA[character].uniform; }
+  return MFF.CHARACTERS.DATA[character].uniforms[uniform].name;
+ }
+ return character;
+},
 "getImageUrlForUniform" : function(character, uniform) { return "images/characters/{0}/{1}.png".format(uniform, character); },
 "getImageForUniform" : function(character, uniform)
 {
@@ -83,6 +89,11 @@ MFF.CHARACTERS =
   data.attack = { "physical" : physical, "energy" : energy };
  }
  if ( !("uniforms" in data) ) { data.uniforms = {}; } // compatibility any to 2.2
+ if ( "last_update" in data ) // bug found in 2.4, dunno since when it was here
+ {
+  data.lastUpdate = data.last_update;
+  delete data.last_update;
+ }
  return data;
 },
 "isValidData" : function(id, data)
@@ -165,12 +176,12 @@ MFF.CHARACTERS =
    MFF.CHARACTERS._all[character].tier = parseInt(data.tier) || 1;
   break;
   case "attack" :
-   MFF.CHARACTERS._all[character].attack.physical = parseInt(data.physical) || 0;
-   MFF.CHARACTERS._all[character].attack.energy = parseInt(data.energy) || 0;
+   if ( "physical" in data ) { MFF.CHARACTERS._all[character].attack.physical = parseInt(data.physical) || 0; }
+   if ( "energy" in data ) { MFF.CHARACTERS._all[character].attack.energy = parseInt(data.energy) || 0; }
   break;
   case "defense" :
-   MFF.CHARACTERS._all[character].defense.physical = parseInt(data.physical) || 0;
-   MFF.CHARACTERS._all[character].defense.energy = parseInt(data.energy) || 0;
+   if ( "physical" in data ) { MFF.CHARACTERS._all[character].defense.physical = parseInt(data.physical) || 0; }
+   if ( "energy" in data ) { MFF.CHARACTERS._all[character].defense.energy = parseInt(data.energy) || 0; }
   break;
   case "skill" :
    MFF.CHARACTERS._all[character].skills[parseInt(data.skill)] = parseInt(data.lvl) || 0;
@@ -201,6 +212,9 @@ MFF.CHARACTERS =
   break;
   case "rank" :
    MFF.CHARACTERS._all[character].rank = data.rank;
+  break;
+  case "favorite" :
+   MFF.CHARACTERS._all[character].favorite = data.favorite;
   break;
  }
  MFF.CHARACTERS._all[character].lastUpdate = (new Date()).valueOf();

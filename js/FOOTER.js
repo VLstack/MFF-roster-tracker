@@ -18,6 +18,10 @@ MFF.LAYOUT.FOOTER =
   span.id = "submitIssues";
   span.className = "bgOpaque";
   span.innerHTML = "<i class=\"fa fa-exclamation\"></i> If you find a bug, an incorrect data or you want to suggest an enhancement, please submit an <a href=\"https://github.com/Mokhet/MFF-roster-tracker/issues\" target=\"blank\">issue</a>";
+  span = MFF.LAYOUT.FOOTER._panel.appendChild(document.createElement("span"));
+  span.id = "OCRCredits";
+  span.className = "bgOpaque";
+  span.innerHTML = "Thanks to Skyyeblu for <a href=\"https://github.com/dcmc87/MFFRosterParserWeb/\" target=\"blank\">OCR</a> parsing";
  },
  "_updateTier" : function()
  {

@@ -3,8 +3,8 @@
 // localStorage.removeItem("sorter");
 var MFF =
 {
- "version" : "2.3.1",
- "versionMFF" : "2.9.5",
+ "version" : "2.4.0",
+ "versionMFF" : "3.0",
  "localStorageKey" : "characters",
  "toid" : null,
  "currentCharacter" : null,
@@ -12,6 +12,12 @@ var MFF =
  "shownClassSide" : ["hero", "vilain", "neutral"],
  "shownClassGender" : ["male", "female", "neutral"],
  "shownClassTier" : ["tier1", "tier2"],
+ "showFavorites" : false,
+ "toggleFavorite" : function(checked)
+ {
+  MFF.showFavorites = checked;
+  MFF.filters();
+ },
  "toggleClass" : function(reference)
  {
   return function(checked, type)
@@ -42,28 +48,39 @@ var MFF =
   {
    data = MFF.CHARACTERS.get(childs[i].id);
    showHide = "hide";
-   for ( j = 0; j < MFF.shownClassType.length; j++ )
+   if ( MFF.showFavorites )
    {
-    if ( childs[i].classList.contains(MFF.shownClassType[j]) )
+    if ( data.favorite ) { showHide = "show"; }
+   }
+   else
+   {
+    for ( j = 0; j < MFF.shownClassType.length; j++ )
     {
-     showHide = "show";
-     break;
+     if ( childs[i].classList.contains(MFF.shownClassType[j]) )
+     {
+      showHide = "show";
+      break;
+     }
     }
-   }
-   if ( showHide == "show" && MFF.shownClassTier.indexOf("tier" + data.tier) == -1 ) { showHide = "hide"; }
-   if ( showHide == "show" )
-   {
-    gender = MFF.CHARACTERS.DATA[childs[i].id].uniforms[data.uniform].gender;
-    if ( MFF.shownClassGender.indexOf(gender) == -1 ) { showHide = "hide"; }
-   }
-   if ( showHide == "show" )
-   {
-    side = MFF.CHARACTERS.DATA[childs[i].id].uniforms[data.uniform].side;
-    if ( MFF.shownClassSide.indexOf(side) == -1 ) { showHide = "hide"; }
-   }
-   if ( showHide == "show" && query && reduce(MFF.CHARACTERS.DATA[childs[i].id].uniforms[data.uniform].name).indexOf(query) == -1 )
-   {
-    showHide = "hide";
+    if ( showHide == "show" && MFF.shownClassTier.indexOf("tier" + data.tier) == -1 ) { showHide = "hide"; }
+    if ( showHide == "show" )
+    {
+     gender = MFF.CHARACTERS.DATA[childs[i].id].uniforms[data.uniform].gender;
+     if ( MFF.shownClassGender.indexOf(gender) == -1 ) { showHide = "hide"; }
+    }
+    if ( showHide == "show" )
+    {
+     side = MFF.CHARACTERS.DATA[childs[i].id].uniforms[data.uniform].side;
+     if ( MFF.shownClassSide.indexOf(side) == -1 ) { showHide = "hide"; }
+    }
+    if ( showHide == "show" && query && reduce(MFF.CHARACTERS.DATA[childs[i].id].uniforms[data.uniform].name).indexOf(query) == -1 )
+    {
+     showHide = "hide";
+    }
+    if ( showHide == "show" && MFF.IMMUNITIES.filters.length > 0 && !MFF.IMMUNITIES.hasFilteredImmunities(childs[i].id) )
+    {
+     showHide = "hide";
+    }
    }
    childs[i].style.display = showHide == "show" ? "" : "none";
    if ( showHide == "show" ) { nb++; }
@@ -102,14 +119,14 @@ var MFF =
   "defpen" :           { "label" : "Ignore defense", "max" : 50, "callback" : function(character) { var v = character.defpen; return { "value" : v, "percent" : true }; } },
   // TODO : check if max ignore dodge is really 75
   "ignore_dodge" :     { "label" : "Ignore dodge", "max" : 75, "callback" : function(character) { var v = character.ignore_dodge; return { "value" : v, "percent" : true }; } },
-  "last_update" :      { "disableChart" : true, "label" : "Last update", "callback" : function(character) { return { "value" : character.lastUpdate || null, "percent" : false }; } },
+  "lastUpdate" :       { "disableChart" : true, "label" : "Last update", "callback" : function(character) { return { "value" : character.lastUpdate || null, "percent" : false }; } },
   "level" :            { "label" : "Level", "callback" : function(character) { var v = character.level; return { "value" : v, "percent" : false }; } },
   "movspeed" :         { "label" : "Movement speed", "max" : 130, "callback" : function(character) { var v = character.movspeed; return { "value" : v, "percent" : true }; } },
   "rank" :             { "label" : "Rank", "callback" : function(character) { var v = character.rank || 0; return { "value" : v, "percent" : false }; } },
   "recorate" :         { "label" : "Recovery rate", "max" : 250, "callback" : function(character) { var v = character.recorate; return { "value" : v, "percent" : true }; } },
   "scd" :              { "label" : "Skill cooldown", "max" : 50, "callback" : function(character) { var v = character.scd; return { "value" : v, "percent" : true }; } },
-  "defense_all" :      { "disableCharts" : true, "disableSort" : true, "label" : "All defenses" },
-  "attack_all" :       { "disableCharts" : true, "disableSort" : true, "label" : "All attacks" }
+  "defense_all" :      { "disableChart" : true, "disableSort" : true, "label" : "All defenses" },
+  "attack_all" :       { "disableChart" : true, "disableSort" : true, "label" : "All attacks" }
  },
  "cbImportExport" : function()
  {
@@ -153,6 +170,7 @@ var MFF =
    try { data = JSON.parse(data); MFF.CHARACTERS.setAll(data); }
    catch(ex) { }
   }
+  MFF.OCR.checkAvailability();
   /* compatibility 2.1.0 start */
   data = localStorage.getItem("sorter");
   if ( data && data != null && data != undefined && data != "null" && data != "undefined" && (typeof data == "string") )
@@ -206,41 +224,22 @@ var MFF =
  //  */
  // },
  "toid2" : null,
- "saveCharacter" : function(data)
+ "saveCharacter" : function(data, characterId)
  {
-  MFF.CHARACTERS.setProperty(MFF.currentCharacter || MFF.lastTarget, data);
+  characterId = characterId || MFF.currentCharacter || MFF.lastTarget;
+  MFF.CHARACTERS.setProperty(characterId, data);
   localStorage.setItem(MFF.localStorageKey, JSON.stringify(MFF.CHARACTERS.getAll()));
   if ( data.mode == "tier" )
   {
    API.EVT.dispatch("updateTier");
-   MFF.LAYOUT.LIST.setTier(MFF.currentCharacter);
+   MFF.LAYOUT.LIST.setTier(characterId);
   }
-//   else if ( data.mode == "gear" || data.mode == "skill" )
-//   {
-//    MFF.toid2 = clearTimeout(MFF.toid2);
-//    MFF.toid2 = setTimeout(function()
-//                           {
-//                            var div = document.getElementById("current_percent");
-//                            if ( div && MFF.currentCharacter )
-//                            {
-// //                            div.innerHTML = API.numberToFixed(MFF.computePercent(MFF.currentCharacter), 2) + "%";
-//                             div.innerHTML = MFF.PERCENT.get(MFF.currentCharacter, true) + "%";
-//                             API.EVT.dispatch("updateTier");
-//                             if ( MFF.LAYOUT.DETAIL.GEARS._btnDetailCharts.isActive() )
-//                             {
-//                              MFF.LAYOUT.CHARTS.renderDetail();
-//                             }
-//                             MFF.LAYOUT.LIST.setSub(MFF.currentCharacter);
-//                             MFF.LAYOUT.LIST.synchroDetailGear(MFF.currentCharacter);
-//                            }
-//                           }, 250);
-//   }
   else if ( data.mode == "uniform" )
   {
-   MFF.LAYOUT.DETAIL.drawCharacter(MFF.currentCharacter, true, true);
-   MFF.LAYOUT.LIST.drawCharacter(MFF.currentCharacter);
+   MFF.LAYOUT.DETAIL.drawCharacter(characterId, true, true);
+   MFF.LAYOUT.LIST.drawCharacter(characterId);
   }
-  MFF.LAYOUT.LIST.setSub(MFF.currentCharacter);
+  MFF.LAYOUT.LIST.setSub(characterId);
  }
 };
 

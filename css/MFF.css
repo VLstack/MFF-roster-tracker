@@ -118,6 +118,7 @@ div.copyright { margin:auto; width:750px; text-align:center; font:10px/14px aria
 #panelDetailContent h1 label#lblCombatPower { float:right; margin-right:5px}
 #lblCombatPower input { text-align:center; padding:2px 10px; width:60px; margin-left:5px }
 #panelDetailContent h1 label { float:left; margin-left:5px; font-size:12px; white-space:nowrap; font-weight:normal }
+#character_favorite { width:16px; cursor:pointer; margin-right:5px; margin-top:-3px; vertical-align:middle }
 #character_level { font:14px/20px arial; text-align:center; width:30px; margin-right:2px; margin-left:2px }
 #panelDetailContent h1 select { float:left; margin:4px 10px 0 5px }
 #character_tier, #character_tier option { font:14px/20px arial }
@@ -126,9 +127,9 @@ div.copyright { margin:auto; width:750px; text-align:center; font:10px/14px aria
 
 #panelDetailContent td.content { vertical-align:top }
 
-#panelDetailContent td.content div.forms { display:inline-block; white-space:nowrap; margin-right:10px; margin-top:3px }
+#panelDetailContent td.content div.forms { display:inline-block; white-space:nowrap; margin-right:5px; margin-top:3px; vertical-align:top }
 #panelDetailContent td.content .forms td.title { padding:0 }
-#panelDetailContent td.content .forms td.title h2 { text-align:center; background:linear-gradient(to bottom, #666e92 0%, #3c4460 50%, #12192b 100%); border-top-left-radius:4px; border-top-right-radius:4px; color:#fff; font:12px/22px arial; min-width:180px }
+#panelDetailContent td.content .forms td.title h2 { text-align:center; background:linear-gradient(to bottom, #666e92 0%, #3c4460 50%, #12192b 100%); border-top-left-radius:4px; border-top-right-radius:4px; color:#fff; font:12px/22px arial; min-width:140px }
 #panelDetailContent td.content .forms th, #panelDetail td.content .forms td { text-align:left; padding:2px }
 #panelDetailContent td.content .forms th { color:white; font:12px/16px arial }
 #panelDetailContent td.content .forms td { text-align:center }
@@ -153,11 +154,9 @@ span.skill_lvl { display:inline-block; width:calc(20% - 8px); margin:2px; color:
 .skill_lvl > option { font:10px/16px arial }
 
 #panelFooter { bottom:0; left:0; right:0; height:30px; overflow:hidden; background-color:#12192b }
-#panelFooter span { display:inline-block; font:10px/18px arial; color:white; padding:1px 5px; border:1px solid rgba(255, 255, 255, 0.5) }
+#panelFooter span { display:inline-block; font:10px/18px arial; color:white; padding:1px 5px; border:1px solid rgba(255, 255, 255, 0.5); margin:5px 5px 0 5px }
+#panelFooter span a:link, #panelFooter span a:visited { color:white }
 #panelFooter span#MFFversion { position:absolute; right:3px; bottom:3px }
-#panelFooter span#nbTiers { position:absolute; left:3px; bottom:3px }
-#panelFooter span#submitIssues { position:absolute; left:170px; bottom:3px }
-#panelFooter span#submitIssues a:link, #panelFooter span#submitIssues a:visited { color:white }
 
 #panelFooter span#MFFversion.beta::before { content:"BETA"; background-color:#630000; color:white; position:absolute; left:-40px; padding:1px 5px; border-radius:4px }
 #panelFooter span#MFFversion.localhost::before { content:"localhost"; background-color:#006363; color:white; position:absolute; left:-60px; padding:1px 5px; border-radius:4px }
@@ -237,3 +236,40 @@ h2.rank.mythical { color:red }
 .selectCharacters li.checked img { opacity:1 }
 
 #nbSelectedForExport { float:right; font:12px/30px arial; font-style:normal; color:white; margin-right:5px }
+
+.dropdown-item.immunity-inline-33 { display:inline-block; width:calc(33% - 12px); text-align:center }
+
+.immunity-actions-title { cursor:default; text-align:center }
+
+#OCRDropArea { position:absolute; top:10px; left:10px; bottom:30px; right:10px; border:2px dashed #999999; paddinxg-top:75px; border-radius:10px }
+#OCRDropArea.OCRDragOver { border-color:#ffffff; color:#ffffff }
+#OCRDropArea div.text { text-align:center; font:20px/80px arial; color:#999999 }
+#OCRDropArea div#OCRList { position:absolute; top:90px; left:20px; right:20px; bottom:0; overflow:auto }
+#OCRFilesFallback { position:absolute; left:0; right:0; bottom:0; height:40px; text-align:center }
+#OCRFilesFallback span { font:12px/40px arial; color:#999999; margin-right:5px }
+#OCRFilesFallback input { color:#999999 }
+#OCRDropArea img { position:absolute; top:0; height:120px; border:4px solid #ffffff; box-shadow:0 0 10px rgba(0, 0, 0, 0.1); border-radius:4px }
+#OCRTextRecap { position:absolute; bottom:10px; left:10px; right:10px; height:20px; text-align:center; font:12px/20px arial; color:#999999 }
+#OCRLoading { position:absolute; top:2px; left:2px; height:4px; right:2px; background-color:red }
+#OCRLoading>div { height:4px; background-color:green; transition:width 1s ease }
+#OCRProcessContent { position:absolute; top:10px; left:2px; right:2px; bottom:2px }
+#OCRProcessContent li { color:#999999; margin-bottom:10px }
+#OCRProcessContent li:not(#OCRProcessRecap) div.result { margin-left:5px; font:12px/20px arial }
+#OCRProcessContent li:not(#OCRProcessRecap) div.content { margin:5px }
+#OCRProcessRecap { font:12px/20px arial; text-align:center }
+#OCRAvailability { display:inline-block; color:white; padding:0px 10px; border-radius:4px; margin-left:5px; vertical-align:middle; font-size:8px }
+#OCRAvailability.OCRAvailabilityCheck { background-color:#006363 }
+#OCRAvailability.OCRAvailabilityTRUE { background-color:#006363 }
+#OCRAvailability.OCRAvailabilityFALSE { background-color:#630000 }
+table.OCRExtract { width:100% }
+table.OCRExtract td { vertical-align:top }
+table.OCRExtract label { display:inline-block; width:90px; font:10px/16px arial; color:#999999; white-space:nowrap }
+table.OCRExtract label.gearName { width:auto }
+table.OCRExtract input { width:50px; text-align:center; font:10px/14px arial }
+table.OCRExtract select { width:150px }
+table.OCRExtract option { font:10px/14px arial }
+table.OCRExtract img { width:120px }
+.OCRbtn { font:9px/12px arial; padding:2px 7px; margin:2px; border-radius:4px; cursor:pointer; color:#ffffff; opacity:0.7 }
+.OCRbtn:hover { opacity:1 }
+.OCRbtn.OCRapply { background-color:#008214; margin-left:8px }
+.OCRbtn.OCRremove { background-color:#9d0f0f; margin-right:8px }

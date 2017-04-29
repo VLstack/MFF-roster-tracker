@@ -135,7 +135,7 @@ MFF.LAYOUT.LIST =
  },
  "setSortAttribute" : function(attribute) { localStorage.setItem("sorterAttribute", attribute); },
  "setSortDirection" : function(direction) { localStorage.setItem("sorterDirection", direction); },
- "getSortAttribute" : function() { var v = localStorage.getItem("sorterAttribute"); return v === undefined || v === null || v === "undefined" || v === "null" || v == "" ? "name" : v; },
+ "getSortAttribute" : function() { var v = localStorage.getItem("sorterAttribute"); return v === undefined || v === null || v === "undefined" || v === "null" || v == "" || !(v in MFF.axisItems) ? "name" : v; },
  "getSortDirection" : function() { var v = localStorage.getItem("sorterDirection"); return v === undefined || v === null || v === "undefined" || v === "null" || v == "" ? "asc" : v; },
  "sort" : function()
  {
@@ -259,7 +259,7 @@ MFF.LAYOUT.LIST =
    tmp = MFF.axisItems[attribute].callback(MFF.CHARACTERS.get(character));
    switch ( attribute )
    {
-    case "last_update":
+    case "lastUpdate":
      if ( tmp.value )
      {
       tmp = new Date(tmp.value);
