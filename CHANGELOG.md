@@ -4,6 +4,12 @@
 
 - More javascript refactor
 
+# ![version 2.4.1](https://img.shields.io/badge/version-2.4.1-brightgreen.svg?style=flat) ![date 2017-05-02](https://img.shields.io/badge/date-2017--05--02-red.svg?style=flat)
+
+**Fixed bugs:**
+
+- [#54](https://github.com/Mokhet/MFF-roster-tracker/issues/54) Cannot save gear values. Sorry, my mistake I forgot a flag from the localhost version.
+
 ![version 2.4.0](https://img.shields.io/badge/version-2.4.0-brightgreen.svg?style=flat) ![date 2017-04-30](https://img.shields.io/badge/date-2017--04--30-red.svg?style=flat)
 
 **Enhancements:**
