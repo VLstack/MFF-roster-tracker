@@ -169,7 +169,7 @@ MFF.LAYOUT.DETAIL.GEARS =
     input.type = "checkbox";
     input.title = "Set as favorite statistic once checked";
     input.setAttribute("tabindex", -1);
-    input.onchange = function() { checkValues(API.DOM.parent(this, "tr")); };
+    input.onchange = function() { checkValues(API.DOM.parent(this, "tr"), true); };
     input.checked = data.gear[i][j].pref;
     td2 = tr.appendChild(document.createElement("td"));
     td2.style.width = "100%";
@@ -222,13 +222,13 @@ MFF.LAYOUT.DETAIL.GEARS =
      if ( MFF.toid ) { MFF.toid = clearTimeout(MFF.toid); }
      MFF.toid = setTimeout(function()
                            {
-                            checkValues(API.DOM.parent(that, "tr"));
+                            checkValues(API.DOM.parent(that, "tr"), true);
                            }, 250);
     };
     curStat.onchange = function()
     {
      if ( MFF.toid ) { MFF.toid = clearTimeout(MFF.toid); }
-     checkValues(API.DOM.parent(this, "tr"));
+     checkValues(API.DOM.parent(this, "tr"), true);
     };
     // min
     td2 = tr.appendChild(document.createElement("td"));
