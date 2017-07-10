@@ -1,3 +1,9 @@
+Unfortunatly the tool is currently in pause because I am on a professional mission abroad.
+
+I'll be back in mid october 2017
+
+<hr>
+
 # Unreleased ![version 2.5.0](https://img.shields.io/badge/version-2.5.0-brightgreen.svg?style=flat)
 
 **In progress**
