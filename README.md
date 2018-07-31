@@ -3,14 +3,6 @@ Roster tracker for characters of the mobile game Marvel Future Fight.
 
 Keep track of developments, levels, tiers, active uniform, attacks value, defenses, hit points, criticals, gears, skills and so on.
 
-# Live
-
-![current](https://img.shields.io/badge/Current_release-stable-green.svg?style=flat) https://www.mokhet.com/MFF/
-
-![beta](https://img.shields.io/badge/Beta_release-unstable-red.svg?style=flat) https://www.mokhet.com/MFF-beta/
-
-![previous](https://img.shields.io/badge/Previous_release-stable-green.svg?style=flat) https://www.mokhet.com/MFF-previous/
-
 # OCR
 
 Adding every data by hand can be very difficult and long. Thanks to Skyyeblu, you will find an OCR Android app to translate your screenshots to compatible json data.
