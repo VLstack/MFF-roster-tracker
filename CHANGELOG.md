@@ -1,14 +1,6 @@
-Unfortunatly the tool is currently in pause because I am on a professional mission abroad.
+# DISCONTINUED
 
-I'll be back in mid october 2017
-
-<hr>
-
-# Unreleased ![version 2.5.0](https://img.shields.io/badge/version-2.5.0-brightgreen.svg?style=flat)
-
-**In progress**
-
-- More javascript refactor
+I was away for more than a year, haven't played since and have no incentive to come back to the game.
 
 # ![version 2.4.1](https://img.shields.io/badge/version-2.4.1-brightgreen.svg?style=flat) ![date 2017-05-02](https://img.shields.io/badge/date-2017--05--02-red.svg?style=flat)
 
