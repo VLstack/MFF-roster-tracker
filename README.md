@@ -1,3 +1,5 @@
+# DISCONTINUED
+
 # MFF Roster Tracker ![version](https://img.shields.io/badge/version-2.3.0-blue.svg)
 Roster tracker for characters of the mobile game Marvel Future Fight.
 
