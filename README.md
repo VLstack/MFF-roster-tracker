@@ -12,7 +12,3 @@ https://github.com/dcmc87/MFFRosterParser
 
 Thanks Skyyeblu and his hard work, we can now import screenshots to the tool.
 https://github.com/dcmc87/MFFRosterParserWeb
-
-# Contributions
-
-You are encouraged to contact me if you want to participate. And you are of course fully allowed to make any fork you wish.
